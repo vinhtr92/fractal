@@ -1,0 +1,178 @@
+/* //--- textbox
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+
+// icon
+.icon {
+	font-size: 60px;
+	color: $color-primary;
+}
+
+// title
+.title {
+	font-size: 20px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+
+// theme dark
+.dark {
+	.text {
+		color: #fff;
+	}
+}
+
+:global(.wil-text-center) {
+	.icon {
+		margin: auto;
+	}
+}
+
+:global(.wil-text-right) {
+	.icon {
+		margin-right: 0;
+		margin-left: auto;
+	}
+}
+
+// modifier iconLeft
+.iconLeft {
+	.icon {
+		float: left;
+		font-size: 30px;
+	}
+	.title {
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	.body {
+		overflow: hidden;
+		padding-left: 25px;
+	}
+}
+
+// modifier iconRight
+.iconRight {
+	.icon {
+		float: right;
+		font-size: 30px;
+	}
+	.title {
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	.body {
+		overflow: hidden;
+		padding-right: 25px;
+		text-align: right;
+	}
+}
+
+// modifier iconBorderSquare
+.iconBorderSquare {
+	.icon {
+		width: 80px;
+		height: 80px;
+		line-height: 80px;
+		text-align: center;
+		border-radius: 50%;
+		border: 1px solid;
+		font-size: 30px;
+		margin-bottom: 25px;
+	}
+}
+
+// modifier iconBorderPill
+.iconBorderPill {
+	.icon {
+		width: 50px;
+		height: 80px;
+		line-height: 80px;
+		text-align: center;
+		border: 1px solid;
+		font-size: 30px;
+		margin-bottom: 25px;
+	}
+}
+
+// modifier background
+.background {
+	background-color: $color-gray-1;
+	padding: 30px;
+	text-align: center;
+	transition: all 0.4s ease;
+
+	// all
+	.icon,
+	.title,
+	.text {
+		transition: all 0.4s ease;
+	}
+
+	// icon
+	.icon {
+		font-size: 50px;
+	}
+
+	// title
+	.title {
+		margin-top: 0;
+	}
+
+	// hover
+	&:hover {
+		background-color: $color-primary;
+		box-shadow: 0 0 15px 0 rgba(#000, 0.1);
+		transform: translate(0, -5px);
+		// alll
+		> * {
+			color: $color-light;
+		}
+
+		// title
+		.title {
+			color: inherit;
+		}
+	}
+}
+
+// modifier borderEffect
+.borderEffect {
+	position: relative;
+	overflow: hidden;
+	z-index: 9;
+	@include pfs('padding-bottom', (
+		400px: 20px,
+		1200px: 30px
+	));
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 3px;
+		left: 0;
+		bottom: 0;
+		z-index: -1;
+		background-color: $color-gray-1;
+	}
+
+	// after
+	&:after {
+		background-color: $color-primary;
+		transform: translate(-100%, 0);
+		transition: all 0.4s $cubic-1;
+	}
+	
+	// hover
+	&:hover {
+		&:after {
+			transform: translate(0, 0);
+		}
+	}
+}

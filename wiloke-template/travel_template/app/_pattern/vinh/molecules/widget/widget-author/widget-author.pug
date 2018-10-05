@@ -1,0 +1,51 @@
+
+//- demo: true
+mixin widget-author(args)
+	+module('div', 'widget-author', args)
+		- var args = item
+		div.widget-author__header
+			- var nameAuthor = set(args, 'nameAuthor', random(random.people.name))
+			a(href="#", title=nameAuthor)
+				div.widget-author__avatar(style=`background-image: url('${ set(args, 'avatar', 'http://via.placeholder.com/200x200') }')`)
+					img(src=set(args, 'avatar', 'http://via.placeholder.com/200x200'), alt="")
+				h3.widget-author__name= nameAuthor
+				div.widget-author__level
+					div.icon!= set(args, 'iconLevel', '<img src="http://via.placeholder.com/20x20" alt="" />')
+					|Adminstrator
+
+		div.widget-author__follow
+			span.widget-author__follower
+				span.number= random(50, 200)
+				|Follower
+			span.widget-author__following
+				span.number= random(50, 200)
+				|Following
+			a.widget-author__follow-btn(href="#")
+				|Follow
+				i(class="fa fa-rss")
+
+		div.widget-author__info
+			div.item
+				i(class="fa fa-map-marker")
+				span= set(args, 'address', random(random.address))
+			div.item
+				i(class="fa fa-phone")
+				a(href="#")= set(args, 'phone', '+123 456 789')
+			div.item
+				i(class="fa fa-globe")
+				a(href="#")= set(args, 'website', 'http://wiloke.com')
+			div.item
+				i(class="fa fa-envelope")
+				a(href="#")= set(args, 'email', 'hpvanlong@gmail.com')
+
+		div.widget-author__social
+			//- Args: icon, text
+			+social({
+				modifier: set(args, 'socialModifier', 'bgColor'),
+				loop: {
+					data: social,
+					items: set(args, 'socialItems', 4),
+					children: true
+				}
+			})
+			

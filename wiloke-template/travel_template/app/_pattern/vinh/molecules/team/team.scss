@@ -1,0 +1,72 @@
+/* //--- longTeam
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	position: relative;
+	max-width: 400px;
+	margin: auto;
+	border-radius: 5px;
+	overflow: hidden;
+	transform: translateZ(0);
+}
+
+// img
+.img {
+	img {
+		width: 100%;
+	}
+}
+
+// content
+.content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: $color-light;
+	composes: bg-gradient-1 from global;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease;
+}
+
+// name
+.name {
+	color: inherit;
+	font-size: 22px;
+	margin: 0;
+	margin-bottom: 5px;
+}
+
+// work
+.work {
+	font-family: $font-tertiary;
+	font-style: italic;
+	font-size: 15px;
+}
+
+// divider
+.divider {
+	width: 55px;
+	height: 2px;
+	background-color: $color-light;
+	margin: 20px auto;
+}
+
+// social
+.social {
+	a {
+		margin: 5px;
+	}
+}
+
+// hover
+.module:hover {
+	.content {
+		opacity: 0.93;
+		visibility: visible;
+	}
+}

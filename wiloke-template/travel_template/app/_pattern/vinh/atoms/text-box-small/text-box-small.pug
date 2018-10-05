@@ -1,0 +1,15 @@
+//- demo: true
+mixin long_text-box-small(args)
+	include cssmodule
+	+module('a', css.module, args)(href="#")
+		-
+			let args = item;
+			let icon = args.icon || random(random.font7);
+			let iconColor = args.iconColor;
+		
+		if (has(args.modifier, 'reverse'))
+			span(class=css.text, class=args.classText)= args.text || 'July 12, 2016'
+			span(class=css.icon, class=iconColor): i(class=icon)
+		else
+			span(class=css.icon, class=iconColor): i(class=icon)
+			span(class=css.text, class=args.classText)= args.text || 'July 12, 2016'

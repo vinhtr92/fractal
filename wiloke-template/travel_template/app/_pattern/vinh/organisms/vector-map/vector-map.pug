@@ -1,0 +1,14 @@
+//- demo: true
+mixin long_vector-map(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- Args:
+		+long_nav-vertical({
+			addClass: css.nav
+		})
+
+		include cssmodule
+		div(class=css.map)

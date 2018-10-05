@@ -1,0 +1,92 @@
+extends pug/layout
+
+//- Config
+block config
+	-
+		config.title = 'about'
+		config.bodyClass = ''
+
+//- afterLink
+block afterLink
+	
+//- Header
+block header
+	//- Args:
+	+hien_header({
+		
+	})
+	
+//- Footer
+block footer
+	
+//- Content
+block content
+	
+
+	+section
+		//- Args: icon, title, text
+		+heading({
+			icon: '<i class="fa fa-facebook"></i>',
+			title: 'đây là đống component vừa tạo',
+			text: random(random.text, 100),
+			align: 'center'
+		})
+		+row
+			//- Args: title, text
+			+testTestcomponent({
+				loop: {
+					data: [
+						{
+							title: 'title 1',
+							text: 'text 1'
+						},
+						{
+							title: 'title 2',
+							text: 'text 2'
+						},
+						{
+							title: 'title 3',
+							text: 'text 3'
+						},
+					],
+					wrap: 'col-md-4',
+				},
+			})
+
+
+	
+	+section({
+		css: {
+			'background-color': '#eee'
+		}
+	})
+		//- Args: icon, title, text
+		+heading({
+			icon: '<i class="fa fa-twitter"></i>',
+			title: 'Pricing',
+			text: random(random.text, 100),
+			align: 'center'
+		})
+
+		+row
+			+col({
+				cols: [0,0,4,4]
+			})
+				//- Args: icon, title, currency, amount, period, list
+				+pricing-01({
+					
+				})
+			+col({
+				cols: [0,0,4,4]
+			})
+				//- Args: icon, title, currency, amount, period, list
+				+pricing-01({
+					modifier: 'feature'
+				})
+			+col({
+				cols: [0,0,4,4]
+			})
+				//- Args: icon, title, currency, amount, period, list
+				+pricing-01({
+					
+				})

@@ -1,0 +1,48 @@
+/* //--- long_body-blog-single
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	font-family: $font-tertiary;
+	font-size: 16px;
+	color: $color-dark-1;
+	background-color: $color-light;
+	max-width: 770px;
+	margin: auto;
+	padding: 40px 10px;
+	@include media('>sm') {
+		padding: 60px 15px;
+	}
+	*:first-child {
+		margin-top: 0 !important;
+	}
+	img {
+		margin-bottom: 20px;
+	}
+}
+
+// tagCloud
+.tagCloud {
+	margin-top: 20px;
+	a {
+		text-decoration: underline;
+		+ a {
+			padding-left: 4px;
+		}
+	}
+}
+
+// shareFixed
+.shareFixed {
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease;
+	z-index: 9;
+	@include media('<md') {
+		display: none;
+	}
+	&.active {
+		opacity: 1;
+		visibility: visible;
+	}
+}

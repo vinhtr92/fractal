@@ -1,0 +1,13 @@
+//- demo: true
+mixin vinhIcon02(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		div(class=css.icon)
+			i(class=set(args, 'icon', random(random.fontawesome)))
+		div(class=css.content)
+			h3(class=css.title)= set(args, 'title', random(random.title))
+	include cssmodule

@@ -1,0 +1,58 @@
+/* //--- longFooter
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	position: relative;
+	color: $color-light;
+	z-index: 9999;
+	@include pfs('padding-top', (
+		400px: 40px,
+		1200px: 75px
+	));
+	:global {
+		a {
+			color: $color-light !important;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		.widget {
+			@include pfs('margin-bottom', (
+				400px: 40px,
+				1200px: 75px
+			));
+		}
+		.widget-title {
+			font-size: 14px;
+			font-weight: $font-semibold;
+			margin: 0;
+			margin-bottom: 32px;;
+			&:after {
+				content: '';
+				display: block;
+				border-top: 1px solid rgba(#000, 0.15);
+				border-bottom: 1px solid rgba(#fff, 0.12);
+				margin-top: 7px;
+			}
+		}
+		.widget-post-item__title {
+			color: $color-light;
+			font-weight: $font-semibold;
+			a {
+				color: inherit !important;
+			}
+		}
+	}
+}
+
+// foot
+.foot {
+	background-color: rgba(#000, 0.05);
+	font-size: 14px;
+	font-family: $font-secondary;
+	font-weight: $font-semibold;
+	color: $color-light;
+	text-align: center;
+	padding: 18px 10px;
+}

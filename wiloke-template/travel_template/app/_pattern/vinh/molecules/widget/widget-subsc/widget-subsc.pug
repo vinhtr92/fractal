@@ -1,0 +1,31 @@
+
+//- demo: true
+mixin widget-subsc(args)
+	+module('div', 'widget-subsc', args)
+		- var args = item
+
+
+		div.mb-20= random(random.text, 100)
+
+		form
+			//- Args: placeholder, multiple, search, selectOption, icon
+			+long_field({
+				placeholder: 'Name',
+				addClass: 'mb-20'
+			})
+			//- Args: placeholder, multiple, search, selectOption, icon
+			+long_field({
+				placeholder: 'Email',
+				addClass: 'mb-20'
+			})
+			//- Args: placeholder, multiple, search, selectOption, icon
+			+long_field({
+				modifier: 'select',
+				selectOption: ['Where are you from?', 'Hai Phong', 'Ha Noi'],
+				addClass: 'mb-20'
+			})
+			+wil-btn('button', {
+				type: 'submit',
+				text: 'Get travel tips',
+				modifier: ['primary', 'md', 'round', 'block']
+			})

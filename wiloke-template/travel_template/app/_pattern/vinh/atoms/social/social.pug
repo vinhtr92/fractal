@@ -1,0 +1,8 @@
+//- demo: true
+mixin long_social(args)
+	include cssmodule
+
+	+module('a', css.module, args)(href="#")
+		- let args = item
+		
+		i(class=set(args, 'icon', 'fa fa-facebook'))

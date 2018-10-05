@@ -1,0 +1,297 @@
+@import "abstracts/_extends.scss";@import "abstracts/_functions.scss";@import "abstracts/_mixins.scss";@import "abstracts/_variables.scss";@import "./_content/wiloke-core/styles/abstracts/_bem.scss";@import "./_content/wiloke-core/styles/abstracts/_button.scss";@import "./_content/wiloke-core/styles/abstracts/_col-multiple.scss";@import "./_content/wiloke-core/styles/abstracts/_extends.scss";@import "./_content/wiloke-core/styles/abstracts/_form-item.scss";@import "./_content/wiloke-core/styles/abstracts/_functions.scss";@import "./_content/wiloke-core/styles/abstracts/_include-media.scss";@import "./_content/wiloke-core/styles/abstracts/_masonry-grid.scss";@import "./_content/wiloke-core/styles/abstracts/_menu.scss";@import "./_content/wiloke-core/styles/abstracts/_mixins.scss";@import "./_content/wiloke-core/styles/abstracts/_poly-fluid-sizing.scss";@import "./_content/wiloke-core/styles/abstracts/_variables.scss";
+/* //--- vinhIcon
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	font-family: $font-primary;
+	text-align: center;
+}
+
+// icon
+.icon {
+	color: $color-gray-6;
+	margin:0 0 25px 0;
+
+
+	i {
+		font-size: 40px;
+	}
+}
+
+// content
+.content {
+	overflow: auto;
+}
+
+// title
+.title {
+	font-size: 20px;
+	font-family: inherit;
+	margin: 0 0 20px 0;
+	color: $color-dark-4;
+	line-height: 1;
+	font-family: inherit;
+}
+
+// text
+.text {
+	font-size: 16px;
+	font-family: inherit;
+	line-height: calc(26/16);
+	margin: 0;
+	overflow: hidden;
+
+	p {
+		margin: inherit;
+	}
+
+}
+
+.title {
+	margin: 0 0  20px 0;
+}
+
+// modifier style02
+.style02 {
+	text-align: left;
+
+	.icon {
+		float: left;
+
+		i {
+			margin: 0 30px 0 0;	
+		}
+
+	}
+
+	.title {
+		margin: 0 0  15px 0;
+	}
+
+	.text {
+		font-size: 14px;
+	}
+
+}
+
+
+// modifier style03
+.style03 {
+	text-align: right;
+
+	.icon {
+		float: right;
+		i{
+
+			margin:0 0 0 30px;
+			font-size: 30px;
+		}
+	}
+
+	.text {
+		font-size: 14px;
+	}
+
+	.title {
+		margin: 0 0  15px 0;
+	}
+
+}
+
+// modifier style04
+.style04 {
+	text-align: left;
+
+	.icon {
+		float: left;
+
+		i {
+			margin:0 30px 0 0 ;
+			font-size: 30px;
+		}
+	}
+
+	.text {
+		font-size: 14px;
+	}
+
+	.title {
+		margin: 0 0  15px 0;
+	}
+}
+
+
+// modifier style05
+.style05 {
+	text-align: left;
+
+	.icon {
+		float: left;
+		border: 1px solid $color-gray-5;
+		width: 60px;
+		height: 60px;
+		border-radius: 100%;
+		text-align: center;
+		margin: 0 30px 0 0;
+		transition: .3s all;
+
+		i {
+			font-size: 20px;
+			line-height: 60px;
+			transition: .3s all;
+		}
+	}
+
+	.text {
+		font-size: 14px;
+	}
+
+	.title {
+		margin: 0 0  15px 0;
+	}
+}
+
+.style05:hover {
+	.icon {
+		background: $color-primary;
+		border: 1px solid $color-primary;
+		transition: .3s all;
+		i {
+			color: $color-light;
+			transition: .3s all;
+		}
+	}
+}
+
+// modifier style06
+.style06 {
+	text-align: left;
+
+	.icon {
+		float: left;
+		border: 1px solid $color-gray-5;
+		width: 50px;
+		height: 50px;
+		border-radius: 100%;
+		text-align: center;
+		margin: 0 50px 0 0;
+		transition: .3s all;
+
+		i {
+			font-size: 24px;
+			line-height: 50px;
+			transition: .3s all;
+		}
+	}
+
+	.text {
+		font-size: 14px;
+	}
+
+	.title {
+		margin:15px 0 15px;
+	}
+}
+
+
+.style06:hover {
+	.icon {
+		background: $color-primary;
+		border: 1px solid $color-primary;
+		transition: .3s all;
+		i {
+			color: $color-light;
+			transition: .3s all;
+		}
+	}
+}
+
+// modifier style07 
+.style07 {
+	padding: 176px 30px;
+	border: 1px solid $color-gray-8;
+
+	.icon {
+
+		i {
+			font-size: 40px;
+			margin: 0 0 45px 0;
+		}
+	}
+
+	.title {
+		font-size: 30px;
+		margin: 0 0  25px 0;
+	}
+}
+
+// modifier style08
+.style08 {
+	background: $color-gray-8;
+	padding: 176px 30px;
+	border: 1px solid $color-gray-8;
+	
+	.icon {
+
+		i {
+			font-size: 40px;
+			margin: 0 0 45px 0;
+		}
+	}
+
+	.title {
+		font-size: 30px;
+		margin: 0 0  25px 0;
+	}
+}
+
+// modifier style09
+.style09 {
+	text-align: left;
+
+	.icon {
+		float: left;
+		border: 1px solid $color-gray-5;
+		width: 65px;
+		height: 65px;
+		border-radius: 100%;
+		text-align: center;
+		margin: 0 30px 0 0;
+		transition: .3s all;
+
+		i {
+			font-size: 30px;
+			line-height: 65px;
+			transition: .3s all;
+		}
+	}
+
+	.text {
+		font-size: 16px;
+	}
+
+	.title {
+		margin: 20px 0 15px 0;
+		font-size: 30px;
+		font-weight: 600;
+	}
+}
+
+.style09:hover {
+	.icon {
+		background: $color-primary;
+		border: 1px solid $color-primary;
+		transition: .3s all;
+
+		i {
+			color: $color-light;
+			transition: .3s all;
+		}
+	}
+}
+
+// wrap
+.wrap {
+	
+}

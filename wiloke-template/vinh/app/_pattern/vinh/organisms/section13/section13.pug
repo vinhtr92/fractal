@@ -1,0 +1,42 @@
+//- demo: true
+mixin vinhSection13(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		+section({
+			container: true,
+		})
+
+			+vinhHeader({
+
+			})
+
+			+row
+				+col({
+					cols: [0,0,4,4],
+					gap: 30,
+				})
+					+vinhIcon04({
+					})
+
+				+col({
+					cols: [0,0,4,4],
+					gap: 30,
+				})
+					+vinhIcon04({
+
+					})
+
+				+col({
+					cols: [0,0,4,4],
+					gap: 30,
+				})
+					+vinhIcon04({
+
+					})
+		
+		
+	include cssmodule

@@ -1,0 +1,13 @@
+//- demo: true
+mixin testAbcde(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		h2(class=css.title)= 'day la title'
+		div(class=css.text)= 'day la noi dung'
+		
+		
+	include cssmodule

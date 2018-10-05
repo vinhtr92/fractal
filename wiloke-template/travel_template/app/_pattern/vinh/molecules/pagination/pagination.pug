@@ -1,0 +1,17 @@
+//- demo: true
+mixin long_pagination(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		span(class="current") 1
+		a(href="#") 2
+		a(href="#") ...
+		a(href="#") 32
+		a(href="#", class=css.prev)
+			i(class="pe-7s-angle-left")
+			|Prev
+		a(href="#", class=css.next)
+			|Next
+			i(class="pe-7s-angle-right")

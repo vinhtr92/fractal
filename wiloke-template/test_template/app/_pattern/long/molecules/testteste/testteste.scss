@@ -1,0 +1,22 @@
+/* //--- long_testteste
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	border: 1px solid red;
+}
+
+// title
+.title {
+	color: blue;
+}
+
+// text
+.text {
+	color: $color-primary;
+}
+
+// modifier abc
+.abc {
+	padding: 20px;
+}

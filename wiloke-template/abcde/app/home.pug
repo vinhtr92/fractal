@@ -1,0 +1,73 @@
+extends pug/layout
+
+//- Config
+block config
+	-
+		config.title = 'home'
+		config.bodyClass = ''
+
+//- afterLink
+block afterLink
+	
+//- Header
+block header
+	//- Args:
+	+hien_header({
+		
+	})
+//- Footer
+block footer
+	
+//- Content
+block content
+	+section
+		//- Args: title, text
+		+longHeading({
+			title: 'Testimonials',
+			align: 'center'
+		})
+		//- Args: options, prevText, nextText, thumbnails, pagination, nextText, prevText
+		+swiper({
+			options: {
+				loop: true,
+			},
+			prevText: 'prev',
+			nextText: 'next'
+		})
+			//- Args: avatar, text, name, work
+			+quote({
+				modifier: 'style2'
+			})
+			//- Args: avatar, text, name, work
+			+quote({
+				modifier: 'style2'
+			})
+	+section
+		//- Args: title, text
+		+longHeading({
+			title: 'Pricing',
+			align: 'center'
+		})
+
+		+row
+			+col({
+				cols: [12,12,4,4]
+			})
+				//- Args: icon, title, currency, amount, period, list
+				+pricing-01({
+					
+				})
+			+col({
+				cols: [12,12,4,4]
+			})
+				//- Args: icon, title, currency, amount, period, list
+				+pricing-01({
+					title: 'Business'
+				})
+			+col({
+				cols: [12,12,4,4]
+			})
+				//- Args: icon, title, currency, amount, period, list
+				+pricing-01({
+					
+				})

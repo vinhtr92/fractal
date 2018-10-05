@@ -1,0 +1,108 @@
+//- include: false
+//- demo: true
+mixin sidebar-01(args)
+	include cssmodule
+	+module('aside', css.module, args)
+		- var args = item
+		include data.pug
+
+		+widget({
+
+		})
+			//- Args: background, img, name, meta, text, signature, background, signature
+			+widget-about({
+				background: 'img/place/4.jpg',
+				img: 'img/team/1.jpg',
+				signature: 'img/signature.png'
+			})
+
+
+		if (args.cat != 'disable')
+			//- Args: title
+			+widget({
+				title: 'Categories'
+			})
+				//- Args: text
+				+widget-list({
+					loop: {
+						data: widget.cat,
+						children: true,
+					}
+				})
+
+
+		if (args.destination != 'disable')
+			//- Args: title
+			+widget({
+				title: 'Destination'
+			})
+				//- Args: items
+				+longWidgetDestinations({
+					items: 4
+				})
+
+		if (args.subscribe != 'disable')
+			//- Args: title
+			+widget({
+				title: 'Subscribe'
+			})
+				//- Args: inputEmail, button
+				+widget-subsc({
+					
+				})
+
+		if (args.gallery != 'disable')
+			//- Args: title
+			+widget({
+				title: 'Instagram'
+			})
+				//- Args: img, img
+				+widget-gallery({
+					loop: {
+						data: widget.gallery,
+						children: true,
+						items: 6
+					},
+					column: 3
+				})
+
+		if (args.post != 'disable')
+			//- Args: title
+			+widget({
+				title: 'Latest Post'
+			})
+				//- Args: img, title, meta
+				+widget-post({
+					loop: {
+						data: widget.post,
+						children: true,
+						items: 3
+					}
+				})
+
+		if (args.postPopular != 'disable')
+			//- Args: title
+			+widget({
+				title: 'Popular Post'
+			})
+				//- Args: img, title, meta
+				+widget-post({
+					loop: {
+						data: widget.postPop,
+						children: true,
+					},
+					addClass: 'widget-post--popular'
+				})
+
+		if (args.tags != 'disable')
+			//- Args: title
+			+widget({
+				title: 'Tags'
+			})
+				//- Args: text
+				+tagcloud({
+					loop: {
+						data: widget.tags,
+						children: true
+					}
+				})

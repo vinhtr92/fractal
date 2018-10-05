@@ -1,0 +1,38 @@
+/* //--- longListBoxFixed
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	background-color: $color-light;
+	border-radius: 5px;
+	padding: 0 30px;
+	@include media('<sm') {
+		padding: 0 20px;
+	}
+}
+
+// list
+.list {
+	composes: list-none from global;
+}
+
+// listItem
+.listItem {
+	padding: 20px 0;
+	border-bottom: 1px solid $color-gray-2;
+	&:last-child {
+		border: 0;
+	}
+}
+
+// text
+.text {
+	font-size: 13px;
+}
+
+// title
+.title {
+	font-size: 16px;
+	composes: color-primary from global;
+	margin: 0;
+}

@@ -1,0 +1,51 @@
+/* //--- long_text-box-small
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	display: inline-block;
+}
+
+// icon
+.icon {
+	font-size: 20px;
+	vertical-align: middle;
+	margin-right: 6px;
+}
+
+// text
+.text {
+	font-family: $font-secondary;
+	font-weight: $font-semibold;
+	text-transform: uppercase;
+	vertical-align: middle;
+	font-size: 11px;
+}
+
+// modifier style2
+.style2 {
+	color: $color-primary;
+	// icon
+	.icon {
+		color: $color-dark-2;
+	}
+}
+
+// modifier reverse
+.reverse {
+	// icon
+	.icon {
+		margin-right: 0;
+		margin-left: 6px;
+	}
+	.text {
+		@include media('<sm') {
+			font-size: 0;
+		}
+	}
+}
+
+// modifier light
+.light {
+	color: $color-light;
+}

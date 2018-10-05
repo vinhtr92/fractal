@@ -1,0 +1,47 @@
+//- demo: true
+mixin longHeroForm(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		+container
+			+row
+				+col({
+					cols: [0,0,6,6],
+					offsets: [0,0,1,1]
+				})
+					include cssmodule
+					div(class=css.logo)
+						img(src="img/logo-white.png", alt="")
+					div(class=css.text)= random(random.text, 244)
+				
+				+col({
+					cols: [0,0,4,4]
+				})
+
+					include cssmodule
+					div(class=css.form)
+						h3(class=css.title) Learn how to save money on your next trip
+						form
+							//- Args: placeholder, multiple, search, selectOption, icon
+							+long_field({
+								placeholder: 'Name',
+								addClass: 'mb-20'
+							})
+							//- Args: placeholder, multiple, search, selectOption, icon
+							+long_field({
+								placeholder: 'Email',
+								addClass: 'mb-20'
+							})
+							//- Args: placeholder, multiple, search, selectOption, icon
+							+long_field({
+								modifier: 'select',
+								selectOption: ['Where are you from?', 'Hai Phong', 'Ha Noi'],
+								addClass: 'mb-20'
+							})
+							+wil-btn('button', {
+								type: 'submit',
+								text: 'Get travel tips',
+								modifier: ['primary', 'md', 'round', 'block']
+							})

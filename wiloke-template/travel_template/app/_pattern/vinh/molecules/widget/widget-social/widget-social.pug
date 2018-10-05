@@ -1,0 +1,22 @@
+//- demo: true
+mixin widget-social(args)
+	include cssmodule
+	
+	+module('div', 'widget-social', args)
+		- let args = item
+
+		div.mb-20 It is a long established fact that a reader will be distracted.
+
+		div(class=css.social)
+			//- Args: icon
+			+long_social({
+				loop: {
+					data: [
+						{ icon: 'fa fa-facebook' },
+						{ icon: 'fa fa-twitter' },
+						{ icon: 'fa fa-dribbble' },
+						{ icon: 'fa fa-google-plus' },
+					]
+				},
+				modifier: 'style2'
+			})

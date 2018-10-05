@@ -1,0 +1,46 @@
+/* //--- widget-statictis
+--------------------------------------------------------------------------------*/
+
+:global {
+
+	.widget_statictis {
+	
+	}
+
+	.widget-statictis__logo {
+		margin-bottom: 30px;
+	}
+
+	.widget_statictis__item {
+		margin-bottom: 24px;
+		overflow: hidden;
+		i {
+			color: $color-dark-4;
+			font-size: 24px;
+			width: 32px;
+			text-align: center;
+			margin-right: 3px;
+			float: left;
+		}
+	}
+	.widget_statictis__item-text {
+		overflow: hidden;
+		span {
+			display: block;
+		}
+	}
+
+	.widget-stattictis__textLg {
+		margin: 0 0 3px 0;
+		font-size: 18px;
+		line-height: 1.2em;
+	}
+
+	.widget-stattictis__textSm {
+		font-family: $font-secondary;
+		font-size: 10px;
+		font-weight: $font-medium;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+}

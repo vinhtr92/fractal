@@ -1,0 +1,13 @@
+/* //--- vinhResponsivemenu
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	:global {
+		@include wilMenu('.header__nav',(
+			menuClass: 'header__menu',
+			theme: 'style2',
+			breakpoint: 512,
+		))
+	}
+}

@@ -1,0 +1,11 @@
+
+//- demo: true
+mixin widget-post(args)
+	+module('div', 'widget-post', args)
+		.widget-post-item
+			a.widget-post-item__media.bg-cover(style=`background-image: url('${set(item, 'img', 'http://via.placeholder.com/200x200')}')`, href="#")
+				img(src=set(item, 'img', 'http://via.placeholder.com/200x200'), alt="")
+			.widget-post-item__body
+				h2.widget-post-item__title
+					a(href="#")= set(item, 'title', 'this is a title')
+				div.widget-post-item__meta!= set(item, 'meta', 'tag html meta')

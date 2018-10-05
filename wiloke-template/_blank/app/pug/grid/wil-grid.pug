@@ -1,0 +1,40 @@
+mixin wil-grid(args)
+	if (args)
+
+		+tag('div', 'wil-grid', args)(data-options=args.options)
+
+			if args.filter
+				.wil-filter
+					ul.wil-filter__list
+						each item in args.filter
+							- filter = item.categories == '*' ? item.categories : '.' + item.categories;
+							li: a(href="#", data-filter=filter)= item.text
+
+
+			.wil-grid__inner
+				.grid-sizer
+				if block
+					block
+				else
+					p No content provided
+
+
+mixin itemInner(args)
+	.grid-item__inner
+		.grid-item__content-wrapper
+			block
+
+mixin grid-item(args)
+	if (args)
+		+wilBlock('div', 'grid-item', args)(
+			class=args.categories ? args.categories : null
+		)
+			+itemInner
+				if block
+					block
+		
+	else
+		div&attributes(attributes).grid-item
+			+itemInner
+				if block
+					block

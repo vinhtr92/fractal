@@ -1,0 +1,72 @@
+//- demo: true
+mixin vinhSection10(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		+section({
+			container:true,
+		})
+
+			+row({
+				css: ({
+					'margin-bottom': '80px',
+				})
+			})
+				+col({
+					cols: [0,0,6,6],
+					gap: 30,
+				})
+
+					+vinhIcon03({
+						modifier: 'style04',
+						text: set(args,'text',random(random.text,200))
+					}) 
+					
+				+col({
+					cols: [0,0,5,5],
+					gap: 30,
+					offsets: [0,0,1,1],
+				})
+					img(src="img/placeholder.png", alt="")
+
+			+row({
+
+			})
+				+col({
+					cols: [0,6,4,3],
+					gap: 0,
+				})
+					+vinhIcon03({
+						modifier: 'style05'
+					})
+
+				+col({
+					cols: [0,6,4,3],
+					gap: 0,
+				})
+					+vinhIcon03({
+						modifier: 'style05'
+					})
+
+				+col({
+					cols: [0,6,4,3],
+					gap: 0,
+				})
+					+vinhIcon03({
+						modifier: 'style05'
+					})
+
+				+col({
+					cols: [0,6,4,3],
+					gap: 0,
+				})
+					+vinhIcon03({
+						modifier: 'style05'
+					})
+		
+		
+		
+	include cssmodule

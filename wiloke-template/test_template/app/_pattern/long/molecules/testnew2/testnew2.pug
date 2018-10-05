@@ -1,0 +1,8 @@
+//- demo: true
+mixin long_testnew2(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		h2(class=css.title)= args.title || 'New Component 2'

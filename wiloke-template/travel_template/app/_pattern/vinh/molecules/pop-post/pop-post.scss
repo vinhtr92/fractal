@@ -1,0 +1,122 @@
+/* //--- long_pop-post
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	position: relative;
+	padding-bottom: 40px;
+}
+
+// first
+.first {
+	position: relative;
+	composes: bd-radius--10 from global;
+	overflow: hidden;
+	transform: translateZ(0);
+	z-index: 9;
+	:global(.wil-overlay) {
+		z-index: 1;
+		background: rgba(#191919, 0.8);
+		background: -moz-linear-gradient(top, transparent 0%, rgba(#191919, 0.8) 100%);
+		background: -webkit-linear-gradient(top, transparent 0%, rgba(#191919, 0.8) 100%);
+		background: linear-gradient(to bottom, transparent 0%, rgba(#191919, 0.8) 100%);
+		top: auto;
+		bottom: 0;
+		height: 40%;
+		pointer-events: none;
+		transition: all 0.3s ease;
+		// opacity: 0;
+	}
+	&:hover {
+		:global(.wil-overlay) {
+			background: rgba(#191919, 0.9);
+			background: -moz-linear-gradient(top, transparent 0%, rgba(#191919, 0.9) 100%);
+			background: -webkit-linear-gradient(top, transparent 0%, rgba(#191919, 0.9) 100%);
+			background: linear-gradient(to bottom, transparent 0%, rgba(#191919, 0.9) 100%);
+			height: 100%;
+		}
+	}
+}
+  
+// img
+.img {
+	padding-top: calc(100% - 40px) !important;
+}
+
+// metaGroup
+.metaGroup {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 5px 20px;
+	z-index: 9;
+}
+
+// meta
+.meta {
+	float: left;
+}
+
+// metaItem
+.metaItem {
+	content: empty;
+	&:after {
+		content: '.';
+		display: inline-block;
+		padding: 0 8px;
+	}
+	&:last-child {
+		&:after {
+			display: none;
+		}
+	}
+}
+
+// title
+.title {
+	font-size: 14px;
+	margin: 0;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	line-height: 40px;
+	composes: text-ellipsis from global;
+	composes: text-center from global;
+}
+
+// share
+.share {
+	float: right;
+}
+
+// metaText
+.metaText {
+	content: empty;
+}
+
+
+:global(.grid-item__content-wrapper) {
+	height: 100%;
+	// module
+	.module, .first, .imgCover, .imgCover a {
+		height: 100%;
+	}
+	.img {
+		padding-top: 0 !important;
+		height: 100%;
+	}
+}
+
+:global(.grid-item[style*="width: 1"]),
+:global(.grid-item[style*="width: 2"]),
+:global(.grid-item[style*="width: 3"]),
+:global(.grid-item[style*="width:1"]),
+:global(.grid-item[style*="width:2"]),
+:global(.grid-item[style*="width:3"]) {
+	.metaItem:first-child,
+	.metaText {
+		display: none;
+	}
+}

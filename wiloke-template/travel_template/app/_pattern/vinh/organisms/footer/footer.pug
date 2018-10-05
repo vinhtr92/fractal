@@ -1,0 +1,64 @@
+//- demo: true
+mixin longFooter(args)
+	include cssmodule
+
+	+module('footer', css.module, args)
+		- let args = item
+		
+		div.wil-overlay.bg-primary
+		+container
+			+row
+				+col({
+					cols: [0,0,3,3]
+				})
+					//- Args: title
+					+widget({
+						title: 'Latest Post'
+					})
+						//- Args: img, title, meta
+						+widget-post({
+							loop: {
+								data: widget.post,
+								children: true,
+								items: 2
+							}
+						})
+				+col({
+					cols: [0,0,3,3]
+				})
+					//- Args: title
+					+widget({
+						title: 'Instagram'
+					})
+						//- Args: img, img
+						+widget-gallery({
+							loop: {
+								data: widget.gallery,
+								children: true,
+								items: 6
+							},
+							column: 3
+						})
+				+col({
+					cols: [0,0,3,3]
+				})
+					//- Args: title
+					+widget({
+						title: 'Contact us'
+					})
+						+widget-contact({
+
+						})
+				+col({
+					cols: [0,0,3,3]
+				})
+					//- Args: title
+					+widget({
+						title: 'Follow us'
+					})
+						+widget-social({
+
+						})
+
+		include cssmodule
+		div(class=css.foot) Copyrights © 2017 all rights reserved by Wiloke

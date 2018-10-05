@@ -1,0 +1,279 @@
+[name]_[local]__[hash:base64:5] cái này để tí thay đổi cho xem
+
+
+
+phần _content kia là phần chứa core và template cần làm
+tạm thời quan tâm tạo template
+đây là file config của bộ build
+
+trong wiloke-template là nơi mình tạo template cần làm. ở kia có _blank là 1 cái template trắng
+mình cần copy nó lên để đổi tên
+
+ví dụ mình tạo template tên là new_template nhé
+file config này để có chức năng như sau
+file này của template
+1. phần info này sau này build ra template có css thì nó sẽ nằm trong chú thích ở file css
+
+2. là phần font icon. thích font nào thì dùng
+3 là google font
+4 là thư viện js nào cần dùng cái nào cần thì bật lên
+5 là các function js viết sẵn thích dùng thì bật lên k thì thôi
+ví dụ thế này là config xong template phù hợp nhé. font thì coi như trong psd dùng font như thế
+save lại và chạy project lên dev thôi
+bây giờ mình chỉ quan tâm thư mục app
+phần này bị sai thư mục
+img là nơi chứa ảnh template
+_pattern là nơi chứa component template
+js là nơi chứa file js chính. styles là nơi chứa style basic... của project còn lại css và js của component là nằm
+hết trong _pattern kia
+chạy xem có lỗi lầm gì k đã nhé :D
+đầu tiên cần activate template mình cần làm là new_template
+đang chờ chạy ok chạy thành công
+vào link trên kia xuất hiện 2 thư mục core và test
+cái core hiện tại k quan tâm
+cái test là cái mình quan tâm. ví dụ test chính là tên mình
+trong pattern này cho phép nhiều người vào làm sẽ đặt tên thư mục theo tên mình ví dụ
+long, test, truong, nguyen đại loại thế
+ở kia tên thằng dev là test chẳng hạn nhé
+trong test đó là các component đc chia theo atomic design
+atoms là chứa component dạng nhỏ như button, rating, abc gì đó...
+molecules chứa component lớn hơn ví dụ post, product, listing, pricing...
+còn tiếp là cứ lớn dần ....
+thích thì tạo thêm thư mục cũng k sao nếu cần
+bây giờ mình sẽ tạo thử component nhé
+tạo component là tạo cả folder luôn nhé vì 1 component chứa tất cả css js html
+tự động nó sẽ tạo cho mình 1 đống file
+mình có thể bỏ qua file cssmodule.pug nhé. k quan tâm
+mở demo lên xem nó có xuất hiện k nhé
+xuất hiện luôn nhé
+nó đang trống k có gì
+viết thử với pug
+random(random.text, 200) đoạn này sẽ tự tạo ra đoạn text 200 chữ
+
+bây giờ ví dụ đã xong component nhé
+ví dụ giờ chỗ khác của template cũng có component tương tự
+nhưng nó lại có background màu xám thế thì mình phải tạo thêm modifier  cho nó
+cách tạo
+=)) 
+sẽ tự xuất hiện modifier background gray cho mình
+bên dưới này là khu vực code copy để xài
+bây giờ để xài ví dụ
+a nãy không có khai báo nào mà sao nó biết có 1 class modifier nữa vậy
+
+thì a viết tool check mà
+cứ viết 
+// modifer thì nó tự động thêm ra ngoài kia
+dòng comment cũng quan trọng :D
+bây giờ sẽ tạo page thử nhé
+ví dụ ở page about.html mình có component kia. trong psd nó vẽ
+vậy chỉ cần tạo và gọi vào. k cần include vì nó đc tự động hết rồi nếu e làm pug sẽ phải include file
+page sẽ ngang hàng với folder _pattern kia ví dụ
+index.pug chính là file mà mình xem component kia
+
+tạo page xong nó tự động viết cho mình đoạn default :D
+vào link thử xem đc k nhé
+xuất hiện ở đây luôn
+có tồn tại rồi nhé :D
+giờ vứt thử component vừa tạo vào nhé
+thay đổi luôn k cần refresh trình duyejt k có load lại
+bây giờ tạo column bootstrap
+cái này có sẵn trong bộ này mình k cần làm
+xóa text để tự động cho đẹp :D
+ak quên làm xong component mình cảm thấy ok thì done luôn nhé
+chỗ này bị bug phần bấm 2 lần :D
+nó sẽ xuất hiện trạng thái component ở đây màu vàng là cần design check chẳng hạn
+bây giờ soi thử class component vừa tạo ra xem ntn nhé
+rõ mình viết là title mà giờ là test_testComponent__title :D
+đây chính là cssmodule nhé :D nó sẽ nối tên thư mục với tên component với class mình tạo
+cho nên là có 1 đống class .title cũng k bị làm sao cả
+ak quên thử cái modifier nhé
+
+giờ test thử thằng này
+Default args module example
+thế là xong theo psd chẳng hạn nhé
+giờ tự yên thằng dev muốn thêm cái title mà thằng design k có vẽ
+hoặc là nó giống cái basic thì có thể lấy từ core ra chính là folder core
+cái folder core này ở đâu
+nó nằm trong wiloke-core để xài chung cho các template
+ak cho cái header đã
+header này là default chơi bời thôi chứ còn k là mình viết
+data là nơi chứa dữ liệu dạng mảng
+ví dụ bây giờ mình có dữ liệu cần loop ra chứ k thích viết thế kia
+cach dùng như sau
+và tiếp là soi html
+khi bật chức năng này lên sẽ soi để lấy đoạn html component phục vụ cho việc dev php làm việc mà k bị nhầm lẫn thẻ gì cả
+cái progress này chính là thanh này
+dùng thử slider 
+bây giờ thử chức năng thay đổi class
+ak quên soi thử k có file css nhé
+chạy trực tiếp trên server đây chính là phần config css cho dev k in ra file, kể cả file html cũng k có luôn nhé
+nhìn tưởng about.html nhưng thực tế là router express a tạo như thế cho giống thôi chứ thực ra nó đang chạy pug trên server
+thử js cái
+viết function hoặc class save lại là tự nó ra thế
+thử jquery nhé
+cũng thay đổi luôn nhé
+thay cái này phải tắt server đi
+bản này k có build đc nhé :D
+chỉ là bản dev thôi nên k xem dc html khi build ra
+nếu muốn xem thì gửi new_template cho a a build ra cho xem thử :D
+class đã thay đổi nhé
+thế nên có thể config thành icon luôn	
+win7 icon ngu lắm win10 mới icon có màu
+hoặc xem firefox thì đc :D
+thằng ie ngu vãi
+và tiếp là đang dùng es6 nữa nên ie nhiều cái k chạy
+sau khi build ra product thì mới ra es5
+
+đây là phần giới thiệu sơ qua chút nhé
+còn nữa lúc đầu mình có làm file config template này
+mấy font hay thư viện lấy ở đâu?
+nó ở trong wiloke-core và có thể thêm vào nhé
+demo thế thôi :D
+xem có thấy gì hay k
+rối mắt lun á chứ a
+mà hay thiệt
+nó tự động hết
+với dễ quản lí nữa
+thì mục đích a muốn nhiều ng làm chung cũng k có vấn đề gì cả
+
+ý là cái clas mà build xong nó ko ra csi tên chi hết
+cái đó hay thiệt
+ko ai biết tên class :D
+cái này cũng có cái hay là ví dụ e làm template nhận ngoài của thằng ôn nào đó
+xong làm xong nó bắt gửi cho xem demo trước rồi mới trả tiền
+e chuyển mẹ thành class thế cho nhiều icon xong để dạng build nén xong gửi cho nó :v
+thế là dev php cũng khỏi làm luôn nếu dám chôm k trả tiền :D
+kaka,bởi thế ngày xưa thèn nào nghĩ ra csai đo chắc bị quỵt tiền nhiều
+=)) cái này bọn tây nghĩ ra :v
+mà thấy a làm nhiều vậy chắc học lâu đó nha
+chứ e nhìn cũng hiểu 1 phầ nthooi
+chưa quen thôi :D
+nếu mà tập thì làm 1 tuần ngon lành. vì cái này a có bán cho cty cũ của a xài. mấy nhân viên mới vào làm học việc 1 tuần là làm ngon. mà k bị cái kiểu viết component k đúng
+vì nó có cấu trúc hết rồi. thằng nào viết cũng chuẩn hết. chỉ có điều phần đó làm có khó k thôi :D
+nhưng phải biết node với ơpug
+đâu cần biết nodejs đâu. gõ mỗi lệnh cho bật server thôi mà
+còn là pug thì a k dùng hết đâu. viết thế thôi vì trong core của pug a xử lý hết rồi
+chỉ cần viết cơ bản thế kia là xong
+a viết dùng mixin
+cái này a có viết demo đơn giản ở codepen nhé. pug dễ mà có cần phải giao tiếp component rồi .... như react đâu :D
+dù sao thì phải xem nó mới biết đc á
+:D
+pug viết thế này
+đấy nếu viết dân dã là như thế :D
+còn viết như a là tạo mixin
+đọc doc của nó là biết
+với xài cái của a thì cũng phải xem qua doc. vì còn nhiều thứ đây a giới thiệu những phần chính
+lâu rồi a cũng k dùng cái này vì a cũng đang bận code react native nữa :D
+chơi rộng rứa
+bên mobile đó hả a
+.))
+uh a làm để phục vụ cho user bên a thôi. khi nó mua sản phẩm thì a kèm tặng app luôn
+à à
+thường thấy website thì áo app di dộng đi kèm hĩ
+thế nên là phát triển thì chủ yếu bọn a vẫn làm web làm product để bán
+
+sắp xong siêu phẩm. khi nào ra mắt a cho xem :D
+hóng
+bữa ni a chỉ tận tình quá
+biết thêm nhiều thứ
+để mai chém gió với thèn bạn
+kaka
+
+:D
+cái này a dùng webpack nhé. còn ngày trước hay xài gulp cơ mà muốn build trên server ngon lành thế kia phải webpack chơi mới đc :D
+để mai ngồi xem lại code với xem cái pug nữa
+mới thông ra đc
+o:k)
+)
+e có thể nhìn ở psd để làm thử 1 component nào đó
+mà cái sublime text này tạo file ngu lắm. tạo folder phải tạo đúng nhé chứ tạo vớ vẩn đôi khi tool bị lỗi cơ mà chắc ít thôi k sao tạo thoải mái
+thực ra có bị 1 phần lẽ ra gõ title là nó hiện ở css luôn cơ
+ak hình như bản này a đang tắt chức năng nối thêm vào
+cái đó a cho phép bật tắt nhưng lại để ở file nén rồi
+nghĩa là
+e gõ h2(class=css.title)= args.title || 'day la title default'
+là file css tự thêm
+
+// title
+.title {
+	
+
+}
+
+sẵn thế này luôn mà lúc đầu a làm k có. cái này bật lên là đc
+chờ a cái
+hinhf nhu cai do
+đấy thấy tự động lấy sang luôn chưa :D
+ok
+cơ mà muốn dùng cssmodule là phải viết 
+div(class=css.text)
+class=css.cai gi do
+chứ pug bt là viết
+div.text
+hoặc div(class="text") thế này là k đc nhé
+phải là
+div(class=css.text)
+trong reactjs sau này e học cũng tương tự thế :D
+cú pháp đầu tiên khó hiểu hơn chứ
+nhiwfn phức tạp
+cú pháp đầu tiên là ntn
+div(class=css.text)
+cái này nè
+thực ra nó là biến thôi mà e. pug e có thể viết js đc mà
+e có thể viết function nhưng mà nó thực hiện trên server nhé
+
+thử console.log mà xem nè
+thêm dâu - là viết js
+- cách cái này viết 1 dòng
+-
+	lùi dòng bên trên k có cách để viết nhiều dòng
+	sdfs
+	sdf
+	dsf
+
+
+cái này đc lưu vào data cả phần ngày tháng tạo component nữa
+nghĩa là thư mục data và file main.js kia k sờ vào làm gì
+thư mục pug kia cũng thế
+styles này là thư mục đặt biến scss hoặc là những thứ base hoặc những thứ mình dùng thư viện ngoài bắt buộc phải style với css thường
+cách style với class thường mà k phải cssmodule phải là
+:global {
+	
+}
+
+custom là chuyển class về dạng nối thư mục do a tự custom cssmodule
+
+thôi a phải nghỉ đã. mai đi du lịch :D
+sướng ta
+chưa cuối tuần mà
+cuối tuần làm. k bão là vỡ mồm :v
+ủa bão hả
+k xem dự báo ak chú :D
+à
+thôi ngủ a
+mai e cày lại nó
+ok. tập cái này nghịch chú sẽ hiểu component là cần phải ntn rồi chứ
+ok i
+e thấy cũng khó lắm đó chứ
+
+hi
+tại chưa quen thôi. chứ cái gì quen rồi cũng code ầm ầm ngay :D
+a trước cũng thế. và ai cũng thế thôi
+hehe
+e cũng mong thế
+sợ tư duy chậm học lâu quá
+gia nhanh thì ko đc
+:v
+cố nắm vững chút rồi học reactjs a thấy là ổn nhất
+lương cũng cao. mà sẽ hiểu sâu nhiều thứ nữa
+ok a
+cảm ơn a nhiều nghe
+ok k có gì. a ngủ nhé pp
+ok pp a
+mai đi chơi vui vẻ
+heh
+
+
+
+
+

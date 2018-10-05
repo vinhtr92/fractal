@@ -1,0 +1,234 @@
+
+/* //--- button
+--------------------------------------------------------------------------------*/
+
+// setting default
+// MODIFIER ALL:
+// STYLE: primary, dark, success, info, warning, danger, link
+// SIZE: xs, sm, md, lg
+// SHAPE: square, round, pill
+// Support pseudo elements, pseudo classes, sass extend
+// Wiloke Button
+// $path: require('path');
+:global {
+	@include wil-btn('.wil-btn', (
+		letter-spacing: 0.01em,
+		font-size: 14px,
+		font-family: $font-secondary,
+		font-weight: 500,
+		padding: 12px 20px,
+		background-color: $color-dark-1,
+		color: #fff,
+		hover: (
+			background-color: $color-dark-2,
+		),
+		
+		modifier: (
+			primary: (
+				background-color: $color-primary,
+				hover: (
+					background-color: $color-primary,
+					color: $color-light
+				),
+				focus: (
+					background-color: $color-primary,
+					color: $color-light
+				)
+			),
+			secondary: (
+				background-color: $color-secondary,
+				hover: (
+					background-color: $color-secondary,
+					color: $color-light
+				),
+				focus: (
+					background-color: $color-secondary,
+					color: $color-light
+				)
+			),
+			tertiary: (
+				background-color: $color-tertiary,
+				hover: (
+					background-color: $color-tertiary,
+					color: $color-light
+				),
+				focus: (
+					background-color: $color-tertiary,
+					color: $color-light
+				)
+			),
+			facebook: (
+				background-color: map-get($social, 'facebook'),
+				hover: (
+					background-color: $color-dark-1,
+					color: $color-light
+				),
+				focus: (
+					background-color: $color-dark-1,
+					color: $color-light
+				)
+			),
+			twitter: (
+				background-color: map-get($social, 'twitter'),
+				hover: (
+					background-color: $color-dark-1,
+					color: $color-light
+				),
+				focus: (
+					background-color: $color-dark-1,
+					color: $color-light
+				)
+			),
+			google: (
+				background-color: map-get($social, 'google-plus'),
+				hover: (
+					background-color: $color-dark-1,
+					color: $color-light
+				),
+				focus: (
+					background-color: $color-dark-1,
+					color: $color-light
+				)
+			),
+
+			dark: (
+				background-color: $color-dark,
+				hover: (
+					background-color: $color-primary,
+				),
+				focus: (
+					background-color: $color-dark,
+				)
+			),
+
+			light: (
+				background-color: $color-light,
+				color: $color-dark-1,
+				hover: (
+					background-color: $color-light,
+					color: $color-primary,
+				),
+				focus: (
+					background-color: $color-light,
+					color: $color-dark-1,
+				)
+			),
+			
+			border: (
+				border: 1px solid $color-gray-1,
+				color: $color-dark-3,
+				background-color: transparent !important,
+				hover: (
+					color: $color-primary,
+					border-color: $color-primary,
+				),
+				focus: (
+					background-color: $color-gray-1,
+					color: $color-dark-3
+				)
+			),
+
+			gray: (
+				background-color: $color-gray-2,
+				color: $color-dark,
+				hover: (
+					background-color: $color-gray-1,
+					color: $color-dark
+				),
+				focus: (
+					background-color: $color-gray-2,
+					color: $color-dark
+				)
+			),
+
+			shadow: (
+				box-shadow: 0px 6px 16px 0px rgba($color-primary, 0.49)
+			),
+
+			round: (
+				border-radius: 5px
+			),
+
+			lg: (
+				padding: 15px 20px,
+				min-width: 180px,
+			),
+			md: (
+				padding: 12px 20px,
+				min-width: 180px,
+			),
+			sm: (
+				padding: 6px 15px,
+				min-width: 150px,
+				font-size: 13px
+			),
+			xs: (
+				padding: 4px 10px,
+				font-size: 13px
+			),
+			xxs: (
+				padding: 2px 10px,
+				font-size: 13px
+			),
+		)
+	));
+
+	// Custom icon font size
+	.wil-btn {
+		i {
+			font-size: 19px;
+			margin-right: 5px;
+			position: relative;
+			bottom: -1px;
+		}
+	}
+	.wil-btn--loading {
+		position: relative;
+		color: transparent !important;
+		* {
+			color: opacity !important;
+		}
+		[class*="pill-loading_"][class*="_module"] {
+			position: absolute;
+			margin: auto;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+		[class*="pill-loading_"][class*="_loader"] {
+			color: rgba($color-light, 0.8) !important;
+		}
+	}
+
+	// Disable text decoration button link
+	.wil-btn--link {
+		&:hover {
+			i {
+				text-decoration: none;
+			}
+		}
+	}
+
+	// Custom button sm, xs, xxs font size 
+	.wil-btn--sm, .wil-btn--xs, .wil-btn--xxs {
+		i {
+			font-size: 17px;
+		}
+		[class*="pill-loading_"][class*="_module"],
+		[class*="pill-loading_"][class*="_loader"] {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	// Button group
+	.btn-group {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		.wil-btn {
+			margin-right: 5px;
+			margin-left: 5px;
+		}
+	}
+}

@@ -1,0 +1,35 @@
+/* //--- longTextBox
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	content: empty;
+}
+
+// title
+.title {
+	font-size: 16px;
+	color: $color-light;
+	background-color: $color-dark;
+	margin: 0;
+	padding: 20px;
+	border-radius: 5px 5px 0 0;
+	@include pfs('padding-left, padding-right', (
+		400px: 20px,
+		1200px: 40px
+	))
+}
+
+// text
+.text {
+	border: 1px solid $color-gray-2;
+	border-radius: 0 0 5px 5px;
+	@include pfs('padding-top, padding-bottom', (
+		400px: 25px,
+		1200px: 30px
+	));
+	@include pfs('padding-left, padding-right', (
+		400px: 20px,
+		1200px: 40px
+	));
+}

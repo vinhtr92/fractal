@@ -1,0 +1,15 @@
+//- demo: true
+mixin testTest(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		div(class=css.image)
+			div image
+		div(class=css.content)
+			h2(class=css.title)= set(args, 'title', 'default title')
+			div(class=css.text)= set(args, 'text', random(random.text, 100))
+		
+	include cssmodule

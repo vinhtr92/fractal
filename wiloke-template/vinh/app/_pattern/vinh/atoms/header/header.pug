@@ -1,0 +1,12 @@
+//- demo: true
+mixin vinhHeader(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		h2(class=css.title)= set(args, 'title', 'default title')
+		
+		
+	include cssmodule

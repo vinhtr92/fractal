@@ -1,0 +1,62 @@
+//- demo: true
+mixin longHeroDesSingle(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		-
+			let args = item
+			let img = args.img || `img/place/${ random(1, 20) }.jpg`
+		
+		//- Args: img, overlay
+		+long_hero({
+			img,
+			overlay: true,
+			modifier: args.modifier === 'style1' && 'fullscreen'
+		})
+			include cssmodule
+			div(class=css.sm)= args.sm || 'Destinations'
+			h2(class=css.title)= args.title || random(random.country)
+
+			if (args.modifier === 'style1')
+				div(class=css.nav)
+					//- Args: icon, iconColor, text
+					+long_text-box-gradient({
+						loop: {
+							data: [{
+								icon: 'pe-7s-way',
+								text: 'Destinations',
+								textBoxHref: '#destinations',
+								modifier: 'light'
+							}, {
+								icon: 'pe-7s-notebook',
+								text: 'Travel Guide Books',
+								textBoxHref: '#books',
+								modifier: 'light'
+							}, {
+								icon: 'pe-7s-cash',
+								text: 'Typical Costs',
+								textBoxHref: '#costs',
+								modifier: 'light'
+							}, {
+								icon: 'pe-7s-piggy',
+								text: 'Budget Tips',
+								textBoxHref: '#tips',
+								modifier: 'light'
+							}, {
+								icon: 'pe-7s-rocket',
+								text: 'Activities',
+								textBoxHref: '#activities',
+								modifier: 'light'
+							}, {
+								icon: 'pe-7s-note',
+								text: 'Articles',
+								textBoxHref: '#articles',
+								modifier: 'light'
+							}]
+						},
+						addClass: 'mb-10'
+					})
+
+			else if (args.modifier === 'style2')
+				div(class=css.svg)
+					img(src="img/svg.png", alt="")

@@ -1,0 +1,212 @@
+extends pug/layout
+
+//- Config
+block config
+	-
+		config.title = 'home1'
+		config.bodyClass = ''
+
+//- afterLink
+block afterLink
+	
+//- Header
+block header
+	+longHeader({
+		modifier: 'fixed'
+	})
+//- Footer
+block footer
+	+longFooter({
+	
+	})
+	
+//- Content
+block content
+	//- Args: img, video, overlay
+	+long_hero({
+		img: `img/place/9.jpg`,
+		overlay: true
+	})
+		//- Args: label
+		+longFormSearch({
+			modifier: 'style2'
+		})
+	
+	+section({
+		css: {
+			'border-bottom': '1px solid #f4f4f4'
+		}
+	})
+		//- Args: icon, title, text
+		+long_heading({
+			title: 'Popular Posts',
+			align: 'center'
+		})
+		+wil-grid({
+			options: {
+				style: 'creative',
+				devices: {
+					320: {
+						vertical: 30,
+						horizontal: 30,
+						column: 4,
+						items: [
+							{width: 2, height: 2},
+							{width: 1, height: 1},
+							{width: 1, height: 1},
+							{width: 1, height: 1},
+							{width: 1, height: 1},
+						]
+					}
+				}
+			}
+		})
+			+long_pop-post({
+				loop: {
+					data: [{},{},{},{},{}],
+					wrap: {
+						addClass: 'grid-item'
+					}
+				}
+			})
+
+
+	+section
+
+		+row
+			+col
+				//- Args: icon, title, text
+				+long_heading({
+					align: 'center',
+					title: 'Destination guide',
+					icon: '<i class="pe-7s-way"></i>'
+				})
+
+			+col({
+				cols: [0,0,6,6],
+				offsets: [0,0,3,3]
+			})
+				div.text-center.mb-30= random(random.text, 400)
+
+			+col
+				//- Args:
+				+long_vector-map({
+					
+				})
+
+	+section({
+		css: {
+			'background-color': '#f4f4f4'
+		}
+	})
+		//- Args: icon, title, text
+		+long_heading({
+			align: 'center',
+			title: 'Upcoming blog',
+			icon: '<i class="pe-7s-pen"></i>'
+		})
+		+row
+			//- Args: img, country
+			+long_post({
+				loop: {
+					data: [{modifier: 'latest'},{modifier: 'latest'},{modifier: 'latest'},{modifier: 'latest'},{modifier: 'latest'},{modifier: 'latest'}],
+					wrap: 'col-md-4 col-lg-4'
+				},
+				modifier: 'latest',
+				addClass: 'mb-30'
+			})
+		
+		//- Args: text
+		+wil-btn({
+			text: 'More all posts',
+			modifier: ['primary', 'round', 'md']
+		})
+
+	+section({
+		css: {
+			'background-image': 'url("img/place/8.jpg")'
+		},
+		overlay: {
+			'background-color': 'rgba(0,0,0,0.5)'
+		}
+	})
+		+row
+			+col({
+				cols: [0,0,8,8],
+				offsets: [0,0,2,2]
+			})
+				//- Args: quote
+				+long_quote2({
+					
+				})
+
+	+section
+		//- Args: icon, title, text
+		+long_heading({
+			align: 'center',
+			title: 'Travel Book Shop',
+			icon: ''
+		})
+		+row({
+			attr: {
+				'data-col-xs-gap': 10,
+				'data-col-md-gap': 30
+			}
+		})
+			//- Args: img, curency, price, sale, name
+			+longProduct({
+				loop: {
+					data: [{},{},{},{},{},{},{},{}],
+					wrap: {
+						addClass: 'col-xs-6 col-md-4 col-lg-3'
+					}
+				},
+			})
+
+	+section({
+		css: {
+			'background-image': 'url("img/place/4.jpg")'
+		},
+		overlay: true
+	})
+		//- Args: icon, title, text
+		+long_heading({
+			align: 'center',
+			title: 'Subscribe',
+			icon: '',
+			modifier: 'light'
+		})
+
+		form
+			+row
+				+col({
+					cols: [0,0,3,3]
+				})
+					//- Args: multiple, search, placeholder
+					+long_field({
+						placeholder: 'Name...'
+					})
+				+col({
+					cols: [0,0,3,3]
+				})
+					//- Args: multiple, search, placeholder
+					+long_field({
+						placeholder: 'Email...'
+					})
+				+col({
+					cols: [0,0,3,3]
+				})
+					//- Args: multiple, search, placeholder
+					+long_field({
+						modifier: 'select',
+						selectOption: ['Where are you from?', 'Viet Nam', 'Brazin', 'Canada', 'USA', 'Singapore'],
+					})
+				+col({
+					cols: [0,0,3,3]
+				})
+					+wil-btn('a', {
+						text: 'Get travel tips',
+						modifier: ['primary', 'round', 'md', 'block']
+					})
+
+

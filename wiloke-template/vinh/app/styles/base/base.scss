@@ -1,0 +1,26 @@
+:global {
+	a:focus,
+	a {
+		color: inherit;
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+	a:focus {
+		text-decoration: none;
+	}
+
+	input,
+	textarea {
+		@include placeholder {
+			color: $color-dark-3;
+		}
+	}
+
+
+	.max-780px {
+		max-width: 780px;
+	}
+	
+}

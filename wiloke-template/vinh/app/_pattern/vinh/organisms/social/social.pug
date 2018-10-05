@@ -1,0 +1,18 @@
+//- demo: true
+mixin vinhSocial(args)
+	include cssmodule
+	include data
+
+	+module('div', css.module, args)
+		- let args = item
+		//- code
+		+menu('.socical',{
+			menuClass: '',
+			data: social,
+			submenu: {
+						class: '',
+						parentClass: '	'
+					}
+		})
+
+	include cssmodule

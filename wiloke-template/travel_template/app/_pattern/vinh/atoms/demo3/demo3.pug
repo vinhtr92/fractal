@@ -1,0 +1,16 @@
+//- demo: true
+mixin longDemo3(args)
+	include cssmodule
+	-
+		let data = [
+			{
+				title: random(random.title),
+				text: random(random.text, 100)
+			},
+			{
+				title: random(random.title),
+				text: random(random.text, 100)
+			},
+		]
+	+module('div', css.module, args)(data-textboxs=data)
+		- let args = item

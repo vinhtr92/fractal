@@ -1,0 +1,11 @@
+//- demo: true
+mixin long_testteste(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		h2(class=css.title)= args.title || random(random.title)
+
+
+		div(class=css.text)= args.text || random(random.text)

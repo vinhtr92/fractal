@@ -1,0 +1,43 @@
+/* //--- long_panel-title
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	position: relative;
+	padding: 8px 20px;
+	color: $color-light;
+	composes: bg-gradient-1 from global;
+	composes: bd-radius--5 from global;
+	composes: arrow--bottom-left from global;
+	&:before {
+		border-top-color: $color-primary;
+		border-width: 7px 9px;
+		bottom: -14px;
+		left: 40px;
+		@include media('<sm') {
+			left: 20px;
+		}
+	}
+}
+
+%vertical {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+// icon
+.icon {
+	font-size: 32px;
+	margin-right: 10px;
+	line-height: normal;
+	@extend %vertical;
+}
+
+// title
+.title {
+	color: inherit;
+	margin: 0;
+	font-size: 14px;
+	font-weight: $font-semibold;
+	@extend %vertical;
+}

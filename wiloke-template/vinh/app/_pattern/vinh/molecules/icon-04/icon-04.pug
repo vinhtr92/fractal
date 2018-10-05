@@ -1,0 +1,14 @@
+//- demo: true
+mixin vinhIcon04(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		- let rainbow = set(args,'color',random(random.colorful))
+		
+		//- code
+		div(class=css.icon)
+			i(class=set(args, 'icon', random(random.fontawesome)),style=rainbow)
+		div(class=css.text)
+			p= set(args,'text', random(random.text, 90))
+	include cssmodule

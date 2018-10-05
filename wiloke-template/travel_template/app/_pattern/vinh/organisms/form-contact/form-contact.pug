@@ -1,0 +1,33 @@
+//- demo: true
+mixin longFormContact(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		form
+			//- Args: placeholder, multiple, search, selectOption, icon
+			+long_field({
+				placeholder: 'Name',
+				addClass: 'mb-20'
+			})
+			//- Args: placeholder, multiple, search, selectOption, icon
+			+long_field({
+				placeholder: 'Email',
+				addClass: 'mb-20'
+			})
+			//- Args: placeholder, multiple, search, selectOption, icon
+			+long_field({
+				modifier: 'textarea',
+				selectOption: 'message',
+				placeholder: 'Message',
+				addClass: 'mb-20'
+			})
+			+wil-btn('button', {
+				type: 'submit',
+				text: 'Send',
+				modifier: ['primary', 'md', 'round', 'block']
+			})
+		
+		
+	include cssmodule

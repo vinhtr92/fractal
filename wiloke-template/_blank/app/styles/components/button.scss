@@ -1,0 +1,26 @@
+
+/* //--- button
+--------------------------------------------------------------------------------*/
+
+// setting default
+// MODIFIER ALL:
+// STYLE: primary, dark, success, info, warning, danger, link
+// SIZE: xs, sm, md, lg
+// SHAPE: square, round, pill
+// Support pseudo elements, pseudo classes, sass extend
+// Wiloke Button
+// $path: require('path');
+:global {
+	@include wil-btn('.wil-btn', (
+		letter-spacing: 0.01em,
+		font-size: 14px,
+		font-family: $font-secondary,
+		font-weight: 500,
+		padding: 12px 20px,
+		background-color: $color-dark-1,
+		color: #fff,
+		hover: (
+			background-color: $color-dark-2,
+		)
+	));
+}

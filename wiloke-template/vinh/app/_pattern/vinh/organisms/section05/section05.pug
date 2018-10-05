@@ -1,0 +1,40 @@
+//- demo: true
+mixin vinhSection05(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		+section({
+			container: true,
+		})
+			+row({
+
+			})
+				+col({
+					cols: [0,0,3,3],
+					gap:30,
+					offsets: [0,0,2,2],
+				})
+					img(src="img/phone01.png", alt="")
+
+				+col({
+					cols: [0,0,4,4],
+					gap:30,
+					offsets: [0,0,1,1],
+				})
+
+					+vinhIcon({
+						modifier: 'style05'
+					})
+
+					+vinhIcon({
+						modifier: 'style05'
+					})
+
+					+vinhIcon({
+						modifier: 'style05'
+					})
+		
+	include cssmodule

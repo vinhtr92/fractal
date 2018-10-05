@@ -1,0 +1,50 @@
+/* //--- vinhHeader
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	text-align: center;
+	font-family: $font-primary;
+	text-transform: capitalize;
+	font-weight: bold;
+	font-size: 40px;
+	
+	h2 {
+		font-family: inherit;
+		line-height: 1;
+		font-size: inherit;
+	}
+}
+
+
+// title
+.title {
+	
+}
+
+// modifier textRight;
+.textRight {
+	text-align: right;
+}
+
+// modifier textLeft;
+.textLeft {
+	text-align: left;
+}
+
+// modifier style02;
+.style02 {
+	position: relative;
+	h2 {
+		color: #333;
+	}
+	&::before {
+		content: "";
+		height: 2px;
+		background: crimson;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+}

@@ -1,0 +1,26 @@
+//- demo: true
+mixin vinhMenu(args)
+
+	include cssmodule
+	include data
+		+module('header', css.module, args)
+				div(class=css.logo)
+					a(href="#"): img(src="img/logo.png", alt="")
+
+				+menu('.header__nav', {
+					menuClass: 'header__menu',
+					data: header,
+					submenu: {
+						class: 'sub-menu',
+						parentClass: 'menu-item-has-children'
+					}
+				})
+					div.header-icon
+						a(href="#")
+							i.icon_search
+						a(href="#")
+							i.icon_cart_alt
+
+
+					span.toggle-menu.icon_menu
+

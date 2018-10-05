@@ -1,0 +1,26 @@
+
+//- demo: true
+mixin widget-statictis(args)
+	+module('div', 'widget-statictis', args)
+		- var args = item
+
+		.widget-statictis__logo
+			img(src="img/logo.png")
+		
+		.widget-stattictis__body
+			.widget_statictis__item
+				i.la.la-map-marker
+				.widget_statictis__item-text
+					span.widget-stattictis__textLg 228,547 places
+					span.widget-stattictis__textSm worldwide
+			.widget_statictis__item
+				i.la.la-user-plus
+				.widget_statictis__item-text
+					span.widget-stattictis__textLg 38,630,265 people
+					span.widget-stattictis__textSm unique visitors
+			.widget_statictis__item
+				i.la.la-star-o
+				.widget_statictis__item-text
+					span.widget-stattictis__textLg 923,047 reviews
+					span.widget-stattictis__textSm shared over
+

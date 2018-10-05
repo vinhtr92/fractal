@@ -1,0 +1,34 @@
+//- demo: true
+mixin long_list(args)
+	include cssmodule
+
+	+module('ul', css.module, args)
+		-
+			let args = item
+			let items = [
+				{
+					text: 'link 1'
+				},
+				{
+					text: 'link 2'
+				},
+				{
+					text: 'link 3'
+				},
+			]
+
+		+long_list-item({
+			loop: {
+				data: items
+			}
+		})
+		
+
+
+mixin long_list-item(args)
+	include cssmodule
+
+	+module('li', css.list, args)
+		- let args = item
+
+		a(href="#", class=css.link)= args.text || random(random.text, 50)

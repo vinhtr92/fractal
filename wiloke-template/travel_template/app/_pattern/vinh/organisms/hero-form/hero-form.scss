@@ -1,0 +1,46 @@
+/* //--- longHeroForm
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	content: empty;
+	:global {
+		@media (min-width: 1660px) {
+			.container {
+				width: 1170px;
+			}
+		}
+	}
+}
+
+// logo
+.logo {
+	margin-top: 25px;
+	margin-bottom: 25px;
+	img {
+		max-heigth: 100px;
+	}
+}
+
+// text
+.text {
+	font-size: 18px;
+	color: $color-light;
+	margin-bottom: 30px;
+}
+
+// form
+.form {
+	background-color: $color-light;
+	padding: 30px;
+	border-radius: 5px;
+}
+
+// title
+.title {
+	font-size: 22px;
+	margin: 0;
+	margin-bottom: 15px;
+	letter-spacing: 0;
+	text-align: center;
+}

@@ -1,0 +1,21 @@
+//- demo: true
+mixin vinhResponsivemenu(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		+menu('.header__nav', {
+			menuClass: 'header__menu',
+			data: header,
+			submenu: {
+				class: 'sub-menu',
+				parentClass: 'menu-item-has-children'
+			}
+		})
+			+vinhSideMenu({
+
+			})
+		
+	include cssmodule

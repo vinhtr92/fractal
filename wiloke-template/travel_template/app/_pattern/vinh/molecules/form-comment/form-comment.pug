@@ -1,0 +1,45 @@
+//- demo: true
+mixin long_form-comment(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		-
+			let args = item
+			let img = args.img || 'img/avatar/1.jpg'
+
+		h3(class=css.title) (21) Comments
+		div(class=css.first) Write a comment
+		div(class=css.last)
+			form(class=css.form)
+				+row({
+					attr: {
+						'data-col-xs-gap': 10,
+						'data-col-sm-gap': 20
+					}
+				})
+					+col({
+						cols: [12,12,6,6]
+					})
+						//- Args: multiple, search, placeholder, selectOption, icon
+						+long_field({
+							placeholder: 'Your name'
+						})
+					+col({
+						cols: [12,12,6,6]
+					})
+						//- Args: multiple, search, placeholder, selectOption, icon
+						+long_field({
+							placeholder: 'Your email'
+						})
+					+col
+						//- Args: multiple, search, placeholder, selectOption, icon
+						+long_field({
+							modifier: 'textarea',
+							placeholder: 'Message...'
+						})
+					+col
+						+wil-btn('button', {
+							text: 'Comment',
+							type: 'submit',
+							modifier: ['primary', 'round', 'md', 'block']
+						})

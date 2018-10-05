@@ -1,0 +1,114 @@
+/* //--- long_blog-comment
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	max-width: 770px;
+	margin: auto;
+	ol, ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	:global {
+		.commentlist {
+			overflow: hidden;
+			> li {
+				background-color: $color-light;
+				margin-bottom: 10px;
+				border-radius: 5px;
+
+				@include media('>sm') {
+					margin-bottom: 20px;
+				}
+
+				.comment_container {
+					padding: 15px 16px;
+					@include media('>sm') {
+						padding: 20px 22px;
+					}
+				}
+				li {
+					padding-left: 10px;
+					@include media('>sm') {
+						padding-left: (46 + 13) * 1px;
+					}
+					&:before {
+						content: '';
+						display: block;
+						height: 0;
+						width: 100000px;
+						transform: translate(-50%, 0);
+						border-top: 1px solid $color-gray-2;
+					}
+					.comment_container {
+						padding: 15px 16px;
+						@include media('>sm') {
+							padding: 20px 22px;
+						}
+					}
+					li {
+						padding-left: 10px;
+						@include media('>sm') {
+							padding-left: 22px;
+						}
+					}
+				}
+			}
+		}
+		.comment-avatar {
+			display: inline-block;
+			width: 36px;
+			height: 36px;
+			border-radius: 50%;
+			overflow: hidden;
+			float: left;
+			margin-right: 10px;
+			@include media('>sm') {
+				width: 46px;
+				height: 46px;
+				margin-right: 13px;
+			}
+		}
+
+		.comment-text {
+			overflow: hidden;
+		}
+		.author {
+			display: block;
+			font-family: $font-secondary;
+			font-weight: $font-bold;
+			font-size: 13px;
+			color: $color-dark;
+			line-height: normal;
+			@include media('>sm') {
+				font-size: 16px;
+			}
+		}
+		.date {
+			font-size: 12px;
+			color: $color-dark-3;
+			line-height: normal;
+		}
+		.comment-description {
+			font-size: 14px;
+			font-family: $font-tertiary;
+			color: $color-dark-1;
+			letter-spacing: 0;
+			@include media('>sm') {
+				font-size: 16px;
+			}
+		}
+		.comment-footer {
+			text-align: right;
+			a {
+				display: inline-block;
+				font-size: 12px;
+				margin-left: 10px;
+			}
+			i {
+				font-size: 14px;
+			}
+		}
+	}
+}

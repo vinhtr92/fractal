@@ -1,0 +1,31 @@
+//- demo: true
+mixin long_author-single(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		-
+			let args = item
+			let content = args.content || random(random.text, 200)
+		
+		//- Args: avatar, body, contentElipsis, title, content, description
+		+long_utility-box-1({
+			modifier: 'lg',
+			align: 'center',
+			description: '',
+			content
+		})
+
+		include cssmodule
+		div(class=css.social)
+			//- Args: icon
+			+long_social({
+				loop: {
+					data: [
+						{icon: 'fa fa-facebook'},
+						{icon: 'fa fa-twitter'},
+						{icon: 'fa fa-google-plus'},
+						{icon: 'fa fa-pinterest'},
+					]
+				},
+				modifier: 'style2'
+			})

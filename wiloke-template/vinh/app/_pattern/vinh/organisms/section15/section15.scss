@@ -1,0 +1,13 @@
+/* //--- vinhSection15
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	:global .row {
+		overflow: hidden;
+		@include media('>=sm'){
+			overflow: unset;
+		}
+	}
+}
+

@@ -1,0 +1,18 @@
+//- demo: true
+mixin longDemo1(args)
+	include cssmodule
+
+	
+	+module('div', css.module, args)
+		-
+			let args = item;
+			args.SEND_CSS && args.SEND_CSS(css);
+
+		if (typeof args.SEND_CSS !== 'function')
+
+			h2(class=css.title)= random(random.title)
+
+			div(class=css.text)= random(random.text, 200)
+			
+		if (block)
+			block

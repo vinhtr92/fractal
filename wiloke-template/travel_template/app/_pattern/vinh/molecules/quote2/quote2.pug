@@ -1,0 +1,17 @@
+//- demo: true
+mixin long_quote2(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		blockquote(class=css.quote)
+			p= args.quote || random(random.text, 200)
+
+		footer(class=css.footer)
+			//- Args: avatar, body, contentElipsis, title, content, description
+			+long_utility-box-1({
+				modifier: ['sm', 'boxLeft', 'light'],
+				content: ''
+			})
+			include cssmodule

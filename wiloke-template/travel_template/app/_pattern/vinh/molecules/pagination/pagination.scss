@@ -1,0 +1,40 @@
+/* //--- long_pagination
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	background-color: $color-light;
+	border-radius: 5px;
+	display: table;
+	width: 100%;
+	a, span {
+		display: table-cell;
+		width: 85px;
+		height: 85px;
+		line-height: 85px;
+		border-right: 1px solid $color-gray-3;
+		font-family: $font-secondary;
+		font-size: 18px;
+		font-weight: $font-medium;
+		text-align: center;
+		vertical-align: middle;
+		i {
+			font-size: 30px;
+			vertical-align: middle;
+		}
+	}
+	:global(.current) {
+		font-size: 30px;
+		color: $color-primary;
+	}
+}
+
+// prev
+.prev {
+	width: 182px !important;
+}
+
+// next
+.next {
+	@extend .prev;
+}

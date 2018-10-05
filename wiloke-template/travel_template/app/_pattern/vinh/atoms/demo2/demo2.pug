@@ -1,0 +1,18 @@
+//- demo: true
+mixin longDemo2(args)
+
+	- let getCss = null;
+
+	+longDemo1({
+		SEND_CSS: css => {
+			getCss = css
+		}
+	})
+
+		//- css module cua demo1 gui sang
+		h2(class=getCss.title)= random(random.title)
+		div(class=getCss.text)= random(random.text, 200)
+
+		//- css module cua demo2
+		include cssmodule
+		div(class=css.test)= random(random.text, 200)

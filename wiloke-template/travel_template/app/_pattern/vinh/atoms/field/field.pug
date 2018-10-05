@@ -1,0 +1,24 @@
+//- demo: true
+mixin long_field(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+			
+		if (has(args.modifier, 'textarea'))
+			textarea(class=css.field, placeholder=set(args, 'placeholder', ''))
+		else if (has(args.modifier, 'file'))
+			input(class=css.field, type="file")
+		else if (has(args.modifier, 'select'))
+			select(class=css.select2, multiple=set(args, 'multiple', ''), data-minimum-results-for-search=(set(args, 'search') != false) ? '' : 'Infinity')
+				if (args.selectOption)
+					each opt in args.selectOption
+						option= opt
+				else
+					option Option 1
+					option Option 2
+					option Option 3
+		else
+			if (typeof args.icon === 'string')
+				div(class=css.icon): i(class=args.icon)
+			input(class=css.field, type="text", placeholder=set(args, 'placeholder', ''))

@@ -1,0 +1,110 @@
+/* //--- vinhIcon02
+--------------------------------------------------------------------------------*/
+// module
+.module {
+	overflow: auto;
+}
+
+// icon
+.icon {
+	i {
+		color: $color-gray-6;
+		font-size: 40px;
+	}
+}
+
+// content
+.content {
+	
+}
+
+// title
+.title {
+	font-size: 14px;
+	color: $color-gray-6;
+	font-family: $font-primary;
+}
+
+// modifier style02 
+.style02 {
+	text-align: center;
+
+	.icon {
+		border: 1px solid $color-gray-5;
+		border-radius: 5px;
+		transition: .3s all;
+
+		i {
+			padding:  70px 0;
+			transition: .3s all;
+		}
+	}
+
+	.title {
+		font-weight: bold;
+		margin-top: 20px;
+	}
+}
+
+.style02:hover {
+	.icon {
+		background-color: $color-primary;
+		transition: .3s all;
+
+		i {
+			transition: .3s all;
+			color: $color-light;
+		}
+
+	}
+}
+
+
+//modifier style03 
+.style03 {
+	.icon {
+		float: left;
+		border: 1px solid transparent;
+		width: 60px;
+		height: 60px;
+		text-align: center;
+		margin: 0 20px 0 0;
+		border-radius: 50%;
+		transition: .3s all;
+		
+		i {
+			font-size: 30px;
+			line-height: 60px;
+			transition: .3s all;
+		}
+	}
+
+	.content {
+		overflow: auto;
+		text-align: left;
+	}
+
+	.title {
+		margin-top: 25px;
+		transition: .1s all;
+	}
+}
+
+.style03:hover {
+	.icon {
+		background: $color-primary;
+		border: 1px solid $color-primary;
+		transition: .3s all;
+
+		i {
+			color: $color-light;
+			transition: .3s all;
+		}
+	}
+
+	.title {
+		font-size: 16px;
+		color: $color-dark-4;
+		transition: .1s all;
+	}
+}

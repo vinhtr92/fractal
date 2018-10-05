@@ -1,0 +1,85 @@
+extends pug/layout
+
+//- Config
+block config
+	-
+		config.title = 'about'
+		config.bodyClass = ''
+
+//- afterLink
+block afterLink
+	
+//- Header
+block header
+	+hien_header({
+	
+	})
+//- Footer
+block footer
+	
+//- Content
+block content
+
+	-
+		// const webpack = require('webpack');
+		// // const config = ;
+		// const compiler = webpack(config);
+		// console.log(__dirname + '.js')
+		const chokidar = require('chokidar');
+
+		
+
+	+section({
+		css: {
+			'background-color': '#f1f1f1'
+		}
+	})
+		//- Args: icon, title, text
+		+heading({
+			title: 'Our pricing',
+			align: 'center'
+		})
+		+row
+			+col({
+				cols: [12,12,4,4]
+			})
+
+				//- Args: icon, title, currency, amount, period, list
+				+pricing-01({
+					
+				})
+			+col({
+				cols: [12,12,4,4]
+			})
+
+				//- Args: icon, title, currency, amount, period, list
+				+pricing-01({
+					modifier: 'feature'
+				})
+			+col({
+				cols: [12,12,4,4]
+			})
+
+				//- Args: icon, title, currency, amount, period, list
+				+pricing-01({
+					
+				})
+
+	+section
+		//- Args: icon, title, text
+		+heading({
+			title: 'Test loop data',
+			align: 'center'
+		})
+		+row
+			//- Args: icon, title, text
+			+textbox({
+				loop: {
+					data: longTextbox,
+					wrap: 'col-md-4',
+					items: 3
+				},
+				modifier: 'borderEffect'
+			})
+
+	

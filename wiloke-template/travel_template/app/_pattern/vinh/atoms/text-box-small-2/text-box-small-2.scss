@@ -1,0 +1,39 @@
+/* //--- long_text-box-small-2
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	overflow: hidden;
+}
+
+// icon
+.icon {
+	float: left;
+	@include size(28px);
+	composes: text-center from global;
+	background-color: $color-dark;
+	color: $color-light;
+	border-radius: 3px;
+	margin-right: 10px;
+}
+
+// text
+.text {
+	font-family: $font-tertiary;
+	font-size: 13px;
+}
+
+// modifier light
+.light {
+	// text
+	.text {
+		color: $color-light;
+	}
+}
+
+// modifier lg
+.lg {
+	.text {
+		font-size: 15px;
+	}
+}

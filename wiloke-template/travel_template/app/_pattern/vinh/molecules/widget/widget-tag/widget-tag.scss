@@ -1,0 +1,17 @@
+:global {
+    .tagcloud {
+        a {
+            display: inline-block;
+			margin-right: 6px;
+			margin-bottom: 6px;
+			font-size: 13px !important;
+			background-color: $color-gray-3;
+			padding: 3px 12px;
+			border-radius: 3px;
+			&:hover {
+				background-color: $color-primary;
+				color: $color-light;
+			}
+        }
+    }
+}

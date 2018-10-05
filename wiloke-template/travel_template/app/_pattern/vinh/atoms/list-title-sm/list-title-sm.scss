@@ -1,0 +1,104 @@
+/* //--- long_list-title-sm
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	content: empty;
+
+	a {
+		vertical-align: middle;
+	}
+	li {
+		vertical-align: middle;
+	}
+}
+
+// list
+.list {
+	composes: list-none from global;
+	font-size: 0;
+	a {
+		font-size: 13px;
+	}
+}
+
+// listItem
+.listItem {
+	font-family: $font-secondary;
+	display: inline-block;
+	+ .listItem {
+		&:before {
+			content: ', '
+		}
+	}
+	ul {
+		display: inline-block;
+		vertical-align: middle;
+		&:before {
+			content: "\e684";
+			font-family: 'Pe-icon-7-stroke';
+			font-size: 22px;
+			vertical-align: middle;
+			padding: 0 3px;
+			line-height: 1em;
+		}
+	}
+	a {
+		position: relative;
+		display: inline-block;
+		&:after {
+			content: '';
+			display: block;
+			background-color: $color-gray-1;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 2px;
+		}
+		&:hover {
+			color: $color-tertiary;
+		}
+	}
+}
+
+// title
+.title {
+	@include pfs('font-size', (
+		400px: 20px,
+		1200px: 28px
+	));
+	margin: 0;
+	margin-top: 7px;
+}
+
+// modifier small
+.small {
+	.title {
+		font-size: 20px;
+	}
+}
+
+// modifier large
+.large {
+	.title {
+		@include pfs('font-size', (
+			400px: 22px,
+			1200px: 40px
+		));
+	}
+}
+
+// modifier light
+.light {
+	color: $color-light;
+	.title {
+		color: $color-light;
+	}
+
+	.listItem {
+		a:after {
+			background-color: rgba($color-light, 0.3);
+		}
+	}
+}

@@ -1,0 +1,19 @@
+//- demo: true
+mixin longHeroText(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		div(class=css.wrap)
+		
+			h2(class=css.title)= args.title || 'Fractal'
+
+			div(class=css.text)!= args.text || '<span class="color-primary">+1238</span> most beautiful tourist destinations in the world'
+
+			+wil-btn('a', {
+				text: 'More all destinations',
+				modifier: ['primary', 'lg', 'round', 'shadow']
+			})
+
+			include cssmodule

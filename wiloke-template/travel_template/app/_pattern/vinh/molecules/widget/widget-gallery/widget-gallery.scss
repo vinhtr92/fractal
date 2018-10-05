@@ -1,0 +1,47 @@
+/* //--- widget-gallery
+--------------------------------------------------------------------------------*/
+
+:global {
+	.widget-gallery {
+		margin: -5px;
+		overflow: hidden;
+		a {
+			position: relative;
+			display: block;
+			width: 100%;
+			padding-top: 75%;
+			background-size: cover;
+			background-position: 50% 50%;
+			border-radius: 5px;
+		
+			img {
+				display: none;
+			}
+		}
+		@for $i from 1 through 6 {
+			&[data-column="#{$i}"] {
+				.widget-gallery__item {
+					width: (100 / $i) * 1%;
+				}
+			}
+		}
+		&:hover {
+			a {
+				-webkit-filter: grayscale(100%);
+				filter: grayscale(100%);
+			}
+		}
+		a {
+			&:hover {
+				-webkit-filter: grayscale(0);
+				filter: grayscale(0);
+			}
+		}
+	}
+	.widget-gallery__item {
+		width: (100 / 3) * 1%;
+		padding: 5px;
+		float: left;
+		overflow: hidden;
+	}
+}

@@ -1,0 +1,33 @@
+
+//- demo: true
+mixin long_utility-box-1(args)
+	include cssmodule
+	+module('div', css.module, args)
+		- var args = item
+
+		//- Utility Box Avatar
+		- var avatar = random(random.people.avatar)
+		if (set(args, 'avatar') != '')
+			div(class=css.avatar, style=`background-image: url('${set(args, 'avatar', avatar)}')`)
+				img(src=set(args, 'avatar', avatar), alt=random(random.people.name))
+		
+		include cssmodule
+
+		if ( set(args, "body") != '' )
+
+			//- Utility Box Body
+			div(class=css.body)
+
+				//- Utility Box Group
+				div(class=css.group, class=set(args, 'contentElipsis'))
+
+					//- Utility Box Title
+					if ( (args.modifier != 'arrowLeft') && ( args.modifier != 'arrowRight') )
+						h3(class=css.title)= set(args, "title", random(random.people.name))
+
+					//- Utility Box Content
+					if ( set(args, "content") != '' )
+						div(class=css.content)!= set(args, "content", random(random.text, random(50, 200)))
+
+				//- Utility Box Description
+				div(class=css.description)!= set(args, "description", random(random.calendar.date))

@@ -1,0 +1,25 @@
+/* //--- vinhSideMenu
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+
+}
+
+:global {
+	@include wilMenu('.sideMenu',(
+		menuClass: 'sideMenu__nav',
+		theme: 'style2',
+		css: (
+			display: flex,
+			padding: 34px 20px,
+			font-size: 18px,
+			hover: (
+				color: $color-4,
+			),
+			current: (
+				color: $color-4
+			)
+		)
+	))
+}

@@ -1,0 +1,25 @@
+/* //--- long_author-single
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	background-color: $color-gray-3;
+	border-radius: 5px;
+	color: $color-dark;
+	@include pfs('padding', (
+		400px: 15px,
+		1200px: 30px
+	));
+	h3 {
+		display: block;
+	}
+}
+
+// social
+.social {
+	text-align: center;
+	margin-top: 10px;
+	a {
+		margin: 3px;
+	}
+}

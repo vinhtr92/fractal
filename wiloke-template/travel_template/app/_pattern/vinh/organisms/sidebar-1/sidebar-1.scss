@@ -1,0 +1,105 @@
+/* //--- sidebar-01
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	max-width: 500px;
+	margin: auto;
+
+	:global {
+		.widget {
+			background-color: $color-light;
+			padding: 15px;
+			margin-bottom: 30px;
+			border-radius: 5px;
+			@include media('>=md') {
+				padding: 20px;
+			}
+			> ul {
+				margin-top: - 10px;
+				margin-bottom: -10px;
+			}
+			> ul > li {
+				&:first-child {
+					> a {
+						border: 0;
+					}
+				}
+			}
+			li {
+				a {
+					display: block;
+					border-top: 1px solid $color-gray-3;
+					padding: 10px 0;
+					font-size: 14px;
+				}
+			}
+			ul ul {
+				margin-left: 15px;
+			}
+		}
+		.widget-title {
+			font-size: 12px;
+			background-color: $color-dark;
+			text-transform: uppercase;
+			text-align: center;
+			border-radius: 5px 5px 0 0;
+			padding: 16px;
+			margin: -15px;
+			margin-bottom: 15px !important;
+			@include media('>=md') {
+				margin: -20px;
+			}
+		}
+
+		.widget-post--popular {
+			.widget-post-item {
+				padding-bottom: 15px;
+				margin-bottom: 15px;
+				border-bottom: 1px solid $color-gray-3;
+				&:first-child {
+					margin: -15px -15px 15px;
+					@include media('>=md') {
+						margin: -15px -20px 15px;
+					}
+					.widget-post-item__media {
+						width: 100%;
+						border-radius: 0;
+						&:after {
+							padding-top: 56.25%;
+						}
+						&:before {
+							display: none;
+						}
+					}
+					.widget-post-item__body {
+						padding: 15px 15px 0;
+						@include media('>=md') {
+							padding: 15px 20px 0;
+						}
+						&:before {
+							content: '0'counter(counter);
+							display: block;
+							@include size(60px);
+							text-align: center;
+							font-size: 22px;
+							font-weight: $font-bold;
+							font-family: $font-secondary;
+							color: $color-light;
+							background-color: $color-primary;
+							border-radius: 50%;
+							float: left;
+							margin-right: 10px;
+						}
+					}
+				}
+				&:last-child {
+					border-bottom: 0;
+					margin-bottom: 0;
+					padding-bottom: 0;
+				}
+			}
+		}
+		
+	}
+}

@@ -1,0 +1,196 @@
+/* //--- long_product
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	max-width: 400px;
+	margin: auto;
+	:global(.wil-overlay) {
+		z-index: 2;
+		opacity: 0 !important;
+		transition: all 0.3s ease;
+	}
+}
+
+// header
+.header {
+	position: relative;
+	composes: bg-cover from global;
+	overflow: hidden;
+	z-index: 1;
+	background-color: $color-gray-2;
+	text-align: center;
+	transition: all 0.3s ease;
+	&:after {
+		content: '';
+		display: block;
+		padding-top: 130%;
+	}
+}
+
+// img
+.img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: calc(100% - 60px);
+	transform: translate(-50%, -50%) perspective(80em) scale(1) rotateY(0);
+	transition: inherit;
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 0;
+		height: 100%;
+		top: 0;
+		border: solid transparent;
+		border-left-color: $color-light;
+		transform-origin: 0 50%;
+		transform: scaleX(0);
+		transition: inherit;
+		@include pfs('border-top-width, border-bottom-width', (
+			400px: 6px,
+			3000px: 10px
+		));
+		@include pfs('border-left-width, border-right-width', (
+			400px: 12px,
+			3000px: 20px
+		));
+		@include pfs('right', (
+			400px: -12px,
+			3000px: -20px
+		));
+	}
+	img {
+		max-width: none;
+		height: 100%;
+		margin-bottom: 0 !important;
+		@include pfs('margin-right', (
+			400px: 12px,
+			3000px: 20px
+		));
+	}
+}
+
+// label
+.label {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	z-index: 9;
+
+	span {
+		position: relative;
+		display: inline-block;
+		padding: 0 5px 0 20px;
+		background-color: $color-tertiary;
+		color: $color-light;
+		font-family: $font-tertiary;
+		font-size: 14px;
+		line-height: 28px;
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			border: 14px solid $color-tertiary;
+			border-right-color: transparent;
+			top: 0;
+			right: -28px;
+		}
+	}
+}
+
+// body
+.body {
+	margin-top: 15px;
+	text-align: center;
+}
+
+// name
+.name {
+	margin-top: 0;
+	margin-bottom: 5px;
+	font-family: $font-secondary;
+	font-size: 12px;
+	font-weight: $font-bold;
+	color: $color-dark;
+	composes: text-ellipsis from global;
+}
+
+// price
+.price {
+	font-family: $font-tertiary;
+	font-size: 18px;
+	color: $color-dark;
+	ins,
+	del {
+		padding-right: 8px;
+	}
+
+	ins {
+		text-decoration: none;
+	}
+	del {
+		color: $color-dark-3;
+		font-size: 14px;
+	}
+}
+
+// addToCart
+.addToCart {
+	position: absolute;
+	left: 50%;
+	bottom: 15px;
+	transform: translate(-50%, 0);
+	z-index: 3;
+	text-align: center;
+	border-radius: $round;
+	background-color: $color-light;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease;
+	a {
+		display: block;
+	}
+}
+
+// hover
+.module:hover {
+	.addToCart {
+		opacity: 1;
+		visibility: visible;
+	}
+	.img {
+		transform: translate(-50%, -50%) perspective(80em) scale(0.8) rotateY(-40deg);
+		&:after {
+			transform: scaleX(1);
+		}
+	}
+	.header {
+		background-color: $color-gray-1;
+	}
+}
+
+// modifier soldout
+.soldout {
+	:global(.wil-overlay) {
+		background: none;
+		background-color: rgba(#000, 0.5);
+		opacity: 1 !important;
+	}
+}
+
+// soldoutLabel
+.soldoutLabel {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	padding: 15px;
+	transform: translate(0, -50%);
+	color: $color-light;
+	font-size: 26px;
+	z-index: 9;
+	margin: 0;
+}

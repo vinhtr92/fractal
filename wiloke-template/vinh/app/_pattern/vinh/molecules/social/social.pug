@@ -1,0 +1,15 @@
+//- demo: true
+mixin vinhSocial(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		ul(class=css.socialList)
+			li
+				i(class=set(args, 'icon', random(random.social)))
+		
+		
+		
+	include cssmodule

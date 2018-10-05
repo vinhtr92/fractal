@@ -1,0 +1,31 @@
+//- demo: true
+mixin long_body-blog-single(args)
+	include cssmodule
+
+	+module('article', css.module, args)
+		-
+			let args = item
+			const tagCloud = arr => arr.map(item => `<a href="#">${ item }</a>` )
+		
+		if block
+			block
+		else
+			h2 Heading 1
+			p 1. “Start with good people, lay out the rules, communicate with your employees, motivate them, and reward them. If you do all those things effectively, you can’t miss.” -Lee Iacocca, American automobile exec and developer of the Ford Mustang
+
+		div(class=css.tagCloud)!= tagCloud(['Photography', 'Design', 'Awesome', 'Minimalist'])
+
+		//- Args: content
+		+long_author-single({
+			addClass: 'mt-30'
+		})
+
+		+long_share({
+	
+		})
+
+		include cssmodule
+		+long_share({
+			modifier: 'vertical',
+			addClass: css.shareFixed
+		})

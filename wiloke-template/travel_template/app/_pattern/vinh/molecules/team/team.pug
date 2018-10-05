@@ -1,0 +1,30 @@
+//- demo: true
+mixin longTeam(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		div(class=css.img)
+			img(src=set(args, 'img', 'img/team/1.jpg'), alt="")
+
+		div(class=css.content)
+			div.wil-tb
+				div.wil-tb__cell
+					h3(class=css.name)= args.name || random(random.people.name)
+					span(class=css.work)= args.text || random(random.work)
+					div(class=css.divider)
+
+					div(class=css.social)
+						//- Args: icon
+						+long_social({
+							loop: {
+								data: [
+									{ icon: 'fa fa-facebook' },
+									{ icon: 'fa fa-twitter' },
+									{ icon: 'fa fa-pinterest' },
+									{ icon: 'fa fa-dribbble' },
+								]
+							}
+						})
+						include cssmodule

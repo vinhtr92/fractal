@@ -1,0 +1,7 @@
+
+//- demo: true
+mixin widget-image(args)
+	+module('div', 'widget-image', args)
+		.widget-image-wrap
+			a(href=set(item, 'link', '#'))
+				img(src=set(item, 'img', 'http://via.placeholder.com/400x400'), alt="")

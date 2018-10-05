@@ -1,0 +1,22 @@
+//- demo: true
+mixin longPanel(args)
+	include cssmodule
+
+	+module('div', 'panel__module', args)
+		-
+			let args = item
+			let icon = args.icon || random(random.font7)
+			let text = args.text || random(random.text, 10)
+		
+
+		//- Args: icon, iconColor, text
+		+long_panel-title({
+			icon,
+			text
+		})
+
+		div.mt-30
+			if block
+				block
+			else
+				div= random(random.text, 200)

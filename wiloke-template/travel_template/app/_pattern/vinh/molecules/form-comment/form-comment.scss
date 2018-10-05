@@ -1,0 +1,47 @@
+/* //--- long_form-comment
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	overflow: hidden;
+	max-width: 770px;
+	margin: auto;
+}
+
+%general {
+	padding: 15px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	background-color: $color-light;
+	@include media('>sm') {
+		padding: 20px;
+		margin-bottom: 20px;
+	}
+}
+
+// first
+.first {
+	font-family: $font-tertiary;
+	font-size: 18px;
+	composes: color-primary from global;
+	cursor: text;
+	@extend %general;
+}
+
+// last
+.last {
+	@extend %general;
+	composes: clearfix from global;
+	display: none;
+}
+
+// form
+.form {
+	width: 100%;
+}
+
+// title
+.title {
+	font-size: 20px;
+	margin-top: 0;
+}

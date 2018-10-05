@@ -1,0 +1,24 @@
+:global {
+	@include wil-form-item('input:not([type="button"]):not([type="submit"]):not([type="radio"]):not([type="checkbox"]):not([type="color"]), textarea, select', (
+		border-radius: 5px,
+		line-height: 48px,
+		height: 48px,
+		border: 1px solid $color-gray-1,
+		color: $color-dark-2,
+		width: 100%,
+		background-color: $color-light,
+		box-sizing: border-box,
+		placeholder: (
+			color: $color-dark-2
+		),
+		focus: (
+			border: 1px solid $color-gray-1,
+		)
+	));
+	textarea {
+		height: 100px;
+		line-height: 1.78;
+		padding: 10px 15px;
+		resize: vertical;
+	}
+}

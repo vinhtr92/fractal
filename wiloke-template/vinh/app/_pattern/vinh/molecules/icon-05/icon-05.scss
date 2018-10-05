@@ -1,0 +1,174 @@
+/* //--- vinhIcon05
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	text-align: center;
+	margin: 50px 0;
+
+	@include media(">=md"){
+		text-align: center;
+	}
+}
+
+// icon
+.icon {
+	width: 80px;
+	height: 80px;
+	border: 1px solid $color-primary;
+	border-radius: 50%;
+	background: $color-primary;
+	display: inline-block;
+	margin: 0 0  5px 0;
+	i {
+		font-size: 36px;
+		line-height: 80px;
+		color: $color-light;
+	}
+
+	@include media(">=md"){
+		margin: 0 0  50px 0;
+	}
+}
+
+// counter
+.counter {
+	border: 1px solid #e8e8e8;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: absolute;
+    background: white;
+
+	&:after {
+		height: 1px;
+		background-color: #e8e8e8;
+		width: 100vw;
+		content: '';
+		position: absolute;
+		z-index: -1;
+		transform: translate(-50%,-50%) rotate(90deg);
+		top: 50%;
+		left: 50%;
+	}
+
+	&:before {
+		counter-increment: item;
+		content: " " counter(item) " ";
+		font-size: 20px;
+		line-height: 35px;
+		z-index: 1;
+	}
+
+	@include media(">=md"){
+		position: relative;
+
+		&:after {
+			transform: translate(-50%) rotate(0deg);
+			top: 50%;
+		}
+	}
+}
+
+// content
+.content {
+	
+}
+
+// title
+.title {
+	margin: 10px  0 0 0  ;
+	font-size: 20px;
+
+	@include media(">=md"){
+		margin: 50px  0 0 0  ;
+	}
+}
+
+// text
+.text {
+	font-size: 14px;
+	color: $color-gray-6;
+}
+
+// modifier style02
+.style02 {
+
+	.icon {
+		width: 50px;
+		height: 50px;
+		border: 1px solid $color-gray-5;
+		border-radius: 50%;
+		background: $color-light;
+		display: inline-block;
+		margin: 0 0  5px 0;
+		transition: .3s all;
+		i {
+			font-size: 24px;
+			line-height: 50px;
+			color: $color-gray-6;
+		}
+		
+		@include media(">=sm"){
+			margin: 0 0  25px 0;
+		}
+	}
+
+	.counter {
+		width: 9px;
+		height: 9px;
+		background-color: $color-gray-5;
+		transition: .3s all;
+		position: absolute;
+
+		&:after {
+			// transform: rotate(90deg) 
+		}
+
+		&:before {
+			content: '';
+		}
+
+		@include media(">=sm"){
+			position: relative;
+
+			&:after {
+				transform: rotate(0deg) translateX(-50%);
+			}
+		}
+	}
+
+	.title {
+		font-size: 14px;
+		margin: 0;
+
+		@include media(">=sm"){
+			margin: 30px  0 0 0 ;
+		}
+	}
+
+	.text {
+		display: none;
+	}
+}
+
+
+.style02:hover {
+	cursor: pointer;
+	.icon {
+		border: 1px solid $color-primary;
+		background: $color-primary;
+
+		i {
+			color: $color-light;
+			transition: .3s all;
+		}
+	}
+
+	.counter {
+		background: $color-gray-6;
+		transition: .3s all;
+		cursor: pointer;
+	}
+}

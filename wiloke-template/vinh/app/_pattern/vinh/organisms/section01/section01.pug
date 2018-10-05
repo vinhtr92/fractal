@@ -1,0 +1,56 @@
+//- demo: true
+mixin vinhSection01(args)
+	include cssmodule
+	include data
+
+	+module('div', css.module, args)
+		- let args = item
+
+		//- code
+		+section({
+			container: true,
+		})
+			+vinhHeader({
+				loop : {
+					data: title,
+				}
+			})
+
+			+row({
+				gap: 30,
+			})
+				+col({
+					cols: [0,0,4,4],
+					gap: 30
+				})
+					+vinhIcon({
+						loop: {
+							data: icon01,
+						}
+					})
+
+				+col({
+					cols: [0,0,4,4],
+					gap: 30
+				})
+					+vinhIcon({
+						loop: {
+							data: icon02,
+						}
+					})
+
+				+col({
+					cols: [0,0,4,4],
+					gap: 30
+				})
+					+vinhIcon({
+						loop: {
+							data: icon03,
+						}
+					})
+			+wil-btn('a',{
+				modifier: 'pill',
+				text: 'explorer',
+			})
+		
+	include cssmodule

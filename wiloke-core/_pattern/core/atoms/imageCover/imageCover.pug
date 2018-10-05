@@ -1,0 +1,18 @@
+//- demo: true
+mixin imageCover(args)
+	include cssmodule
+	+module('div', css.module, args)
+		-
+			let args = item
+
+		if (args.link)
+			a(href=args.link)
+				div(class=css.img, class=args.classImg style=`background-image: url('${ set(args, 'img', 'http://via.placeholder.com/400x400') }')`)
+					img(src=set(args, 'img', 'http://via.placeholder.com/400x400') , alt="")
+					if block
+						block
+		else
+			div(class=css.img, class=args.classImg, style=`background-image: url('${ set(args, 'img', 'http://via.placeholder.com/400x400') }')`)
+				img(src=set(args, 'img', 'http://via.placeholder.com/400x400') , alt="")
+				if block
+					block

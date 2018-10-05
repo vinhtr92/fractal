@@ -1,0 +1,30 @@
+/* //--- vinhSection01
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	text-align: center;
+	padding: 150px 0;
+}
+
+
+:global {
+	.vinh_header__module {
+		h2 {
+			margin: 0 0 70px 0;
+		}
+	}
+
+	.wil-btn {
+		text-transform: uppercase;
+		background: $color-primary !important;
+		padding: 13px 50px !important;	
+		transition: .3s all;
+		margin: 80px 0 0 0  !important;
+
+	}
+
+	.wil-btn:hover {
+		background-color: darken($color-primary, 10%) !important;
+	}
+}

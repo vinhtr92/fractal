@@ -1,0 +1,80 @@
+:global {
+	@include media('<sm') {
+		.container {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		.row {
+			margin-left: -10px;
+			margin-right: -10px;
+		}
+		[class*="col-"] {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+	@media (min-width: 1660px) {
+		.container {
+			width: 1600px;
+		}
+		.page-1170 .wil-content .container {
+			width: 1170px;
+		}
+	}
+
+	.equal-height {
+		display: flex;
+		flex-wrap: wrap;
+		> [class*="col-"] {
+			> * {
+				min-height: 100%;
+				margin-bottom: 0;
+			}
+		}
+	}
+	.equal-height-center {
+		align-items: center;
+	}
+
+	@for $i from 0 through 8 {
+		$cst: 5;
+		[data-col-xs-gap="#{$i*$cst}"] {
+			&.row {
+				margin: floor(($i*$cst)/2)*(-1) * 1px !important;
+				> [class*="col-"] {
+					padding: floor(($i*$cst)/2) * 1px !important;
+				}
+			}
+		}
+		@include media('>=sm') {
+			[data-col-sm-gap="#{$i*$cst}"] {
+				&.row {
+					margin: floor(($i*$cst)/2)*(-1) * 1px !important;
+					> [class*="col-"] {
+						padding: floor(($i*$cst)/2) * 1px !important;
+					}
+				}
+			}
+		}
+		@include media('>=md') {
+			[data-col-md-gap="#{$i*$cst}"] {
+				&.row {
+					margin: floor(($i*$cst)/2)*(-1) * 1px !important;
+					> [class*="col-"] {
+						padding: floor(($i*$cst)/2) * 1px !important;
+					}
+				}
+			}
+		}
+		@include media('>=lg') {
+			[data-col-lg-gap="#{$i*$cst}"] {
+				&.row {
+					margin: floor(($i*$cst)/2)*(-1) * 1px !important;
+					> [class*="col-"] {
+						padding: floor(($i*$cst)/2) * 1px !important;
+					}
+				}
+			}
+		}
+	}
+}

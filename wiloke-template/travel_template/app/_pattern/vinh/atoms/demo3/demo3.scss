@@ -1,0 +1,27 @@
+/* //--- longDemo3
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	border: 1px solid red;
+	overflow: hidden;
+	padding: 10px;
+}
+
+// item
+.item {
+	border: 1px solid blue;
+	width: 50%;
+	float: left;
+	padding: 20px;
+}
+
+// title
+.title {
+	color: blue;
+}
+
+// text
+.text {
+	color: green;
+}

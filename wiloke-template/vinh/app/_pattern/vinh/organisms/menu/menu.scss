@@ -1,0 +1,139 @@
+/* //--- vinhMenu
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	border-bottom: 1px solid #eee;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	text-transform: capitalize;
+	&:before,
+	&:after {
+		display: none;
+	}
+
+	:global {
+		i[class^=icon_]{
+			font-size: 18px;
+			line-height: 1.5;
+		}
+
+		i[class=icon_menu]{
+
+			//for elegant font icon,
+			font-size: 28px;
+			line-height: 1;
+			position: relative;
+			top: 7px;	
+		}
+
+		.header__nav{
+			display: flex;
+			align-items: center;
+			padding: 20px 0;
+	
+			@include media('>=1200px'){
+				padding: 0;
+			}
+	
+			span.toggle-menu {
+				font-size: 36px;
+				padding: 0 0 0 22px;
+
+			}
+		}
+
+		.header-icon {
+			@include media('<=lg'){
+				// display: none,
+			}
+			
+			a {
+				padding: 34px 22px;
+			}
+
+			i {
+				font-size: 18px;
+			}
+		}
+
+		ul.sub-menu {
+			&.active {
+				display: block;
+			}
+		}
+	}
+}
+
+// logo
+.logo {
+	content: empty;
+	margin-left:5px;
+}
+
+
+:global {
+	@include wilMenu('.header__nav', (
+		menuClass: 'header__menu',
+		theme: 'style2', // ? the location of theme style? how to write it?
+		breakpoint: 1200,
+		css: (
+			color: $color-gray-4,
+			font-family: $font-primary !important,
+			font-size: 14px,
+			padding: 34px 20px,
+			font-weight: 700,
+			hover: (
+				color: $color-4,
+			),
+			current: (
+				color: $color-4
+			)
+		),
+		arrow: (
+			use: 'FontAwesome',
+			icon: 'fa-angle-down'
+		),
+		subMenu: (
+			width: 200,
+			class: 'sub-menu',
+			parentClass: 'menu-item-has-children',
+			align: 'right',
+			position: 'right',
+			css: (
+				color: $color-gray-4,
+				hover: (
+					color: $color-4
+				),
+				current: (
+					color: $color-4
+				)
+			),
+			arrow: (
+				use: 'FontAwesome',
+				icon: 'fa-angle-right'
+			),
+			animate: (
+				time: 300,
+				easing: easeOutBack,
+				effect: slideDown
+			)
+		),
+		menuMobile: (
+			toggleClass: 'active',
+			classButtonToggle: 'toggle-menu',
+			theme: 'style2',
+			css: (
+				font-size: 16px
+			),
+			arrow: (
+				use: 'FontAwesome',
+				icon: 'fa-caret-down'
+			)
+		),
+		responsiveByJavascript: (
+			enable: false
+		)
+	));
+}

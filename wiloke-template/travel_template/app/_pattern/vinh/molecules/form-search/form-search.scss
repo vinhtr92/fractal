@@ -1,0 +1,117 @@
+/* //--- longFormSearch
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	max-width: 770px;
+	padding: 0 10px;
+	form {
+		background-color: $color-light;
+		position: relative;
+		border-radius: 5px;
+		padding: 12px;
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+	}
+}
+
+// item
+.item {
+	position: relative;
+	@include media('>500px') {
+		float: left;
+		width: calc(100% - 200px);
+	}
+	label {
+		display: block;
+		font-family: $font-secondary;
+		font-size: 13px;
+		line-height: normal;
+		position: absolute;
+		top: 8px;
+		left: 0;
+		cursor: text;
+		transition: all 0.2s ease;
+	}
+	input {
+		border: 0;
+		font-family: $font-secondary;
+		font-size: 20px !important;
+		color: $color-dark !important;
+		border: 0 !important;
+		padding: 0 !important;
+		margin-top: 23px !important;
+		height: 35px !important;
+		background: none !important;
+		transition: all 0.2s ease 0.1s;
+		@include placeholder {
+			color: $color-dark !important;
+		}
+		&:focus {
+			margin-top: 0 !important;
+			height: 58px !important;
+			~ label {
+				opacity: 0;
+				transform: translate(0, -10px);
+			}
+		}
+	}
+}
+
+// action
+.action {
+	@include media('>500px') {
+		float: right;
+	}
+	:global(.wil-btn) {
+		padding: 0 15px;
+		line-height: 58px;
+		@include media('<=500px') {
+			width: 100%;
+			margin-top: 15px;
+		}
+	}
+}
+
+// textWrap
+.textWrap {
+	color: $color-light;
+	margin-bottom: 34px;
+}
+
+// title
+.title {
+	color: inherit;
+	line-height: 1.2em;
+	margin-bottom: -8px;
+	@include pfs('font-size', (
+		400px: 40px,
+		1200px: 90px
+	))
+}
+
+// text
+.text {
+	font-family: $font-tertiary;
+	line-height: 1.3em;
+	@include pfs('font-size', (
+		400px: 20px,
+		1200px: 30px
+	))
+}
+
+// modifier style2
+.style2 {
+	margin: auto;
+	text-align: center;
+	// text
+	.text {
+		@include pfs('font-size', (
+			400px: 26px,
+			1200px: 50px
+		))
+	}
+}

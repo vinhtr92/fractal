@@ -1,0 +1,6 @@
+
+//- demo: true
+mixin widget-list(args)
+    +module('ul', '', args)
+        li
+            a(href="#")= set(item, 'text', 'widget list')

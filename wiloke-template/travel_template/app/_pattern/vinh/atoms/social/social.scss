@@ -1,0 +1,46 @@
+/* //--- long_social
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	display: inline-block;
+	:global(.fa) {
+		display: inline-block;
+		@include size(40px);
+		border-radius: 50%;
+		font-size: 18px;
+		color: $color-light;
+		text-align: center;
+		&:hover {
+			background-color: rgba($color-light, 0.2);
+		}
+	}
+}
+
+// modifier style2
+.style2 {
+	:global(.fa) {
+		border-radius: 5px;
+		font-size: 16px;
+		background-color: $color-dark;
+	}
+}
+@include socialColor('.style2', (
+	type: 'hover',
+	value: 'background-color'
+));
+
+// modifier style3
+.style3 {
+	:global(.fa) {
+		@include size(44px);
+		border: 1px solid;
+		font-size: 16px;
+	}
+	&:hover {
+		opacity: 0.6;
+	}
+}
+@include socialColor('.style3', (
+	type: 'default'
+));

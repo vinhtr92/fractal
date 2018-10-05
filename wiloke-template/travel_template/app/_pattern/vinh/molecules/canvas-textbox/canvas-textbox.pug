@@ -1,0 +1,20 @@
+//- demo: true
+mixin long_canvas-textbox(args)
+	include cssmodule
+	+module('div', css.module, args)
+		- var args = item
+		
+		div(class=css.content)
+			h2(class=css.title)!= set(args, 'title', 'Become a Contributor')
+
+			div(class=css.text)= set(args, 'text', random(random.text, 160))
+
+			div(class=css.btn)
+				+wil-btn('a', {
+					text: 'Contact now',
+					modifier: ['tertiary', 'lg', 'round']
+				})
+				include cssmodule
+		
+		div(class=css.canvas, data-gradient-left="#a4baff", data-gradient-right="#a4e6ff")
+			canvas

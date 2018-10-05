@@ -1,0 +1,12 @@
+//- demo: true
+mixin long_text-box-gradient(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		-
+			let args = item;
+			let icon = args.icon || random(random.font7);
+			let iconColor = args.iconColor;
+		a(href=set(args, 'textBoxHref', '#'))
+			span(class=css.icon): i(class=icon)
+			h2(class=css.title)= args.text || 'Destinations'

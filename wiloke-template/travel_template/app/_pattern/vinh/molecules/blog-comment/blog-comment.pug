@@ -1,0 +1,72 @@
+//- demo: true
+mixin long_blog-comment(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		+wil-comment({
+			data: [
+				{
+					img: `img/avatar/${ random(1,20) }.jpg`,
+					author: random(random.people.name),
+					date: 'Jul 12, 2016',
+					text: random(random.text, 200)
+				},
+				{
+					img: `img/avatar/${ random(1,20) }.jpg`,
+					author: random(random.people.name),
+					date: 'Jul 12, 2016',
+					text: random(random.text, 200),
+					children: [
+						{
+							img: `img/avatar/${ random(1,20) }.jpg`,
+							author: random(random.people.name),
+							date: 'Jul 12, 2016',
+							text: random(random.text, 200)
+						},
+						{
+							img: `img/avatar/${ random(1,20) }.jpg`,
+							author: random(random.people.name),
+							date: 'Jul 12, 2016',
+							text: random(random.text, 200),
+							children: [
+								{
+									img: `img/avatar/${ random(1,20) }.jpg`,
+									author: random(random.people.name),
+									date: 'Jul 12, 2016',
+									text: random(random.text, 200)
+								},
+								{
+									img: `img/avatar/${ random(1,20) }.jpg`,
+									author: random(random.people.name),
+									date: 'Jul 12, 2016',
+									text: random(random.text, 200)
+								},
+								{
+									img: `img/avatar/${ random(1,20) }.jpg`,
+									author: random(random.people.name),
+									date: 'Jul 12, 2016',
+									text: random(random.text, 200)
+								},
+							]
+						},
+						{
+							img: `img/avatar/${ random(1,20) }.jpg`,
+							author: random(random.people.name),
+							date: 'Jul 12, 2016',
+							text: random(random.text, 200)
+						},
+					]
+				},
+				{
+					img: `img/avatar/${ random(1,20) }.jpg`,
+					author: random(random.people.name),
+					date: 'Jul 12, 2016',
+					text: random(random.text, 200)
+				}
+			],
+			reply: '<i class="pe-7s-comment"></i> Reply',
+			edit: '<i class="pe-7s-pen"></i> Edit',
+			del: '<i class="pe-7s-trash"></i> Delete'
+		})

@@ -1,0 +1,18 @@
+//- demo: true
+mixin vinhIcon06(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		- let piechart = set(args,'piechart', random(random.piechart))
+		
+		//- code
+		div(class=css.chart data-percent=piechart)
+			span= piechart + "%"
+		div(class=css.content)
+			h3(class=css.title)= set(args, 'title', random(random.title))	
+			div(class=css.text)
+				p= set(args,'text', random(random.text,80))		
+		
+		
+	include cssmodule

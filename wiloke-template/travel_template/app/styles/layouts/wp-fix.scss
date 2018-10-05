@@ -1,0 +1,286 @@
+:global {
+	.wp-caption {
+		display: inline-block;
+		box-shadow: 0 5px 10px 0px rgba(0, 0, 0, .1);
+		margin: 0;
+		margin-bottom: 10px;
+	  }
+	  
+	  .wp-caption,
+	  .wp-caption img {
+		max-width: 100%;
+	  }
+	  
+	  .wp-caption a {
+		display: block;
+	  }
+	  
+	  .wp-caption img {
+		position: relative;
+		top: 5px;
+		max-width: 100% !important;
+		margin: 0;
+	  }
+	  
+	  .wp-caption .wp-caption-text {
+		font-size: 14px;
+		font-style: italic;
+		text-align: left;
+		padding: 15px;
+		margin-bottom: 0;
+	  }
+	  
+	  .alignleft {
+		float: left;
+		margin-right: 30px;
+	  }
+	  
+	  .aligncenter {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	  }
+	  
+	  .alignright {
+		float: right;
+		margin-left: 30px;
+	  }
+	  
+	  
+	  /* Gallery */
+	  .gallery {
+		overflow: hidden;
+		margin: 0 !important
+	  }
+	  .gallery .gallery-item {
+		position: relative;
+		margin: 0 !important;
+		float: left;
+		padding: 0 !important;
+	  }
+	  .gallery .gallery-item img {
+		margin-bottom: 0;
+	  }
+	  [data-style="circle"],
+	  [data-style="square"],
+	  [data-style="high"] {
+		.gallery-icon {
+		  position: absolute;
+		  width: auto;
+		}
+	  }
+	  @for $i from 1 through 8 {
+		$gap: ($i * 5);
+		$gapVal: ($i * 5) / 2;
+		[data-spacing="#{$gap}"] {
+		  &.gallery {
+			margin-left: -$gapVal * 1px !important;
+			margin-right: -$gapVal * 1px !important;
+		  }
+		  .gallery-icon,
+		  .gallery-caption {
+			top: $gapVal * 1px !important;
+			right: $gapVal * 1px !important;
+			bottom: $gapVal * 1px !important;
+			left: $gapVal * 1px !important;
+		  }
+		  .gallery-item {
+			padding: $gapVal * 1px !important;
+		  }
+		}
+	  }
+	  @for $i from 1 through 9 {
+		.gallery-columns-#{$i} {
+		  .gallery-item {
+			width: (100 / $i) * 1% !important;
+		  }
+		}
+	  }
+	  [data-style="high"],
+	  [data-style="circle"],
+	  [data-style="square"] {
+		.gallery-item {
+		  &:after {
+			content: '';
+			display: block;
+			padding-top: 100%;
+		  }
+		  a {
+			display: block;
+			width: 100%;
+			height: 100%;
+		  }
+		  img {
+			display: none !important;
+		  }
+		}
+		.gallery-icon {
+		  background-size: cover;
+		  background-position: 50% 50%;
+		}
+	  }
+	  [data-style="high"] .gallery-item:after {
+		padding-top: 200%;
+	  }
+	  [data-style="circle"] .gallery-icon {
+		border-radius: 50%;
+	  }
+	  
+	  .gallery br {
+		display: none;
+	  }
+	  .gallery .gallery-caption {
+		position: absolute;
+		padding: 10px 5px;
+		top: auto !important;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		background-color: rgba(0,0,0,.4);
+		color: #fff;
+		text-align: center;
+		pointer-events: none;
+	  }
+	  .gallery a {
+		display: block;
+	  }
+	  .gallery a img {
+		width: 100%;
+		border: 0 !important;
+	  }
+	  
+	  
+	  /* Table */
+	  
+	  .post table {
+		  background-color: transparent;
+		  margin-bottom: 20px;
+		  max-width: 100%;
+		  width: 100%;
+	  }
+	  .post table th {
+		  text-align: left;
+	  }
+	  .post table a {
+		  color: inherit;
+	  }
+	  .post table > thead > tr > th,
+	  .post table > tbody > tr > th,
+	  .post table > tfoot > tr > th,
+	  .post table > thead > tr > td,
+	  .post table > tbody > tr > td,
+	  .post table > tfoot > tr > td {
+		  border-top: 1px solid #ddd;
+		  line-height: 1.42857;
+		  padding: 8px;
+		  vertical-align: top;
+	  }
+	  .post table > thead > tr > th {
+		  border-bottom: 2px solid #ddd;
+		  vertical-align: bottom;
+	  }
+	  .post table > caption + thead > tr:first-child > th,
+	  .post table > colgroup + thead > tr:first-child > th,
+	  .post table > thead:first-child > tr:first-child > th,
+	  .post table > caption + thead > tr:first-child > td,
+	  .post table > colgroup + thead > tr:first-child > td,
+	  .post table > thead:first-child > tr:first-child > td {
+		  border-top: 0 none;
+	  }
+	  .post table > tbody + tbody {
+		  border-top: 2px solid #ddd;
+	  }
+	  
+	  
+	  .textwidget > p > img,
+	  .textwidget > p > strong {
+		display: block;
+		margin-bottom: 10px;
+	  }
+	  .textwidget > p > br {
+		display: none;
+	  }
+	  
+	  
+	  .fb_iframe_widget {
+		width: 100%;
+	  }
+	  .fb_iframe_widget > span {
+		width: 100% !important;
+		max-width: 480px;
+		margin: 20px auto 0;
+	  }
+	  .fb_iframe_widget > span iframe {
+		width: 100% !important;
+	  }
+	  
+	  
+	  
+	  .widget_calendar #calendar_wrap {
+		position: relative;
+	  }
+	  .widget_calendar #wp-calendar {
+		width: 100%;
+		background-color: #fff;
+	  }
+	  .widget_calendar #wp-calendar caption {
+		position: relative;
+		background-color: #eceef2;
+		text-align: center;
+		font-family: $font-secondary;
+		font-size: 12px;
+		line-height: 40px;
+		text-transform: uppercase;
+		color: #444;
+		z-index: 9;
+		letter-spacing: 0.1em;
+	  }
+	  .widget_calendar #wp-calendar th, .widget_calendar #wp-calendar td {
+		text-align: center;
+		border: 1px solid #eceef2;
+		padding: 3px 6px;
+		font-size: 12px;
+		text-transform: uppercase;
+	  }
+	  .widget_calendar #wp-calendar th#today, .widget_calendar #wp-calendar td#today {
+		color: $color-primary;
+		font-weight: 700;
+	  }
+	  .widget_calendar #wp-calendar thead th {
+		color: #585858;
+		font-family: $font-secondary;
+		padding: 6px;
+		font-size: 14px;
+	  }
+	  .widget_calendar #wp-calendar tbody td a {
+		color: #333;
+		font-weight: 700;
+	  }
+	  .widget_calendar #wp-calendar tbody td a:hover {
+		color: $color-primary;
+	  }
+	  .widget_calendar #wp-calendar tfoot {
+		border: 1px solid #eceef2;
+		border-top: 0;
+	  }
+	  .widget_calendar #wp-calendar tfoot td {
+		border: 0;
+		padding: 6px;
+		font-size: 12px;
+	  }
+	  .widget_calendar #wp-calendar tfoot td a {
+		color: #888;
+	  }
+	  .widget_calendar #wp-calendar tfoot td a:hover {
+		color: $color-primary;
+	  }
+	  .widget_calendar #wp-calendar tfoot td#prev {
+		text-align: left;
+	  }
+	  .widget_calendar #wp-calendar tfoot td#next {
+		text-align: right;
+	  }
+}

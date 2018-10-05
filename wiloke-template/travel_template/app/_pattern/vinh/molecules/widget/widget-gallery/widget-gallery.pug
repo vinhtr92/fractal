@@ -1,0 +1,8 @@
+
+//- demo: true
+mixin widget-gallery(args)
+	+module('div', 'widget-gallery', args)(data-column=set(args, 'column'))
+		- var args = item
+		.widget-gallery__item
+			a(href="#" style="background-image: url('" + set(args, 'img', 'http://via.placeholder.com/200x200') + "')")
+				img(src=set(args, 'img', 'http://via.placeholder.com/200x200'), alt="")

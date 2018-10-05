@@ -1,0 +1,41 @@
+/* //--- longSearchFixed
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100%;
+	transform: translate(100%, 0);
+	z-index: 9999;
+	padding: 0 10px 10px;
+	background-color: $color-gray-2;
+	transition: all 0.3s ease;
+	// active
+	&[data-search-active="true"] {
+		transform: translate(0, 0);
+	}
+}
+
+// close
+.close {
+	cursor: pointer;
+	text-align: right;
+	height: 60px;
+	line-height: 60px;
+	padding: 0 10px;
+	i {
+		font-size: 30px;
+		color: $color-tertiary;
+		vertical-align: middle;
+	}
+	span {
+		vertical-align: middle;
+	}
+}
+
+// nav
+.nav {
+	height: calc(100vh - 70px);
+}

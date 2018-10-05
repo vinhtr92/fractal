@@ -1,0 +1,17 @@
+/* //--- vinhSection14
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	:global .vinh_header__module{
+		margin: 0 0 85px 0;
+	}
+
+	:global .row{
+		overflow: hidden;
+		counter-reset: item;
+		@include media(">=md") {
+			overflow: unset;
+		}
+	}
+}

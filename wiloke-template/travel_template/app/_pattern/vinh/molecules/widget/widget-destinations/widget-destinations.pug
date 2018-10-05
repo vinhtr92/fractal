@@ -1,0 +1,16 @@
+//- demo: true
+mixin longWidgetDestinations(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		-
+			let args = item
+			let items = args.items || 3
+		
+		- for (let i = 0; i < items; i++)
+			//- Args: img, country
+			+long_image-box({
+				addClass: 'mb-15',
+				modifier: 'style3'
+			})
+

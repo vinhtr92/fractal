@@ -1,0 +1,14 @@
+//- demo: true
+mixin longSearchFixed(args)
+	include cssmodule
+
+	+module('div', css.module, args)(data-search-active="false")
+		- let args = item
+		
+		div(class=css.close)
+			i.pe-7s-close
+			span Close
+		+long_nav-vertical({
+			addClass: css.nav
+		})
+		include cssmodule

@@ -1,0 +1,64 @@
+extends pug/layout
+
+//- Config
+block config
+	-
+		config.title = 'homepage'
+		config.bodyClass = ''
+
+//- afterLink
+block afterLink
+	
+//- Header
+block header
+	+section({
+		container: false,
+	})
+
+		+vinhMenu({
+		
+		})
+
+	
+//- Footer
+block footer
+	
+//- Content
+block content
+
+	h2 terminal A
+	+section
+		+row
+			+col({
+				cols: [0,0,3,3],
+				gap: 0,
+			})
+				//- Args: title, text
+				+vinhIcon03({
+					modifier: 'style05',
+					color: $color-secondary,
+				})
+			+col({
+				cols: [0,0,3,3],
+				gap: 0,
+			})
+				//- Args: title, text
+				+vinhIcon03({
+					modifier: 'style05'
+				})
+			+col({
+				cols: [0,0,3,3],
+				gap: 0,
+			})
+				//- Args: title, text
+				+vinhIcon03({
+					modifier: 'style05'
+				})
+			+col({
+				cols: [0,0,3,3],
+				gap: 0,
+			})
+				//- Args: title, text
+				+vinhIcon03({
+					modifier: 'style05'
+				})

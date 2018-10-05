@@ -1,0 +1,13 @@
+//- demo: true
+mixin long_text-box-small-2(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		-
+			let args = item;
+			let icon = args.icon || random(random.fontawesome);
+			let iconColor = args.iconColor;
+		
+		span(class=css.icon, class=iconColor): i(class=icon)
+
+		span(class=css.text)!= args.text || random(random.text, 100)

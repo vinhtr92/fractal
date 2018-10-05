@@ -1,0 +1,115 @@
+/* //--- widget-post
+--------------------------------------------------------------------------------*/
+
+:global {
+	// item
+	.widget-post-item {
+		margin-bottom: 14px;
+		overflow: hidden;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	// widget-post-item__media
+	.widget-post-item__media {
+		float: left;
+		width: 66px;
+		border-radius: 3px;
+		&:after {
+			content: '';
+			display: block;
+			padding-top: 100%;
+		}
+		img {
+			display: none;
+		}
+	}
+
+	// widget-post-item__body
+	.widget-post-item__body {
+		overflow: hidden;
+		padding-left: 14px;
+	}
+
+	// widget-post-item__title
+	.widget-post-item__title {
+		margin-top: 5px;
+		margin-bottom: 0px;
+		font-size: 14px;
+	}
+
+	// widget-post-item__meta
+	.widget-post-item__meta {
+		font-family: $font-tertiary;
+		font-style: italic;
+		font-size: 12px;
+	}
+
+	// widget-post-item__list
+	.widget-post-item__list {
+		.widget-post-item__media {
+			float: left;
+			@include size(80px);
+			overflow: hidden;
+			img {
+				width: 100%;
+			}
+		}
+		.widget-post-item__body {
+			overflow: hidden;
+		}
+		.widget-post-item__title {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+
+	.widget-post--popular {
+		.widget-post-item {
+			counter-increment: counter;
+			.widget-post-item__media {
+				position: relative;
+				border-radius: 50%;
+				width: 52px;
+				&:before {
+					content: counter(counter);
+					position: absolute;
+					top: 0;
+					right: -4px;
+					@include size(26px);
+					text-align: center;
+					font-size: 12px;
+					font-weight: $font-bold;
+					font-family: $font-secondary;
+					color: $color-light;
+					background-color: $color-dark;
+					border-radius: 50%;
+				}
+			}
+			@for $i from 1 through 9 {
+				&:nth-child(#{ $i }) {
+					.widget-post-item__media {
+						&:before {
+							content: '0'counter(counter);
+						}
+					}
+				}
+			}
+			&:nth-child(2) {
+				.widget-post-item__media {
+					&:before {
+						background-color: $color-secondary;
+					}
+				}
+			}
+			&:nth-child(3) {
+				.widget-post-item__media {
+					&:before {
+						background-color: $color-tertiary;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+/* //--- vinhSocial
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	a {
+		font-size: 14px;
+		padding: 0 13px;
+		display: inline-block;
+
+		&:hover {
+			color: #90b1df;
+		}
+	}
+	
+	ul {
+		margin: 0 ;
+		padding: 0;
+	}
+
+	li {
+		list-style: none;
+		float: left;
+	}
+}

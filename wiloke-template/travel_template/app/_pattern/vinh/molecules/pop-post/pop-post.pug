@@ -1,0 +1,62 @@
+//- demo: true
+mixin long_pop-post(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		-
+			let args = item;
+			let img = args.img || `img/place/${ random(1, 31) }.jpg`;
+			let country = args.country || random(random.country);
+		
+		div(class=css.first)
+			//- Args: img, link
+			+imageCover({
+				img: img,
+				link: '#',
+				classImg: css.img,
+				addClass: css.imgCover
+			})
+			div.wil-overlay
+			include cssmodule
+			div(class=css.metaGroup)
+				div(class=css.meta)
+					//- Args: icon, iconColor, text
+					+long_text-box-small({
+						icon: 'pe-7s-date',
+						iconColor: 'color-tertiary',
+						text: 'July 12, 2016',
+						modifier: 'light',
+						addClass: css.metaItem
+					})
+					include cssmodule
+					//- Args: icon, iconColor, text
+					+long_text-box-small({
+						icon: 'pe-7s-look',
+						iconColor: 'color-secondary',
+						text: '2230',
+						modifier: 'light',
+						addClass: css.metaItem
+					})
+					include cssmodule
+					//- Args: icon, iconColor, text
+					+long_text-box-small({
+						icon: 'pe-7s-comment',
+						iconColor: 'color-primary',
+						text: '102',
+						modifier: 'light',
+						addClass: css.metaItem
+					})
+				include cssmodule
+				div(class=css.share)
+					//- Args: icon, iconColor, text
+					+long_text-box-small({
+						icon: 'pe-7s-share',
+						text: 'Share',
+						iconColor: 'color-quaternary',
+						classText: css.metaText,
+						modifier: ['reverse', 'light']
+					})
+		
+		include cssmodule
+		h2(class=css.title)
+			a(href="#")= args.title || random(random.title)

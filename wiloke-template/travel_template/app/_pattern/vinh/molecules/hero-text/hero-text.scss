@@ -1,0 +1,52 @@
+/* //--- longHeroText
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	text-align: right;
+	@include pfs('padding-right', (
+		400px: 0px,
+		1200px: 100px
+	));
+	:global(.wil-btn) {
+		padding-left: 30px;
+		padding-right: 30px;
+		@include pfs('margin-left', (
+			400px: 0px,
+			1200px: 220px
+		));
+	}
+}
+
+// wrap
+.wrap {
+	display: inline-block;
+	text-align: left;
+	max-width: 780px;
+}
+
+// title
+.title {
+	composes: text-gradient-1 from global;
+	margin: 0;
+	margin-bottom: 15px;
+	@include pfs('font-size', (
+		400px: 40px,
+		1200px: 140px
+	))
+}
+
+// text
+.text {
+	font-size: 16px;
+	font-family: $font-secondary;
+	text-transform: uppercase;
+	font-weight: $font-semibold;
+	color: $color-dark;
+	letter-spacing: 0.1em;
+	margin-bottom: 34px;
+	@include pfs('margin-left', (
+		400px: 0px,
+		1200px: 160px
+	));
+}

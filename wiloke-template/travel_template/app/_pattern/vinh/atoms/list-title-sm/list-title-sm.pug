@@ -1,0 +1,18 @@
+//- demo: true
+mixin long_list-title-sm(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		ul(class=css.list)
+			li(class=css.listItem)
+				a(href="#")= random(random.country)
+				ul(class=css.list)
+					li(class=css.listItem): a(href="#")= random(random.country)
+
+		if (args.forSingle)
+			h1(class=css.title)= args.title || random(random.title)
+		else
+			h2(class=css.title)
+				a(href="blog-single.html")= args.title || random(random.title)

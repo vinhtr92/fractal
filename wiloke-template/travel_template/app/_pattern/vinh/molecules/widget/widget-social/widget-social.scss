@@ -1,0 +1,15 @@
+/* //--- widget-social
+--------------------------------------------------------------------------------*/
+
+:global {
+	.widget-social {
+		font-family: $font-tertiary;
+		font-style: italic;
+	}
+}
+// social
+.social {
+	a {
+		margin: 2px;
+	}
+}

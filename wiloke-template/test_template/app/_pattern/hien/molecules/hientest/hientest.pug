@@ -1,0 +1,8 @@
+//- demo: true
+mixin hien_hientest(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		div(class=css.text)= args.text || random(random.text, 300)

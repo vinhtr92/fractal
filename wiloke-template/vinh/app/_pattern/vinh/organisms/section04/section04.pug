@@ -1,0 +1,62 @@
+//- demo: true
+mixin vinhSection04(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		+section({
+			container: true,
+		})
+
+			+row({
+
+			})
+
+				+col({
+					cols: [0,0,4,4],
+					gap: 30
+				})
+
+					+vinhIcon({
+						modifier: 'style03'
+					})
+
+					+vinhIcon({
+						modifier: 'style03'
+					})
+
+					+vinhIcon({
+						modifier: 'style03'
+					})
+
+
+				+col({
+					cols: [0,0,4,4],
+					gap: 30,
+					css: {
+						'text-align': 'center',
+					}
+				})
+					img(src="img/phone01.png", alt="iphone")
+
+				
+				+col({
+					cols: [0,0,4,4],
+					gap: 30
+				})
+					+vinhIcon({
+						modifier: 'style04'
+					})
+
+					+vinhIcon({
+						modifier: 'style04'
+					})
+
+					+vinhIcon({
+						modifier: 'style04'
+					})
+
+
+	include cssmodule

@@ -1,0 +1,54 @@
+//- demo: true
+mixin vinhSection11(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		+section({
+			container: true,
+		})
+			+vinhHeader({
+				title: 'A wonderful serenity has taken possession',
+				css: ({
+					'max-width' : '650px',
+					'margin': '0 auto',
+				})
+			})
+			div(style="text-align:center")
+				img(src="img/tablet.png", alt="")
+
+			+row({
+				css: ({
+					'margin-top': '60px',
+				})
+			})
+				+col({
+					cols: [0,0,6,6],
+					gap: 30,
+				})
+
+					+vinhIcon({
+						modifier: 'style09',
+						css: ({
+							'margin-left':'40px'
+						})
+					})
+
+				+col({
+					cols: [0,0,6,6],
+					gap: 30,
+
+				})
+
+					+vinhIcon({
+						modifier: 'style09',
+						css: ({
+							'margin-left':'40px'
+						})
+					})
+		
+		
+		
+	include cssmodule

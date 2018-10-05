@@ -1,0 +1,24 @@
+//- demo: true
+mixin widget-contact(args)
+	+module('div', 'widget-contact', args)
+		- let args = item
+		
+
+		//- Args: icon, iconColor, text
+		+long_text-box-small-2({
+			icon: 'fa fa-phone',
+			text: '+<a href="#">84123456789</a> or <a href="#">+84987654321</a>',
+			addClass: 'mb-15'
+		})
+		//- Args: icon, iconColor, text
+		+long_text-box-small-2({
+			icon: 'fa fa-map-marker',
+			text: '<a href="#">121 King Street, Melbourne Victoria  3000 Australia</a>',
+			addClass: 'mb-15'
+		})
+		//- Args: icon, iconColor, text
+		+long_text-box-small-2({
+			icon: 'fa fa-envelope',
+			text: '<a href="#">Wiloke@gmail.com</a>',
+			addClass: 'mb-15'
+		})

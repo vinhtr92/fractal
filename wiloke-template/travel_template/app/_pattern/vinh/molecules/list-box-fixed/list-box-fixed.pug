@@ -1,0 +1,29 @@
+//- demo: true
+mixin longListBoxFixed(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		-
+			let args = item
+			let listArr = [
+				{
+					text: 'Destination guide',
+					title: 'Vietnamese travel'
+				},
+				{
+					text: 'Mexico',
+					title: 'Hippocampus Sea Services'
+				},
+				{
+					text: 'Destination guide',
+					title: 'Hippocampus Sea Services'
+				},
+			]
+		
+		ul(class=css.list)
+			each list, index in listArr
+				li(class=css.listItem)
+					a(href="#")
+						div(class=css.text)= list.text
+						h2(class=css.title)= list.title
+

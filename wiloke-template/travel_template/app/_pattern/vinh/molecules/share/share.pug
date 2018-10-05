@@ -1,0 +1,24 @@
+//- demo: true
+mixin long_share(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		-
+			let args = item
+			args.scrollTop = true
+		
+		h3(class=css.shareTitle) Share
+		//- Args: icon
+		+long_social({
+			loop: {
+				data: [
+					{icon: 'fa fa-facebook'},
+					{icon: 'fa fa-twitter'},
+					{icon: 'fa fa-google-plus'}
+				]
+			},
+			modifier: 'style3'
+		})
+		include cssmodule
+		if (args.modifier !== 'center')
+			a(class=css.scrollTop, href="#") #[i.pe-7s-upload]Top

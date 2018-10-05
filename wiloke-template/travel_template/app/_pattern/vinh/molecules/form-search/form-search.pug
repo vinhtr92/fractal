@@ -1,0 +1,22 @@
+//- demo: true
+mixin longFormSearch(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		div(class=css.textWrap)
+			if (args.modifier !== 'style2')
+				h2(class=css.title)= args.title || 'Fractal'
+			div(class=css.text)= args.text || (args.modifier !== 'style2' ? 'Travel better with cheaper price and longer.' : 'Get the info you need to save money on your next trip')
+		form
+			div(class=css.item)
+				input(type="search", id="search", placeholder="Destinations...")
+				label(for="search")= args.label || 'Where do you want to travel?'
+			div(class=css.action)
+				+wil-btn('button', {
+					type: 'submit',
+					text: '<i class="pe-7s-search"></i> Search now',
+					modifier: ['primary', 'lg', 'round']
+				})
+				include cssmodule

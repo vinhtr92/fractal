@@ -1,0 +1,24 @@
+/* //--- testTestcomponent
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	border: 1px solid red;
+}
+
+// title
+.title {
+	font-size: 30px;
+	color: $color-primary;
+}
+
+// text
+.text {
+	color: $color-secondary;
+	font-size: 15px;
+}
+
+// modifier bgGray
+.bgGray {
+	background-color: #eee;
+}

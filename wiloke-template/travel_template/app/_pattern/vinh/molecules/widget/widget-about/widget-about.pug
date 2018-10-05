@@ -1,0 +1,16 @@
+//- demo: true
+mixin widget-about(args)
+	+module('div', 'widget-about', args)
+		- var args = item
+		- var background = args.background != null ? `background-image: url('${ set(args, 'background') }')` : null
+		a.widget-about__header.bg-cover(style=background, href="#")
+			div.wil-overlay.bg-primary
+			div.widget-about__headerInfo
+				div.widget-about__avatar.bg-cover(style=`background-image: url('${ set(args, 'img', random(random.people.avatar)) }')`)
+					img(src=set(args, 'img', random(random.people.avatar)), alt="")
+				h4.widget-about__name= set(args, 'name', random(random.people.name))
+				span.widget-about__meta!= set(args, 'meta', random(random.work))
+		div.widget-about__body
+			p= set(args, 'text', random(random.text, 200))
+			if ( args.signature != null )
+				div.widget-about__signature: img(src=set(args, 'signature'), alt="")

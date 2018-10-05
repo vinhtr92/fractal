@@ -1,0 +1,19 @@
+//- demo: true
+mixin vinhSideMenu(args)
+	include cssmodule
+	include data
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		+menu('.sideMenu',{
+			menuClass: 'sideMenu__nav',
+			data: sideMenu,
+			submenu: {
+				class: 'sub-menu',
+				parentClass: 'menu-item-has-children'
+			}
+		})
+
+	include cssmodule

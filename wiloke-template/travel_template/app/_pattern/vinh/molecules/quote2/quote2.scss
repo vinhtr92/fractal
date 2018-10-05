@@ -1,0 +1,52 @@
+/* //--- long_quote2
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	overflow: hidden;
+}
+
+// quote
+.quote {
+	margin: 0;
+	font-style: normal;
+	border-left: 15px solid $color-dark;
+	&:before {
+		display: none;
+	}
+	P {
+		position: relative;
+		background-color: $color-dark;
+		color: $color-light;
+		display: inline;
+		line-height: 1.7em;
+		padding: 10px 0;
+		margin-bottom: 0;
+		@include pfs('font-size', (
+			400px: 20px,
+			1200px: 30px
+		));
+	}
+}
+
+// footer
+.footer {
+	margin-top: 15px;
+}
+
+// modifier style2
+.style2 {
+	text-align: center;
+	.quote {
+		font-style: italic;
+		border: 0;
+	}
+	p {
+		background: none;
+		display: block;
+	}
+	.footer {
+		display: inline-block;
+		text-align: left;
+	}
+}

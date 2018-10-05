@@ -1,0 +1,69 @@
+/* //--- long_canvas-textbox
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	position: relative;
+	z-index: 9;
+	padding-top: 200px;
+	padding-bottom: 60px;
+}
+
+// content
+.content {
+	text-align: center;
+	max-width: 770px;
+	padding: 0 15px;
+	margin: auto;
+	color: $color-light;
+}
+
+// title
+.title {
+	margin: 0;
+	margin-bottom: 10px;
+	color: inherit;
+	@include pfs('font-size', (
+		400px: 22px,
+		1200px: 40px
+	));
+}
+
+// text
+.text {
+	margin-bottom: 30px;
+	@include media('>=sm') {
+		font-size: 15px;
+	}
+}
+
+// btn
+.btn {
+	@include media('>=xs') {
+		display: inline-block;
+	}
+
+	a {
+		margin: 8px;
+		min-width: 195px;
+		@include media('<xs') {
+			display: block;
+			width: 100%;
+			margin: 8px 0;
+		}
+	}
+}
+
+// canvas
+.canvas {
+	position: absolute;
+	width: 100%;
+	height: 110%;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+	canvas {
+		width: 100% !important;;
+		height: 100% !important;
+	}
+}

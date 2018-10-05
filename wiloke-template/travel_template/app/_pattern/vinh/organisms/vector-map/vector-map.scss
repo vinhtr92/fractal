@@ -1,0 +1,48 @@
+/* //--- long_vector-map
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	background-color: $color-gray-3;
+	padding: 20px;
+}
+
+// map
+.map {
+	height: 70vh;
+}
+
+// nav
+.nav {
+	float: left;
+	margin-right: 30px;
+	@include media('<md') {
+		display: none;
+	}
+}
+
+:global {
+	.jqvmap-zoomin {
+		position: absolute;
+		@include size(35px);
+		border-radius: 50%;
+		top: 0;
+		text-align: center;
+		font-size: 20px;
+		padding: 0;
+		cursor: pointer;
+		color: $color-dark;
+		background-color: $color-gray-3;
+		border: 1px solid $color-gray-1;
+		transition: all 0.3s ease;
+		&:hover {
+			background-color: $color-primary;
+			border-color: $color-primary;
+			color: $color-light;
+		}
+	}
+	.jqvmap-zoomout {
+		@extend .jqvmap-zoomin;
+		top: 45px;
+	}
+}

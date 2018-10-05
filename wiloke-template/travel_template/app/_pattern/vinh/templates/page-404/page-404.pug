@@ -1,0 +1,17 @@
+//- demo: true
+mixin longPage404(args)
+	include cssmodule
+
+	+module('section', css.module, args)
+		- let args = item
+		
+		div.wil-tb
+			div.wil-tb__cell
+				div(class=css.itemGroup)
+					span(class=css.item) 4
+					span(class=css.item): span(style=`background-image: url('${ args.img || 'img/place/5.jpg' }')`)
+					span(class=css.item) 4
+
+				div(class=css.footer)
+					h2(class=css.title)!= args.title || 'Page Not Found'
+					div(class=css.text)!= args.text || `We were not able to find what you're a looking for try <a href="#" class="color-primary">fractal.com</a>`
