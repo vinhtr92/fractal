@@ -1,0 +1,74 @@
+//- demo: true
+mixin vinhBox(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		include cssmodule
+		div(class=css.img)
+			div(class=css.tag)
+				+vinhTextboxSmall({
+						loop: {
+							data: [
+								{
+									text: random(random.continental),
+									modifier: 'singleText',
+									textClass: 'bgcolor-secondary rounded-5'
+								},
+							],
+						}
+					})
+				include cssmodule
+			img(src= set(args,'box-image','https://picsum.photos/600/600/?random'))
+			div(class=css.social id='md-social')
+				+vinhSocial({
+					loop: {
+							data: [
+								{
+									icon: 'la la-facebook',
+									social: 'https://www.facebook.com/',
+
+								},
+								{icon: 'la la-twitter'},
+								{icon: 'la la-google-plus'},
+								{icon: 'la la-pinterest'},
+							]
+						},
+					modifier: 'style02'
+				})
+				include cssmodule
+		div(class=css.content)
+			div(class=css.desc)
+				h4(class=css.title)= set(args,'title',random(random.title))
+				div(class=css.meta)
+					+vinhTextboxSmall({
+						loop: {
+							data: [
+								{
+									icon: 'la la-eye',
+									text: '120 view'
+								},
+								{
+									icon: 'la la-comment-o',
+									text: '03 comment'
+								}
+							],
+						}
+					})
+					include cssmodule
+
+				
+			div(class=css.share)
+				+vinhTextboxSmall({
+					loop: {
+						data: [
+							{
+								icon: 'pe-7s-share',
+								modifier: 'singleIcon',
+							}
+						],
+					}
+				})
+				include cssmodule

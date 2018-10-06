@@ -12,10 +12,10 @@ var templateConfig = {
 		'pe-icon',
 		// 'elegant-font',
 		// 'linea',
-		// 'line-awesome'
+		'line-awesome'
 	],
 
-	googleFont: 'https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900|Open+Sans:300,400|Lora:300,400,400italic',
+	googleFont: 'https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900|Open+Sans:300,400|Roboto:300,400,400italic|Poppins:400,500,600,700',
 
 
 	// build config

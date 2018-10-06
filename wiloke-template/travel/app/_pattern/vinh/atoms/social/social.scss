@@ -1,0 +1,45 @@
+/* //--- vinhSocial
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	display: inline-block;
+	border-radius: 50%;
+	:global {
+			.fa,.la {
+			display: inline-block;
+			@include size(40px);
+			font-size: 18px;
+			line-height: 40px;
+			color: $color-light;
+			text-align: center;
+			border-radius: 50%;
+		}
+	}
+}
+
+.module:hover {
+	a {
+		text-decoration: none;
+	}
+}
+
+// modifier style02
+.style02 {
+	background-color: rgba($color-light, 0.3);
+	transition: .3s all;
+
+	margin: 6px;
+	:global{
+
+		.la {
+			@include size(38px);
+			transition: .3s all;
+		}
+	}
+
+	&:hover i {
+		background-color: $color-primary;
+		transition: all 0.3s ease;
+	}
+}

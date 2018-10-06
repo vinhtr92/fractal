@@ -1,0 +1,12 @@
+//- demo: true
+mixin vinhSectitle(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		h2(class=css.title)= args.secTitle || 'lorem ipsum dolor'
+		div(class=css.desc)= args.titleDesc  || 'lorem picsum dolor sit amte lorem'
+		
+	include cssmodule

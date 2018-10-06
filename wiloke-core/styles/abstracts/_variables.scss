@@ -1,32 +1,37 @@
 // Fonts
-$font-primary: 'Open sans', sans-serif !default;
-$font-secondary: 'Montserrat', sans-serif !default;
-$font-tertiary: 'Lekton', sans-serif !default;
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Poppins', sans-serif;
+$font-tertiary: 'Montserrat', sans-serif;
 
 // Font awesome
 $font-awesome: 'FontAwesome' !default;
 
 // Font weight
-$font-light: 300 !default;
-$font-normal: 400 !default;
-$font-bold: 700 !default;
+$font-light: 300;
+$font-normal: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+$font-black: 900;
 
 // Color
-$color-primary: #426efc !default;
-$color-secondary: #ff7171 !default;
-$color-tertiary: #55df6f !default;
-$color-dark: #121113 !default;
-$color-light: #fff !default;
-$color-light-2: #e5e5e5 !default;
-$color-gray-1: #e5e5e5 !default;
-$color-gray-2: #949494 !default;
-$color-gray-3: #646464 !default;
-
-$color-success: #5cb85c !default;
-$color-warning: #f0ad4e !default;
-$color-danger: #ff7171 !default;
-$color-info: #5bc0de !default;
-
+$color-primary: #37e584;
+$color-secondary: #55df6f;
+$color-tertiary: #ff7171;
+$color-quaternary: #c763f5;
+$color-dark: #1b1b1d;
+$color-dark-1: #2c2c2c;
+$color-dark-2: #848484;
+$color-dark-3: #9a9a9a;
+$color-dark-4: #9ea6ba;
+$color-gray-1: #d7d7d7;
+$color-gray-2: #e4e4e4;
+$color-gray-3: #f4f4f4;
+$color-gray-4: #fbfbfc;
+$color-gray-5: #8e9198;
+$color-gray-6:  #acb0bd;
+$color-gray-7: #858891;
+$color-light: #fff;
 // cubic berzier
 $cubic-1: cubic-bezier(0.77, 0, 0.175, 1);
 $cubic-2: cubic-bezier(0.85, 0, 0.15, 1);
@@ -59,3 +64,21 @@ $social: (
 	'heart': #4bd1fa,
 	'github': #24292e
 );
+
+$colors: (
+	 'primary': #37e584,
+	 'secondary': #1478ff,
+	 'tertiary': #ff7171,
+	 'quaternary': #c763f5,
+);
+
+$radius: (
+	'5': 5px,
+	'10': 10px,
+	'15': 15px,
+	'20': 20px,
+	'25': 25px,
+);
+
+//box-shadow
+$shadow-style01 : 0px 12px 30px 0px rgba(27, 27, 29, 0.08)

@@ -35,6 +35,10 @@
     @content;
 }
 
+@mixin bd-radius($radius){
+	border-radius: $radius;
+}
+
 @mixin placeholder {
 	$placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
 	@each $placeholder in $placeholders {

@@ -1,0 +1,28 @@
+/* //--- vinhSectitle
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	
+}
+
+// title
+.title {
+	margin: 0;
+	font-size: 26px;
+	text-transform: capitalize;
+	line-height: 1;
+}
+
+// desc
+.desc {
+	font-size: 15px;
+}
+
+// modifier style02
+.style02 {
+	.title {
+		font-size: 36px;
+		margin-bottom: 5px;
+	}
+}

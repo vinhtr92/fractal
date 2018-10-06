@@ -1,0 +1,183 @@
+/* //--- vinhBox
+--------------------------------------------------------------------------------*/
+
+$defaultOpt: (
+	loop: 10
+);
+@mixin socialAnimation($classes, $opts: $defaultOpt) {
+	#{$classes} {
+		$loop: map-get($opts, 'loop');
+		@for $i from 0 through $loop {
+			&:nth-child(#{$i}) {
+				transition-delay: $i * 0.1s;
+			}
+		}
+	}
+}
+
+// module
+.module {
+	overflow: hidden;
+	position: relative;
+	@include clearfix;
+	box-shadow:$shadow-style01;
+
+	&:global(.active) {
+		.social {
+			> span {
+				opacity: 1;
+				visibility: visible;
+				transform: translate(0, 0);
+			}
+		}
+
+		.share  {
+			a {
+				color: $color-primary;
+			}
+		}
+
+		.img {
+			img {
+				filter: blur(2px)  ;
+				transition: all .3s ease;
+			}
+		}
+	}
+
+	a:hover,
+	a:visited,
+	a:hover,
+	a:active {
+		text-decoration: none !important;
+	}
+}
+
+// img
+.img {
+	position: relative;
+	overflow: hidden;
+
+	img {
+		width: 100%;
+		transform: scale(1.02);
+		transition: all .3s ease;
+	}
+}
+
+// tag
+.tag {
+	line-height: 1;
+	span > span {
+		padding: 7px;
+		color:  rgba($color: $color-light, $alpha: 0.8);
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		z-index: 10;
+	}
+}
+// social
+.social {
+	@include absAlign;
+	position: absolute;
+	text-align: center;
+
+	> span {
+		opacity: 0;
+		visibility: hidden;
+		transform: translate(0, 20px);
+		transition: all 0.2s cubic-bezier(.4,.8,.58,1.29);
+	}
+	@include socialAnimation('span');
+}
+
+// content
+.content {
+	background-color: $color-light;
+	padding: 20px;
+	position: relative;
+	@include clearfix;
+}
+
+// text
+.text {
+	
+}
+
+// desc
+.desc {
+	
+}
+
+// title
+.title {
+	margin: 5px 0;
+	font-size: 14px;
+	text-transform: capitalize;
+	line-height: 1;
+}
+
+// view
+.view {
+}
+
+// comment
+.comment {
+	
+}
+
+.view,
+.comment {
+
+	a {
+	color: $color-primary !important;
+
+	}
+}
+
+// share
+.share {
+	@include clearfix;
+	color: $color-gray-1;
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	a {
+		color: $color-gray-6;
+		font-size: 25px;
+		line-height: 1;
+		transition: .3s color;
+		text-decoration: none;
+	}
+
+	:global(.active){
+		color: $color-primary;
+		transition: .3s color;
+	}
+}
+
+// meta
+.meta {
+	float: left;
+	@include clearfix;
+	font-size: 12px;
+
+	i {
+		color: $color-primary;
+		margin-right: 5px;
+		font-size: 16px;
+	}
+
+	> span {
+		margin-right: 15px;
+		color: $color-gray-7 !important;
+	}
+}
+
+@each $name,$value in $colors {
+	:global(.bgcolor-#{$name}) {
+		background-color: $value;
+	}
+}
+
