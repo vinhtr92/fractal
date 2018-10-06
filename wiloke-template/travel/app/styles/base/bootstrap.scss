@@ -1,26 +1,4 @@
 :global {
-	@include media('<sm') {
-		.container {
-			padding-left: 10px;
-			padding-right: 10px;
-		}
-		.row {
-			margin-left: -10px;
-			margin-right: -10px;
-		}
-		[class*="col-"] {
-			padding-left: 10px;
-			padding-right: 10px;
-		}
-	}
-	@media (min-width: 1660px) {
-		.container {
-			width: 1600px;
-		}
-		.page-1170 .wil-content .container {
-			width: 1170px;
-		}
-	}
 
 	.equal-height {
 		display: flex;
