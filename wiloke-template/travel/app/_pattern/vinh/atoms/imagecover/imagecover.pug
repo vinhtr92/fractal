@@ -1,0 +1,21 @@
+//- demo: true
+mixin vinhImagecover(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		- let imgsrc = 'https://picsum.photos/650/650/?random'
+		//- code
+		if (args.link)
+			a(href=args.link)
+				div(class=css.img, class=args.classImg style=`background-image: url('${ set(args, 'img', imgsrc) }')`)
+					img(src=set(args, 'img', imgsrc) , alt="")
+					if block
+						block
+		else
+			div(class=css.img, class=args.classImg, style=`background-image: url('${ set(args, 'img', imgsrc) }')`)
+				img(src=set(args, 'img', imgsrc) , alt="")
+				if block
+					block
+	include cssmodule
+

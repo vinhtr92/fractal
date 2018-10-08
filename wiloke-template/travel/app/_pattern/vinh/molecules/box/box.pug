@@ -15,8 +15,7 @@ mixin vinhBox(args)
 							data: [
 								{
 									text: random(random.continental),
-									modifier: 'singleText',
-									textClass: 'bgcolor-secondary rounded-5'
+									modifier: 'tag',
 								},
 							],
 						}
@@ -39,7 +38,7 @@ mixin vinhBox(args)
 						},
 					modifier: 'style02'
 				})
-				include cssmodule
+				include cssmodule 
 		div(class=css.content)
 			div(class=css.desc)
 				h4(class=css.title)= set(args,'title',random(random.title))

@@ -1,0 +1,114 @@
+/* //--- vinhBox2
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	position: relative;
+	overflow: hidden;
+}
+
+.module:hover {
+	.meta {
+		opacity: 1;
+		transition: all .3s ease;
+	}
+
+	.title {
+		color: $color-primary;
+		transition: all .3s ease;
+	}
+
+	.icon {
+		opacity: 1;
+		transition: all .3s ease;
+	}
+
+
+}
+
+// meta
+.meta {
+	position: absolute;
+	top: 9px;
+	right: 9px;
+	line-height: 1;
+	opacity: 0;
+	transition: all .3s ease;
+
+
+	:global(.md-meta) {
+		padding: 5px;
+		line-height: 1;
+		background-color: rgba(27, 27, 29, 0.3);
+		margin-left: 10px;
+		border-radius: 5px;
+		font-size: 12px;
+
+		> span {
+		}
+
+		i {
+			margin-right: 3px;
+			color: $color-primary;
+			font-size: 16px;
+		}
+	}
+}
+
+// content
+.content {
+	position: absolute;
+	bottom: 16px;
+	left: 16px;
+	right: 16px;
+}
+
+// header
+.header {
+	float: left;
+	@include clearfix;
+}
+
+// tag
+.tag {
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: $font-light;
+}
+
+.tag,
+.title {
+	margin: 0;
+	color: $color-light;
+}
+
+// title
+.title {
+	margin: 0;
+	font-size: 14px;
+	text-transform: capitalize;
+	line-height: 1.4;
+	transition: all .3s ease;
+
+}
+
+// icon
+.icon {
+	float: right;
+	@include clearfix;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-size: 30px;
+	line-height: 1;
+	color: $color-light;
+	opacity: 0;
+	transition: all .3s ease;
+}
+
+// img
+.img {
+	img {
+		width: 100%;
+	}
+}
