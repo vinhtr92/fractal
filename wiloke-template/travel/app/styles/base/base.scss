@@ -1,7 +1,4 @@
-:global(.overlay){
-	position: relative;
-	&::before {
-		@include absFull(2);
-		background-color: rgba(89, 93, 103, 0.5)
-	} 
+:global {
 }
+
+

@@ -1,0 +1,68 @@
+/* //--- vinhBox3
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	position: relative;
+	text-align: center;
+}
+
+.module:hover {
+	.title {
+		color: $color-primary;
+		transition: all .3s ease;
+	}
+}
+
+// bg
+@include boxEffect('.bg', (
+    parent: '.module',
+    duration: 300,
+    easing: 'ease',
+    boxEffectSize: 30,
+    boxBackgroundColor: '#fff',
+    boxEffectBackgroundColor: '#e2e2e5' 
+));
+.bg {
+	@include absFull(0);
+}
+
+// counter
+.counter {
+	font-family:  $font-quarter;
+	font-size: 60px;
+	font-weight: normal;
+	line-height: 1;
+	position: relative;
+	z-index: 1;
+
+	padding: 40px 0 5px 0;
+
+	@include setBackgroundGradient($color-primary, $color-primary-hover);
+}
+
+// title
+.title {
+	font-size: 18px;
+	margin: 0;
+	text-transform: capitalize;
+	transition: all .3s ease;
+
+}
+
+// desc
+.desc {
+	color: $color-gray-5;
+	font-size: 15px;
+	line-height: 1.5;
+}
+
+// content
+.content {
+	// @include absAlign;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+	padding: 20px 0 30px;
+}
+

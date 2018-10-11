@@ -26,3 +26,132 @@
 	-webkit-text-fill-color: transparent;
 	color: $color1;
 }
+
+
+
+
+
+@function boxEffectConstructor($opt) {
+    $defaultOpt: (
+        parent: '.test',
+        duration: 300,
+        easing: 'ease',
+        boxEffectSize: 30,
+        boxBackgroundColor: '#fff',
+        boxEffectBackgroundColor: 'blue'
+    );
+    @return map-merge($defaultOpt, $opt);
+}
+
+@function boxEffectFixed($unit: "") {
+    $number: 2;
+    @return if($unit == "", $number, $number + unquote($unit));
+}
+
+@mixin hideAllChildNotFirst() {
+    &:not(:first-child) {
+        display: none !important;
+    }
+}
+
+@mixin boxInnerStyle($opts) {
+    $boxBackgroundColor: unquote(map-get($opts, 'boxBackgroundColor'));
+    $boxEffectSize: map-get($opts, 'boxEffectSize') / 2;
+    $duration: map-get($opts, 'duration');
+    $easing: unquote(map-get($opts, 'easing'));
+    &:first-child {
+        position: relative;
+        display: block;
+        top: -$boxEffectSize * 1px;
+        width: calc(100% + #{$boxEffectSize} * 1px);
+        height: calc(100% + #{$boxEffectSize} * 1px);
+        background-color: $boxBackgroundColor;
+        transition: all $duration * 1ms $easing;
+        &:before {
+            content: "";
+            position: absolute;
+            top: boxEffectFixed("px");
+            right: 0;
+            width: 100%;
+            height: 0;
+            border: ($boxEffectSize + boxEffectFixed()) * 1px solid transparent;
+            border-left-color: $boxBackgroundColor;
+            border-bottom-color: $boxBackgroundColor;
+            transform: translate(0, -100%);
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: boxEffectFixed("px");
+            height: 100%;
+            width: 0;
+            border: ($boxEffectSize + boxEffectFixed()) * 1px solid transparent;
+            border-left-color: $boxBackgroundColor;
+            border-bottom-color: $boxBackgroundColor;
+            transform: translate(100%, 0);
+        }
+    }
+}
+
+@mixin boxStyle($el, $opts) {
+    $boxBackgroundColor: unquote(map-get($opts, 'boxBackgroundColor'));
+    $boxEffectBackgroundColor: unquote(map-get($opts, 'boxEffectBackgroundColor'));
+    $boxEffectSize: map-get($opts, 'boxEffectSize') / 2;
+    $duration: map-get($opts, 'duration');
+    $easing: unquote(map-get($opts, 'easing'));
+    #{$el} {
+        position: relative;
+        overflow: hidden;
+        &:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 0;
+            right: 0;
+            border: $boxEffectSize * 1px solid transparent;
+            border-left-color: $boxEffectBackgroundColor;
+            border-bottom-color: $boxEffectBackgroundColor;
+            transform: translate($boxEffectSize * 2px, -$boxEffectSize * 2px);
+            transition: all $duration * 1ms $easing;
+        }
+        * {
+            @include hideAllChildNotFirst();
+            @include boxInnerStyle($opts);
+        }
+    }
+}
+
+@mixin parentHover($el, $opts) {
+    $parent: map-get($opts, 'parent');
+    $boxEffectSize: map-get($opts, 'boxEffectSize') / 2;
+    #{$parent} {
+        &:hover {
+            #{$el} {
+                *:first-child {
+                    transform: translate(-$boxEffectSize * 2px, $boxEffectSize * 2px);
+                }
+                &:after {
+                    transform: translate(0, 0);
+                }
+            }
+        }
+    }
+}
+
+
+@mixin boxEffect($el, $opt: ()) {
+    $opts: boxEffectConstructor($opt);
+    @include boxStyle($el, $opts);
+    @include parentHover($el, $opts);
+}
+
+
+
+
+@mixin setBackgroundGradient($from,$to) {
+	background: linear-gradient(45deg, $to 0%, $from 100%);
+	-webkit-background-clip: text !important;
+	-webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,5 @@
+@function setBackgroundGradient($from, $to) {
+	@return  linear-gradient(45deg, $to 0%, $from 100%);
+	
+
+}

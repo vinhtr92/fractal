@@ -1,0 +1,40 @@
+//- demo: true
+mixin vinhSection01(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		+section
+			+wil-grid({
+				options: {
+					style: 'creative',
+					devices: {
+						320: {
+							vertical: 30,
+							horizontal: 30,
+							column: 4,
+							items: [
+								{width: 2, height: 2},
+								{width: 1, height: 1},
+								{width: 1, height: 1},
+								{width: 1, height: 1},
+								{width: 1, height: 1},
+							]
+						}
+					}
+				}
+			})
+				+vinhBox4({
+					loop: {
+						data: [{},{},{},{}],
+						wrap: {
+							addClass: 'grid-item'
+						}
+					},
+				})
+				
+		
+		
+	include cssmodule

@@ -5,10 +5,12 @@ mixin vinhBox2(args)
 	+module('div', css.module, args)
 		- 
 			let args = item
-			let imgsrc = 'https://picsum.photos/600/600/?random'
+			let imgsrc = 'https://picsum.photos/300/450/?random'
 		
 		//- code
 		a(href= args.link || '#')
+			div(class='overlay')
+
 			div(class=css.meta)
 				+vinhTextboxSmall({
 					addClass: 'md-meta',
@@ -23,7 +25,6 @@ mixin vinhBox2(args)
 									icon: 'la la-comment-o',
 									text: '03 comment',
 									modifier: 'meta',
-
 								}
 						],
 					}
@@ -36,5 +37,5 @@ mixin vinhBox2(args)
 					h4(class=css.tag)= args.tag || random(random.country)
 					h3(class=css.title)= args.title || random(random.title)
 				div(class=css.icon)
-					i(class=set(args,'icon','fa fa-ellipsis-v'))
+					i(class= args.icon || 'la la-ellipsis-v')
 	include cssmodule

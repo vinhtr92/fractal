@@ -15,7 +15,7 @@ var templateConfig = {
 		'line-awesome'
 	],
 
-	googleFont: 'https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900|Open+Sans:300,400|Roboto:300,400,400italic|Poppins:400,500,600,700',
+	googleFont: 'https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900|Open+Sans:300,400|Roboto:300,400,400italic|Poppins:400,500,600,700|Mali:400,700',
 
 
 	// build config
@@ -29,7 +29,7 @@ var templateConfig = {
 		'imagesloaded/imagesloaded.pkgd.js',
 		// 'odometer/odometer.js',
 		// 'odometer/odometer-theme-default.css',
-		// 'masonry-layout/masonry.pkgd.js',
+		'masonry-layout/masonry.pkgd.js',
 		'isotope-layout/isotope.pkgd.js',
 		'theia-sticky-sidebar/theia-sticky-sidebar.js',
 		'swiper/swiper.js',
@@ -53,7 +53,7 @@ var templateConfig = {
 		'isMobile.js',
 		// 'carousel.js',
 		'wil-menu.js',
-		// 'wil-grid.js',
+		'wil-grid.js',
 		'embed-responsive.js',
 		// 'wow.js',
 		// 'overflowText.js',
