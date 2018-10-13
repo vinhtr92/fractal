@@ -1,0 +1,24 @@
+//- demo: true
+mixin long_nav-vertical(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+
+		//- Args: heightDefault, multiple, search, placeholder, icon
+		+long_field({
+			icon: 'pe-7s-search',
+			placeholder: 'Search map',
+			addClass: `${ css.search } mb-10`,
+		})
+
+		include cssmodule
+		
+		+menu(`.${css.navVertical}`, {
+			menuClass: 'nav-menu',
+			data: navVerticalData,
+			submenu: {
+				class: 'sub-menu',
+				parentClass: 'menu-item-has-children'
+			}
+		})

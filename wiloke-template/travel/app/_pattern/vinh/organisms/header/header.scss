@@ -1,0 +1,238 @@
+/* //--- longHeader
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	position: absolute;
+	z-index: 9999;
+	background-color: $color-light;
+	border-radius: 5px;
+	@include pfs('top, left, right', (
+		400px: 10px,
+		1200px: 30px
+	));
+	@include pfs('padding-left, padding-right', (
+		400px: 15px,
+		1200px: 50px
+	));
+	@include pfs('padding-top, padding-bottom', (
+		400px: 10px,
+		1200px: 25px
+	));
+}
+
+// logo
+.logo {
+	padding: 7px 0;
+	text-align: center;
+	@include media('>lg') {
+		border-right: 2px solid $color-gray-2;
+		margin-right: 50px;
+		padding: 7px 70px 7px 0;
+		float: left;
+	}
+	img {
+		max-width: none;
+		max-height: 39px;
+		@include media('<sm') {
+			max-height: 27px;
+		}
+	}
+}
+
+// search
+.search {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	font-family: $font-secondary;
+	font-weight: $font-medium;
+	font-size: 14px;
+	color: $color-dark;
+	@include pfs('right', (
+		400px: 15px,
+		1200px: 50px
+	));
+	@include media('<=lg') {
+		font-size: 0;
+	}
+	* {
+		vertical-align: middle;
+	}
+	i {
+		font-size: 26px;
+		font-weight: bold;
+		margin-left: 12px;
+	}
+}
+
+// fixed
+.fixed {
+	&.sticky {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		border-radius: 0;
+		border-bottom: 1px solid $color-gray-2;
+		animation: fixed 0.3s ease;
+		@include pfs('padding-top, padding-bottom', (
+			400px: 10px,
+			1200px: 15px
+		));
+
+		@keyframes fixed {
+			0% {
+				transform: translate(0, -100%);
+			}
+			100% {
+				transform: translate(0, 0);
+			}
+		}
+	}
+}
+
+:global {
+	.toggle-menu {
+		position: absolute;
+		width: 22px;
+		height: 16px;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		@include pfs('left', (
+			400px: 15px,
+			1200px: 50px
+		));
+		cursor: pointer;
+		user-select: none;
+		transition: all 0.3s ease;
+		span {
+			position: absolute;
+			left: 0;
+			margin: auto;
+			width: 100%;
+			height: 2px;
+			background-color: $color-dark;
+			transition: all 0.3s ease;
+			&:nth-child(1) {
+				top: 0;
+				transform: translate(0, 0) rotate(0);
+			}
+			&:nth-child(2) {
+				top: 0;
+				bottom: 0;
+			}
+			&:nth-child(3) {
+				bottom: 0;
+				transform: translate(0, 0) rotate(0);
+			}
+		}
+	}
+	.header-menu.active {
+		~ .toggle-menu {
+			transform: rotate(-90deg);
+			span {
+				background-color: $color-tertiary;
+				&:nth-child(1) {
+					top: 50%;
+					transform: translate(0, -50%) rotate(-45deg);
+				}
+				&:nth-child(2) {
+					display: none;
+				}
+				&:nth-child(3) {
+					bottom: 50%;
+					transform: translate(0, 50%) rotate(45deg);
+				}
+			}
+		}
+	}
+} 
+
+:global {
+	@include wilMenu('.header-nav', (
+		menuClass: 'header-menu',
+		theme: 'style2',
+		align: 'left',
+		breakpoint: 1200,
+		css: (
+			color: $color-dark,
+			font-family: $font-secondary,
+			font-size: 14px,
+			font-weight: $font-semibold,
+			padding: 15px 27px,
+			hover: (
+				color: $color-primary
+			),
+			current: (
+				color: $color-primary
+			)
+		),
+		arrow: (
+			use: 'FontAwesome',
+			icon: 'fa-angle-down'
+		),
+		subMenu: (
+			width: 200,
+			class: 'sub-menu',
+			parentClass: 'menu-item-has-children',
+			align: 'right',
+			position: 'right',
+			css: (
+				color: $color-dark,
+				font-weight: $font-medium,
+				hover: (
+					color: $color-primary
+				),
+				current: (
+					color: $color-primary
+				)
+			),
+			arrow: (
+				use: 'FontAwesome',
+				icon: 'fa-angle-right'
+			),
+			animate: (
+				time: 300,
+				easing: 'easeOutBack',
+				effect: 'slideDown'
+			)
+		),
+		menuMobile: (
+			toggleClass: 'active',
+			classButtonToggle: 'toggle-menu',
+			theme: 'style1',
+			align: 'left',
+			width: 260,
+			css: (
+				font-size: 14px,
+				color: $color-gray-3,
+				border-bottom: 1px solid rgba(#fff, 0.05),
+				hover: (
+					color: $color-gray-3
+				),
+				toggle: (
+					color: $color-primary
+				)
+			),
+			arrow: (
+				use: 'FontAwesome',
+				icon: 'fa-angle-down'
+			),
+			subMenu: (
+				css: (
+					hover: (
+						color: $color-gray-3
+					),
+					toggle: (
+						color: $color-primary
+					)
+				)
+			)
+		),
+		responsiveByJavascript: (
+			enable: false
+		)
+	));
+}

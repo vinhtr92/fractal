@@ -26,6 +26,8 @@ $defaultOpt: (
 		opacity: 0;
 		transition: all .3s ease;
 		background-color: rgba($color-gray-8,0.5);
+		position: absolute;
+		@include absFull(1);		
 	}
 
 	&:global(.active) {
@@ -44,6 +46,7 @@ $defaultOpt: (
 		}
 
 		.img {
+			padding-top: 56,57%;
 			img {
 				filter: blur(2px) ;
 				transform: scale(1.1);
@@ -54,6 +57,10 @@ $defaultOpt: (
 		:global(.wil-overlay) {
 			opacity: 1;
 			transition: all .3s ease;
+		}
+
+		.bg {
+			filter: blur(3px);
 		}
 	}
 
@@ -100,6 +107,7 @@ $defaultOpt: (
 	@include absAlign;
 	position: absolute;
 	text-align: center;
+	z-index: 2;
 
 	> span {
 		opacity: 0;
@@ -108,6 +116,17 @@ $defaultOpt: (
 		transition: all 0.2s cubic-bezier(.4,.8,.58,1.29);
 	}
 	@include socialAnimation('span');
+}
+
+// bg
+.bg {
+	padding-top: 56.57%;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+	z-index: 0;
+	transition: .3s all ease;	
+
 }
 
 // content

@@ -1,5 +1,5 @@
 function box() {
-	const css = {"module":".vinh_box__module","social":".vinh_box__social","share":".vinh_box__share","img":".vinh_box__img","tag":".vinh_box__tag","content":".vinh_box__content","text":".vinh_box__text","desc":".vinh_box__desc","title":".vinh_box__title","view":".vinh_box__view","comment":".vinh_box__comment","meta":".vinh_box__meta","":""};
+	const css = {"module":".vinh_box__module","social":".vinh_box__social","share":".vinh_box__share","img":".vinh_box__img","bg":".vinh_box__bg","tag":".vinh_box__tag","content":".vinh_box__content","text":".vinh_box__text","desc":".vinh_box__desc","title":".vinh_box__title","view":".vinh_box__view","comment":".vinh_box__comment","meta":".vinh_box__meta","":""};
 
 	const shares = Array.from(document.querySelectorAll(css.share));
 	shares.forEach(share => {

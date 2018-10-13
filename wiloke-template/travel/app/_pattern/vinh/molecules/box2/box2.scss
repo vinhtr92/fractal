@@ -5,17 +5,17 @@
 .module {
 	position: relative;
 	overflow: hidden;
-
+	border-radius: 10px;
 
 	:global(.overlay){
 		position: absolute;
 		width: 100%;
-		height: 40%;
+		height: 100%;
 		bottom: 0;
 		right: 0;
 		background: linear-gradient(0deg, rgba(#50545f,0.8) 0%, rgba(81, 81, 81, 0) 100%);
 		z-index: 10;
-		transform: translateY(100%);
+		transform: translateY(30%);
 		transition: all .3s ease;
 		// filter: blur(3px) scale(1.02);
 	}
@@ -30,7 +30,8 @@
 	.meta {
 		opacity: 1;
 		transition: all .3s ease;
-		transform: translateY(0)
+		transform: translateY(0);
+		z-index: 12;
 	}
 
 	.title {
@@ -62,6 +63,8 @@
 	opacity: 0;
 	transition: all .3s ease;
 	transform: translateY(-30px);
+	z-index: 12;
+	padding-left: 10px;
 
 
 	:global(.md-meta) {
@@ -71,6 +74,8 @@
 		margin-left: 10px;
 		border-radius: 5px;
 		font-size: 12px;
+		float: left;
+		margin: 5px 3px ;
 		
 		i {
 			margin-right: 3px;
@@ -121,8 +126,9 @@
 
 // icon
 .icon {
-	float: right;
-	@include clearfix;
+	position: absolute;
+	bottom: 0;
+	right: 0;
 	font-size: 30px;
 	line-height: 1;
 	color: $color-light;
@@ -135,8 +141,11 @@
 .img {
 	position: relative;
 	z-index: 9;
+	background-size: cover;
+	background-position: center center;
+	padding-top: 134%;
 	img {
-		width: 100%;
+		// width: 100%;
 	}
 }
 

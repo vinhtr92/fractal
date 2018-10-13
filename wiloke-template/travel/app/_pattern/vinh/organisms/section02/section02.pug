@@ -1,0 +1,67 @@
+//- demo: true
+mixin vinhSection02(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		+section({
+			container: true,
+		})
+			+vinhSectitle({
+				addClass: 'mb-30 text-center',
+				modifier: 'style02',
+				loop: {
+					data: [
+						{
+							secTitle: 'Start Planning Your Trip',
+							titleDesc: '+1238 most beautiful tourist destinations in the world'
+						}
+					]
+				}
+			})
+			+row
+				+vinhBox3({
+					loop: {
+						data: [
+							{
+								counter: '01'
+							},
+							{
+								counter: '02'
+
+							},
+							{
+								counter: '03'
+
+							},
+							{
+								counter: '04'
+
+							},
+						],
+						wrap: 'col-sm-12 col-md-4 col-lg-3',
+						
+					}
+				})
+			//- +row
+			//- 	+col({
+			//- 		cols: [0,0,4,3]
+			//- 	})
+			//- 		+vinhBox3({})
+			//- 	+col({
+			//- 		cols: [0,0,4,3]
+			//- 	})
+			//- 		+vinhBox3({})
+			//- 	+col({
+			//- 		cols: [0,0,4,3]
+			//- 	})
+			//- 		+vinhBox3({})
+			//- 	+col({
+			//- 		cols: [0,0,4,3]
+			//- 	})
+			//- 		+vinhBox3({})
+
+
+	include cssmodule

@@ -3,15 +3,49 @@ mixin vinhSection01(args)
 	include cssmodule
 
 	+module('div', css.module, args)
-		- let args = item
+		-
+			let args = item
+			let imgsrc = `img/place/${ random(1, 31) }.jpg`
+			let thumbsrc = `img/place/${ random(1, 31) }.jpg`
+			let thumbsrc2 = `img/place/${ random(1, 31) }.jpg`
+			let thumbsrc3 = `img/place/${ random(1, 31) }.jpg`
+			let thumbsrc4= `img/place/${ random(1, 31) }.jpg`
+
 		
 		//- code
-		+section
+		+section()
+			
+			+vinhSectitle({
+				modifier: 'style02',
+				loop: {
+					data: [
+						{
+							secTitle: 'destination guide',
+							titleDesc: '+1238 most beautiful tourist destinations in the world',
+						}
+					],
+				},
+				addClass: 'mb-30',
+			})
+
 			+wil-grid({
 				options: {
 					style: 'creative',
 					devices: {
 						320: {
+							vertical: 30,
+							horizontal: 30,
+							column: 1,
+							items: [
+								{width: 1, height: 1},
+								{width: 1, height: 1},
+								{width: 1, height: 1},
+								{width: 1, height: 1},
+								{width: 1, height: 1},
+							]
+						},
+
+						576: {
 							vertical: 30,
 							horizontal: 30,
 							column: 4,
@@ -28,7 +62,26 @@ mixin vinhSection01(args)
 			})
 				+vinhBox4({
 					loop: {
-						data: [{},{},{},{}],
+						data: [
+								{
+									href: "gooogle.com",
+									iconshare: 'la la-plus',
+									thumb: {
+										src: `img/place/${ random(1, 31) }.jpg`,
+										src2: `img/place/${ random(1, 31) }.jpg`,
+										src3: `img/place/${ random(1, 31) }.jpg`,
+										src4: `img/place/${ random(1, 31) }.jpg`,
+									}
+								},
+								{
+								},
+								{
+								},
+								{
+								},
+								{
+								}
+							],
 						wrap: {
 							addClass: 'grid-item'
 						}

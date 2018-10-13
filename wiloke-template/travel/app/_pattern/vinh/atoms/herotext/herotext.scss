@@ -1,0 +1,21 @@
+/* //--- vinhHerotext
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	
+}
+
+// title
+.title {
+	font-size: 50px;	
+	line-height: 1;
+	@include setBackgroundGradient($color-primary, $color-primary-hover)
+}
+
+// desc
+.desc {
+	font-size: 20px;
+	color: rgba($color-light,0.8);
+	line-height: 1.5;
+}

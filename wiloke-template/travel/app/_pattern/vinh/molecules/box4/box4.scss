@@ -6,7 +6,10 @@
 	position: relative;
 	overflow: hidden;
 	height: 100%;
-	border-radius: 15px
+	border-radius: 15px;
+	// for tag a
+	display: block;
+
 
 	:global(.overlay){
 		position: absolute;
@@ -19,6 +22,16 @@
 		transform: translateY(100%);
 		transition: all .3s ease;	
 	}
+
+
+	@include media('<=1200px'){
+		// display: none;
+	}
+
+	@include media('<=md'){
+
+	}
+
 }
 
 .module:hover {
@@ -64,9 +77,14 @@
 
 // heading
 .heading {
-	float: left;
-	// @include clearfix;
-	
+	display: block;
+	text-align: right;
+	margin: 5px;
+
+	@include media('>=1024px'){
+		float: left;
+		text-align: left;
+	}
 }
 
 // title
@@ -92,41 +110,22 @@
 // thumbList
 .thumbList {
 	@include clearfix;
-	float: right;
-	position: absolute;
-	top: 20px;
-	right: 20px;
 
-	@include media('>=sm') {
-		position: absolute;
-		top: unset;
-		bottom: 20px;
-		right: 20px;
-		z-index: 10;
-
-	}
-
-	li {
+	span {
+		display: block;
+		background-size: cover;
+		background-position: center center;
 		float: right;
-		display: inline-block;
-		@include size(54px);
-		position: relative;
+		margin: 3px;
+		width: 54px;
+		height: 54px;
 		border-radius: 5px;
-		overflow: hidden;
-		margin-left: 5px;
-
-		&:first-child {
+		position: relative;
+		&:global(.icon-share) {
 			background-color: $color-primary;
 		}
 
-	}
 
-	img {
-		width: 100%;
-	}
-
-	span {
-		display: inline-block;
 	}
 
 	i {
@@ -159,4 +158,19 @@
 
 	}
 
+}
+
+// headingsm
+.headingsm {
+	.title {
+		font-size: 18px;
+	}
+	.desc {
+		font-size: 13px;
+	}
+
+	.thumbList {
+		display: none;
+		visibility: hidden;
+	}
 }

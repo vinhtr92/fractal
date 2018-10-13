@@ -11,12 +11,39 @@ block afterLink
 	
 //- Header
 block header
-	
+	+longHeader({
+		modifier: 'fixed'
+	})
 //- Footer
 block footer
 	
 //- Content
 block content
-	+vinhSection01({
-	
+	//- code
+	+section({
+		container: false,
 	})
+		+vinhForm({
+			options: {
+				labelname: 'name',
+				labelemail: 'email',
+			}
+		})
+		+vinhSwiper({
+			options: {
+				slidesPerView: 5,
+				centeredSlides: false,
+				spaceBetween: 30,
+				navigation: {
+					nextEl: '.swiper-button-prev-custom',
+					prevEl: '.swiper-button-next-custom',
+				},
+				pagination: true,
+			}
+		})
+			+vinhBox2({
+				loop: {
+					data:[{},{},{},{},{},{},{},{}]
+
+				},
+			})

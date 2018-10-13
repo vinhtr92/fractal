@@ -1,0 +1,13 @@
+//- demo: true
+mixin vinhImgthumb(args)
+	include cssmodule
+
+	+module('span', css.module, args)
+		- let args = item
+		
+		//- code
+		span(class=args.thumbclass style=`background-image:url('${args.thumbsrc||thumbsrc}')`)
+		
+		
+		
+	include cssmodule

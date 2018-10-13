@@ -13,7 +13,7 @@
 :global {
 	@include wil-btn('.wil-btn', (
 		letter-spacing: 0.01em,
-		font-size: 14px,
+		font-size: 10px,
 		font-family: $font-secondary,
 		font-weight: 500,
 		padding: 12px 20px,
@@ -154,7 +154,7 @@
 				min-width: 180px,
 			),
 			md: (
-				padding: 12px 20px,
+				padding: 10px 20px,
 				min-width: 180px,
 			),
 			sm: (
@@ -176,8 +176,8 @@
 	// Custom icon font size
 	.wil-btn {
 		i {
-			font-size: 19px;
-			margin-right: 5px;
+			font-size: 22px;
+			margin-left: 13px;
 			position: relative;
 			bottom: -1px;
 		}

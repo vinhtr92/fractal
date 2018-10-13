@@ -1,0 +1,33 @@
+//- demo: true
+mixin vinhForm(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		form(name='wil-subscrible' id='wil-subscribe')
+				
+			div(class='item-group')
+				label(for="name")= args.labelname || 'name'
+				input(type="name", id="name", )
+				div(class='form-icon')
+					i(class='fa fa-user')
+
+			div(class='item-group')
+				label(for="email")= args.labelemail|| 'email'
+				input(type="email", id="email",  )
+				div(class='form-icon')
+					i(class='fa fa-envelope')
+
+
+			div(class=css.action)
+				+wil-btn('button', {
+					type: 'submit',
+					text: 'Subscrible<i class="la la-paper-plane"></i> ',
+					modifier: ['primary', 'md', 'round']
+				})
+				include cssmodule
+		
+		
+	include cssmodule
