@@ -1,0 +1,38 @@
+//- demo: true
+mixin long_hero(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		-
+			let args = item
+			let img = args.img || 'img/place/1.jpg'
+			let video = args.video || '<iframe src="https://player.vimeo.com/video/123843173?autoplay=1&loop=1&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+			if (video.indexOf('autoplay=1') === -1) {
+				video = video.replace(/\?/g, '?autoplay=1&')
+			}
+			if (video.indexOf('loop=1') === -1) {
+				video = video.replace(/\?/g, '?loop=1&')
+			}
+			if (video.indexOf('mute=1') === -1) {
+				video = video.replace(/\?/g, '?mute=1&')
+			}
+		
+		div(class=css.header)
+			if (has(args.modifier, 'video'))
+				div(class=css.bgVideo)!= video
+				div(class=css.videoPlaceholder, style=`background-image: url('${ img }')`)
+			else
+				div(class=css.img, style=`background-image: url('${ img }')`)
+					img(src=img, alt="")
+
+		if (args.overlay)
+			div.wil-overlay(class=(typeof args.overlay === 'string' ? args.overlay : ''))
+		
+		div.wil-tb
+			div.wil-tb__cell
+				div.container
+					if block
+						block
+					else
+						div= random(random.text, 200)
+		include cssmodule

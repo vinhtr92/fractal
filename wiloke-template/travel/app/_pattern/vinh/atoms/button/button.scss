@@ -1,0 +1,9 @@
+:global {
+	a.wil-btn {
+		&:hover,
+		&:active,
+		&:visited {
+			text-decoration: none;
+		}
+	}
+}

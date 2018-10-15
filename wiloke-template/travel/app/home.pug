@@ -5,6 +5,7 @@ block config
 	-
 		config.title = 'home'
 		config.bodyClass = ''
+		let args = item
 
 //- afterLink
 block afterLink
@@ -12,38 +13,321 @@ block afterLink
 //- Header
 block header
 	+longHeader({
-		modifier: 'fixed'
+		modifier: 'style02',
 	})
-//- Footer
+//- Footer1
 block footer
 	
 //- Content
 block content
-	//- code
-	+section({
-		container: false,
+	//- Args: img, video, overlay
+	+long_hero({
+		img: `img/bg/4.jpg`,
+		overlay: true,
+		addClass: 'text-center',
+
 	})
+		+vinhHerotext({
+			title: 'Hi! I am Gregory Lewis',
+			desc : 'Each month over 1,000,000 people use my advice to travel better, cheaper, and smarter. Let me help you plan your trip of a lifetime!',
+			modifier: 'style02',
+		})
+
 		+vinhForm({
 			options: {
-				labelname: 'name',
+				labelname: 'namesss',
 				labelemail: 'email',
 			}
 		})
+
+	+section({
+		container: true
+	})
+		+vinhSectitle({
+			title: 'lasted from the blog',
+		})
+
 		+vinhSwiper({
 			options: {
 				slidesPerView: 5,
 				centeredSlides: false,
 				spaceBetween: 30,
-				navigation: {
-					nextEl: '.swiper-button-prev-custom',
-					prevEl: '.swiper-button-next-custom',
+				loop: true,				
+				
+				breakpoints: {
+					380: {
+						slidesPerView: 1,
+						spaceBetween:  10,
+						centeredSlides: false,
+
+						loop: false,
+						css: {
+						}
+
+					},
+					1170: {
+						slidesPerView: 2,
+						spaceBetween:  20,
+						loop: false,
+
+					},
 				},
-				pagination: true,
+
+				navigation: {
+					nextEl: '.swiper-button-prev',
+					prevEl: '.swiper-button-next',
+				},
+			},
+			css: {
+				'width': '90vw',
+				'overflow': 'unset',
+				'margin': '0',
+			}
+		})
+			+vinhBox({
+				loop: {
+					data:[{},{},{},{},{},{},{},{}],
+				},
+				
+			})
+
+		+vinhSectitle({
+			title: 'destination guide',
+			desc: '+1238 most beautiful tourist destinations in the world',
+			addClass: 'mb-30',
+		})
+
+		+wil-grid({
+			options: {
+				style: 'creative',
+				devices: {
+					320: {
+						vertical: 30,
+						horizontal: 30,
+						column: 1,
+						items: [
+							{width: 1, height: 1},
+							{width: 1, height: 1},
+							{width: 1, height: 1},
+							{width: 1, height: 1},
+							{width: 1, height: 1},
+						]
+					},
+
+					576: {
+						vertical: 30,
+						horizontal: 30,
+						column: 4,
+						items: [
+							{width: 2, height: 2},
+							{width: 1, height: 1},
+							{width: 1, height: 1},
+							{width: 1, height: 1},
+							{width: 1, height: 1},
+						]
+					}
+				}
+			}
+		})
+
+			+vinhBox4({
+				loop: {
+					data: [
+							{
+								href: "gooogle.com",
+								iconshare: 'la la-plus',
+								thumb: {
+									src: `img/place/${ random(1, 31) }.jpg`,
+									src2: `img/place/${ random(1, 31) }.jpg`,
+									src3: `img/place/${ random(1, 31) }.jpg`,
+									src4: `img/place/${ random(1, 31) }.jpg`,
+								}
+							},{},{},{},{}
+						],
+					wrap: {
+						addClass: 'grid-item'
+					}
+				},
+			})
+
+
+	+section({
+		container: true,
+		css: {
+			'background-color': '#efeff1'
+		}
+	})
+		+vinhSectitle({
+			title: 'Start Planning Your Trip',
+			desc: '+1238 most beautiful tourist destinations in the world',
+			addClass: 'mb-30 text-center',
+			modifier: 'style02',
+			})
+
+		+row
+			+vinhBox3({
+				loop: {
+					data: [
+						{
+							counter: '01'
+						},
+						{
+							counter: '02'
+
+						},
+						{
+							counter: '03'
+
+						},
+						{
+							counter: '04'
+
+						},
+					],
+					wrap: 'col-sm-12 col-md-4 col-lg-3 mb-30',
+					
+				}
+			})
+
+	+section({
+		container: true,
+	})
+		+vinhSectitle({
+			title: 'upcoming blog',
+			desc: '+1238 most beautiful tourist destinations in the world',
+		})
+
+		+vinhSwiper({
+			options: {
+				slidesPerView: 5,
+				centeredSlides: false,
+				spaceBetween: 30,
+				loop: true,				
+				
+				breakpoints: {
+					380: {
+						slidesPerView: 1,
+						spaceBetween:  10,
+						centeredSlides: false,
+
+						loop: false,
+						css: {
+						}
+					},
+					1170: {
+						slidesPerView: 2,
+						spaceBetween:  20,
+						loop: false,
+
+					},
+				},
+
+				navigation: {
+					nextEl: '.swiper-button-prev',
+					prevEl: '.swiper-button-next',
+				},
+			},
+			css: {
+				'width': '90vw',
+				'overflow': 'unset',
+				'margin': '0',
+				'transform':'translatez(0)'
 			}
 		})
 			+vinhBox2({
 				loop: {
 					data:[{},{},{},{},{},{},{},{}]
-
 				},
 			})
+
+	+section({
+		container: true,
+	})
+		+vinhSectitle({
+			title: 'get our travel guides',
+			desc: 'We have over a dozen guides to destinations around the world! Get one of you trip today',
+		})
+
+		+row({
+			attr: {
+				'data-col-xs-gap': 10,
+				'data-col-md-gap': 30,
+			}
+		})
+			+longProduct({
+				modifier: 'sale',
+				loop: {
+					data: [{
+						itemLabel: 'sale',
+					},{},{},{},],
+					wrap: {
+						addClass: 'col-xs-6 col-md-4 col-lg-3'
+					}
+				},
+			})
+
+		div.custom-center
+			+wil-btn('a', {
+				text: 'view all products',
+				modifier: ['primary', 'lg', 'round']
+			})
+	
+	+section({
+		container: true,
+	})
+
+		+vinhCanvas
+
+		+row({
+		})
+			+col({
+				cols: [0,0,5,5],
+				offsets: [0,0,1,1],
+			})
+				+vinhSectitle({
+					modifier: 'style03',
+					title: 'download application',
+					desc: 'It is a long established fact that a reader will be distracted readable content of a page when looking at its layout'
+				})
+
+				+vinhList
+					+vinhListitem({
+
+						loop: {
+							data: [
+								{
+									icon: 'la la-check',
+									text: random(random.text,40),
+								},
+								{
+									icon: 'la la-check',
+									text: random(random.text,40),
+								},
+								{
+									icon: 'la la-check',
+									text: random(random.text,40),
+								},
+								{
+									icon: 'la la-check',
+									text: random(random.text,40),
+								},
+								{
+									icon: 'la la-check',
+									text: random(random.text,40),
+								},
+								{
+									icon: 'la la-check',
+									text: random(random.text,40),
+								},
+
+							]
+						}
+					})
+
+			+col({
+				cols: [0,0,6,6]
+			})
+				div vitrna,mnslfhl	
+			
+
+		

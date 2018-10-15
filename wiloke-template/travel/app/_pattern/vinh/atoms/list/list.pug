@@ -1,0 +1,17 @@
+//- demo: true
+mixin vinhList(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		if (args.type === 'ol')
+			ol(class=css.ol)
+				if block
+					block
+		else
+			ul(class=css.ul)
+				if block
+					block
+	include cssmodule

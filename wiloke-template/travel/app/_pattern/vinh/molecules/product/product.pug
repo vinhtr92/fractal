@@ -1,0 +1,44 @@
+//- demo: true
+mixin longProduct(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		-
+			let args = item
+			let itemLabel = random(['Sale','','',''])
+			let img = args.img || `img/product/${ random(1, 10) }.jpg`
+			let curency = args.curency || '$'
+			let priceDefault = args.price || random(40, 100)
+			let priceIns = priceDefault - random(5, 10)
+
+		div(class=css.header)
+			a(href="#", class=css.img)
+				img(src=img, alt="")
+
+			div.wil-overlay
+
+			if (args.modifier === 'soldout')
+				h4(class=css.soldoutLabel) Sold out
+			else
+				div(class=css.label)
+					if (itemLabel !== '')
+						span(class=itemLabel)= args.sale || itemLabel
+			
+				div(class=css.addToCart)
+					+wil-btn('a', {
+						text: 'Add to cart',
+						modifier: ['primary', 'sm', 'round']
+					})
+		include cssmodule
+		div(class=css.body)
+			h2(class=css.name)
+				a(href="product-single.html")= args.name || random(random.product.name)
+			div(class=css.price)
+				if (itemLabel.indexOf('Sale') !== -1 || itemLabel.indexOf('sale') !== -1)
+					del
+						span.amount= curency + priceDefault
+					ins
+						span.amount= curency + priceIns
+				else
+					span.amount= curency + priceDefault
+		

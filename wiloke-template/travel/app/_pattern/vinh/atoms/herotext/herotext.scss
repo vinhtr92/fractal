@@ -3,13 +3,13 @@
 
 // module
 .module {
-	
+	position: relative;
 }
 
 // title
 .title {
+	margin: 0;
 	font-size: 50px;	
-	line-height: 1;
 	@include setBackgroundGradient($color-primary, $color-primary-hover)
 }
 
@@ -18,4 +18,26 @@
 	font-size: 20px;
 	color: rgba($color-light,0.8);
 	line-height: 1.5;
+}
+
+// modifier style02
+.style02 {
+	@include pfs('margin-bottom',(
+		400px:  50px,
+		768px:  80px,
+		1200px: 124px,
+	));
+
+	.title {
+		@include pfs('font-size',(
+			1200px: 50px,
+			768px: 40px
+		))
+	}
+
+	.desc {
+		max-width:  670px;
+		font-size: 19px;
+		margin: 0 auto;
+	}
 }

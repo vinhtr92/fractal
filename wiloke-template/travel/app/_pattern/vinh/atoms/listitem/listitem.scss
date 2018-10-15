@@ -1,0 +1,15 @@
+/* //--- vinhListitem
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	margin: 0 0 5px 0;
+	
+	:global {
+		span {
+			font-size: 24px;
+			margin:0 12px 0 0 ;
+			color: $color-primary;
+		}
+	}
+}

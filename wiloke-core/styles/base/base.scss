@@ -249,6 +249,19 @@
 		overflow-y: scroll;
 	}
 
+	.fl-left {
+		float:  left !important;
+	}
+
+	.fl-right {
+		float: right !important;
+	}
+
+	.custom-center {
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+	}
 
 
 	

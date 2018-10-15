@@ -5,7 +5,7 @@
 .module {
 	position: relative;
 	overflow: hidden;
-	border-radius: 10px;
+	border-radius: $general-radius;
 
 	:global(.overlay){
 		position: absolute;

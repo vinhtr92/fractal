@@ -1,0 +1,25 @@
+/* //--- vinhList
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	position: relative;
+
+	:global{
+		ul,ol {
+			margin: 0;
+			padding: 0;
+			// reset margin, padding 
+		}
+
+		li {
+			list-style: none;
+			// remove list style if needed
+		}
+	}
+}
+
+// ol
+.ol {
+	
+}

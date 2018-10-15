@@ -1,0 +1,13 @@
+//- demo: true
+mixin vinhCanvas(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		canvas(id='canvas')
+		
+		
+		
+	include cssmodule

@@ -20,7 +20,7 @@
 		float: unset;
 		position: relative;
 		overflow: hidden;
-		margin: 0 0 20px  0;
+		margin: 0  0 20px  0;
 
 		
 		label {
@@ -91,9 +91,7 @@
 			}
 		}
 
-		input {
-			width: 255px !important ;
-		}
+
 
 		.action {
 			display: inline-block;
@@ -103,6 +101,11 @@
 
 	@include media('>=lg'){
 		padding: 30px;
+
+		input {
+			width: 255px !important ;
+			
+		}
 	}
 }
 

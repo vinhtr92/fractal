@@ -236,3 +236,22 @@
 		)
 	));
 }
+
+// modifier style02
+.style02 {
+	@include pfs('top, left, right', (
+		400px: 10px,
+		1200px: 10px
+	));
+
+	@include pfs('padding-left, padding-right', (
+		400px: 15px,
+		1200px: 40px
+	));
+
+
+	@include pfs('padding-top, padding-bottom', (
+		400px: 10px,
+		1200px: 10px
+	));
+}

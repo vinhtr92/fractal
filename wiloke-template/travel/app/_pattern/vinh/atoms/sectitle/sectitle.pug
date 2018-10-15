@@ -6,7 +6,7 @@ mixin vinhSectitle(args)
 		- let args = item
 		
 		//- code
-		h2(class=css.title)= args.secTitle || 'lorem ipsum dolor'
-		div(class=css.desc)= args.titleDesc  || 'lorem picsum dolor sit amte lorem'
+		h2(class=css.title)= args.title || 'lorem ipsum dolor'
+		div(class=css.desc)= args.desc  || 'lorem picsum dolor sit amte lorem'
 		
 	include cssmodule
