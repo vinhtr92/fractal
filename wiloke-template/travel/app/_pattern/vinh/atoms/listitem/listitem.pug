@@ -12,6 +12,13 @@ mixin vinhListitem(args)
 		else if (args.icon && args.link)
 			span(class= args.icon || 'fa fa-square')
 			a(href=args.link.href)= args.link.text || random(random.text,50)
-		else 
+		else if (args.link)
+			a(href=args.link.href)= args.link.text || random(random.text,50)
+		else if (args.galery)
+			a(href=args.galery.href)
+				span(class='galery-item')
+					div( style=`background-image: url('${args.galery.src}')`)
+					img(src=args.galery.src, alt="")
+		else
 			=args.text ||  random(random.text,50)
 	include cssmodule

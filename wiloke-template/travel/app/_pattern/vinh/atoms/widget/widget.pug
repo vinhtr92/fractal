@@ -1,0 +1,15 @@
+//- demo: true
+mixin vinhWidget(args)
+	include cssmodule
+
+	+module('section','widget', args)
+		- let args = item
+		
+		//- code
+		if (args.title != null)
+			h3.widget-title= args.title 
+		if block
+			block
+		
+		
+	include cssmodule

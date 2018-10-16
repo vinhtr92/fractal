@@ -108,8 +108,8 @@
             position: absolute;
             width: 0;
             height: 0;
-            top: 0;
-            right: 0;
+            top: 1px;
+            right: 1px;
             border: $boxEffectSize * 1px solid transparent;
             border-left-color: $boxEffectBackgroundColor;
             border-bottom-color: $boxEffectBackgroundColor;

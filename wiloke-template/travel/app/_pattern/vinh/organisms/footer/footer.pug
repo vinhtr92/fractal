@@ -1,0 +1,185 @@
+//- demo: true
+mixin vinhFooter(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- 
+			let args = item
+			let imgsrc = `img/place/${ random(1, 31) }.jpg`
+			let imgsrc2 = `img/place/${ random(1, 31) }.jpg`
+			let imgsrc3 = `img/place/${ random(1, 31) }.jpg`
+			let imgsrc4 = `img/place/${ random(1, 31) }.jpg`
+			let imgsrc5 = `img/place/${ random(1, 31) }.jpg`
+			let imgsrc6 = `img/place/${ random(1, 31) }.jpg`
+
+
+		
+		//- code
+
+		+section({
+			container: true,
+		})
+			+col({
+				cols: [0,0,3,3]
+			})
+				+vinhWidget({
+					title: 'travel advice'
+				})
+					+vinhList
+						+vinhListitem({
+							loop: {
+								data: [
+									{
+										link: {
+											href: '#',
+											text: 'how to find cheap flight',
+										}
+									},
+									{
+										link: {
+											href: '#',
+											text: 'how to choose the backpack',
+										}
+									},
+									{
+										link: {
+											href: '#',
+											text: '14 key preparation tips',
+										}
+									}
+
+								]
+							}
+						})
+			
+			+col({
+				cols: [0,0,3,3]
+			})
+				+vinhWidget({
+					title: 'travel tips'
+				})
+					+vinhList({
+					})
+						+vinhListitem({
+							loop: {
+								data: [
+									{
+										link: {
+											href: '#',
+											text: 'start here',
+										}
+									},
+									{
+										link: {
+											href: '#',
+											text: 'travel blog',
+										}
+									},
+									{
+										link: {
+											href: '#',
+											text: 'destination guides',
+										}
+									}
+
+								]
+							}
+						})
+
+
+			+col({
+				cols: [0,0,3,3]
+			})
+				+vinhWidget({
+					title: 'travel tips'
+				})
+					+vinhList
+						+vinhListitem({
+
+							loop: {
+								data: [
+									{
+										modifier: 'galery',
+										galery: {
+											src: imgsrc,
+											href: '#',
+										},
+									},
+									{
+										modifier: 'galery',
+										galery: {
+											src: imgsrc2,
+											href: '#',
+										}
+									},
+									{
+										modifier: 'galery',
+										galery: {
+											src: imgsrc3,
+											href: '#',
+										}
+									},
+									{
+										modifier: 'galery',
+										galery: {
+											src: imgsrc4,
+											href: '#',
+										}
+									},
+									{
+										modifier: 'galery',
+										galery: {
+											src: imgsrc5,
+											href: '#',
+										}
+									},
+									{
+										modifier: 'galery',
+										galery: {
+											src: imgsrc6,
+											href: '#',
+										}
+									},
+								]
+							},
+						})
+			+col({
+				cols: [0,0,3,3]
+			})
+				+vinhWidget({
+					title: 'travel tips'
+				})
+					+vinhList
+						+vinhListitem({
+							loop: {
+								data: [
+									{
+										link: {
+											href: '#',
+											text: 'travel forum',
+										}
+									},
+									{
+										link: {
+											href: '#',
+											text: 'book club',
+										}
+									},
+									{
+										link: {
+											href: '#',
+											text: 'Flyte',
+										}
+									},
+									{
+										link: {
+											href: '#',
+											text: 'guidebooks',
+										}
+									},
+								]
+							}
+						})
+		
+		
+	include cssmodule

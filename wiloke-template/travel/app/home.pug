@@ -74,15 +74,16 @@ block content
 				},
 
 				navigation: {
-					nextEl: '.swiper-button-prev',
-					prevEl: '.swiper-button-next',
+					nextText: '.swiper-button-prev',
+					prevText: '.swiper-button-next',
 				},
 			},
 			css: {
-				'width': '90vw',
+				'width': '95vw',
 				'overflow': 'unset',
 				'margin': '0',
-			}
+				'right' : '0',
+			},
 		})
 			+vinhBox({
 				loop: {
@@ -154,7 +155,8 @@ block content
 	+section({
 		container: true,
 		css: {
-			'background-color': '#efeff1'
+			/*'background-color': '#efeff1' */
+			'background-color': 'red',
 		}
 	})
 		+vinhSectitle({
@@ -212,6 +214,7 @@ block content
 
 						loop: false,
 						css: {
+							'display':'none'
 						}
 					},
 					1170: {
@@ -232,7 +235,7 @@ block content
 				'overflow': 'unset',
 				'margin': '0',
 				'transform':'translatez(0)'
-			}
+			},
 		})
 			+vinhBox2({
 				loop: {
