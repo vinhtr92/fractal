@@ -41,7 +41,7 @@ block content
 		})
 
 	+section({
-		container: true
+		container: true,
 	})
 		+vinhSectitle({
 			title: 'lasted from the blog',
@@ -49,48 +49,33 @@ block content
 
 		+vinhSwiper({
 			options: {
-				slidesPerView: 5,
+				slidesPerView: 'auto',
 				centeredSlides: false,
 				spaceBetween: 30,
-				loop: true,				
-				
+				loop: false,
+				normalizeSlideIndex: true,
 				breakpoints: {
 					380: {
-						slidesPerView: 1,
-						spaceBetween:  10,
-						centeredSlides: false,
+						centeredSlides: true,
+						spaceBetween: 15,
 
-						loop: false,
-						css: {
-						}
-
-					},
-					1170: {
-						slidesPerView: 2,
-						spaceBetween:  20,
-						loop: false,
-
-					},
+					}
 				},
 
-				navigation: {
-					nextText: '.swiper-button-prev',
-					prevText: '.swiper-button-next',
-				},
 			},
-			css: {
-				'width': '95vw',
-				'overflow': 'unset',
-				'margin': '0',
-				'right' : '0',
-			},
+			nextText: '<i class="la la-angle-right"></i>',
+			prevText: '<i class="la la-angle-left"></i>',
+			addClass: 'swiper__fullwidth swiper--button-pill swiper--button-abs'
 		})
 			+vinhBox({
 				loop: {
 					data:[{},{},{},{},{},{},{},{}],
 				},
 				
+	
 			})
+
+
 
 		+vinhSectitle({
 			title: 'destination guide',
@@ -155,8 +140,7 @@ block content
 	+section({
 		container: true,
 		css: {
-			/*'background-color': '#efeff1' */
-			'background-color': 'red',
+			'background-color': '#efeff1'
 		}
 	})
 		+vinhSectitle({
@@ -201,40 +185,21 @@ block content
 
 		+vinhSwiper({
 			options: {
-				slidesPerView: 5,
+				slidesPerView: 'auto',
 				centeredSlides: false,
 				spaceBetween: 30,
-				loop: true,				
-				
+				loop: false,
 				breakpoints: {
 					380: {
-						slidesPerView: 1,
-						spaceBetween:  10,
-						centeredSlides: false,
-
-						loop: false,
-						css: {
-							'display':'none'
-						}
-					},
-					1170: {
-						slidesPerView: 2,
-						spaceBetween:  20,
-						loop: false,
-
-					},
-				},
-
-				navigation: {
-					nextEl: '.swiper-button-prev',
-					prevEl: '.swiper-button-next',
-				},
+						centeredSlides: true,
+						spaceBetween: 15,
+					}
+				}
 			},
+			addClass: 'swiper__fullwidth',
+
 			css: {
-				'width': '90vw',
-				'overflow': 'unset',
-				'margin': '0',
-				'transform':'translatez(0)'
+				
 			},
 		})
 			+vinhBox2({

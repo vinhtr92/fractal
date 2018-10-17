@@ -4,6 +4,7 @@ if (isIE) {
 	$('body').addClass('ie');
 }
 
+
 // create wilMenuVertical
 class wilMenuVertical {
     constructor(el, opt) {
@@ -161,3 +162,12 @@ class wilMenuVertical {
 }
 
 
+
+
+
+(function gridSizer(el){
+	const grids = [...document.querySelectorAll(el)];
+	grids.forEach((item)=>{
+		item.offsetWidth < 320 ? item.wilAddClass('small') : null
+	})
+})('.grid-item')

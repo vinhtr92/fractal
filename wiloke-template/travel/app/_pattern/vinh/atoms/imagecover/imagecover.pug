@@ -4,16 +4,16 @@ mixin vinhImagecover(args)
 
 	+module('div', css.module, args)
 		- let args = item
-		- let imgsrc = 'https://picsum.photos/650/650/?random'
+		- let imgsrc = `img/place/${ random(1, 31) }.jpg`
 		//- code
 		if (args.link)
 			a(href=args.link)
-				div(class=css.img, class=args.classImg style=`background-image: url('${ set(args, 'img', imgsrc) }')`)
+				div(class=css.img, class=args.classImg style=`background-image:url('${args.imgsrc||imgsrc}')`)
 					img(src=set(args, 'img', imgsrc) , alt="")
 					if block
 						block
 		else
-			div(class=css.img, class=args.classImg, style=`background-image: url('${ set(args, 'img', imgsrc) }')`)
+			div(class=css.img, class=args.classImg, style=`background-image:url('${args.imgsrc||imgsrc}')`)
 				img(src=set(args, 'img', imgsrc) , alt="")
 				if block
 					block

@@ -2,6 +2,78 @@
 	.mb-30 {
 		margin-bottom: 30px;
 	}
+
+	.swiper__fullwidth {
+		overflow: visible !important;
+		.swiper-slide {
+			width: 304px !important;
+		}
+
+
+		.swiper-button-custom {
+			display: none;
+			visibility: hidden;
+
+			@include media('>=sm'){
+				display: initial;
+			}
+		}
+
+		.swiper-button-custom > div {
+			position: absolute;
+			top: 50%;
+			transform: translate(0, -50%);
+			margin: 0;
+
+			@include media('>=md') {
+				width: 52px !important;
+				height: 52px !important;
+				line-height: 52px !important;
+
+				&.swiper-button-prev-custom {
+					left: -25% !important;
+				}
+				&.swiper-button-next-custom {
+					right: -25% !important;
+				}
+				&.swiper-button-disabled {
+					opacity: 0;
+					pointer-events: none;
+				}
+			}
+
+		}
+
+		
+	}
+
+	.grid-item {
+		&.small {
+			a.vinh_box4__module {
+				font-size: 13px;
+				h2 {
+					font-size: 18px;
+					margin: 0;
+				}
+
+				.vinh_box4__content {
+					margin: 14px 20px 14px 20px;
+				}
+
+				.vinh_box4__desc {
+					width: 100%;
+				}
+
+				.vinh_box4__thumbgroup {
+					display: none;
+				}
+			}
+		}
+	}
+
+	
+	
+
 }
 
 

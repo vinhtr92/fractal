@@ -1,7 +1,9 @@
 /**
  * Wil Grid
  */
+
 $('.wil-grid').each(function() {
+
 	var self = $(this),
 		optData = self.data('options'),
 		optDefault = {
@@ -77,3 +79,5 @@ function work() {
 	});
 }
 work();
+
+

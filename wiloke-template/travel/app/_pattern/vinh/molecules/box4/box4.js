@@ -1,5 +1,5 @@
 function box4() {
-	const css = {"module":".vinh_box4__module","title":".vinh_box4__title","image":".vinh_box4__image","content":".vinh_box4__content","heading":".vinh_box4__heading","desc":".vinh_box4__desc","thumbList":".vinh_box4__thumbList","small":".vinh_box4__small","headingsm":".vinh_box4__headingsm","":""};
+	const css = {"module":".vinh_box4__module","title":".vinh_box4__title","content":".vinh_box4__content","desc":".vinh_box4__desc","thumbgroup":".vinh_box4__thumbgroup","":""};
 	;
 	const thisModule = css.module;
 	// console.log(thisModule);

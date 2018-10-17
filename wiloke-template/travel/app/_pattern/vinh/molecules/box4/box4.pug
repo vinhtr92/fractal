@@ -5,27 +5,29 @@ mixin vinhBox4(args)
 	+module('a', css.module, args,href=args.href)
 		- 
 			let args = item
-			let imgsrc = `img/place/${ random(1, 31) }.jpg`
-			let thumbsrc = `img/place/${ random(1, 31) }.jpg`
-			let thumbsrc2 = `img/place/${ random(1, 31) }.jpg`
-			let thumbsrc3 = `img/place/${ random(1, 31) }.jpg`
-			let thumbsrc4= `img/place/${ random(1, 31) }.jpg`
-		//- code
 
-		div(class='overlay')
-		div(class=css.image style=`background-image:url('${args.imgsrc||imgsrc}')`)
-		div(class=css.content)
-			div(class=css.heading)
-					h3(class=css.title)= args.title || random(random.continental)
-					div(class=css.desc)= args.desc  || '40 destination'
-			div(class=css.thumbList)
-				if (args.iconshare)
-					span(class='icon-share'): i(class= args.iconshare)
-				if (args.thumb)
-					span(style=`background-image:url('${args.thumb.src}')`)
-					span(style=`background-image:url('${args.thumb.src2}')`)
-					span(style=`background-image:url('${args.thumb.src3}')`)
-					span(style=`background-image:url('${args.thumb.src4}')`)
+		//- code
+		+vinhImagecover
+		include cssmodule				
+
+			div(class=css.content)
+				h2(class=css.title)= args.location || random(random.country)
+				div(class=css.desc)= args.desc  || random(random.text,20)
+
+				div(class=css.thumbgroup)
+					span(class='icon-share')
+						i(class='la la-plus')
+					span
+						+vinhImagecover
+					span
+						+vinhImagecover
+					span
+						+vinhImagecover
+
+
+
+
+				
 
 	include cssmodule
 

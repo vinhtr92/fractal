@@ -30,7 +30,8 @@ mixin vinhBox2(args)
 					}
 				})
 				include cssmodule
-			div(class=css.img style=`background-image:url('${args.imgsrc||imgsrc}')`)
+			+vinhImagecover
+			/*div(class=css.img style=`background-image:url('${args.imgsrc||imgsrc}')`)*/
 				//- img(src= args.imgsrc || imgsrc ) 
 			div(class=css.content)
 				div(class=css.header)
