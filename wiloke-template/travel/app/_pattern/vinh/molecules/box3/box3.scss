@@ -5,6 +5,8 @@
 .module {
 	position: relative;
 	text-align: center;
+	max-width: 275px;
+	margin:  0 auto;
 }
 
 .module:hover {
@@ -25,6 +27,8 @@
 ));
 .bg {
 	@include absFull(0);
+
+	
 }
 
 // counter

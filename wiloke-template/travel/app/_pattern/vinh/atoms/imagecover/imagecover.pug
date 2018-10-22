@@ -2,18 +2,18 @@
 mixin vinhImagecover(args)
 	include cssmodule
 
-	+module('div', css.module, args)
+	+module('div', 'img-cover', args)
 		- let args = item
 		- let imgsrc = `img/place/${ random(1, 31) }.jpg`
 		//- code
 		if (args.link)
 			a(href=args.link)
-				div(class=css.img, class=args.classImg style=`background-image:url('${args.imgsrc||imgsrc}')`)
+				div(class=css.img , class='cover' style=`background-image:url('${args.imgsrc||imgsrc}')`)
 					img(src=set(args, 'img', imgsrc) , alt="")
 					if block
 						block
 		else
-			div(class=css.img, class=args.classImg, style=`background-image:url('${args.imgsrc||imgsrc}')`)
+			div(class=css.img, class='cover', style=`background-image:url('${args.imgsrc||imgsrc}')`)
 				img(src=set(args, 'img', imgsrc) , alt="")
 				if block
 					block

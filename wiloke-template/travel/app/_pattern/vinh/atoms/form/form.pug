@@ -9,13 +9,13 @@ mixin vinhForm(args)
 		form(name='wil-subscrible' id='wil-subscribe')
 				
 			div(class='item-group')
-				label(for="name")= args.labelname || 'name'
+				label(for="name")= args.name || 'name'
 				input(type="name", id="name", )
 				div(class='form-icon')
 					i(class='fa fa-user')
 
 			div(class='item-group')
-				label(for="email")= args.labelemail|| 'email'
+				label(for="email")= args.email|| 'email'
 				input(type="email", id="email",  )
 				div(class='form-icon')
 					i(class='fa fa-envelope')

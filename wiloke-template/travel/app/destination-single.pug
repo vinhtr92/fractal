@@ -1,0 +1,31 @@
+extends pug/layout
+
+//- Config
+block config
+	-
+		config.title = 'home'
+		config.bodyClass = ''
+		let args = item
+
+//- afterLink
+block afterLink
+	
+//- Header
+block header
+	+longHeader({
+		modifier: 'style02',
+	})
+//- Footer1
+block footer
+
+//- Content
+block content
+	//- Args: img, video, overlay
+	+longHeroDesSingle({
+		img: 'img/place/21.jpg',
+		modifier: 'style2'
+	})
+
+	+longBodyDesSingle({
+		modifier: 'style2'
+	})

@@ -1,0 +1,35 @@
+/* //--- longBodyDesSingle
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	font-family: $font-tertiary;
+	font-size: 16px;
+	color: $color-dark-1;
+	background-color: $color-light;
+	padding: 40px 0;
+	@include media('>sm') {
+		padding: 60px 15px;
+	}
+	*:first-child {
+		margin-top: 0 !important;
+	}
+	img {
+		margin-bottom: 20px;
+	}
+}
+
+// modifier style1
+.style1 {
+	content: empty;
+}
+
+// modifier style2
+.style2 {
+	content: empty;
+}
+
+// nav
+.nav {
+	content: empty;
+}

@@ -1,0 +1,62 @@
+/* //--- vinh_text-box-gradient
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	display: block;
+	background-color: $color-gray-2;
+	border-radius: 5px;
+	composes: text-center from global;
+	cursor: pointer;
+	a {
+		display: block;
+		padding: 20px 15px 26px;
+	}
+}
+
+// icon
+.icon {
+	font-size: 40px;
+	line-height: 1.4em;
+	color: $color-dark;
+}
+
+// title
+.title {
+	font-size: 14px;
+	font-weight: $font-semibold;
+	margin: 0;
+}
+
+// hover
+.module:hover {
+	.icon, .title {
+		color: $color-primary;
+	}
+}
+
+%light {
+	background: none;
+	.icon, .title {
+		color: $color-light !important;
+	}
+}
+
+// modifier light
+.light {
+	border-radius: 0;
+	@extend %light;
+	a {
+		padding: 25px 15px 30px;
+	}
+}
+
+// modifier active
+.active {
+	@extend %light;
+	background: $color-primary;
+	background: -moz-linear-gradient(left, $color-primary 0%, rgb(66,252,237) 100%);
+	background: -webkit-linear-gradient(left, $color-primary 0%, rgb(66,252,237) 100%);
+	background: linear-gradient(to right, $color-primary 0%, rgb(66,252,237) 100%);
+	border: 0 !important;
+}

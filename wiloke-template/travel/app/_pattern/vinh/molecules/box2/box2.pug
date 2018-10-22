@@ -13,7 +13,6 @@ mixin vinhBox2(args)
 
 			div(class=css.meta)
 				+vinhTextboxSmall({
-					addClass: 'md-meta',
 					loop: {
 						data: [
 								{
@@ -31,8 +30,7 @@ mixin vinhBox2(args)
 				})
 				include cssmodule
 			+vinhImagecover
-			/*div(class=css.img style=`background-image:url('${args.imgsrc||imgsrc}')`)*/
-				//- img(src= args.imgsrc || imgsrc ) 
+			include cssmodule
 			div(class=css.content)
 				div(class=css.header)
 					h4(class=css.tag)= args.tag || random(random.country)

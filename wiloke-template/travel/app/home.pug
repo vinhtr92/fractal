@@ -34,14 +34,15 @@ block content
 		})
 
 		+vinhForm({
-			options: {
-				labelname: 'namesss',
-				labelemail: 'email',
-			}
+			name: 'Name',
+			email: 'Email',
 		})
 
 	+section({
 		container: true,
+		css: {
+			'padding': '60px 0 30px 0 '
+		}	
 	})
 		+vinhSectitle({
 			title: 'lasted from the blog',
@@ -53,12 +54,10 @@ block content
 				centeredSlides: false,
 				spaceBetween: 30,
 				loop: false,
-				normalizeSlideIndex: true,
 				breakpoints: {
 					380: {
 						centeredSlides: true,
 						spaceBetween: 15,
-
 					}
 				},
 
@@ -71,19 +70,27 @@ block content
 				loop: {
 					data:[{},{},{},{},{},{},{},{}],
 				},
-				
-	
 			})
 
+
+	+section({
+		container: true,
+		css: {
+			'padding': '0 0 65px 0', 
+		}
+	})
 
 
 		+vinhSectitle({
 			title: 'destination guide',
 			desc: '+1238 most beautiful tourist destinations in the world',
-			addClass: 'mb-30',
+			css: {
+				'margin-bottom' : '20px',
+			}
 		})
 
 		+wil-grid({
+			addClass: 'grid-custom',
 			options: {
 				style: 'creative',
 				devices: {
@@ -118,29 +125,16 @@ block content
 
 			+vinhBox4({
 				loop: {
-					data: [
-							{
-								href: "gooogle.com",
-								iconshare: 'la la-plus',
-								thumb: {
-									src: `img/place/${ random(1, 31) }.jpg`,
-									src2: `img/place/${ random(1, 31) }.jpg`,
-									src3: `img/place/${ random(1, 31) }.jpg`,
-									src4: `img/place/${ random(1, 31) }.jpg`,
-								}
-							},{},{},{},{}
-						],
-					wrap: {
-						addClass: 'grid-item'
-					}
-				},
+					data: [{},{},{},{},{}],
+					wrap: 'grid-item',
+				}
 			})
 
 
 	+section({
 		container: true,
 		css: {
-			'background-color': '#efeff1'
+			'background-color': '#efeff1',
 		}
 	})
 		+vinhSectitle({
@@ -159,28 +153,31 @@ block content
 						},
 						{
 							counter: '02'
-
 						},
 						{
 							counter: '03'
-
 						},
 						{
 							counter: '04'
-
 						},
 					],
-					wrap: 'col-sm-12 col-md-4 col-lg-3 mb-30',
+					wrap: 'col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-30',
 					
 				}
 			})
 
 	+section({
 		container: true,
+		css : {
+			'padding': '60px 0 30px 0 ',
+		}
 	})
 		+vinhSectitle({
 			title: 'upcoming blog',
 			desc: '+1238 most beautiful tourist destinations in the world',
+			css: {
+				'margin-bottom': '20px',
+			}
 		})
 
 		+vinhSwiper({
@@ -196,11 +193,9 @@ block content
 					}
 				}
 			},
-			addClass: 'swiper__fullwidth',
-
-			css: {
-				
-			},
+			nextText: '<i class="la la-angle-right"></i>',
+			prevText: '<i class="la la-angle-left"></i>',
+			addClass: 'swiper__fullwidth swiper__fullwidth swiper--button-pill swiper--button-abs',
 		})
 			+vinhBox2({
 				loop: {
@@ -210,10 +205,16 @@ block content
 
 	+section({
 		container: true,
+		css: {
+			'padding': '30px 0 30px 0 ',
+		}
 	})
 		+vinhSectitle({
 			title: 'get our travel guides',
 			desc: 'We have over a dozen guides to destinations around the world! Get one of you trip today',
+			css: {
+				'margin-bottom': '25px',
+			}
 		})
 
 		+row({
@@ -242,6 +243,9 @@ block content
 	
 	+section({
 		container: true,
+		css : {
+			'padding': '30px 0 30px 0 ',
+		}
 	})
 
 		+vinhCanvas
@@ -249,13 +253,14 @@ block content
 		+row({
 		})
 			+col({
-				cols: [0,0,5,5],
+				cols: [0,6,5,5],
 				offsets: [0,0,1,1],
 			})
 				+vinhSectitle({
 					modifier: 'style03',
 					title: 'download application',
-					desc: 'It is a long established fact that a reader will be distracted readable content of a page when looking at its layout'
+					desc: 'It is a long established fact that a reader will be distracted readable content of a page when looking at its layout',
+					addClass: 'mb-30',
 				})
 
 				+vinhList
@@ -293,9 +298,13 @@ block content
 					})
 
 			+col({
-				cols: [0,0,6,6]
+				cols: [0,6,6,6]
 			})
-				div vitrna,mnslfhl	
-			
+				div.product-img
+					div
+						img(src="img/products/1.png", alt="iphone")
+					div
+						img(src="img/products/2.png", alt="iphone")
+						
 
 		

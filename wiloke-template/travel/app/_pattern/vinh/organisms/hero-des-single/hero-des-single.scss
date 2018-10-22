@@ -1,0 +1,107 @@
+/* //--- longHeroDesSingle
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	position: relative;
+	z-index: 9;
+	color: $color-light;
+	text-align: center;
+}
+
+// sm
+.sm {
+	font-family: $font-tertiary;
+	font-style: italic;
+	line-height: normal;
+	@include pfs('font-size', (
+		400px: 18px,
+		1600px: 30px
+	))
+}
+
+// title
+.title {
+	margin: 0;
+	color: $color-light;
+	line-height: normal;
+	@include pfs('font-size', (
+		400px: 34px,
+		1600px: 90px
+	))
+}
+
+// nav
+.nav {
+	position: absolute;
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	z-index: 99;
+	background-color: rgba(#000, 0.5);
+	> * {
+		display: table-cell;
+		vertical-align: middle;
+		border-right: 1px solid rgba(#fff, 0.15);
+		&:first-child {
+			border-left: 1px solid rgba(#fff, 0.15);
+		}
+	}
+	&.fixed {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background-color: rgba(#000, 0.7);
+		a {
+			padding: 20px 15px;
+		}
+		i {
+			display: none;
+		}
+	}
+}
+
+// svg
+.svg {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: 1;
+	img {
+		width: 100%;
+	}
+}
+
+// modifier style1
+.style1 {
+	content: empty;
+}
+
+// modifier style2
+.style2 {
+	color: $color-dark;
+	padding-bottom: 20vh;
+	:global {
+		.wil-tb__cell {
+			vertical-align: bottom;
+		}
+		.wil-overlay {
+			display: none;
+		}
+	}
+	.sm {
+		position: relative;
+		transform: translate(0, 20vh);
+		z-index: 2;
+	}
+	.title {
+		position: relative;
+		transform: translate(0, 20vh);
+		z-index: 2;
+		@include textGradient(#98ff00, #37e584);
+	}
+}

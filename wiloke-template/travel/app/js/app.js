@@ -170,4 +170,4 @@ class wilMenuVertical {
 	grids.forEach((item)=>{
 		item.offsetWidth < 320 ? item.wilAddClass('small') : null
 	})
-})('.grid-item')
+})('.grid-custom .grid-item')

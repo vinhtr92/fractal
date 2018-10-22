@@ -8,26 +8,21 @@ mixin vinhBox4(args)
 
 		//- code
 		+vinhImagecover
-		include cssmodule				
+		include cssmodule
+			div.wil-overlay
 
 			div(class=css.content)
 				h2(class=css.title)= args.location || random(random.country)
 				div(class=css.desc)= args.desc  || random(random.text,20)
 
 				div(class=css.thumbgroup)
-					span(class='icon-share')
+					div(class='icon-share')
 						i(class='la la-plus')
-					span
-						+vinhImagecover
-					span
-						+vinhImagecover
-					span
-						+vinhImagecover
-
-
-
-
-				
+					+vinhImagecover({
+						loop: {
+							data: [{},{},{},{}],
+						},
+					})
 
 	include cssmodule
 

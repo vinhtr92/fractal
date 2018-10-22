@@ -15,18 +15,18 @@ mixin vinhTextboxSmall(args)
 				span(class=css.text, class=args.classText)= args.text || 'July 12'
 				span(class=css.icon, class=iconClass): i(class=icon)
 		else if (has(args.modifier,'singleIcon')) 
-			a(href= args.link || '#')
-				span(class=css.icon, class=iconClass): i(class=icon)
+			a(href= args.link || '#'):  i(class=icon)
 
 		else if (has(args.modifier,'singleText')) 
 			span(class=css.text, class=textClass)= args.text || 'July 12'
 
 		else if (has(args.modifier,'tag')) 
-			span(class=css.text, class=textClass id='moduleTag')= args.text || 'July 12'
+			span( id='moduleTag')= args.text || 'July 12'
 
-		else if (has(args.modifier,'meta')) 
-			span(class=css.icon, class=iconClass): i(class=icon)
-			span(class=css.text, class=args.classText)= args.text || 'July 12'
+		else if (has(args.modifier,'meta'))
+			div(class='md-meta')
+				span: i(class=icon)
+				span= args.text || 'July 12'
 			
 		else
 			a(href= args.link || '#')

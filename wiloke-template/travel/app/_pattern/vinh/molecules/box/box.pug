@@ -11,30 +11,21 @@ mixin vinhBox(args)
 		//- code
 		include cssmodule
 		div(class=css.img)
-			div(class=css.bg style=`background-image:url('${args.imgsrc||imgsrc}')`)
+
+			+vinhImagecover
+			include cssmodule
+
 			div.wil-overlay
-			div(class=css.tag)
-				+vinhTextboxSmall({
-						loop: {
-							data: [
-								{
-									text: random(random.continental),
-									modifier: 'tag',
-								},
-							],
-						}
-					})
-				include cssmodule
-			//- img(src= set(args,'box-image','https://picsum.photos/600/600/?random'))
+			+vinhTextboxSmall({
+				text: random(random.comtinental),
+				modifier: 'tag',
+				})
+			include cssmodule
 			div(class=css.social id='md-social')
 				+vinhSocial({
 					loop: {
 							data: [
-								{
-									icon: 'la la-facebook',
-									social: 'https://www.facebook.com/',
-
-								},
+								{icon: 'la la-facebook'},
 								{icon: 'la la-twitter'},
 								{icon: 'la la-google-plus'},
 								{icon: 'la la-pinterest'},
@@ -45,7 +36,7 @@ mixin vinhBox(args)
 				include cssmodule
 		div(class=css.content)
 			div(class=css.desc)
-				h4(class=css.title)= set(args,'title',random(random.title))
+				h2(class=css.title)= set(args,'title',random(random.title))
 				div(class=css.meta)
 					+vinhTextboxSmall({
 						loop: {
@@ -63,8 +54,8 @@ mixin vinhBox(args)
 					})
 					include cssmodule
 
-				
 			div(class=css.share)
+
 				+vinhTextboxSmall({
 					loop: {
 						data: [
