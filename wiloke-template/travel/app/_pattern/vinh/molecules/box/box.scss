@@ -60,7 +60,7 @@ $defaultOpt: (
 
 	&:global(.active) {
 		.social {
-			> span {
+			> a {
 				opacity: 1;
 				visibility: visible;
 				transform: translate(0, 0);
@@ -124,13 +124,13 @@ $defaultOpt: (
 	text-align: center;
 	z-index: 2;
 
-	> span {
+	a {
 		opacity: 0;
 		visibility: hidden;
 		transform: translate(0, 20px);
 		transition: all 0.2s cubic-bezier(.4,.8,.58,1.29);
 	}
-	@include socialAnimation('span');
+	@include socialAnimation('a');
 }
 
 // bg
