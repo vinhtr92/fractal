@@ -1,0 +1,72 @@
+/* //--- long_image-box
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	overflow: hidden;
+	transition: all 0.3s ease;
+}
+
+// country
+.country {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 14px;
+	background-color: $color-light;
+	border-radius: 5px;
+	padding: 13px 35px;
+	margin: 0;
+	composes: text-center from global;
+	transition: all 0.3s ease;
+}
+
+// hover
+.module {
+	&:hover {
+		// country
+		.country {
+			background-color: $color-primary;
+			color: $color-light;
+		}
+	}
+}
+
+// modifier style2
+.style2 {
+	// country
+	.country {
+		top: auto;
+		bottom: 0;
+		right: 0;
+		border-radius: 0;
+		width: 100%;
+		background-color: rgba($color-dark, 0.5) !important;
+		color: $color-light;
+	}
+	&:hover {
+		// country
+		.country {
+			padding: 30px 35px;
+		}
+	}
+}
+
+// modifier style3
+.style3 {
+	// country
+	.country {
+		top: auto;
+		bottom: 20px;
+		right: 0;
+		border-radius: 0;
+		background-color: $color-dark !important;
+		color: $color-light;
+	}
+	&:hover {
+		// country
+		.country {
+			padding: 13px 55px;
+		}
+	}
+}

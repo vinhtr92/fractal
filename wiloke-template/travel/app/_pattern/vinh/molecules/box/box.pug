@@ -17,8 +17,9 @@ mixin vinhBox(args)
 
 			div.wil-overlay
 			+vinhTextboxSmall({
-				text: random(random.comtinental),
-				modifier: 'tag',
+				text: random(random.continental),
+				modifier: 'singleText',
+				id: 'moduleTag',
 				})
 			include cssmodule
 			div(class=css.social id='md-social')

@@ -14,10 +14,17 @@
 
 		}
 
-		li {
-			list-style: none;
-			// remove list style if needed
+		ul {
+			li {
+				list-style: none;
+			}
 		}
+
+		ol {
+			list-style: decimal;
+		}
+
+
 	}
 }
 

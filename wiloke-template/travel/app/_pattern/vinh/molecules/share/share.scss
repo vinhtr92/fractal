@@ -1,0 +1,55 @@
+/* //--- long_share
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	margin-top: 30px;
+	a {
+		margin-right: 5px;
+	}
+}
+
+// shareTitle
+.shareTitle {
+	font-size: 14px;
+	margin: 0;
+	margin-bottom: 5px;
+}
+
+// scrollTop
+.scrollTop {
+	text-align: center;
+	float: right;
+	font-size: 12px;
+	color: $color-dark;
+	margin-right: 0;
+	margin-top: -14px;
+	i {
+		display: block;
+		font-size: 32px;
+		margin-bottom: 5px;
+	}
+}
+
+// modifier vertical
+.vertical {
+	a {
+		display: block;
+		margin-right: 0;
+		margin-bottom: 8px;
+	}
+	.scrollTop {
+		float: none;
+		width: 44px;
+		margin-top: 0;
+	}
+}
+
+// modifier center
+.center {
+	text-align: center;
+	overflow: hidden;
+	.shareTitle {
+		margin-bottom: 15px;
+	}
+}

@@ -24,7 +24,7 @@ block content
 	+long_hero({
 		img: `img/bg/4.jpg`,
 		overlay: true,
-		addClass: 'text-center',
+		align: 'center',
 
 	})
 		+vinhHerotext({
@@ -34,8 +34,9 @@ block content
 		})
 
 		+vinhForm({
-			name: 'Name',
-			email: 'Email',
+			modifier: 'subscribe',
+			name: 'name',
+			email: 'email',
 		})
 
 	+section({
@@ -98,6 +99,7 @@ block content
 						vertical: 30,
 						horizontal: 30,
 						column: 1,
+						gap: 30,
 						items: [
 							{width: 1, height: 1},
 							{width: 1, height: 1},
@@ -110,7 +112,19 @@ block content
 					576: {
 						vertical: 30,
 						horizontal: 30,
-						column: 4,
+						column: 2,
+						items: [
+							{width: 1, height: 1},
+							{width: 1, height: 1},
+							{width: 1, height: 1},
+							{width: 1, height: 1},
+							{width: 1, height: 1},
+						]
+					},
+					768: {
+						vertical: 30,
+						horizontal: 30,
+						column:4,
 						items: [
 							{width: 2, height: 2},
 							{width: 1, height: 1},
@@ -126,7 +140,7 @@ block content
 			+vinhBox4({
 				loop: {
 					data: [{},{},{},{},{}],
-					wrap: 'grid-item',
+					wrap: 'grid-item mb-30',
 				}
 			})
 
@@ -263,8 +277,10 @@ block content
 					addClass: 'mb-30',
 				})
 
-				+vinhList
+				+vinhList({
+				})
 					+vinhListitem({
+						modifier: 'style02',
 
 						loop: {
 							data: [
@@ -288,17 +304,12 @@ block content
 									icon: 'la la-check',
 									text: random(random.text,40),
 								},
-								{
-									icon: 'la la-check',
-									text: random(random.text,40),
-								},
-
 							]
 						}
 					})
 
 			+col({
-				cols: [0,6,6,6]
+				cols: [0,6,6,6],
 			})
 				div.product-img
 					div

@@ -17,7 +17,7 @@ $font-black: 900;
 
 // Color
 $color-primary: #37e584;
-$color-secondary: #55df6f;
+$color-secondary: #426efc;
 $color-tertiary: #ff7171;
 $color-quaternary: #c763f5;
 $color-dark: #1b1b1d;
@@ -77,12 +77,14 @@ $colors: (
 	 'quaternary': #c763f5,
 );
 
-$radius: (
+$spaces: (
 	'5': 5px,
 	'10': 10px,
 	'15': 15px,
 	'20': 20px,
 	'25': 25px,
+	'30': 30px,
+	'35': 35px,
 );
 
 $general-radius: 10px;

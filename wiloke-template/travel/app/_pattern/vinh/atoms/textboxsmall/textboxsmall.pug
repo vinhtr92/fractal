@@ -2,26 +2,24 @@
 mixin vinhTextboxSmall(args)
 	include cssmodule
 
-	+module('span', css.module, args)
+	+module('span', css.module, args, id=args.id)
 		-
 			let args = item
 			let icon = args.icon || random(random.font7);
+			let color =  args.iconColor;
 			let iconClass = args.iconClass;
 			let textClass = args.textClass;
 
 		//- code
 		if (has(args.modifier, 'reverse'))
 			a(href= args.link || '#')
-				span(class=css.text, class=args.classText)= args.text || 'July 12'
-				span(class=css.icon, class=iconClass): i(class=icon)
+				span(class='desc', class=args.classText)= args.text || 'July 12'
+				span(class=color): i(class=icon)
 		else if (has(args.modifier,'singleIcon')) 
 			a(href= args.link || '#'):  i(class=icon)
 
 		else if (has(args.modifier,'singleText')) 
-			span(class=css.text, class=textClass)= args.text || 'July 12'
-
-		else if (has(args.modifier,'tag')) 
-			span( id='moduleTag')= args.text || 'July 12'
+			= args.text || 'July 12'
 
 		else if (has(args.modifier,'meta'))
 			div(class='md-meta')
@@ -30,7 +28,7 @@ mixin vinhTextboxSmall(args)
 			
 		else
 			a(href= args.link || '#')
-				span(class=css.icon, class=iconClass): i(class=icon)
-				span(class=css.text, class=args.classText)= args.text || 'July 12'
+				span(class='icon',class=color): i(class=icon)
+				span(class='desc', class=args.classText)= args.text || 'July 12'
 
 	include cssmodule

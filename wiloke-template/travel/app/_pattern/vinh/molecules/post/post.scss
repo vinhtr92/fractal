@@ -1,0 +1,136 @@
+/* //--- long_post
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	background-color: $color-light;
+	composes: bd-radius--5 from global;
+	overflow: hidden;
+	margin-bottom: 30px;
+	border-radius: $general-radius;
+
+	a {
+		&:hover,
+		&:active {
+			text-decoration: none;
+			color: $color-primary;
+		}
+	}
+}
+
+
+
+:global(.grid-item) {
+	.module {
+		margin-bottom: 0;
+	}
+}
+
+// header
+.header {
+	content: empty;
+}
+
+// body
+.body {
+	padding: 14px 18px;
+}
+
+// text
+.text {
+	padding: 7px 0;
+}
+
+// footer
+.footer {
+	padding: 14px 18px;
+	composes: clearfix from global;
+}
+
+// meta
+.meta {
+	float: left;
+
+	:global {
+		.icon {
+			vertical-align: sub;
+			font-size: 20px;
+			margin: 0 6px 0 0 ;
+		}
+
+		.desc {
+			font-size: 11px;
+			text-transform: uppercase;
+			color: $color-dark-2;
+			vertical-align: middle;
+			font-family: $font-tertiary;
+			font-weight: 600;
+		}
+	}
+
+}
+
+// share
+.share {
+	font-size: 20px;
+}
+
+// metaItem
+.metaItem {
+	content: empty;
+	&:after {
+		content: '.';
+		display: inline-block;
+		padding: 0 8px;
+	}
+	&:last-child {
+		&:after {
+			display: none;
+		}
+	}
+}
+
+// share
+.share {
+	float: right;
+}
+
+// modifier grid
+.grid {
+	max-width: 500px;
+	margin: auto;
+	.share {
+		.metaText {
+			font-size: 0;
+		}
+	}
+}
+
+// modifier latest
+.latest {
+	@extend .grid;
+}
+
+// modifier list
+.list {
+	@include media('>sm') {
+		.header {
+			float: left;
+			width: 40%;
+			padding-right: 15px;
+		}
+		:global {
+			.divider-gray--2 {
+				clear: both;
+			}
+		}
+	}
+}
+
+:global {
+	@each $name,$value in $colors {
+		.color-#{$name} {
+		  color: $value !important;
+		}
+	} 
+}

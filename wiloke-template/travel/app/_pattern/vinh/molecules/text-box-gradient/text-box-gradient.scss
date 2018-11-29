@@ -11,6 +11,11 @@
 	a {
 		display: block;
 		padding: 20px 15px 26px;
+
+		&:hover,
+		&:active {
+			text-decoration: none;
+		}
 	}
 }
 

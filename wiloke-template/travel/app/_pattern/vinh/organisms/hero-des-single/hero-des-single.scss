@@ -102,6 +102,6 @@
 		position: relative;
 		transform: translate(0, 20vh);
 		z-index: 2;
-		@include textGradient(#98ff00, #37e584);
+		@include textGradient(#37e584,#98ff00);
 	}
 }

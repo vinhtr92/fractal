@@ -15,7 +15,7 @@ var templateConfig = {
 		'line-awesome'
 	],
 
-	googleFont: 'https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900|Open+Sans:300,400|Roboto:300,400,400italic|Poppins:400,500,600,700|Mali:400,700',
+	googleFont: 'https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900|Open+Sans:300,400,600|Roboto:300,400,400italic|Poppins:400,500,600,700|Mali:400,700',
 
 
 	// build config

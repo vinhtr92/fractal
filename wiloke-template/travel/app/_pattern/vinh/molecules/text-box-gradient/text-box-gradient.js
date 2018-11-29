@@ -1,3 +1,5 @@
+
+
 class textBoxGradient {
 	constructor() {
 		this.css = {"module":".vinh_text-box-gradient__module","icon":".vinh_text-box-gradient__icon","title":".vinh_text-box-gradient__title","light":".vinh_text-box-gradient__light","active":".vinh_text-box-gradient__active","":""};
@@ -15,7 +17,6 @@ class textBoxGradient {
 		$('html, body').animate({
 			scrollTop: o.top - 30 + 'px'
 		}, 300);
-
 	}
 
 	handleActive(active) {
@@ -40,4 +41,6 @@ class textBoxGradient {
 		$(window).on('scroll', () => this.handleActive(active));
 	}
 }
+
+
 new textBoxGradient();

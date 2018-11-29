@@ -8,13 +8,37 @@
 
 // img
 .img {
-	// padding-top: 100%;//squared
-	// background-size: cover;
-	// background-repeat: no-repeat;
-	// background-position: center center;
+	padding-top: 100%;//squared
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
 	img {
 		display: none;
 		visibility: hidden;
 	}
+}
 
+// modifier ratio 4by3
+.ratio-4by3 {
+	.img {
+		padding-top: 75%;
+	}
+}
+
+// modifier ratio 16by9
+.ratio-16by9 {
+	.img {
+		padding-top: 56.25%;
+	}
+}
+
+// modifier static
+.static {
+	.img {
+		padding: 0;
+		background: none !important;
+		img {
+			display: block;
+		}
+	}
 }

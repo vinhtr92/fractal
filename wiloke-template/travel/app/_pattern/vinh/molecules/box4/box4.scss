@@ -8,6 +8,8 @@
 	border-radius: $general-radius;
 	overflow: hidden;
 	margin-bottom: 30px;
+	width: 100%;
+	height: 100%;
 
 
 	@include media('>=md'){
@@ -27,7 +29,7 @@
 			background: linear-gradient(0deg, #50545f 0%, rgba(81, 81, 81, 0) 100%);
 			height: 30%;
 			top: unset;
-			bottom: 0;
+			bottom: -2px;
 			transition: .3s all ease;
 		}
 	}
@@ -89,7 +91,11 @@
 	width: 40%;
 
 	@include media('>=sm'){
-		width: 60%;
+		width: 50%;
+	}
+
+	@include media('>=md') {
+		width: 60% !important;
 	}
 	
 	@include media('<330px'){

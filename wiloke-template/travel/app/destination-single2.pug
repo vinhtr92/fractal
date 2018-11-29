@@ -1,0 +1,147 @@
+extends pug/layout
+
+//- Config
+block config
+	-
+		config.title = 'destination-single'
+		config.bodyClass = 'page-1170'
+
+//- afterLink
+block afterLink
+	
+//- Header
+block header
+	+longHeader({
+		modifier: 'style02',
+
+	})
+//- Footer
+block footer
+
+//- Content
+block content
+	//- Args: img, sm, title
+	+longHeroDesSingle({
+		modifier: 'style1',
+		img: 'img/place/12.jpg'
+	})
+
+
+	+longBodyDesSingle({
+		modifier: 'style1'
+	})
+
+		//- Args: icon, text
+		+longPanel({
+			icon: 'pe-7s-way',
+			text: 'Destinations',
+			id: 'destinations'
+		})
+			+row({
+				attr: {
+					'data-col-xs-gap': 20
+				}
+			})
+				//- Args: img, country
+				+long_image-box({
+					loop: {
+						data: [{},{},{},{}],
+						wrap: 'col-md-6'
+					}
+				})
+
+		//- Args: icon, text
+		+longPanel({
+			icon: 'pe-7s-notebook',
+			text: 'Travel Guide Books',
+			id: 'books'
+		})
+
+			+row({
+				attr: {
+					'data-col-xs-gap': 10,
+					'data-col-md-gap': 30
+				}
+			})
+				//- Args: img, curency, price, sale, name
+				+longProduct({
+					modifier: 'sale',
+					loop: {
+						data: [{},{},{},{},{},{}],
+						wrap: {
+							addClass: 'col-xs-6 col-md-4'
+						}
+					},
+				})
+
+
+		//- Args: icon, text
+		+longPanel({
+			icon: 'pe-7s-cash',
+			text: 'Typical Costs',
+			id: 'costs'
+		})
+			p #[strong Accommodation] – Hostels start around 100,000 VND per night for the most basic accommodation. For a nicer place, you can pay almost double. Private rooms will cost at least 425,000 VND per night for a double room. While hostels were once scarce, they have started popping up all over the country to accommodate budget travelers.  Most hostels will offer free WiFi, and many will also include free breakfast or free beer during certain hours of the day. Self-catering facilities are not very common since eating out is so cheap.  For a budget hotel with a double bed, expect to pay around 225,000 VND per night. This will usually include free WiFi and free breakfast.
+			p #[strong Food] – You can get a bowl of pho or a rice dish for 20,000 VND. Most sit-down restaurants are also inexpensive at around 45,000-95,000 VND.  The fancier (and more touristy) the restaurant, the more expensive. Western food will also be more expensive. A liter of water at a convenience store is about 15,000 VND, while a beer or soda at a restaurant is about 20,000-35,000 VND. For those looking to cook their own meals, expect to pay at least 400,000 VND per week for basic groceries. Be sure to shop at the local markets to get the cheapest and freshest food. That being said, food is so cheap in the country, that is simply easier – and often cheaper – to just eat the street food.
+			p #[strong Transportation] – Bus travel is very cheap in Vietnam. The public bus around Ho Chi Minh City will cost a maximum of 4,000 VND per ride.  Overnight buses, while uncomfortable, are only about 100,000-500,000 VND and can take you to lots of cities in Vietnam (this will also save you a night of paying for accommodation). For a bus from Ho Chi Minh City to neighboring Phnom Penh in Cambodia, expect to pay around 320,000 VND per person. The train is also another inexpensive way to travel, with the 791km long train journey from Da Nang to Hanoi costing around 750,000 VND. There are extremely low-cost airlines that can hop you around the country quickly for as little as 400,000 VND.
+			p #[strong Activities] – Many of Vietnam’s attractions are based around its natural beauty and, as such, cost very little. For organized excursions such as touring the Cu Chi Tunnels you can expect to pay between 100,000-200,000 VND. Halong Bay tours from Hanoi start around 850,000 VND for two-day trips and increase exponentially from there. Half-day cooking classes and bicycle tours are heavily targeted at tourists, so they cost a bit more. Expect prices to start at around 300,000 VND. For canyoning in Da Lat (which is amazing!) prices begin around 450,000 VND.
+			p #[strong Suggested] daily budget – 680,000-900,000 VND / $30-40 USD (Note: This is a suggested budget assuming you’re staying in a hostel, eating all the delicious street, and using local transportation. If you stay in fancier accommodation or eat out more often, expect this to be higher!)
+
+		//- Args: icon, text
+		+longPanel({
+			icon: 'pe-7s-piggy',
+			text: 'Budget Tips',
+			id: 'tips'
+		})
+			p #[strong Eat delicious street food] – The food is usually excellent, really cheap, and you can watch it being cooked in front of you. Stick to the local food and you’ll save money. The street-side pho, bread, meat sandwiches (called bahn mi), donuts, and bananas are your best deals all of which can be found for around 20,000 VND.
+			p #[strong Late-night travel] – If traveling long journeys, try to take the late night “sleeper” buses or trains as this will save you the cost of a night’s accommodation. Depending on the company, you may even have a chance to comfortably lie flat as you ride through the dark countryside to your next destination.Take the tourist bus – It is actually cheaper to take the tourist bus around the country than taking local transportation because of the “tourist” price you get at the bus station. Tickets from one end of the country to another will cost around 1,200,000 VND.
+			p #[strong Fly for cheap] – Vietnam’s low-cost airlines VietJet and FlyVietnam are extremely inexpensive and adding luggage to your flight can cost as little as 150,000 VND.  This is a great option for people with limited time to explore different regions of Vietnam.
+			p #[strong Bargain hard] – Tourists tend to be charged more than locals for everything from cycles (a three-wheel bicycle taxi) to clothes to street food. Bargain harder than you would ordinarily, and don’t underestimate the value of walking away.
+			p #[strong Skip the SIM Card] – Vietnam is highly connected to WiFi — you can find it just about every hotel, shop, restaurant, and convenience store for free! Unless you need to have connectivity during a long bus ride or in rural areas, I’d forgo the SIM card and take a break from connectivity.
+			p #[strong Ask your hostel staff] – Before you leave the hostel, ask them to estimate how much what you want to do should cost. How much should a ride to the museum cost?  How much should I pay to have a gown like this made? They will be able to give you bargaining guidelines.
+
+		//- Args: icon, text
+		+longPanel({
+			icon: 'pe-7s-rocket',
+			text: 'Activities',
+			id: 'activities'
+		})
+			p #[strong Eat delicious street food] – The food is usually excellent, really cheap, and you can watch it being cooked in front of you. Stick to the local food and you’ll save money. The street-side pho, bread, meat sandwiches (called bahn mi), donuts, and bananas are your best deals all of which can be found for around 20,000 VND.
+			p #[strong Late-night travel] – If traveling long journeys, try to take the late night “sleeper” buses or trains as this will save you the cost of a night’s accommodation. Depending on the company, you may even have a chance to comfortably lie flat as you ride through the dark countryside to your next destination.Take the tourist bus] – It is actually cheaper to take the tourist bus around the country than taking local transportation because of the “tourist” price you get at the bus station. Tickets from one end of the country to another will cost around 1,200,000 VND.
+			p #[strong Fly for cheap] – Vietnam’s low-cost airlines VietJet and FlyVietnam are extremely inexpensive and adding luggage to your flight can cost as little as 150,000 VND.  This is a great option for people with limited time to explore different regions of Vietnam.
+			p #[strong Bargain hard] – Tourists tend to be charged more than locals for everything from cycles (a three-wheel bicycle taxi) to clothes to street food. Bargain harder than you would ordinarily, and don’t underestimate the value of walking away.
+			p #[strong Skip the SIM Card] – Vietnam is highly connected to WiFi — you can find it just about every hotel, shop, restaurant, and convenience store for free! Unless you need to have connectivity during a long bus ride or in rural areas, I’d forgo the SIM card and take a break from connectivity.
+			p #[strong Ask your hostel staff] – Before you leave the hostel, ask them to estimate how much what you want to do should cost. How much should a ride to the museum cost?  How much should I pay to have a gown like this made? They will be able to give you bargaining guidelines.
+
+
+	+section({
+		css: {
+			'background-color': '#f4f4f4'
+		},
+		id: 'articles',
+		addClass: 'panel__module'
+	})
+		//- Args: icon, title, text
+		+vinhSectitle({
+			modifier: 'style04',
+			align: 'center',
+			title: 'Article About Bulgaria',
+			icon: ''
+		})
+		+row
+			//- Args: img, country
+			+long_post({
+				loop: {
+					data: [
+						{modifier: 'latest'},
+						{modifier: 'latest'},
+						{modifier: 'latest'},
+						{modifier: 'latest'},
+						{modifier: 'latest'},
+						{modifier: 'latest'}
+					],
+					wrap: 'col-md-4 col-lg-4'
+				},
+				addClass: 'mb-30',
+				modifier: 'lastest'
+			})

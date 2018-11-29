@@ -1,0 +1,20 @@
+//- demo: true
+mixin long_image-box(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		-
+			let args = item;
+			let img = args.img || `img/place/${ random(1, 25) }.jpg`;
+			let country = args.country || random(random.country);
+
+		//- Args: img, link
+		+imageCover({
+			modifier: 'ratio-16by9',
+			img: img,
+			link: '#',
+			addClass: 'bd-radius--5'
+		})
+			include cssmodule
+			h4(class=css.country)= country
+

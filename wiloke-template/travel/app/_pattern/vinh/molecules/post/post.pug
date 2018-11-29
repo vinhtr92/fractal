@@ -1,0 +1,118 @@
+//- demo: true
+mixin long_post(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		-
+			let args = item;
+			let img = args.img || `img/place/${ random(1, 31) }.jpg`;
+			let country = args.country || random(random.country);
+
+
+		header(class=css.header)
+			if (args.postType === 'quote')
+				//- Args: quote
+				+long_quote1({
+					
+				})
+			else if (args.postType === 'video')
+				//- Args: img, popup, icon
+				+video-popup({
+					modifier: ['round'],
+					img: 'img/place/6.jpg',
+					addClass: 'video-popup-parallax-inner',
+					attr: {
+						'data-hover-parallax-options': '3d'
+					}
+				})
+			else if (args.postType === 'slider')
+				//- Args: options, prevText, nextText, thumbnails, pagination, nextText, prevText
+				+swiper({
+					options: {
+						spaceBetween: 0,
+						slidesPerView: 1,
+						loop: true,
+						effect: 'fade'
+					},
+					nextText: '<i class="pe-7s-angle-right"></i>',
+					prevText: '<i class="pe-7s-angle-left"></i>',
+					addClass: 'swiper--button-pill swiper--button-abs'
+				})
+					- for (let i = 0; i < 3; i++)
+						//- Args: img, link
+						+imageCover({
+							modifier: 'ratio-4by3',
+							img: `img/place/${ random(1, 31) }.jpg`
+						})
+			else
+				//- Args: img, link
+				+imageCover({
+					modifier: args.modifier === 'latest' || args.modifier === 'list' ? 'ratio-4by3' : 'static',
+					img: img,
+				})
+
+		include cssmodule
+		div(class=css.body)
+			//- Args: title
+			+long_list-title-sm({
+				modifier: (args.modifier === 'grid' || args.modifier === 'list' || args.modifier === 'latest') && 'small'
+			})
+			include cssmodule
+			if (args.modifier === 'grid' || args.modifier === 'list')
+				div(class=css.text)
+					p= random(random.text, 74) + '...'
+			else if (typeof args.modifier === 'undefined')
+				div(class=css.text)
+					p= random(random.text, 236) + '...'
+
+			if (args.modifier !== 'latest')
+				//- Args: icon, iconColor, text
+				+vinhTextboxSmall({
+					modifier: 'style2',
+					text: 'Continue reading',
+					icon: 'pe-7s-right-arrow'
+				})
+
+		div.divider-gray--2
+
+		include cssmodule
+		div(class=css.footer)
+			div(class=css.meta)
+				//- Args: icon, iconColor, text
+				+vinhTextboxSmall({
+					icon: 'pe-7s-date',
+					iconColor: 'color-tertiary',
+					text: 'July 12, 2016',
+					addClass: css.metaItem
+				})
+				include cssmodule
+				//- Args: icon, iconColor, text
+				+vinhTextboxSmall({
+					icon: 'pe-7s-look',
+					iconColor: 'color-secondary',
+					text: '2230',
+					addClass: css.metaItem
+				})
+				include cssmodule
+				//- Args: icon, iconColor, text
+				+vinhTextboxSmall({
+					icon: 'pe-7s-comment',
+					iconColor: 'color-primary',
+					text: '102',
+					addClass: css.metaItem
+				})
+
+			include cssmodule
+			div(class=css.share)
+				//- Args: icon, iconColor, text
+				+vinhTextboxSmall({
+					modifier: 'reverse',
+					icon: 'pe-7s-share',
+					text: 'Share',
+					iconColor: 'color-quaternary',
+					classText: css.metaText,
+					href: '#'
+				})
+
+
+			include cssmodule
