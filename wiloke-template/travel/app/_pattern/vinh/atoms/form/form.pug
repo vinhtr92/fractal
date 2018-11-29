@@ -22,13 +22,12 @@ mixin vinhForm(args)
 						i(class='fa fa-envelope')
 
 
-				div(class=css.action)
-					+wil-btn('button', {
-						type: 'submit',
-						text: 'Subscrible<i class="la la-paper-plane"></i> ',
-						modifier: ['primary', 'md', 'round']
-					})
-					include cssmodule
+				+wil-btn('button', {
+					type: 'submit',
+					text: 'Subscrible<i class="la la-paper-plane"></i> ',
+					modifier: ['primary', 'md', 'round']
+				})
+				include cssmodule
 		else if (has( args.modifier, 'search-wide'))
 			form(name='wil-search', id='wil-search')
 
@@ -36,12 +35,35 @@ mixin vinhForm(args)
 					label(for="search")= args.search || 'Search destination'
 					input(type='search', id='search')
 
-				div(class=css.action)
-					+wil-btn('button', {
-						type: 'submit',
-						text: 'Search<i class="la la-search"></i> ',
-						modifier: ['primary', 'xl', 'round']
-					})
-					include cssmodule
+				+wil-btn('button', {
+					type: 'submit',
+					text: 'Search<i class="la la-search"></i> ',
+					modifier: ['primary', 'xl', 'round']
+				})
+				include cssmodule
+
+		else if( has(args.modifier,'feedback'))
+			form(name='wil-feedback' id='wil-feedback')
+				div(class='item-group')
+					label(for="name")= args.name || 'name'
+					input(type="text", id="name", )
+					div(class='form-icon')
+						i(class='fa fa-user')
+
+				div(class='item-group')
+					label(for="email")= args.email|| 'email'
+					input(type="email", id="email",  )
+					div(class='form-icon')
+						i(class='fa fa-envelope')
+				div(class='item-group')
+					label(for='textarea')= args.textarea || 'textarea'
+					textarea
+
+				+wil-btn('button', {
+					type: 'submit',
+					text: 'Subscrible<i class="la la-paper-plane"></i> ',
+					modifier: ['primary', 'md', 'round']
+				})
+				include cssmodule
 		
 	include cssmodule

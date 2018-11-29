@@ -8,4 +8,4 @@
 			item.value === '' ? this.parentNode.wilRemoveClass('active') :null	
 		})
 	})
-})('form#wil-subscribe input,form#wil-search input')
+})('form#wil-subscribe input,form#wil-search input,form#wil-feedback input, form#wil-feedback textarea')

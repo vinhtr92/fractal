@@ -14,6 +14,8 @@
 	form {
 		float: left;
 		width: 100%;
+
+
 	}
 
 	:global(.item-group) {
@@ -37,6 +39,11 @@
 			transition: .3s all ease;
 			display: inline-block;
 			float: left;
+		}
+
+		input,
+		textarea {
+			color: $color-gray-8 !important;
 		}
 
 		input {
@@ -153,7 +160,7 @@
 	:global {
 		.item-group {
 			margin: 0 0 20px 0;
-			border: 2px solid $color-gray-1;
+			border: 2px solid $color-gray-9;
 			transition: .3s ease all;
 
 
@@ -203,5 +210,53 @@
 			padding: 20px  0 19px 0;
 		}
 
+	}
+}
+
+// modifier feedback
+.feedback {
+	width: 100% !important;
+
+	form {
+		margin: -10px;
+		width: calc(100%  + 20px);
+	}
+
+	textarea {
+		border: none;
+		padding: 20px 15px;
+		&:focus {
+			border: none;
+		}
+	}
+	input {
+		width: 100% !important;
+	}
+	:global {
+		.item-group {
+			@include media('>=sm') {
+				width: calc((100% / 2) - 20px);
+
+			}
+			margin: 10px ;
+
+			&:nth-child(3) {
+				width: calc(100% - 20px);
+				label {
+					top: 25px;
+				}
+
+				&.active {
+					label {
+						top: 15px;
+					}
+				}
+			}
+		}
+
+		.wil-btn {
+			margin: 10px;
+			width: calc(100% - 20px);
+		}
 	}
 }
