@@ -1,0 +1,35 @@
+//- demo: true
+mixin vinhWidgetPost(args)
+	include cssmodule
+
+	+module('div', 'widget-post', args)
+		- let args = item
+		- let imgsrc = `img/place/${ random(1, 35) }.jpg`
+
+		
+		//- code
+		.widget-post-item 
+			a.widget-post-item__media(style=`background-image:url('${args.imgsrc||imgsrc}')`)
+				img(src=args.imgsrc || imgsrc, alt="")
+			.widget-post-item__body
+				h4.widget-post-item__category
+					a(href="#")= args.category || random(random.continental)
+				h2.widget-post-item__title
+					a(href="#")= args.title || random(random.title)
+				div.widget-post-item__meta
+
+					a.widget-post-item__view(href="#")
+						i(class=args.iconView || 'la la-eye' )
+						=args.viewText|| `${random(1,1000)} Views`
+					
+
+					a.widget-post-item__comment(href="#")
+						i(class=args.iconComment || 'la la-comment')
+						=args.commentText|| `${random(1,1000)} Comments`
+					
+					
+
+
+
+		
+	include cssmodule

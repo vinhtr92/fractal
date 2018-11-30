@@ -1,0 +1,10 @@
+//- demo: true
+mixin vinhWidgetList(args)
+	include cssmodule
+
+	+module('ul', 'widget-list', args)
+		- let args = item
+		//- code
+		li
+			a(href="#")= set(item, 'text', 'widget list')
+	include cssmodule

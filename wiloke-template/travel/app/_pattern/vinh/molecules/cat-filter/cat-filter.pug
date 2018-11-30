@@ -1,0 +1,19 @@
+//- demo: true
+mixin vinhCatFilter(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		//- .wil-overlay
+		//- code
+		+vinhImagecover({
+		})
+		include cssmodule
+		div(class=css.body)
+			h2(class=css.category)
+				a(href=args.hrefCategory || '#')= args.category || random(random.continental)
+			p(class=css.desc)=args.desc || `${random(1,100)} destinations` 
+		
+		
+		
+	include cssmodule

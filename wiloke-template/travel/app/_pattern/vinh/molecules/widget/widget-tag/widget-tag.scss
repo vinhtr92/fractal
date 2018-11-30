@@ -1,0 +1,32 @@
+/* //--- vinhWidgetTag
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	
+}
+:global {
+	.tagcloud {
+		@include clearfix;
+		margin: -3px;
+		a {
+			float: left;
+			line-height: 1;
+			padding: 6px 13px;
+			color: $color-gray-8;
+			font-size: 13px;
+			text-decoration: none;
+			background: #f6f6f6;
+			border: 1px solid #eaeaee;
+			border-radius: 5px;
+			margin: 3px;
+
+			&:hover {
+				text-decoration: none;
+				color: $color-light;
+				border: 1px solid $color-primary;
+				background: $color-primary;
+			}
+		}
+	}
+}

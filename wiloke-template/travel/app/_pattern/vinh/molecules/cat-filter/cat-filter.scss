@@ -1,0 +1,41 @@
+/* //--- vinhCatFilter
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	position: relative;
+	border-radius: $general-radius;
+	overflow: hidden;
+
+	a {
+		text-decoration: none;
+		&:hover {
+			color: $color-primary;
+			h2 {
+				color: inherit;
+			}
+		}
+	}
+	p {
+		margin: 0;
+	}
+}
+
+// body
+.body {
+	@include absolute(left 0 right 0  bottom 0);
+	padding: 10px 20px;
+}
+
+// category
+.category {
+	font-size: 18px;
+	color: $color-light ;
+	margin : 0;
+}
+
+// desc
+.desc {
+	color: $color-gray-9;
+	line-height: 1.4;	
+}

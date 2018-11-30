@@ -1,0 +1,9 @@
+//- demo: true
+mixin vinhWidgetTag(args)
+	include cssmodule
+
+	+module('div', 'tagcloud', args)
+		//- code
+		a(href="#")= set(item, 'text', 'tagcloud')
+
+	include cssmodule

@@ -1,0 +1,97 @@
+//- demo: true
+mixin vinhSidebar(args)
+	include cssmodule
+
+	+module('aside', css.module, args)
+		- let args = item
+		
+		//- code
+		+vinhWidget({
+			addClass: 'mb-30',
+		})
+			+vinhWidgetAbout({
+			})
+
+		+vinhWidget({
+			addClass: 'mb-30',
+			title: 'subscribe'
+		})
+
+			+vinhWidgetSubsc({
+			})
+
+		+vinhWidget({
+			addClass: 'mb-30',
+			title: 'categories'
+		})
+			+vinhWidgetList({
+				loop: {
+					data: [
+						{
+
+						},
+						{
+
+						},
+						{
+
+						},
+						{
+
+						},
+						{
+
+						},
+						{
+
+						},
+					],
+					children: true,
+				}
+			})
+
+		+vinhWidget({
+			addClass: 'mb-30',
+			title: 'tags'
+		})
+
+			+vinhWidgetTag({
+				loop: {
+					data: [
+						{
+
+						},
+						{
+
+						},
+						{
+
+						},
+						{
+
+						},
+						{
+
+						},
+						{
+
+						},
+					],
+					children: true,
+				}
+			})
+
+		+vinhWidget({
+			title: 'list post',
+			addClass: 'mb-30',
+		})
+
+			+vinhWidgetPost({
+				loop: {
+					data: [{},{},{}],
+					children: true,
+				}
+			})
+	include cssmodule
+
+

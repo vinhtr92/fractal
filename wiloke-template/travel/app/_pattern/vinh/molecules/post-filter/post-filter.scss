@@ -1,0 +1,66 @@
+/* //--- vinhPostFilter
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	padding: 15px 0;	
+	@include clearfix;
+	display: flex;
+	border-bottom: 1px solid $color-gray-9;
+
+}
+
+// image
+.image {
+	@include size(84px);
+	border-radius: $general-radius;
+	overflow: hidden;
+}
+
+// body
+
+.body {
+	width: calc(100% - 84px);
+	padding: 0 0 0 15px;
+	align-self: center;
+}
+
+.body,
+.image {
+	float: left;
+}
+
+// category
+.category {
+	font-size: 12px;
+	text-transform: uppercase;
+	margin: 0;
+	line-height: 1.4;
+	font-weight: 400;
+}
+
+// title
+.title {
+	font-size: 14px;
+	color: $color-dark;
+	margin: 0;
+	line-height: 1.4;
+	margin: 10px 0 5px 0;
+
+	&:hover {
+		color: $color-primary;
+	}
+}
+
+// desc
+.desc {
+	font-size: 14px;
+	width: calc(100% - 15px);
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+
+	@include media('>=sm'){
+		width: calc(100% - 40px);
+	}
+}

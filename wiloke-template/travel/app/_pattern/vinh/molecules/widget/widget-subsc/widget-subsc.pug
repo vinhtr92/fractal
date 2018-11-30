@@ -1,0 +1,16 @@
+//- demo: true
+mixin vinhWidgetSubsc(args)
+	include cssmodule
+
+	+module('div', 'widget-subsc', args)
+
+		- let args = item
+		
+		//- code
+		div.mb-10= args.desc || 'Enter your email to get my best travel tips that help you plan better and spend less.'
+		+vinhForm({
+			modifier: 'subscribe',
+		})
+		
+		
+	include cssmodule

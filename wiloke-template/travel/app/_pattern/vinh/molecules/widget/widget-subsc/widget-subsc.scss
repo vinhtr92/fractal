@@ -1,0 +1,16 @@
+/* //--- vinhWidgetSubsc
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	
+}
+
+:global {
+	.widget-subsc {
+
+		div[class*=form]{
+			padding: 0;
+		}
+	}
+}

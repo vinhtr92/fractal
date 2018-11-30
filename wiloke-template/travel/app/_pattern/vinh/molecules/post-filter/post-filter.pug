@@ -1,0 +1,22 @@
+//- demo: true
+mixin vinhPostFilter(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		div(class=css.image)
+			+vinhImagecover({
+
+			})
+			include cssmodule
+		div(class=css.body)
+			h4(class=css.category class=args.color || 'color')
+				a(href=hrefCategory|| '#')= args.category || random(random.continental)
+			h2(class=css.title)
+				a(href=hrefTitle || '#')= args.title || random(random.title)
+			div(class=css.desc)= random(random.text,120)
+		
+		
+	include cssmodule
