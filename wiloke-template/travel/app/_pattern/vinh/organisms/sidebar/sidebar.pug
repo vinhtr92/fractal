@@ -92,6 +92,20 @@ mixin vinhSidebar(args)
 					children: true,
 				}
 			})
+
+		+vinhWidget({
+			title: 'list post',
+			addClass: 'mb-30',
+		})
+
+			+vinhWidgetGallery({
+				loop: {
+					data: [{},{},{},{},{}],
+					children: true,
+				}
+			})
+		+vinhWidgetSearch({
+		})
 	include cssmodule
 
 

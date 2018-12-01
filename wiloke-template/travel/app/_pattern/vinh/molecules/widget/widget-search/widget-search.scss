@@ -1,0 +1,73 @@
+/* //--- vinhWidgetSearch
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	
+}
+:global {
+	.item-group {
+		position: relative;
+		border: 1px solid transparent;
+
+		input {
+			background: $color-light;
+			// border: 1px solid transparent;
+			border: 1px solid transparent !important;
+			transition: .3s ease all;
+
+
+			&:focus {
+				border: 1px solid $color-primary !important;
+				transition: .3s ease all;
+
+			}
+		}
+
+		button {
+			border: none;
+			padding: 0 15px;
+			background: none;
+			@include absolute(right 0 top 0 bottom 0);
+			overflow: hidden;
+			border-radius:  0 5px 5px 0 ;
+
+
+			i {
+				font-size: 16px;
+				position: relative;
+				z-index: 1;
+				transition: .3s ease all;
+
+			}
+
+			&:after {
+				content: '';
+				@include absolute(top 0 left 0 right 0 bottom 0);
+				border-radius:  0 5px 5px 0 ;
+				background: $color-primary;
+				z-index: 0;
+				transform: translate(110%);
+				transition: .3s ease all;
+			}
+
+			&:hover {
+				i {
+					color: $color-light;
+					transition: .3s ease all;
+
+				}
+				&:after {
+					transform: translate(0);
+					transition: .3s ease all;
+				}
+			}
+			&:active {
+				&:after {
+					background: darken($color-primary,10%)
+
+				}
+			}
+		}
+	}
+}

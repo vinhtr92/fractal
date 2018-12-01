@@ -5,41 +5,51 @@
 .module {
 	display: inline-block;
 	border-radius: 50%;
-	:global {
-			.fa,.la {
-			display: inline-block;
-			@include size(40px);
-			font-size: 18px;
-			line-height: 40px;
-			color: $color-light;
-			text-align: center;
-			border-radius: 50%;
+		i{
+		display: inline-block;
+		@include size(40px);
+		font-size: 18px;
+		line-height: 40px;
+		color: $color-light;
+		text-align: center;
+		border-radius: 50%;
+		transition: .3s ease all;
+
+	}
+
+	&:hover {
+		a {
+			text-decoration: none;
+		}
+
+		i {
+			color: $color-primary;
+			transition: .3s ease all;
 		}
 	}
 }
 
-.module:hover {
-	a {
-		text-decoration: none;
-	}
-}
+
 
 // modifier style02
 .style02 {
 	background-color: rgba($color-light, 0.3);
 	transition: .3s all;
-
 	margin: 6px;
-	:global{
 
-		.la {
-			@include size(38px);
-			transition: .3s all;
-		}
+	i {
+		@include size(38px);
+		transition: .3s all;
 	}
+}
 
-	&:hover i {
-		background-color: $color-primary;
-		transition: all 0.3s ease;
+
+// modifier style03
+.style03 {
+	background: #f6f6f6;
+	i {
+		@include size(34px);
+		font-size: 14px;
+		color: $color-gray-8;
 	}
 }

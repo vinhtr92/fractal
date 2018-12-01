@@ -5,114 +5,288 @@ mixin long_post(args)
 	+module('div', css.module, args)
 		-
 			let args = item;
-			let img = args.img || `img/place/${ random(1, 31) }.jpg`;
+			let img = args.img || `img/place/${ random(1, 35) }.jpg`;
 			let country = args.country || random(random.country);
 
+		if (has(args.modifier,'post02'))
+			header(class=css.header)
+				+vinhTextboxSmall({
+					modifier: 'category'
+				})
+				if (args.postType === 'quote')
+					//- Args: quote
+					+long_quote1({
+						
+					})
+					include cssmodule
+				else if (args.postType === 'video')
+					//- Args: img, popup, icon
+					+video-popup({
+						modifier: ['round'],
+						img: 'img/place/6.jpg',
+						addClass: 'video-popup-parallax-inner',
+						attr: {
+							'data-hover-parallax-options': '3d'
+						}
+					})
+					include cssmodule
+				else if (args.postType === 'slider')
+					//- Args: options, prevText, nextText, thumbnails, pagination, nextText, prevText
+					+swiper({
+						options: {
+							spaceBetween: 0,
+							slidesPerView: 1,
+							loop: true,
+							effect: 'fade'
+						},
+						nextText: '<i class="pe-7s-angle-right"></i>',
+						prevText: '<i class="pe-7s-angle-left"></i>',
+						addClass: 'swiper--button-pill swiper--button-abs'
+					})
+						- for (let i = 0; i < 3; i++)
+							//- Args: img, link
+							+imageCover({
+								modifier: 'ratio-4by3',
+								img: `img/place/${ random(1, 31) }.jpg`
+							})
+					include cssmodule
+				else
+					//- Args: img, link
+					+vinhImagecover({
+						modifier: 'ratio-16by9',
+					})
+					include cssmodule
+			div(class=css.body)
+				h3(class=css.title)
+					a(href='#')= args.title || random(random.title)
+				p(class=css.desc)= args.desc || random(random.text,120)
 
-		header(class=css.header)
-			if (args.postType === 'quote')
-				//- Args: quote
-				+long_quote1({
-					
-				})
-			else if (args.postType === 'video')
-				//- Args: img, popup, icon
-				+video-popup({
-					modifier: ['round'],
-					img: 'img/place/6.jpg',
-					addClass: 'video-popup-parallax-inner',
-					attr: {
-						'data-hover-parallax-options': '3d'
-					}
-				})
-			else if (args.postType === 'slider')
-				//- Args: options, prevText, nextText, thumbnails, pagination, nextText, prevText
-				+swiper({
-					options: {
-						spaceBetween: 0,
-						slidesPerView: 1,
-						loop: true,
-						effect: 'fade'
-					},
-					nextText: '<i class="pe-7s-angle-right"></i>',
-					prevText: '<i class="pe-7s-angle-left"></i>',
-					addClass: 'swiper--button-pill swiper--button-abs'
-				})
-					- for (let i = 0; i < 3; i++)
-						//- Args: img, link
-						+imageCover({
-							modifier: 'ratio-4by3',
-							img: `img/place/${ random(1, 31) }.jpg`
-						})
-			else
-				//- Args: img, link
-				+imageCover({
-					modifier: args.modifier === 'latest' || args.modifier === 'list' ? 'ratio-4by3' : 'static',
-					img: img,
-				})
+			div(class=css.footer)
+				div(class=css.meta)
+					+vinhTextboxSmall({
+						loop: {
+							data: [
+								{
+									modifier: 'meta',
+									icon: 'la la-eye',
+									text: `${random(1,100)} Views`
+								},
+								{
+									modifier: 'meta',
+									icon: 'la la-comment',
+									text: `${random(1,100)} Comments`
+								}
+							],
+						}
+					})
+					include cssmodule
+				div(class=css.share)
+					+vinhTextboxSmall({
+						modifier: 'singleIcon',
+						icon: 'pe-7s-share'
+					})
+					include cssmodule
 
-		include cssmodule
-		div(class=css.body)
-			//- Args: title
-			+long_list-title-sm({
-				modifier: (args.modifier === 'grid' || args.modifier === 'list' || args.modifier === 'latest') && 'small'
-			})
 			include cssmodule
-			if (args.modifier === 'grid' || args.modifier === 'list')
-				div(class=css.text)
-					p= random(random.text, 74) + '...'
-			else if (typeof args.modifier === 'undefined')
-				div(class=css.text)
-					p= random(random.text, 236) + '...'
 
-			if (args.modifier !== 'latest')
-				//- Args: icon, iconColor, text
+		else if(has(args.modifier,'post03'))
+			header(class=css.header)
+				if (args.postType === 'quote')
+					//- Args: quote
+					+long_quote1({
+						
+					})
+					include cssmodule
+				else if (args.postType === 'video')
+					//- Args: img, popup, icon
+					+video-popup({
+						modifier: ['round'],
+						img: 'img/place/6.jpg',
+						addClass: 'video-popup-parallax-inner',
+						attr: {
+							'data-hover-parallax-options': '3d'
+						}
+					})
+					include cssmodule
+				else if (args.postType === 'slider')
+					//- Args: options, prevText, nextText, thumbnails, pagination, nextText, prevText
+					+swiper({
+						options: {
+							spaceBetween: 0,
+							slidesPerView: 1,
+							loop: true,
+							effect: 'fade'
+						},
+						nextText: '<i class="pe-7s-angle-right"></i>',
+						prevText: '<i class="pe-7s-angle-left"></i>',
+						addClass: 'swiper--button-pill swiper--button-abs'
+					})
+						- for (let i = 0; i < 3; i++)
+							//- Args: img, link
+							+imageCover({
+								modifier: 'ratio-4by3',
+								img: `img/place/${ random(1, 31) }.jpg`
+							})
+					include cssmodule
+				else
+					//- Args: img, link
+					+vinhImagecover({
+						modifier: 'ratio-16by9',
+					})
+					include cssmodule
+			div(class=css.body)
 				+vinhTextboxSmall({
-					modifier: 'style2',
-					text: 'Continue reading',
-					icon: 'pe-7s-right-arrow'
-				})
-
-		div.divider-gray--2
-
-		include cssmodule
-		div(class=css.footer)
-			div(class=css.meta)
-				//- Args: icon, iconColor, text
-				+vinhTextboxSmall({
-					icon: 'pe-7s-date',
-					iconColor: 'color-tertiary',
-					text: 'July 12, 2016',
-					addClass: css.metaItem
+					modifier: 'category',
 				})
 				include cssmodule
-				//- Args: icon, iconColor, text
-				+vinhTextboxSmall({
-					icon: 'pe-7s-look',
-					iconColor: 'color-secondary',
-					text: '2230',
-					addClass: css.metaItem
+
+				h3(class=css.title)
+					a(href='#')= args.title || random(random.title)
+				p(class=css.desc)= args.desc || random(random.text,200)
+				
+				+wil-btn('a', {
+					text: 'readmore',
+					modifier: ['sm']
 				})
 				include cssmodule
-				//- Args: icon, iconColor, text
-				+vinhTextboxSmall({
-					icon: 'pe-7s-comment',
-					iconColor: 'color-primary',
-					text: '102',
-					addClass: css.metaItem
-				})
+			div(class=css.footer)
+				div(class=css.share)
+					+vinhSocial({
+						loop: {
+								data: [
+									{icon: 'la la-facebook'},
+									{icon: 'la la-twitter'},
+									{icon: 'la la-google-plus'},
+									{icon: 'la la-pinterest'},
+								]
+							},
+						modifier: 'style03'
+					})
+					include cssmodule
+				div(class=css.view)
+					+vinhTextboxSmall({
+						modifier: 'meta',
+						text: `${random(1,100)} Views`,
+						icon: 'la la-eye'
+					})
+					include cssmodule
+				div(class=css.comment)
+					+vinhTextboxSmall({
+						modifier: 'meta',
+						text: `${random(1,100)} Comments`,
+						icon: 'la la-comment'
+					})
+					include cssmodule
+
+		else
+			header(class=css.header)
+				if (args.postType === 'quote')
+					//- Args: quote
+					+long_quote1({
+						
+					})
+					include cssmodule
+				else if (args.postType === 'video')
+					//- Args: img, popup, icon
+					+video-popup({
+						modifier: ['round'],
+						img: 'img/place/6.jpg',
+						addClass: 'video-popup-parallax-inner',
+						attr: {
+							'data-hover-parallax-options': '3d'
+						}
+					})
+				else if (args.postType === 'slider')
+					//- Args: options, prevText, nextText, thumbnails, pagination, nextText, prevText
+					+swiper({
+						options: {
+							spaceBetween: 0,
+							slidesPerView: 1,
+							loop: true,
+							effect: 'fade'
+						},
+						nextText: '<i class="pe-7s-angle-right"></i>',
+						prevText: '<i class="pe-7s-angle-left"></i>',
+						addClass: 'swiper--button-pill swiper--button-abs'
+					})
+						- for (let i = 0; i < 3; i++)
+							//- Args: img, link
+							+imageCover({
+								modifier: 'ratio-4by3',
+								img: `img/place/${ random(1, 31) }.jpg`
+							})
+				else
+					//- Args: img, link
+					+imageCover({
+						modifier: args.modifier === 'latest' || args.modifier === 'list' ? 'ratio-4by3' : 'static',
+						img: img,
+					})
+					include cssmodule
 
 			include cssmodule
-			div(class=css.share)
-				//- Args: icon, iconColor, text
-				+vinhTextboxSmall({
-					modifier: 'reverse',
-					icon: 'pe-7s-share',
-					text: 'Share',
-					iconColor: 'color-quaternary',
-					classText: css.metaText,
-					href: '#'
+			div(class=css.body)
+				//- Args: title
+				+long_list-title-sm({
+					modifier: (args.modifier === 'grid' || args.modifier === 'list' || args.modifier === 'latest') && 'small'
 				})
+				include cssmodule
 
+				if (args.modifier === 'grid' || args.modifier === 'list')
+					div(class=css.text)
+						p= random(random.text, 74) + '...'
+				else if (typeof args.modifier === 'undefined')
+					div(class=css.text)
+						p= random(random.text, 236) + '...'
+
+				if (args.modifier !== 'latest')
+					//- Args: icon, iconColor, text
+					+vinhTextboxSmall({
+						modifier: 'style2',
+						text: 'Continue reading',
+						icon: 'pe-7s-right-arrow'
+					})
+					include cssmodule
+
+			div.divider-gray--2
 
 			include cssmodule
+			div(class=css.footer)
+				div(class=css.meta)
+					//- Args: icon, iconColor, text
+					+vinhTextboxSmall({
+						icon: 'pe-7s-date',
+						iconColor: 'color-tertiary',
+						text: 'July 12, 2016',
+						addClass: css.metaItem
+					})
+					include cssmodule
+					//- Args: icon, iconColor, text
+					+vinhTextboxSmall({
+						icon: 'pe-7s-look',
+						iconColor: 'color-secondary',
+						text: '2230',
+						addClass: css.metaItem
+					})
+					include cssmodule
+					//- Args: icon, iconColor, text
+					+vinhTextboxSmall({
+						icon: 'pe-7s-comment',
+						iconColor: 'color-primary',
+						text: '102',
+						addClass: css.metaItem
+					})
+
+				include cssmodule
+				div(class=css.share)
+					//- Args: icon, iconColor, text
+					+vinhTextboxSmall({
+						modifier: 'reverse',
+						icon: 'pe-7s-share',
+						text: 'Share',
+						iconColor: 'color-quaternary',
+						classText: css.metaText,
+						href: '#'
+					})
+
+
+				include cssmodule

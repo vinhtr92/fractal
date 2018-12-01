@@ -1,0 +1,15 @@
+//- demo: true
+mixin vinhWidgetSearch(args)
+	include cssmodule
+
+	+module('form', 'search-form', args)
+		- let args = item
+		//- code
+		div.item-group
+			label(for="search-form")
+			input(type="search" id='search-form' class='search-field' placeholder= args.placeholder || 'Search...')
+			button(type='submit' class='search-submit') 
+				i(class=args.searchIcon || 'fa fa-search')
+		
+		
+	include cssmodule

@@ -1,0 +1,56 @@
+/* //--- vinhWidgetGallery
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	
+}
+:global {
+	.widget-gallery {
+		margin: -4px;
+		overflow: hidden;
+		a {
+			position: relative;
+			display: block;
+			width: 100%;
+			padding-top: 100%;
+			background-size: cover;
+			background-position: 50% 50%;
+			border-radius: 10px;
+		
+			img {
+				display: none;
+			}
+		}
+		@for $i from 1 through 6 {
+			&[data-column="#{$i}"] {
+				.widget-gallery__item {
+					width: (100 / $i) * 1%;
+				}
+			}
+		}
+		&:hover {
+			a {
+				-webkit-filter: grayscale(100%);
+				filter: grayscale(100%);
+			}
+		}
+		a {
+			&:hover {
+				-webkit-filter: grayscale(0);
+				filter: grayscale(0);
+			}
+		}
+	}
+	.widget-gallery__item {
+		width: 25%;
+		padding: 4px;
+		float: left;
+		overflow: hidden;
+
+		&:nth-child(10n+1),
+		&:nth-child(10n+6) {
+			width: 50%;
+		}
+	}
+}

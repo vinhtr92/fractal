@@ -4,16 +4,22 @@
 // module
 .module {
 	background-color: $color-light;
-	composes: bd-radius--5 from global;
 	overflow: hidden;
 	margin-bottom: 30px;
 	border-radius: $general-radius;
+	position: relative;
 
 	a {
 		&:hover,
 		&:active {
 			text-decoration: none;
 			color: $color-primary;
+		}
+	}
+
+	:global {
+		.module-category {
+			@include absolute(top 10px  left 10px)
 		}
 	}
 }
@@ -32,7 +38,8 @@
 }
 
 // body
-.body {
+.body,
+.footer {
 	padding: 14px 18px;
 }
 
@@ -43,7 +50,6 @@
 
 // footer
 .footer {
-	padding: 14px 18px;
 	composes: clearfix from global;
 }
 
@@ -134,3 +140,219 @@
 		}
 	} 
 }
+
+//modifier post02
+.post02 {
+	.title {
+		margin: 0 0 3px 0;
+		color: $color-dark;
+		font-size: 16px;
+	}
+
+	.desc {
+		margin: 0;
+		font-size: 14px;
+	}
+
+	.footer {
+		@include clearfix;
+		// margin: 0 -18px -14px -18px;
+		line-height: 1;
+		border: 1px solid $color-gray-9;
+	}
+
+	.share {
+		float: right;
+		a {
+			color: $color-gray-6;
+			// font-size: 18px;
+			&:hover {
+				color: $color-primary;
+			}
+		}
+
+		i {
+			vertical-align: middle
+		}
+	}
+
+	.meta {
+		:global {
+			.md-meta {
+				color: $color-gray-7;
+				font-size: 12px;
+				display: inline-block;
+				line-height: 2;
+				position: relative;
+
+				i {
+					font-size: 16px;
+					vertical-align: text-bottom;
+					margin: 0  4px 0 0;
+				}
+
+			}
+
+			span[class*=textbox]{
+				padding: 0 10px;
+				position: relative;
+
+				&:first-child {
+					padding: 0 10px 0 0 ;
+				}
+
+				+ span[class*=textbox]:before {
+					content: '\f111';
+					font-family: 'fontawesome';
+					font-size: 4px;
+					@include absolute(top 50%  left 0);
+					transform: translate(-50%);
+					line-height: 0;
+					color: $color-gray-9;
+				}
+			}
+		}
+	}
+}
+// title
+.title {
+}
+
+// modifier post03
+.post03 {
+	content: none;
+
+	:global {
+		.module-category {
+			position: relative;
+		}
+	}
+	// view
+	.view {
+		float: left;
+	}
+
+	.title {
+		font-size: 24px;
+		margin: 15px 0 5px 0;
+	}
+
+	.desc {
+
+		@include media('>=sm') {
+			max-width: 560px;
+			margin: 0 auto 30px auto;
+		}
+	}
+
+	.body {
+		text-align: center;
+		background: $color-light;
+		padding: 14px 20px 30px 20px;
+
+
+
+		span[class*=textboxsmall]{
+			display: inline-block;
+			line-height: 0;
+			> h4 {
+				position: relative;
+				display: inline-block;
+				top: initial;
+				left: initial;
+			}
+		}
+
+		@include media('>=sm') {
+			margin: -30px 30px 0 30px;
+			padding: 30px 0 40px 0;
+
+		}
+	}
+
+	// comment
+	.comment {
+		float: right;
+	}
+
+	.view,
+	.comment {
+		width: calc(100% /2 );
+		padding: 15px 0;
+
+		a {
+			font-size: 12px;
+			color: $color-gray-7;
+		}
+
+		i {
+			margin: 0 4px 0 0;
+			font-size: 16px;
+			vertical-align: middle;
+		}
+
+		@include media('>=sm'){
+			width: calc((100% - 48.05%) / 2);
+			padding: 20px 0 ;
+		}
+	}
+
+	.view {
+		border-right: 1px solid $color-gray-9;
+	}
+
+	.share {
+		width: 100%;
+		border-bottom: 1px solid $color-gray-9;
+		border-top: 1px solid $color-gray-9;
+		padding: 5px 0;		
+
+		a {
+			margin: 4px;
+			text-decoration: none;
+		}
+		@include media('>=sm') {
+			width: 48.05%;
+			float: none;
+			display: inline-block;
+			border: none;
+			padding: 11px 0;
+			border-right: 1px solid $color-gray-9;
+		}
+	}
+
+	.footer {
+		text-align: center;
+		// padding: 14px 18px 0 18px;
+		padding: 0;
+
+		@include media('>=sm'){
+			border-top: 1px solid $color-gray-9;
+
+		}
+	}
+
+	:global {
+		.wil-btn {
+			background: none;
+			color: $color-gray-7;
+			text-transform: uppercase;
+			font-size: 10px !important;
+			font-weight: 400;
+			border-bottom: 1px solid #e2e2e5;
+			min-width: 106px !important;
+			padding: 3px 0 !important;
+			letter-spacing: 1px;
+			text-decoration: none;
+			&:hover {
+				background: darken($color-light,10%);
+				color: $color-dark;
+			}
+			&:active {
+				background: darken($color-light,30%)
+			}
+		}
+	}
+}
+
+

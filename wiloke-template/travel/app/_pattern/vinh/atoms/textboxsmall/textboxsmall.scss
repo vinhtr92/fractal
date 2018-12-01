@@ -35,3 +35,30 @@
 	
 }
 
+//modifier category
+.category {
+	:global {
+		.module-category {
+			font-family: $font-primary;
+			font-size: 12px;
+			font-weight: $font-normal;
+			color: $color-light;
+			display: inline-block;
+			border-radius: 5px;
+			margin: 0;
+			overflow: hidden;
+
+			a {
+				padding: 4px 11px;
+				display: block;
+				text-decoration: none;
+				background: inherit;
+
+				&:hover {
+					color: $color-light
+				}
+			}
+		}
+	}
+}
+

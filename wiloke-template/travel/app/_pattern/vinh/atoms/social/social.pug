@@ -2,7 +2,7 @@
 mixin vinhSocial(args)
 	include cssmodule
 
-	+module('a', css.module, args,href=args.href)
+	+module('a', css.module, args,href="#")
 		- let args = item
 		//- code
 		i(class = args.icon || 'fa fa-facebook')

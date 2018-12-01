@@ -8,35 +8,34 @@ mixin vinhBox2(args)
 			let imgsrc = `img/place/${ random(1, 31) }.jpg`
 		
 		//- code
-		a(href= args.link || '#')
-			div(class='overlay')
+		div(class='overlay')
 
-			div(class=css.meta)
-				+vinhTextboxSmall({
-					loop: {
-						data: [
-								{
-									icon: 'la la-eye',
-									text: '120 view',
-									modifier: 'meta',
-								},
-								{
-									icon: 'la la-comment-o',
-									text: '03 comment',
-									modifier: 'meta',
-								}
-						],
-					}
-				})
-				include cssmodule
-			+vinhImagecover
+		div(class=css.meta)
+			+vinhTextboxSmall({
+				loop: {
+					data: [
+							{
+								icon: 'la la-eye',
+								text: '120 view',
+								modifier: 'meta',
+							},
+							{
+								icon: 'la la-comment-o',
+								text: '03 comment',
+								modifier: 'meta',
+							}
+					],
+				}
+			})
 			include cssmodule
-			div(class=css.content)
-				div(class=css.header)
-					h4(class=css.tag)= args.tag || random(random.country)
-					h3(class=css.title)= args.title || random(random.title)
-				div(class=css.icon)
-					i(class= args.icon || 'la la-ellipsis-v')
+		+vinhImagecover
+		include cssmodule
+		div(class=css.content)
+			div(class=css.header)
+				h4(class=css.tag)= args.tag || random(random.country)
+				h3(class=css.title)= args.title || random(random.title)
+			div(class=css.icon)
+				i(class= args.icon || 'la la-ellipsis-v')
 
 
-	include cssmodule
+include cssmodule

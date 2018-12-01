@@ -133,6 +133,25 @@
 			border-radius: $value;
 		}
 	}
+
+	@each $name,$value in $colors {
+		.bgcolor-#{$name}{
+			background: $value;
+		};
+
+		.color-#{$name}{
+			color: $value;
+		}
+	}
+
+	.md-meta {
+
+		i {
+			margin-right: 3px;
+			color: $color-primary;
+			font-size: 16px;
+		}
+	}
 }
 
 

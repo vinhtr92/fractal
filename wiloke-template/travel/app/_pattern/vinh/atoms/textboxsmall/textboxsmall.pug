@@ -21,10 +21,14 @@ mixin vinhTextboxSmall(args)
 		else if (has(args.modifier,'singleText')) 
 			= args.text || 'July 12'
 
+		else if (has(args.modifier,'category'))
+			h4(class='module-category' class=args.bgColor || 'bgcolor-primary')
+				a(href='#')= args.category || random(random.continental)
+
 		else if (has(args.modifier,'meta'))
-			div(class='md-meta')
-				span: i(class=icon)
-				span= args.text || 'July 12'
+			a(class='md-meta' href='#')
+				i(class=icon)
+				= args.text || 'July 12'
 			
 		else
 			a(href= args.link || '#')
