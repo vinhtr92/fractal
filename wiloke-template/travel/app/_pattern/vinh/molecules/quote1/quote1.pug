@@ -1,0 +1,11 @@
+//- demo: true
+mixin long_quote1(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		blockquote(class=css.quote)
+			p= args.quote || random(random.text, 200)
+		
+		footer(class=css.name)= random(random.people.name)

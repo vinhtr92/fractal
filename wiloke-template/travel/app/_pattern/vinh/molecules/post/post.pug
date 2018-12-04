@@ -8,10 +8,23 @@ mixin long_post(args)
 			let img = args.img || `img/place/${ random(1, 35) }.jpg`;
 			let country = args.country || random(random.country);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 		if (has(args.modifier,'post02'))
 			header(class=css.header)
 				+vinhTextboxSmall({
-					modifier: 'category'
+					modifier: 'category',
 				})
 				if (args.postType === 'quote')
 					//- Args: quote
@@ -32,15 +45,15 @@ mixin long_post(args)
 					include cssmodule
 				else if (args.postType === 'slider')
 					//- Args: options, prevText, nextText, thumbnails, pagination, nextText, prevText
-					+swiper({
+					+vinhSwiper({
 						options: {
 							spaceBetween: 0,
 							slidesPerView: 1,
 							loop: true,
 							effect: 'fade'
 						},
-						nextText: '<i class="pe-7s-angle-right"></i>',
-						prevText: '<i class="pe-7s-angle-left"></i>',
+						nextText: '<i class="la la-angle-right"></i>',
+						prevText: '<i class="la la-angle-left"></i>',
 						addClass: 'swiper--button-pill swiper--button-abs'
 					})
 						- for (let i = 0; i < 3; i++)
@@ -89,6 +102,24 @@ mixin long_post(args)
 
 			include cssmodule
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		//- post03
 		else if(has(args.modifier,'post03'))
 			header(class=css.header)
 				if (args.postType === 'quote')
@@ -110,23 +141,23 @@ mixin long_post(args)
 					include cssmodule
 				else if (args.postType === 'slider')
 					//- Args: options, prevText, nextText, thumbnails, pagination, nextText, prevText
-					+swiper({
+					+vinhSwiper({
 						options: {
 							spaceBetween: 0,
 							slidesPerView: 1,
 							loop: true,
 							effect: 'fade'
 						},
-						nextText: '<i class="pe-7s-angle-right"></i>',
-						prevText: '<i class="pe-7s-angle-left"></i>',
+						nextText: '<i class="la la-angle-right"></i>',
+						prevText: '<i class="la la-angle-left"></i>',
 						addClass: 'swiper--button-pill swiper--button-abs'
 					})
 						- for (let i = 0; i < 3; i++)
 							//- Args: img, link
-							+imageCover({
-								modifier: 'ratio-4by3',
-								img: `img/place/${ random(1, 31) }.jpg`
+							+vinhImagecover({
+								modifier: 'ratio-16by9'
 							})
+							include cssmodule
 					include cssmodule
 				else
 					//- Args: img, link
@@ -137,6 +168,7 @@ mixin long_post(args)
 			div(class=css.body)
 				+vinhTextboxSmall({
 					modifier: 'category',
+					category: args.category || random(random.continental)
 				})
 				include cssmodule
 
@@ -178,6 +210,32 @@ mixin long_post(args)
 					})
 					include cssmodule
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		else
 			header(class=css.header)
 				if (args.postType === 'quote')
@@ -198,15 +256,15 @@ mixin long_post(args)
 					})
 				else if (args.postType === 'slider')
 					//- Args: options, prevText, nextText, thumbnails, pagination, nextText, prevText
-					+swiper({
+					+vinhSwiper({
 						options: {
 							spaceBetween: 0,
 							slidesPerView: 1,
 							loop: true,
 							effect: 'fade'
 						},
-						nextText: '<i class="pe-7s-angle-right"></i>',
-						prevText: '<i class="pe-7s-angle-left"></i>',
+						nextText: '<i class="la la-angle-right"></i>',
+						prevText: '<i class="la la-angle-left"></i>',
 						addClass: 'swiper--button-pill swiper--button-abs'
 					})
 						- for (let i = 0; i < 3; i++)

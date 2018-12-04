@@ -144,6 +144,15 @@
 		}
 	}
 
+	@each $name,$value in $social {
+		a[class*=socialtext] {
+
+			i[class*=#{$name}]{
+				background: $value
+			}
+		}
+	}
+
 	.md-meta {
 
 		i {
@@ -152,6 +161,67 @@
 			font-size: 16px;
 		}
 	}
+	a[class*=socialtext] {
+		text-decoration: none;
+		&:hover {
+			i {
+				color: $color-light
+			}
+		}
+
+		i {
+			border-radius: 17px;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 1;
+			padding: 10px 13px;
+			&:before {
+				// padding: 
+				margin-right: 10px;
+				line-height: 1;
+			}
+		}
+
+
+		span {
+			font-family: $font-secondary;
+			font-size: 12px;
+			font-weight: $font-semibold;
+		}
+	}
+
+		
+	span[class*=textboxsmall] {
+		display: inline-block;
+		line-height: 0;
+	}
+
+	div[class*=video-popup]{
+		a[class*=video-popup__popup]{
+			background: $color-light;
+			i {
+				color: $color-primary !important;
+			}
+		}
+	}
+
+	div[class^=swiper]{
+
+		.swiper-button-custom {
+			> div {
+				@include size(52px)
+			}
+
+			>div[class*=next]{
+				right: 10px;
+			}
+			>div[class*=prev]{
+				left: 10px;
+			}
+		}
+	}
+
+	
 }
 
 

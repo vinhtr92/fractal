@@ -1,6 +1,9 @@
 (function formActive(el){
 	const inputs = [...document.querySelectorAll(el)];
-	inputs.forEach((item)=>{
+	// console.log(inputs.parentElement)
+	console.log(inputs.parentNode)
+	// console.log(outerEl)
+	inputs.map((item)=>{
 		item.addEventListener('focusin',function(){
 			this.parentNode.wilAddClass('active');
 		});
@@ -9,3 +12,5 @@
 		})
 	})
 })('form#wil-subscribe input,form#wil-search input,form#wil-feedback input, form#wil-feedback textarea')
+
+

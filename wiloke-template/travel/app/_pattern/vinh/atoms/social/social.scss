@@ -14,8 +14,7 @@
 		text-align: center;
 		border-radius: 50%;
 		transition: .3s ease all;
-
-	}
+}
 
 	&:hover {
 		a {
@@ -51,5 +50,14 @@
 		@include size(34px);
 		font-size: 14px;
 		color: $color-gray-8;
+	}
+}
+
+// modifier socialtext
+.socialtext {
+	content: none;
+	i {
+		width: initial;
+		height: initial;
 	}
 }

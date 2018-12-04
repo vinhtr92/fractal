@@ -3,6 +3,7 @@
 
 // module
 .module {
+	line-height: 0;
 	color: $color-light;
 	a {
 		color: inherit;
@@ -61,4 +62,22 @@
 		}
 	}
 }
+
+// modifier category style02
+.category--style02 {
+	@extend .category;
+	font-family: $font-secondary;
+
+	h4 {
+		font-family: inherit !important;
+		text-transform: uppercase;
+		font-size: 10px !important;
+		letter-spacing: 1px;
+	}
+
+	a:hover {
+		color: $color-dark !important;
+	} 
+}
+
 

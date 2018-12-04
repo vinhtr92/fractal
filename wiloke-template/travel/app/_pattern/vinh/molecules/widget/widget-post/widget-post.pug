@@ -12,7 +12,7 @@ mixin vinhWidgetPost(args)
 			a.widget-post-item__media(style=`background-image:url('${args.imgsrc||imgsrc}')`)
 				img(src=args.imgsrc || imgsrc, alt="")
 			.widget-post-item__body
-				h4.widget-post-item__category
+				h4(class='widget-post-item__category' class=args.catColor || random(random.textcolor))
 					a(href="#")= args.category || random(random.continental)
 				h2.widget-post-item__title
 					a(href="#")= args.title || random(random.title)

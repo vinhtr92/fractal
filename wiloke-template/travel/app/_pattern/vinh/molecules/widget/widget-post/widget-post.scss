@@ -85,6 +85,14 @@
 					color: #e2e2e5;
 				}
 			}
+
+			@include media('<=320px'){
+				a {
+					width: 100%;
+					padding: 0 !important;
+					display: block;
+				}
+			}
 		}
 
 		.widget-post-item__media {

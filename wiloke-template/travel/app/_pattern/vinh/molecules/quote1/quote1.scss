@@ -1,0 +1,34 @@
+/* //--- long_quote1
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	composes: bgcolor-secondary from global;
+	color: $color-light;
+	@include pfs('padding', (
+		400px: 20px,
+		1200px: 50px
+	))
+}
+
+// quote
+.quote {
+	font-family: $font-quarter;
+	font-style: italic;
+	padding: 0;
+	margin: 0;
+	@include pfs('font-size', (
+		400px: 16px,
+		1200px: 22px
+	));
+}
+
+// name
+.name {
+	font-family: $font-secondary;
+	font-weight: $font-bold;
+	text-align: right;
+	&:before {
+		content: '~ ';
+	}
+}

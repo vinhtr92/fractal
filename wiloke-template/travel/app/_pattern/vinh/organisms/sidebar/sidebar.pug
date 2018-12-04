@@ -1,15 +1,24 @@
 //- demo: true
 mixin vinhSidebar(args)
 	include cssmodule
+	include data
 
 	+module('aside', css.module, args)
 		- let args = item
 		
 		//- code
+		+vinhWidgetSearch({
+			addClass: 'mb-30'
+		})
+
+
 		+vinhWidget({
 			addClass: 'mb-30',
 		})
 			+vinhWidgetAbout({
+				loop: {
+					data: widget.about
+				}
 			})
 
 		+vinhWidget({
@@ -20,32 +29,15 @@ mixin vinhSidebar(args)
 			+vinhWidgetSubsc({
 			})
 
+
+
 		+vinhWidget({
 			addClass: 'mb-30',
 			title: 'categories'
 		})
 			+vinhWidgetList({
 				loop: {
-					data: [
-						{
-
-						},
-						{
-
-						},
-						{
-
-						},
-						{
-
-						},
-						{
-
-						},
-						{
-
-						},
-					],
+					data: widget.cat,
 					children: true,
 				}
 			})
@@ -57,26 +49,7 @@ mixin vinhSidebar(args)
 
 			+vinhWidgetTag({
 				loop: {
-					data: [
-						{
-
-						},
-						{
-
-						},
-						{
-
-						},
-						{
-
-						},
-						{
-
-						},
-						{
-
-						},
-					],
+					data: widget.tag,
 					children: true,
 				}
 			})
@@ -94,7 +67,7 @@ mixin vinhSidebar(args)
 			})
 
 		+vinhWidget({
-			title: 'list post',
+			title: 'gallery',
 			addClass: 'mb-30',
 		})
 
@@ -104,8 +77,6 @@ mixin vinhSidebar(args)
 					children: true,
 				}
 			})
-		+vinhWidgetSearch({
-		})
 	include cssmodule
 
 

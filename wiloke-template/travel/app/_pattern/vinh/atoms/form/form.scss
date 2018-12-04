@@ -3,9 +3,9 @@
 
 // module
 .module {
-	padding: 20px;
-	position: relative;
 	@include clearfix;
+	padding: 30px;
+	position: relative;
 	display: inline-block;
 	background-color: $color-light;
 	border-radius: 5px;
@@ -14,112 +14,102 @@
 	form {
 		float: left;
 		width: 100%;
-
-
 	}
 
-	:global(.item-group) {
-		float: unset;
-		position: relative;
-		overflow: hidden;
-		margin: 0  0 20px  0;
-		border-radius: 5px;
-		border: 1px solid $color-gray-1   ;
-
-
-		
-		label {
-			position: absolute;
-			text-transform: uppercase;
-			top: 50%;
-			transform: translateY(-50%);
-			font-size: 12px;
-			color: $color-gray-5;
-			left: 15px;
-			transition: .3s all ease;
-			display: inline-block;
-			float: left;
+	:global {
+		.wil-btn {
+			min-width: unset;
+			width: 100%;
 		}
 
-		input,
-		textarea {
-			color: $color-gray-8 !important;
-		}
-
-		input {
-			padding: 15px 15px 0 15px !important;
-			font-size: 13px !important	;
-			width: 100% ;
-			border: 1px solid transparent !important  ;
-
-
-			&:focus {
-				border: 1px solid transparent !important  ;
-			}
-		}
-
-		:global(.form-icon){
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			right: 15px;
-		}
-
-		i {
-			// float: right;
-		}
-
-		&:global(.active){
-			border: 1px solid $color-primary   ;
-
+		.item-group {
+			float: unset;
+			position: relative;
+			overflow: hidden;
+			margin: 0  0 20px  0;
+			border-radius: 5px;
+			border: 1px solid $color-gray-1   ;
 			label {
-				font-size: 10px;
-				color: $color-primary;	
-				top: 15px;
+				position: absolute;
+				text-transform: uppercase;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 12px;
+				color: $color-gray-5;
+				left: 15px;
 				transition: .3s all ease;
+				display: inline-block;
+				float: left;
+			}
+			input,
+			textarea {
+				color: $color-gray-8 !important;
+			}
+			input {
+				padding: 15px 15px 0 15px !important;
+				font-size: 13px !important	;
+				width: 100% ;
+				border: 1px solid transparent !important  ;
+				&:focus {
+					border: 1px solid transparent !important  ;
+				}
+			}
+
+			.form-icon {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: 15px;
+			}
+
+			&.active {
+				border: 1px solid $color-primary   ;
+
+				label {
+					font-size: 10px;
+					color: $color-primary;	
+					top: 15px;
+					transition: .3s all ease;
+				}	
 			}
 		}
-
-
-
 	}
 
-	:global(.wil-btn){
-		min-width: unset;
-		width: 100%;
-	}
+
 
 
 	@include media('>=sm'){
-		width: unset;
 		:global {
 			.wil-btn {
 				min-width: 162px;
 				width: unset;
 			}
-
-
-			.item-group {
-				margin:  0 20px 0 0 ;
-				float: left;
-			}
 		}
-
-
-
 		.action {
 			display: inline-block;
 			float: left;
 		}
 	}
 
-	@include media('>=lg'){
-		padding: 30px;
 
-		input {
-			width: 255px !important ;
-		}
-	}
+	// :global {
+	// 	#wil-subscribe.sm {
+	// 		width: 100%;
+	// 		> div {
+	// 			margin:  0 0 20px 0;
+	// 			float: none;
+	// 		}
+
+	// 		input {
+	// 			width: 100% !important
+	// 		}
+
+	// 		button {
+	// 			width: 100%;
+	// 		}
+	// 	}
+	// }
+
 }
 
 // item
@@ -128,8 +118,8 @@
 
 // action
 .action {
-	display: initial;
-	float: none;
+	// display: initial;
+	// float: none;
 }
 
 // name
@@ -149,7 +139,38 @@
 
 // modifier subscribe
 .subscribe {
+	form {
+		margin: -10px;
+		width: calc(100% + 20px);
+	}
+	.action,
+	:global(.item-group){
+		margin: 10px;
+		width: calc(100% - 20px);
+		float: inherit;
+	}
 
+	.action {
+		button {
+			width: 100%;
+		}
+	}
+
+	@include media('>=sm'){
+		:global {
+			.item-group {
+				float: left;
+				width: calc(((100% - 22.1311%) / 2) - 30px);
+			}
+
+
+		}
+
+		.action {
+			width: 22.1311%;
+			float: left;
+		}
+	}
 }
 
 // modifier search wide
@@ -162,8 +183,7 @@
 			margin: 0 0 20px 0;
 			border: 2px solid $color-gray-9;
 			transition: .3s ease all;
-
-
+			
 			&.active {
 				border: 2px solid $color-primary;
 				transition: .3s ease all;
@@ -232,13 +252,18 @@
 	input {
 		width: 100% !important;
 	}
+
 	:global {
 		.item-group {
+			margin:  0 20px 0 0 ;
+			float: left;
+
+			width: calc(100% - 20px);
+			margin: 10px ;
+
 			@include media('>=sm') {
 				width: calc((100% / 2) - 20px);
-
 			}
-			margin: 10px ;
 
 			&:nth-child(3) {
 				width: calc(100% - 20px);

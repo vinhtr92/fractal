@@ -5,5 +5,10 @@ mixin vinhSocial(args)
 	+module('a', css.module, args,href="#")
 		- let args = item
 		//- code
-		i(class = args.icon || 'fa fa-facebook')
+		if (has(args.modifier,'socialtext'))
+			i(class = args.icon || 'fa fa-facebook')
+				span= args.text || random(random.text,10)
+		else
+			i(class = args.icon || 'fa fa-facebook')
+
 	include cssmodule

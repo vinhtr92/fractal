@@ -1,0 +1,146 @@
+/* //--- vinhPostDetail
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+}
+
+// body
+.body {
+	padding: 30px;	
+}
+
+// title
+.title {
+	font-size: 28px;
+	margin: 0;
+}
+
+// meta
+.meta {
+	:global {
+		a.md-meta {
+			color: $color-gray-7;
+			font-family: $font-primary;
+			font-size: 12px;
+			font-weight: 400;
+			line-height: 1.4;
+
+			i {
+				vertical-align: bottom;
+				margin: 0 5px 0 0;
+			}
+		}
+
+
+		span[class*=textboxsmall]{
+			padding: 0 10px;
+			position: relative;
+
+
+			&:first-child {
+				padding: 0 10px 0 0 ; 
+			}
+
+			+ span[class*=textboxsmall]:before {
+				content: '\f111';
+				font-family: 'fontawesome';
+				font-size: 3px;
+				color:$color-gray-9;
+				line-height: 0;
+				@include absolute(left 0 top 50%);
+				transform: translate(-50%);
+			}
+		}
+	}
+}
+
+// social
+.social {
+	margin: 20px -3px;
+	
+	a[class*=social] {
+		padding: 3px
+	}
+}
+
+// content
+.content {
+	
+}
+
+:global {
+	article.post {
+		background: $color-light;
+		border-radius: $general-radius;
+		overflow: hidden;
+
+
+
+		p {
+			margin: 15px  0 20px;
+			color: $color-gray-8;
+			line-height: 1.73;
+			
+			@include media('>=sm'){
+				margin: 25px 0 30px;
+			}
+
+			a {
+				color: $color-primary;
+			}
+		}
+
+		figure {
+			position: relative;
+		}
+
+		figcaption {
+			font-size: 12px;
+			font-family: $font-primary;
+			color: $color-gray-5;
+			position: relative;
+
+			padding: 5px 0 5px 15px;
+			margin: 7px 0;
+
+			&:before {
+				content: ' ';
+				height: 100%;
+				width: 1px;
+				background: $color-primary;
+
+				@include absolute(left 0 top 0 bottom 0)
+			}
+		}
+
+		blockquote.wp-block-quote {
+			margin: 0;
+			font-family: $font-quarter;
+			font-size: 18px;
+			position: relative;
+			padding: 13px 0 0 0 ;
+
+			p {
+				color: $color-gray-5;
+			}
+
+			&:before {
+				content: '';
+				width: 60px;
+				height: 2px;
+				background: $color-primary;
+
+				@include absolute(top 0)
+			}
+			
+			p {
+				margin: 0;
+			}
+		}
+
+		.tagcloud {
+			margin : 20px 0 10px;
+		}
+	}
+}

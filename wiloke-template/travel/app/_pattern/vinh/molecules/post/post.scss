@@ -21,6 +21,12 @@
 		.module-category {
 			@include absolute(top 10px  left 10px)
 		}
+
+		.swiper-button-custom {
+			> div {
+				@include size(52px)
+			}
+		}
 	}
 }
 
@@ -34,13 +40,16 @@
 
 // header
 .header {
-	content: empty;
+	position: relative;
+	z-index: 0;
 }
 
 // body
 .body,
 .footer {
 	padding: 14px 18px;
+	position: relative;
+	z-index: 1;
 }
 
 // text
@@ -143,6 +152,11 @@
 
 //modifier post02
 .post02 {
+	:global {
+		span[class*=textboxsmall] {
+			display: initial;
+		}
+	}
 	.title {
 		margin: 0 0 3px 0;
 		color: $color-dark;
@@ -185,12 +199,15 @@
 				line-height: 2;
 				position: relative;
 
+				&:hover {
+					color: $color-primary !important;
+				}
+
 				i {
 					font-size: 16px;
 					vertical-align: text-bottom;
 					margin: 0  4px 0 0;
 				}
-
 			}
 
 			span[class*=textbox]{
@@ -250,8 +267,6 @@
 		background: $color-light;
 		padding: 14px 20px 30px 20px;
 
-
-
 		span[class*=textboxsmall]{
 			display: inline-block;
 			line-height: 0;
@@ -283,6 +298,10 @@
 		a {
 			font-size: 12px;
 			color: $color-gray-7;
+
+			&:hover {
+				color: $color-primary;
+			}
 		}
 
 		i {
@@ -290,6 +309,8 @@
 			font-size: 16px;
 			vertical-align: middle;
 		}
+
+		
 
 		@include media('>=sm'){
 			width: calc((100% - 48.05%) / 2);

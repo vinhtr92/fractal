@@ -1,0 +1,17 @@
+//- demo: true
+mixin vinhTestimonialItem(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		header(class=css.header)
+			div(class=css.avatar)
+				img(src=args.avatar || `img/avatar/${random(1,20)}.jpg`)
+			h3(class=css.name)
+				a(href="#")= args.name || random(random.people.name)
+			div(class=css.desc)= args.work || random(random.work)
+		div(class=css.text)= args.text || random(random.text,200)
+
+	include cssmodule

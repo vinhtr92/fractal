@@ -1,0 +1,54 @@
+/* //--- vinhTestimonial
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+// header
+.header {
+	order: 2;
+	margin: 25px 0 20px 0;
+}
+
+// text
+.text {
+	order: 1;
+	font-family: $font-quarter;
+	font-size: 18px;
+	color: $color-gray-8;
+	padding: 0 120px;
+}
+
+// avatar
+.avatar {
+	@include size(60px);
+	margin: 0 auto;
+	img {
+		border-radius: 100%;
+	}
+}
+
+// name
+.name {
+	color: $color-dark;
+	font-size: 12px;
+	text-transform: capitalize;
+	margin: 8px 0 6px 0;
+
+	&:hover {
+		a {
+			color: $color-primary;
+		}
+	}
+}
+
+// desc
+.desc {
+	font-size: 12px;
+	color: $color-gray-5;
+	line-height: 1;
+}

@@ -1,0 +1,114 @@
+/* //--- vinhWidgetChart
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+
+}
+
+:global {
+
+	.widget-chart {
+		border-radius: $general-radius;
+		overflow: hidden;
+		div[class*=imagecover]{
+			padding-top: 15.55%;
+		}
+		.widget-chart__title {
+			margin: 0;
+			@include absolute(top 50% left 50%);
+			transform: translate(-50%,-50%);
+			color: $color-light;
+			font-size: 14px;
+			transition: .3s ease all;
+			padding:  5px 20px;
+
+			&:after ,
+			&:before {
+				content: '';
+				width: 100%;
+				height: 1px;
+				position: absolute;
+				background: white;
+				transition: .3s ease all;
+				opacity: 0;
+
+				// opacity: 0;
+			}
+
+			&:after {
+				bottom : 0;
+				left: 0;
+				transform: translate(120%);
+
+			}
+
+			&:before {
+				top: 0;
+				transform: translate(-120%);
+				left: 0;
+
+			}
+
+		}
+
+		.wil-overlay {
+			z-index: 0;
+			transition: .3s all;
+			transform: scale(1.01);
+
+		}
+
+		.widget-chart__item {
+			display: block;
+			position: relative;
+
+				.wil-overlay {
+					opacity: 0.85;
+					transition: .3s ease opacity;
+
+				}
+			&:nth-child(1){
+				.wil-overlay {
+					background: linear-gradient(90deg, #8085df 0%, #48d3d8 100%);
+				}
+			}
+			&:nth-child(2) {
+				.wil-overlay {
+					background: linear-gradient(90deg, #a065f1 0%, #ec6fb6 100%);
+				}
+			}
+			&:nth-child(3) {
+				.wil-overlay {
+					background: linear-gradient(90deg, #f09162 0%, #fcbf70 100%);
+				}
+			}
+
+			&:nth-child(n+4 ) {
+				display: none;
+				visibility: hidden;
+			}
+
+			&:hover {
+				transition: .3s ease all;
+
+				.wil-overlay {
+					opacity: 1;
+					transition: .3s ease opacity;
+					// background: rgba(44, 44, 44, 0.7) ;
+				}
+
+				.widget-chart__title {
+					&:after,
+					&:before {
+						transform: translateX(0);
+						transition: .3s ease all;
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+	}
+
+}

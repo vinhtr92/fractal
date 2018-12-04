@@ -1,0 +1,16 @@
+//- demo: true
+mixin vinhWidgetChart(args)
+	include cssmodule
+
+	+module('div', 'widget-chart', args)
+		- let args = item
+		
+		//- code
+		a.widget-chart__item(href='#')
+			+vinhImagecover({
+				imgsrc: args.imgsrc || `img/place/${ random(1, 31) }.jpg`
+			})
+			include cssmodule
+			.wil-overlay
+			h3(class='widget-chart__title')= args.title || random(random.country)
+	include cssmodule

@@ -1,0 +1,137 @@
+/* //--- vinhPostComment
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	:global {
+		ol {
+			list-style: none;
+
+			&:first-child {
+				padding: 0;
+			}
+
+			&.commentlist {
+				> li.comment {
+					&:last-child .comment_container{
+						border: none;
+					}
+
+					> ol.children {
+						padding-inline-start : 65px;
+					}
+				}
+			}
+		}
+		div.comment_container {
+			@include clearfix;
+			padding: 20px 0 15px 0;
+			border-bottom: 1px solid #eaeaee;
+
+		}
+
+
+		li.comment {
+			div.comment-footer {
+				line-height: 1;
+			}
+
+			span.author {
+				font-family: $font-secondary;
+				color: $color-dark;
+				font-weight: $font-semibold;
+				font-size: 14px;
+			}
+
+			span.date {
+				float: right;
+				font-size: 11px;
+				font-family: $font-primary;
+			}
+
+			div.comment-avatar {
+				display: inline-block;
+				@include size(50px);
+				img {
+					border-radius: 100%;
+				}
+				float: left;
+			}
+
+			div.comment-text {
+				float: left;
+				width: calc(100% - 50px);
+				padding: 0 0 0 15px;
+
+			}
+
+			div.comment-meta {
+				line-height: 1.1;
+			}
+
+			div.comment-description {
+				color: $color-gray-8;
+				font-size: 14px;
+			}
+
+			div.comment-footer a {
+				color: $color-gray-5;
+				text-decoration: none;
+				font-size: 11px;
+				position: relative;
+				padding: 0 10px;
+				text-transform: capitalize;
+
+				&:before {
+					font-family: 'lineawesome';
+					color: $color-primary;
+					font-size: 11px;
+					margin: 0 3px 0 0;					
+				}
+
+				+ a:after {
+					content: '/';
+
+					@include absolute(left 0 top 50%);
+					transform: translate(-50%, -50%);
+				}
+
+				&:first-child {
+					padding: 0 10px 0 0;
+				}
+
+			}
+
+			a.comment-reply:before {
+				content: "\f19d";
+			}
+
+			a.comment-edit:before {
+				content: "\f1c1"
+			}
+
+
+		}
+
+		ol.children {
+			padding-inline-start: 45px;
+			div.comment-avatar {
+				@include size(35px);
+			}
+
+			div.comment-text {
+				width: calc(100% - 35px);
+				padding: 0 0 0 10px;
+			}
+
+			span.author {
+				font-size: 12px;
+			}
+
+			div.comment-description {
+				font-size: 13px;
+			}
+		}
+
+	}
+}

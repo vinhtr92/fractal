@@ -11,6 +11,11 @@
 
 		div[class*=form]{
 			padding: 0;
+			
+			.item-group,
+			div[class*=action] {
+				width: calc(100% - 20px);
+			}
 		}
 	}
 }

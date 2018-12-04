@@ -1,0 +1,56 @@
+//- demo: true
+mixin vinhPostComment(args)
+	include cssmodule
+	include data
+
+	+module('div', css.module, args)
+		- let args = item
+		//- code
+		+wil-comment({
+			data: [
+				{
+					img: `img/avatar/${random(1,20)}.jpg`,
+					author: 'Nguyen Long',
+					date: 'January 16, 2017',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet illum tempora ipsum a provident numquam nemo corporis minus temporibus, eligendi.'
+				},
+				{
+					img: `img/avatar/${random(1,20)}.jpg`,
+					author: 'Nguyen Long',
+					date: 'January 16, 2017',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet illum tempora ipsum a provident numquam nemo corporis minus temporibus, eligendi.',
+					children: [
+						{
+							img: `img/avatar/${random(1,20)}.jpg`,
+							author: 'Nguyen Long',
+							date: 'January 16, 2017',
+							text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet illum tempora ipsum a provident numquam nemo corporis minus temporibus, eligendi.',
+							children: [
+								{
+									img: `img/avatar/${random(1,20)}.jpg`,
+									author: 'Nguyen Long',
+									date: 'January 16, 2017',
+									text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet illum tempora ipsum a provident numquam nemo corporis minus temporibus, eligendi.'
+								}
+							]
+						}
+					]
+				},
+				{
+					img: `img/avatar/${random(1,20)}.jpg`,
+					author: 'Nguyen Long',
+					date: 'January 16, 2017',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet illum tempora ipsum a provident numquam nemo corporis minus temporibus, eligendi.'
+				},
+				{
+					img: `img/avatar/${random(1,20)}.jpg`,
+					author: 'Nguyen Long',
+					date: 'January 16, 2017',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet illum tempora ipsum a provident numquam nemo corporis minus temporibus, eligendi.'
+				}
+			],
+			reply: 'reply',
+			edit: 'edit'
+		})
+
+	include cssmodule

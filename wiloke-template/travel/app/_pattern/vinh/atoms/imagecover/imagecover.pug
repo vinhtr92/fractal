@@ -9,12 +9,12 @@ mixin vinhImagecover(args)
 		if (args.link)
 			a(href=args.link)
 				div(class=css.img , class='cover' style=`background-image:url('${args.imgsrc||imgsrc}')`)
-					img(src=args.imgsrc||imgsrc , alt="")
+					img(src=args.imgsrc||imgsrc  alt="")
 					if block
 						block
 		else
-			div(class=css.img, class='cover', style=`background-image:url('${args.imgsrc||imgsrc}')`)
-				img(src=set(args, 'img', imgsrc) , alt="")
+			div(class='cover', class=css.img,  style=`background-image:url('${args.imgsrc||imgsrc}')`)
+				img(src=args.imgsrc||imgsrc  alt="")
 				if block
 					block
 	include cssmodule

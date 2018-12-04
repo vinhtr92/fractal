@@ -21,19 +21,20 @@ mixin vinhForm(args)
 					div(class='form-icon')
 						i(class='fa fa-envelope')
 
-
-				+wil-btn('button', {
-					type: 'submit',
-					text: 'Subscrible<i class="la la-paper-plane"></i> ',
-					modifier: ['primary', 'md', 'round']
-				})
-				include cssmodule
+				div(class=css.action)
+					+wil-btn('button', {
+						type: 'submit',
+						text: 'Subscrible<i class="la la-paper-plane"></i> ',
+						modifier: ['primary', 'md', 'round']
+					})
+					include cssmodule
 		else if (has( args.modifier, 'search-wide'))
 			form(name='wil-search', id='wil-search')
 
 				div(class='item-group')
 					label(for="search")= args.search || 'Search destination'
 					input(type='search', id='search')
+
 
 				+wil-btn('button', {
 					type: 'submit',
