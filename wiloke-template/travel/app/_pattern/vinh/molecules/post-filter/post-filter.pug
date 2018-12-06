@@ -12,7 +12,7 @@ mixin vinhPostFilter(args)
 			})
 			include cssmodule
 		div(class=css.body)
-			h4(class=css.category class=args.color || 'color')
+			h4(class=css.category class=args.color || random(random.textcolor))
 				a(href=hrefCategory|| '#')= args.category || random(random.continental)
 			h2(class=css.title)
 				a(href=hrefTitle || '#')= args.title || random(random.title)

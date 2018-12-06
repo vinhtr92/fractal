@@ -1,0 +1,96 @@
+extends pug/layout
+
+//- Config
+block config
+	-
+		config.title = 'Blog'
+		config.bodyClass = ''
+
+//- afterLink
+block afterLink
+	
+//- Header
+block header
+	
+//- Footer
+block footer
+	
+//- Content
+block content
+	+section({
+		container: true,
+		css: {
+			'background':'#f6f6f6'
+		}
+	})
+		+row
+			+col({
+				cols: [0,0,12,12]
+			})
+				+vinhForm({
+					modifier: 'search-wide',
+					addClass: 'mb-30'
+				})
+
+		+row
+			+col({
+				cols: [0,0,8,8]
+			})
+				+row
+					+long_post({
+						loop: {
+							data: [
+								{
+									modifier: 'post02',
+									addClass: 'mb-30',
+									postType: 'video',
+								},
+								{
+									modifier: 'post02',
+									addClass: 'mb-30',
+									postType: 'slider',
+								},
+								{
+									modifier: 'post02',
+									addClass: 'mb-30',
+								},
+								{
+									modifier: 'post02',
+									addClass: 'mb-30',
+								},
+								{
+									modifier: 'post02',
+									addClass: 'mb-30',
+								},
+								{
+									modifier: 'post02',
+									addClass: 'mb-30',
+								},
+								{
+									modifier: 'post02',
+									addClass: 'mb-30',
+								},
+								{
+									modifier: 'post02',
+									addClass: 'mb-30',
+								},
+								{
+									modifier: 'post02',
+									addClass: 'mb-30',
+								},
+								{
+									modifier: 'post02',
+									addClass: 'mb-30',
+								},
+							],
+							wrap: 'col-lg-6'
+						}
+					})
+
+			+col({
+				cols: [0,0,4,4]
+			})
+				+vinhSidebar({
+
+				})
+

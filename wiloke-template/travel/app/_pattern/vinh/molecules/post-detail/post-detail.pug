@@ -27,24 +27,24 @@ mixin vinhPostDetail(args)
 				include cssmodule
 			else if (args.postType === 'slider')
 				//- Args: options, prevText, nextText, thumbnails, pagination, nextText, prevText
-				+swiper({
+				+vinhSwiper({
 					options: {
 						spaceBetween: 0,
 						slidesPerView: 1,
 						loop: true,
 						effect: 'fade'
 					},
-					nextText: '<i class="pe-7s-angle-right"></i>',
-					prevText: '<i class="pe-7s-angle-left"></i>',
+					nextText: '<i class="la la-angle-right"></i>',
+					prevText: '<i class="la la-angle-left"></i>',
 					addClass: 'swiper--button-pill swiper--button-abs'
 				})
 					- for (let i = 0; i < 3; i++)
 						//- Args: img, link
-						+imageCover({
-							modifier: 'ratio-4by3',
-							img: `img/place/${ random(1, 31) }.jpg`
+						+vinhImagecover({
+							modifier: 'ratio-16by9'
 						})
-				include cssmodule
+						include cssmodule
+
 			else
 				//- Args: img, link
 				+vinhImagecover({
@@ -54,14 +54,14 @@ mixin vinhPostDetail(args)
 			include cssmodule
 		div(class=css.body)
 			+vinhTextboxSmall({
-				modifier: 'category'
+				modifier: 'category',
+				category: args.category || random(random.continental)
 			})
 			include cssmodule
 			h2(class=css.title)
 				a(href="#")= args.title || random(random.title)
 			div(class=css.meta)
 				+vinhTextboxSmall({
-
 					loop: {
 							data: [
 								{

@@ -3,144 +3,132 @@
 
 // module
 .module {
-	position: relative;
-	overflow: hidden;
 	border-radius: $general-radius;
+	overflow: hidden;
+	position: relative;
 
-	:global{
-		.cover {
-			position: relative;
-			z-index: 9;
-			background-size: cover;
-			background-position: center center;
-			padding-top: 134%;
-		}
-
-		.overlay {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			bottom: 0;
-			right: 0;
-			background: linear-gradient(0deg, rgba(#50545f,0.8) 0%, rgba(81, 81, 81, 0) 100%);
-			z-index: 10;
-			transform: translateY(30%);
-			transition: all .3s ease;
-		}
-
-		.md-meta {
-			padding: 5px;
+	:global {
+		.module-category {
+			font-size: 12px !important;
+			text-transform: uppercase;
 			line-height: 1;
-			background-color: rgba(27, 27, 29, 0.3);
-			margin-left: 10px;
-			border-radius: 5px;
-			font-size: 12px;
-			float: left;
-			margin: 5px 3px ;
-			text-decoration: none;
-			
+			overflow: visible;
+			border-radius: 0;
+			// position: relative;
+			// top:3px;
+			&:hover {
+				color: $color-primary;
+
+				a {
+					color: inherit !important;
+
+				}
+			}
+
+			a {
+				padding: 0;
+			}
+		}
+
+		.wil-overlay {
+			z-index: 0;
+		}
+
+		div[class*=imagecover]{
+			padding-top: 134%;
 		}
 	}
 }
 
 .module:hover {
-	.meta {
-		opacity: 1;
-		transition: all .3s ease;
-		transform: translateY(0);
-		z-index: 12;
-	}
-
-	.title {
-		color: $color-primary;
-		transition: all .3s ease;
+	:global {
+		.wil-overlay {
+			height: 100%;
+			transition: .3s ease all;
+		}
 	}
 
 	.icon {
+		transform: translateX(0);
+		transition: .3s ease all;
 		opacity: 1;
-		transition: all .3s ease;
-		transform: translateX(10px);
 	}
 
-	:global(.overlay){
+	.meta {
+		transition: .3s ease all;
 		transform: translateY(0);
-		transition: all .3s ease;
+		opacity: 1;
 	}
 }
 
 // meta
 .meta {
-	position: absolute;
-	top: 9px;
-	right: 9px;
-	line-height: 1;
+	margin: -3px;
+	transform: translateY(-100%);
+	transition: .3s ease all;
 	opacity: 0;
-	transition: all .3s ease;
-	transform: translateY(-30px);
-	z-index: 12;
-	padding-left: 10px;
+	> span {
+		line-height: 1;
+	}
+	@include absolute(top 10px right 10px);
+
+	:global {
+		.md-meta {
+			font-size: 12px;
+			line-height: 1;
+			display: block;
+			padding: 4px 7px;
+			background: rgba(27, 27, 29, 0.3);
+			margin: 3px;
+			border-radius: 5px;
+
+			i {
+				vertical-align: text-bottom;
+				margin: 0 4px 0 0;
+			}
+		}	
+	}
 }
 
 // content
 .content {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
+	@include absolute(left 0 right 0 bottom 0);
 	margin: 16px;
-	z-index: 11;
 }
 
 // header
 .header {
-	float: left;
-	@include clearfix;
-}
-
-// tag
-.tag {
-	font-size: 12px;
-	text-transform: uppercase;
-	font-weight: $font-light;
-}
-
-.tag,
-.title {
-	margin: 0;
-	color: $color-light;
+	
 }
 
 // title
 .title {
-	margin: 0;
+	color: $color-light;
 	font-size: 14px;
-	text-transform: capitalize;
-	line-height: 1.4;
-	transition: all .3s ease;
+	margin: 0;
 
+	&:hover {
+		color: $color-primary;
+	}
 }
 
 // icon
 .icon {
-	position: absolute;
-	bottom: 0;
-	right: 0;
+	@include absolute(right -10px bottom 0);
+	line-height: 0;
 	font-size: 30px;
-	line-height: 1;
 	color: $color-light;
+	transform: translateX(100%);
+	transition: .3s ease all;
 	opacity: 0;
-	transition: all .3s ease;
-	transform: translateX(20px) translateZ(0);	
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
 }
 
-// img
-
-
-.img {
-
-	// img {
-	// 	// width: 100%;
-	// }
+// media
+.media {
+	
 }
-
-

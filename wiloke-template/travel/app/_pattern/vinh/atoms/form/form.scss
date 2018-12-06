@@ -7,7 +7,7 @@
 	padding: 30px;
 	position: relative;
 	display: inline-block;
-	background-color: $color-light;
+	background-color: transparent;
 	border-radius: 5px;
 	width: 100%;
 
@@ -79,6 +79,8 @@
 
 
 	@include media('>=sm'){
+	background-color: $color-light;
+
 		:global {
 			.wil-btn {
 				min-width: 162px;
@@ -236,6 +238,8 @@
 // modifier feedback
 .feedback {
 	width: 100% !important;
+	border-radius: $general-radius;
+	overflow: hidden;
 
 	form {
 		margin: -10px;

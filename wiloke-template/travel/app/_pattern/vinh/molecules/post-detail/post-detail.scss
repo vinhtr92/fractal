@@ -70,12 +70,20 @@
 }
 
 :global {
+
+
+
+
 	article.post {
 		background: $color-light;
 		border-radius: $general-radius;
 		overflow: hidden;
 
-
+		blockquote {
+			p {
+				color: $color-light;
+			}
+		}
 
 		p {
 			margin: 15px  0 20px;

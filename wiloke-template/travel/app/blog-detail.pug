@@ -1,0 +1,86 @@
+extends pug/layout
+
+//- Config
+block config
+	-
+		config.title = 'blog detail'
+		config.bodyClass = ''
+
+//- afterLink
+block afterLink
+	
+//- Header
+block header
+	
+//- Footer
+block footer
+	
+//- Content
+block content
+	+section({
+		container: true,
+		css: {
+			'background':'#f6f6f6'
+		}
+	})
+		+row
+			+col({
+				cols: [0,0,8,8]
+			})
+				+vinhPostDetail({
+					postType: 'quote',
+					title: 'lorem ipsum dolor sit amet',
+					category: 'utopia',
+					addClass: 'mb-30',
+				})
+
+				+vinhPostComponent({
+					title: 'related post',
+					addClass: 'mb-30',
+				})
+					+row
+						+vinhPostRelated({
+							loop: {
+								data: [
+									{
+
+									},
+									{
+
+									},
+									{
+
+									},
+									{
+
+									},
+									{
+										
+									},
+									{
+
+									},
+								],
+								wrap: 'col-lg-4 col-md-6 col-sm-12'
+							}
+						})
+
+				+vinhPostComponent({
+					title: `(10)comment`,
+					addClass: 'mb-30',
+				})
+
+					+vinhPostComment({
+					})
+				
+				+vinhForm({
+					modifier: 'feedback'
+				})
+
+			+col({
+				cols: [0,0,4,4]
+			})
+				+vinhSidebar({
+
+				})
+

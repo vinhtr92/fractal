@@ -19,15 +19,39 @@
 
 	:global {
 		.module-category {
-			@include absolute(top 10px  left 10px)
+			@include absolute(top 10px  left 10px);
+			z-index: 10;
 		}
+	}
 
-		.swiper-button-custom {
-			> div {
-				@include size(52px)
+
+	&:global(.sm){
+		a[class*=video-popup__popup]{ 
+
+			@include size(50px);
+
+			@include media("<=sm"){
+				i {
+					top : 1px;
+				}
+			}
+		}
+		
+		div[class^=swiper__module]{
+
+			div[class*=button-custom] {
+				> div {
+					@include size(35px);
+				}
+
+				i {
+					font-size: 20px;
+				}
 			}
 		}
 	}
+
+
 }
 
 
@@ -307,7 +331,7 @@
 		i {
 			margin: 0 4px 0 0;
 			font-size: 16px;
-			vertical-align: middle;
+			vertical-align: text-bottom;
 		}
 
 		
@@ -320,6 +344,10 @@
 
 	.view {
 		border-right: 1px solid $color-gray-9;
+
+		@include media('>=sm') {
+			border: none;
+		}
 	}
 
 	.share {
@@ -337,8 +365,10 @@
 			float: none;
 			display: inline-block;
 			border: none;
-			padding: 11px 0;
+			padding: 12px 0;
 			border-right: 1px solid $color-gray-9;
+			border-left: 1px solid $color-gray-9;
+
 		}
 	}
 
@@ -349,7 +379,6 @@
 
 		@include media('>=sm'){
 			border-top: 1px solid $color-gray-9;
-
 		}
 	}
 

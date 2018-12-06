@@ -2,6 +2,38 @@ $('.swiper__module').each(function() {
 	var self = $(this),
 		wrapper = $('.swiper-wrapper', self),
 		optData = eval('(' + self.attr('data-options') + ')'),
+		method = {
+			on: {
+				init: function(){
+					const container = wrapper[0];
+					const items = [...container.querySelectorAll('.swiper-slide')]
+					items.forEach(item	=>{
+					let itemPosX = item.getBoundingClientRect().x;
+					let windowWidth = window.innerWidth;
+					let currentWidth = item.clientWidth;
+						if(itemPosX<0 || windowWidth - itemPosX < currentWidth ){
+							item.wilAddClass('covered')
+						}
+					})
+				},
+				transitionEnd: function(){
+					const container = wrapper[0];
+					const items = [...container.querySelectorAll('.swiper-slide')]
+					items.forEach(item	=>{
+					let itemPosX = item.getBoundingClientRect().x;
+					let windowWidth = window.innerWidth;
+					let currentWidth = item.clientWidth;
+						if(itemPosX<0 || windowWidth - itemPosX < currentWidth ){
+							item.wilAddClass('covered')
+						}
+						else if(itemPosX>0){
+							item.wilRemoveClass('covered')
+						}
+					})
+				}
+			}
+		}
+		,
 		optDefault = {
 			paginationClickable: true,
 			pagination: {
@@ -13,10 +45,10 @@ $('.swiper__module').each(function() {
 			},
 			spaceBetween: 30
 		},
-		options = $.extend(optDefault, optData);
+		options = $.extend(optDefault, optData,method);
 	wrapper.children().wrap('<div class="swiper-slide"></div>');
 	var swiper = new Swiper(self, options);
-	
+
 	function thumbnails(selector) {
 
 		if (selector.length > 0) {

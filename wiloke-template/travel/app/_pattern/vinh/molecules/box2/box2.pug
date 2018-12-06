@@ -8,8 +8,7 @@ mixin vinhBox2(args)
 			let imgsrc = `img/place/${ random(1, 31) }.jpg`
 		
 		//- code
-		div(class='overlay')
-
+		div.wil-overlay
 		div(class=css.meta)
 			+vinhTextboxSmall({
 				loop: {
@@ -28,14 +27,21 @@ mixin vinhBox2(args)
 				}
 			})
 			include cssmodule
-		+vinhImagecover
+		+vinhImagecover({
+
+		})
 		include cssmodule
 		div(class=css.content)
-			div(class=css.header)
-				h4(class=css.tag)= args.tag || random(random.country)
-				h3(class=css.title)= args.title || random(random.title)
+			+vinhTextboxSmall({
+				modifier: 'category--style02',
+				color: ' ',
+			})
+			include cssmodule
+			h3(class=css.title)
+				a(href="#")= args.title || random(random.title)
 			div(class=css.icon)
-				i(class= args.icon || 'la la-ellipsis-v')
+				a(href="#")
+					i(class= args.icon || 'la la-ellipsis-v')
 
 
 include cssmodule

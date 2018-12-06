@@ -3,5 +3,12 @@
 
 // module
 .module {
-	
+	padding: 30px 10px;
+	background: $color-light;
+	border-radius: $general-radius;
+	overflow: hidden;
+
+	@include media('>=md'){
+		padding: 30px;
+	}
 }

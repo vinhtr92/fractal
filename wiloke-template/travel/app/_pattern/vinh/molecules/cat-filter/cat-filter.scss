@@ -18,6 +18,18 @@
 	}
 	p {
 		margin: 0;
+		font-family: $font-primary;
+		font-size: 13px;
+		color: $color-gray-9;
+	}
+}
+
+.module:hover {
+	:global {
+		.wil-overlay {
+			height: 100%;
+			transition: .3s ease all;
+		}
 	}
 }
 

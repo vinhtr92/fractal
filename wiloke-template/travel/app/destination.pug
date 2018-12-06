@@ -1,0 +1,74 @@
+extends pug/layout
+
+//- Config
+block config
+	-
+		config.title = 'destination'
+		config.bodyClass = ''
+
+//- afterLink
+block afterLink
+	
+//- Header
+block header
+	
+//- Footer
+block footer
+	
+//- Content
+block content
+	+section({
+		container: true,
+		css: {
+			'background':'#f6f6f6'
+		}
+	})
+		+row
+			+col({
+				cols: [12]
+			})
+				+vinhForm({
+					modifier: 'search-wide',
+					addClass: 'mb-40',
+				})
+
+		+vinhSectitle({
+			title: 'Filter by Region',
+			desc : '+1238 most beautiful tourist destinations in the world'
+		})
+
+		+row
+			+vinhCatFilter({
+				addClass: 'mb-30',
+				loop: {
+					data: [{},{},{},{}],
+					wrap: 'col-sm-12 col-md-6 col-lg-3'
+				}
+			})
+
+		+vinhSectitle({
+			title: 'Filter by Country',
+			desc : '+1238 most beautiful tourist destinations in the world'
+		})
+
+		+row
+			+vinhCatFilter({
+				addClass: 'mb-30',
+				loop: {
+					data: [{},{},{},{},{},{},{},{}],
+					wrap: 'col-sm-12 col-md-6 col-lg-3'
+				},
+			})
+		
+		+vinhSectitle({
+			title: 'General Travel Tips and Resources',
+			desc : '+1238 most beautiful tourist destinations in the world'
+		})
+
+		+row
+			+vinhPostFilter({
+				loop: {
+					data: [{},{},{},{},{},{},{},{}],
+					wrap: 'col-sm-12 col-md-6 '
+				},
+			})

@@ -12,4 +12,4 @@ mixin video-popup(args)
 				h2(class=css.title)= args.title || random(random.title)
 				div(class=css.desc)= args.desc || random(random.text, 50)
 			a(href=set(args, 'popup', 'https://vimeo.com/259411563'), class=css.popup, class="js-video-popup")
-				i.pe-7s-play
+				i(class=args.iconplay || 'la la-play')

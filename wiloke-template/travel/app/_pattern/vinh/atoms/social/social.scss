@@ -5,6 +5,7 @@
 .module {
 	display: inline-block;
 	border-radius: 50%;
+	line-height: 1;
 		i{
 		display: inline-block;
 		@include size(40px);

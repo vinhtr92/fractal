@@ -12,17 +12,19 @@ mixin vinhBox(args)
 		include cssmodule
 		div(class=css.img)
 
-			+vinhImagecover
+			+vinhImagecover({
+				modifier: 'ratio-16by9'
+			})
 			include cssmodule
 
 			div.wil-overlay
 			+vinhTextboxSmall({
 				text: random(random.continental),
-				modifier: 'singleText',
-				id: 'moduleTag',
-				})
+				modifier: 'category',
+				bgColor: args.bgColor || random(random.bgcolor)
+			})
 			include cssmodule
-			div(class=css.social id='md-social')
+			div(class=css.social)
 				+vinhSocial({
 					loop: {
 							data: [
@@ -39,18 +41,22 @@ mixin vinhBox(args)
 			div(class=css.desc)
 				h2(class=css.title)= set(args,'title',random(random.title))
 				div(class=css.meta)
-					+vinhTextboxSmall({
+					+vinhTextboxSmall({							
 						loop: {
 							data: [
 								{
 									icon: 'la la-eye',
-									text: '120 view'
+									text: '120 view',
+									modifier: 'meta',
 								},
 								{
 									icon: 'la la-comment-o',
-									text: '03 comment'
+									text: '03 comment',
+									modifier: 'meta',
+
 								}
 							],
+							modifier: 'meta'
 						}
 					})
 					include cssmodule

@@ -59,9 +59,10 @@ mixin long_post(args)
 						- for (let i = 0; i < 3; i++)
 							//- Args: img, link
 							+imageCover({
-								modifier: 'ratio-4by3',
+								modifier: 'ratio-16by9',
 								img: `img/place/${ random(1, 31) }.jpg`
 							})
+							include cssmodule
 					include cssmodule
 				else
 					//- Args: img, link
