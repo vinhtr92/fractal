@@ -360,6 +360,25 @@ $wilEasing: (
 		}
 	}
 
+	// Style2--dark
+	%large-style2--dark {
+		a {
+			padding: 20px 30px;
+		}
+		.#{$get-subMenu-class} {
+			background-color: $color-dark;
+			text-align: left;
+			box-shadow: 0 2px 8px 0 rgba(#fff, 0.1);
+			a {
+				padding: 10px 15px;
+				border-bottom: 1px solid rgba(#fff, 0.05);
+				&:after {
+					right: 15px;
+				}
+			}
+		}
+	}
+
 	// Style3
 	%large-style3 {
 		a {

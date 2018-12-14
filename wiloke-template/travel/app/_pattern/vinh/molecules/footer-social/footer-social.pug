@@ -1,0 +1,35 @@
+//- demo: true
+mixin vinhFooterSocial(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		div(class=css.logo)
+			img(src=args.logosrc || 'img/logo.png', alt="")
+		div(class=css.social)
+			+vinhSocial({
+				loop: args.dataIcon || {
+					data: [
+						{
+							icon: 'fa fa-facebook'
+						},
+						{
+							icon: 'fa fa-twitter'
+						},
+						{
+							icon: 'fa fa-instagram'
+						},
+						{
+							icon: 'fa fa-pinterest'
+						},
+						{
+							icon: 'fa fa-google-plus'
+						}					
+					]
+				}
+			})
+		
+		
+	include cssmodule

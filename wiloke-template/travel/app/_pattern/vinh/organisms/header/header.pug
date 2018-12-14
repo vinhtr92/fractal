@@ -19,16 +19,18 @@ mixin longHeader(args)
 				parentClass: 'menu-item-has-children'
 			}
 		})
+			include cssmodule
 			span.toggle-menu
 				span
 				span
 				span
 
-		include cssmodule
-		a(class=css.search, href="#")
-			span Find your destinations
-			i.pe-7s-search
-			
-	+longSearchFixed({
-	
-	})
+			div(class=css.search)
+
+				a(href="#" class='toggle-mobile')
+					i.la.la-search
+				+vinhWidgetSearch({
+					searchIcon: 'la la-search'
+				})
+				
+

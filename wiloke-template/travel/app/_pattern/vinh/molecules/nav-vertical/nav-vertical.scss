@@ -8,6 +8,20 @@
 	input {
 		border: 0 !important;
 	}
+
+	:global {
+		div[class*=field__icon] {
+			i {
+				vertical-align: middle;
+			}
+		}
+
+	input[class*=field]{
+		&:focus {
+			border: 1px solid $color-primary !important;
+		}
+	}
+	}
 }
 
 // search
@@ -44,7 +58,7 @@
 		}
 		.nav-back-button {
 			a {
-				color: $color-tertiary;
+				color: $color-primary;
 				font-size: 14px;
 				i {
 					font-size: 24px;

@@ -16,21 +16,8 @@ $('.swiper__module').each(function() {
 						}
 					})
 				},
-				transitionEnd: function(){
-					const container = wrapper[0];
-					const items = [...container.querySelectorAll('.swiper-slide')]
-					items.forEach(item	=>{
-					let itemPosX = item.getBoundingClientRect().x;
-					let windowWidth = window.innerWidth;
-					let currentWidth = item.clientWidth;
-						if(itemPosX<0 || windowWidth - itemPosX < currentWidth ){
-							item.wilAddClass('covered')
-						}
-						else if(itemPosX>0){
-							item.wilRemoveClass('covered')
-						}
-					})
-				}
+				setTransition: function(){
+}
 			}
 		}
 		,
@@ -48,7 +35,24 @@ $('.swiper__module').each(function() {
 		options = $.extend(optDefault, optData,method);
 	wrapper.children().wrap('<div class="swiper-slide"></div>');
 	var swiper = new Swiper(self, options);
-
+	
+	swiper.on('setTransition', function () {
+		const container = wrapper[0];
+		const items = [...container.querySelectorAll('.swiper-slide')]
+		items.forEach(item	=>{
+		let itemPosX = item.getBoundingClientRect().x;
+		let windowWidth = window.innerWidth;
+		let currentWidth = item.clientWidth;
+			if(itemPosX<0 || windowWidth - itemPosX < currentWidth ){
+				item.wilAddClass('covered')
+			}
+			else if(itemPosX>0){
+				item.wilRemoveClass('covered')
+			}
+		})
+	
+	  });
+	// console.log(swiper)
 	function thumbnails(selector) {
 
 		if (selector.length > 0) {

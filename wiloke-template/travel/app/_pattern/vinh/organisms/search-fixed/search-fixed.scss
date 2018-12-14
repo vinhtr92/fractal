@@ -16,6 +16,10 @@
 	&[data-search-active="true"] {
 		transform: translate(0, 0);
 	}
+
+	a {
+		color: $color-dark;
+	}
 }
 
 // close
@@ -27,7 +31,7 @@
 	padding: 0 10px;
 	i {
 		font-size: 30px;
-		color: $color-tertiary;
+		color: $color-primary;
 		vertical-align: middle;
 	}
 	span {

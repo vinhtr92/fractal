@@ -1,0 +1,324 @@
+/* //--- vinhImagebox
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	position: relative;
+	border-radius: $general-radius;
+	overflow: hidden;
+
+
+
+
+
+	:global {
+		.wil-overlay {
+			z-index: 0;
+		}
+	}
+}
+
+.module:hover {
+
+	.meta,
+	.share {
+		transform: translateY(0);
+		opacity: 1;
+		transition: .3s ease all;
+	}
+
+	.share {
+	}
+
+	:global {
+		.wil-overlay {
+			height: 100%;
+			// opacity: 0.3;
+		}
+	}
+}
+
+// img
+.img {
+	content: none
+}
+
+// body
+.body {
+	content: none;
+	@include absolute(bottom 0 left 0 right 0);
+	padding: 20px;
+}
+
+// title
+.title {
+
+	font-size: 14px;
+	margin:	10px 0 0 0;
+	color: $color-light;
+	text-transform: capitalize;
+	font-weight: $font-semibold;
+	line-height: 1;
+}
+
+.title:hover {
+	color: $color-primary;
+}
+
+// desc
+.desc {
+	font-size: 15px;
+	color: $color-gray-9;
+}
+
+// meta
+.meta {
+	@include absolute(top 10px right 10px);
+	margin: -3px;
+	transform: translateY(-40px);
+	opacity: 0;
+	transition: .3s ease all;
+	z-index: 1;
+	
+	:global {
+		.md-meta {
+			padding: 5px 8px;
+			background-color: rgba(27, 27, 29, 0.3);
+			margin: 3px;
+			
+		}
+	}
+}
+
+// imgThumbs
+.imgThumbs {
+	@include absolute(bottom 20px right 20px ) ;
+	z-index: 1;
+	margin: -3px;
+	width: 37%;
+	> div,a {
+		@include size(50px);
+		float: right;
+		margin: 3px;
+		border-radius: 5px;
+		overflow: hidden;
+	}
+	
+	:global {
+		.icon-share {
+			display: block;
+			text-align: center;
+			background: $color-primary;
+			&:hover {
+				text-decoration: none;
+				i {
+				}
+			}
+			
+			i {
+				color: $color-light;
+				font-size: 30px;
+				line-height: 50px;
+			}
+			
+		}
+	}
+	
+	@include media('>=xs'){
+		width: 100%;
+	}
+}
+
+// share
+.share {
+	@include absolute(right 8px bottom 18px);
+	line-height: 1;
+	transform: translateX(30px);
+	opacity: 0;
+	transition: .3s ease all;
+	&:hover {
+		text-decoration: none;
+	}
+	
+	i {
+		font-size: 30px;
+		color: $color-light;
+	}
+}
+
+// category
+.category {
+	color: $color-light;
+	font-size: 12px;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	
+	position: relative;
+	z-index: 1;
+	margin: 0;
+}
+
+.category:hover {
+	color: $color-primary;
+}
+
+
+// modifier style02
+.style02 {
+	.desc {
+		font-size: 15px;
+		line-height: 1;
+		margin: 5px 0 0 0;
+	}
+	
+	
+	.category {
+		font-size: 20px;
+		font-weight: $font-semibold;
+		text-transform: capitalize;
+		max-width: 40%;
+
+		@include media('>=sm'){
+			max-width: 100%;
+		}
+	}
+}
+
+// modifier style03
+.style03 {
+	.body {
+		padding: 17px 16px;
+	}
+
+	.title {
+		margin: 5px 0 0 0;
+	}
+
+	:global {
+		div[class*=imagecover] {
+			padding-top: 133.5%;
+		}
+	}
+}
+
+// modifier style04
+.style04 {
+	border-radius: 0;
+	padding: 15px 0;
+	border-bottom: 1px solid $color-gray-9;
+	display: flex;
+	
+	
+	:global {
+		.wil-overlay {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	.img {
+		@include size(84px);
+		overflow: hidden;
+		border-radius: 10px;
+		float: left;
+	}
+	
+	.body {
+		align-self: center;
+		float: left;
+		position: relative;
+		width: calc(100% - 85px);
+		padding: 10px 0 10px 15px;
+	}
+	
+	.category {
+		font-size: 12px;
+		text-transform: uppercase;
+		font-weight: $font-normal;
+	}
+	
+	.title {
+		font-size: 14px;
+		font-weight: $font-semibold;
+		color: $color-dark;
+		text-transform: capitalize;
+		margin: 13px 0 12px 0;
+		
+		&:hover {
+			color: $color-primary;
+		}
+	}
+	
+	.desc {
+		color: $color-gray-5;
+		font-size: 14px;
+		line-height: 1;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		width: calc(100% - 10px);
+	}
+}
+
+
+// modifier style05
+.style05 {
+	border-radius: 0;
+	text-align: center;
+
+	.body {
+		position: relative;
+		padding: 12px 0 20px 0 ;
+	}
+
+	.img {
+		border-radius: $general-radius;
+		overflow: hidden;
+	}
+
+	.category {
+		font-size: 10px;
+		font-weight: $font-normal;
+		line-height: 1;
+	}
+
+	.title {
+		color: $color-dark;
+		font-size: 12px;
+		margin: 5px 0 0 0;
+		&:hover {
+			color: $color-primary;
+		}
+	}
+
+	:global {
+		.wil-overlay {
+			display: none;
+			visibility: hidden;
+		}
+
+		div[class*=imagecover] {
+			padding-top: 56.05%;
+		}
+	} 
+}
+
+
+// modifier style06 
+.style06 {
+	.body {
+		padding: 14px 20px;
+	}
+	.category {
+		font-size: 18px;
+		color: $color-light;
+		font-weight: $font-semibold;
+		text-transform: capitalize;
+	}
+
+	.desc {
+		font-size: 13px;
+		line-height: 1;
+		color: $color-gray-9;
+	}
+}

@@ -39,6 +39,40 @@ block content
 					addClass: 'mb-30',
 				})
 					+row
+						+vinhImagebox({
+							loop: {
+								wrap: 'col-lg-4 col-md-6 col-sm-12',
+								data: [
+									{
+										modifier: 'style05',
+										categoryColor: random(random.textcolor),
+									},
+									{
+										modifier: 'style05',
+										categoryColor: random(random.textcolor),
+									},
+									{
+										modifier: 'style05',
+										categoryColor: random(random.textcolor),
+									},
+									{
+										modifier: 'style05',
+										categoryColor: random(random.textcolor),
+									},
+									{
+										modifier: 'style05',
+										categoryColor: random(random.textcolor),
+									},
+									{
+										modifier: 'style05',
+										categoryColor: random(random.textcolor),
+									},
+								]
+							}
+						})
+
+
+					//-
 						+vinhPostRelated({
 							loop: {
 								data: [
@@ -61,7 +95,6 @@ block content
 
 									},
 								],
-								wrap: 'col-lg-4 col-md-6 col-sm-12'
 							}
 						})
 

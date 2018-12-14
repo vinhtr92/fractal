@@ -7,18 +7,110 @@
 	z-index: 9999;
 	background-color: $color-light;
 	border-radius: 5px;
+	box-shadow: 0px 0px 30px 0px rgba(27, 27, 29, 0.1);
 	@include pfs('top, left, right', (
 		400px: 10px,
-		1200px: 30px
+		1200px: 10px
 	));
+
 	@include pfs('padding-left, padding-right', (
 		400px: 15px,
-		1200px: 50px
+		1200px: 40px
 	));
+
+
 	@include pfs('padding-top, padding-bottom', (
 		400px: 10px,
-		1200px: 25px
+		1200px: 15px
 	));
+
+
+	:global {
+		form[class*=search] {
+			transform: translateX(100%);
+			transition: .3s ease all;
+
+			.item-group {
+				overflow: hidden;
+			}
+
+			input {
+			}
+
+			button {
+				padding: 0;
+				&:after {
+					content: none;
+				}
+
+				i {
+					font-size: 22px;
+				}
+			}
+
+			button:hover {
+				i {
+					color: $color-primary;
+				}
+			}
+		}
+
+		form[data-state=open] {
+			transform: translateX(0);
+			transition: .3s ease all;
+			input {
+			}
+
+			button {
+				padding: 0 15px;
+				&:after {
+					content: '';
+				}
+			}
+			
+			button:hover {
+				i {
+					color: $color-light;
+				}
+			}
+		}
+
+
+		@include media(">=685px"){
+			
+			form[class*=search] {
+				transform: translateX(0);
+				input {
+				}
+
+				button {
+					padding: 0 15px;
+					&:after {
+						content: '';
+					}
+				}
+				
+				button:hover {
+					i {
+						color: $color-light;
+					}
+				}
+			}
+		}
+
+		a.toggle-mobile {
+			display: block ;
+			z-index: 0;
+			top: 50%;
+			position: absolute;
+			right: 0;
+			transform: translateY(-50%);
+
+			@include media(">=685px") {
+				display: none;
+			}
+		}
+	}
 }
 
 // logo
@@ -27,7 +119,7 @@
 	text-align: center;
 	@include media('>lg') {
 		border-right: 2px solid $color-gray-2;
-		margin-right: 50px;
+		margin-right: 40px;
 		padding: 7px 70px 7px 0;
 		float: left;
 	}
@@ -49,21 +141,47 @@
 	font-weight: $font-medium;
 	font-size: 14px;
 	color: $color-dark;
+	width: 80%;
+	overflow: hidden;
 	@include pfs('right', (
 		400px: 15px,
-		1200px: 50px
+		1200px: 40px
 	));
-	@include media('<=lg') {
-		font-size: 0;
-	}
 	* {
 		vertical-align: middle;
 	}
 	i {
-		font-size: 26px;
-		font-weight: bold;
-		margin-left: 12px;
+		font-size: 22px;
+		font-weight: $font-normal;
+		color: $color-gray-5;
+		transition: .3s ease all;
 	}
+	
+	a {
+		color: $color-dark-2;
+		text-decoration: none;
+		font-weight: $font-semibold;
+		transition: .3s ease all;
+	}
+	
+	:global(.item-group) {
+		input {
+			border: 1px solid $color-gray-1 !important;
+			
+			&:focus {
+				border: 1px solid $color-primary !important;
+			} 
+		}
+	};
+	
+	@include media('<=lg') {
+		font-size: 0;
+	}
+	@include media('>=685px'){
+		width: 268px;
+	}
+
+
 }
 
 // fixed
@@ -74,7 +192,7 @@
 		left: 0;
 		right: 0;
 		border-radius: 0;
-		border-bottom: 1px solid $color-gray-2;
+		// border-bottom: 1px solid $color-gray-2;
 		animation: fixed 0.3s ease;
 		@include pfs('padding-top, padding-bottom', (
 			400px: 10px,
@@ -113,7 +231,7 @@
 			margin: auto;
 			width: 100%;
 			height: 2px;
-			background-color: $color-dark;
+			background-color: rgba($color-dark,0.8);
 			transition: all 0.3s ease;
 			&:nth-child(1) {
 				top: 0;
@@ -128,12 +246,16 @@
 				transform: translate(0, 0) rotate(0);
 			}
 		}
+
+		@include media('>=lg'){
+			display: none;
+		}
 	}
 	.header-menu.active {
 		~ .toggle-menu {
 			transform: rotate(-90deg);
 			span {
-				background-color: $color-tertiary;
+				background-color: $color-primary;
 				&:nth-child(1) {
 					top: 50%;
 					transform: translate(0, -50%) rotate(-45deg);
@@ -148,7 +270,14 @@
 			}
 		}
 	}
-} 
+
+	div[class*=header__search]{
+
+	}
+
+
+
+}
 
 :global {
 	@include wilMenu('.header-nav', (
@@ -161,7 +290,7 @@
 			font-family: $font-secondary,
 			font-size: 14px,
 			font-weight: $font-semibold,
-			padding: 15px 27px,
+			padding: 10px 27px,
 			hover: (
 				color: $color-primary
 			),
@@ -235,13 +364,159 @@
 			enable: false
 		)
 	));
+
+
+
+	header.header--dark {
+		background: $color-dark;
+		border-bottom: 1px solid #000;
+
+		span.toggle-menu {
+			span {
+				background-color: rgba($color-light,0.5);
+			}
+		}
+
+		div[class*=header__search]{
+
+		}
+		.header-menu.active {
+			~ .toggle-menu {
+				span {
+					// background-color: $color-primary;
+				}
+			}
+		}
+	
+		div[class*=header__logo]{
+			@include media('>=lg'){
+				border-right: 2px solid rgba(218, 218, 218, 0.1);
+
+			}
+		}
+
+
+		div[class*=header__search]{
+
+			input {
+				background-color: #333335 !important;
+				border: 1px solid transparent !important;
+				transition: .3s ease all;
+
+				&:focus {
+					border: 1px solid transparent !important;
+					background-color: rgb(246, 246, 246) !important;
+					transition: .3s ease all;
+
+				}
+			}
+
+		}
+		@include wilMenu('.header-nav', (
+			menuClass: 'header-menu',
+			theme: 'style2--dark',
+			align: 'left',
+			breakpoint: 1200,
+			css: (
+				color: $color-light,
+				font-family: $font-secondary,
+				font-size: 14px,
+				font-weight: $font-semibold,
+				padding: 15px 27px,
+				hover: (
+					color: $color-primary
+				),
+				current: (
+					color: $color-primary
+				)
+			),
+			arrow: (
+				use: 'FontAwesome',
+				icon: 'fa-angle-down'
+			),
+			subMenu: (
+				width: 200,
+				class: 'sub-menu',
+				parentClass: 'menu-item-has-children',
+				align: 'right',
+				position: 'right',
+				css: (
+					color: $color-light,
+					font-weight: $font-medium,
+					hover: (
+						color: $color-primary
+					),
+					current: (
+						color: $color-primary
+					)
+				),
+				arrow: (
+					use: 'FontAwesome',
+					icon: 'fa-angle-right'
+				),
+				animate: (
+					time: 300,
+					easing: 'easeOutBack',
+					effect: 'slideDown'
+				)
+			),
+			menuMobile: (
+				toggleClass: 'active',
+				classButtonToggle: 'toggle-menu',
+				theme: 'style1',
+				align: 'left',
+				width: 260,
+				css: (
+					font-size: 14px,
+					color: $color-gray-3,
+					border-bottom: 1px solid rgba(#fff, 0.05),
+					hover: (
+						color: $color-gray-3
+					),
+					toggle: (
+						color: $color-primary
+					)
+				),
+				arrow: (
+					use: 'FontAwesome',
+					icon: 'fa-angle-down'
+				),
+				subMenu: (
+					css: (
+						hover: (
+							color: $color-gray-3
+						),
+						toggle: (
+							color: $color-primary
+						)
+					)
+				)
+			),
+			responsiveByJavascript: (
+				enable: false
+			)
+		))
+
+
+	}
+
+
+	header.header--full {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		border-radius: 0;
+	}
+
+
 }
 
 // modifier style02
 .style02 {
 	@include pfs('top, left, right', (
-		400px: 10px,
-		1200px: 10px
+		400px: 0px,
+		1200px: 0px
 	));
 
 	@include pfs('padding-left, padding-right', (
@@ -254,4 +529,120 @@
 		400px: 10px,
 		1200px: 10px
 	));
+}
+// modifier dark
+
+.dark {
+	.fixed {
+		&.sticky {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			border-radius: 0;
+			border-bottom: 1px solid $color-gray-2;
+			animation: fixed 0.3s ease;
+			@include pfs('padding-top, padding-bottom', (
+				400px: 10px,
+				1200px: 15px
+			));
+
+			@keyframes fixed {
+				0% {
+					transform: translate(0, -100%);
+				}
+				100% {
+					transform: translate(0, 0);
+				}
+			}
+		}
+	}
+	:global {
+
+	@include wilMenu('.header-nav', (
+		menuClass: 'header-menu',
+		theme: 'style2--dark',
+		align: 'left',
+		breakpoint: 1200,
+		css: (
+			color: $color-light,
+			font-family: $font-secondary,
+			font-size: 14px,
+			font-weight: $font-semibold,
+			padding: 15px 27px,
+			hover: (
+				color: $color-primary
+			),
+			current: (
+				color: $color-primary
+			)
+		),
+		arrow: (
+			use: 'FontAwesome',
+			icon: 'fa-angle-down'
+		),
+		subMenu: (
+			width: 200,
+			class: 'sub-menu',
+			parentClass: 'menu-item-has-children',
+			align: 'right',
+			position: 'right',
+			css: (
+				color: $color-light,
+				font-weight: $font-medium,
+				hover: (
+					color: $color-primary
+				),
+				current: (
+					color: $color-primary
+				)
+			),
+			arrow: (
+				use: 'FontAwesome',
+				icon: 'fa-angle-right'
+			),
+			animate: (
+				time: 300,
+				easing: 'easeOutBack',
+				effect: 'slideDown'
+			)
+		),
+		menuMobile: (
+			toggleClass: 'active',
+			classButtonToggle: 'toggle-menu',
+			theme: 'style1',
+			align: 'left',
+			width: 260,
+			css: (
+				font-size: 14px,
+				color: $color-gray-3,
+				border-bottom: 1px solid rgba(#fff, 0.05),
+				hover: (
+					color: $color-gray-3
+				),
+				toggle: (
+					color: $color-primary
+				)
+			),
+			arrow: (
+				use: 'FontAwesome',
+				icon: 'fa-angle-down'
+			),
+			subMenu: (
+				css: (
+					hover: (
+						color: $color-gray-3
+					),
+					toggle: (
+						color: $color-primary
+					)
+				)
+			)
+		),
+		responsiveByJavascript: (vinh_header__search
+			enable: false
+		)
+	))
+
+	}
 }

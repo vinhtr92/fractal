@@ -13,7 +13,9 @@ block afterLink
 //- Header
 block header
 	+longHeader({
-		modifier: 'style02',
+		modifier: '',
+		addClass: '',
+		searchComponent: false,
 	})
 //- Footer1
 block footer
@@ -64,6 +66,7 @@ block content
 						spaceBetween: 15,
 					}
 				},
+
 			},
 			nextText: '<i class="la la-angle-right"></i>',
 			prevText: '<i class="la la-angle-left"></i>',
@@ -71,7 +74,10 @@ block content
 		})
 			+vinhBox({
 				loop: {
-					data:[{},{},{},{},{},{},{},{}],
+					data:[
+						{
+						},{},{},{},{},{},{},{}
+						],
 				},
 			})
 
@@ -139,10 +145,26 @@ block content
 			}
 		})
 
-			+vinhBox4({
+			+vinhImagebox({
 				loop: {
-					data: [{},{},{},{},{}],
+					data: [
+						{
+							modifier: 'style02',
+						},
+						{
+							modifier: 'style02',
+						},
+						{
+							modifier: 'style02',
+						},
+						{
+							modifier: 'style02',
+						},
+						{
+							modifier: 'style02',
+						}],
 					wrap: 'grid-item',
+					
 				}
 			})
 
@@ -213,9 +235,17 @@ block content
 			prevText: '<i class="la la-angle-left"></i>',
 			addClass: 'swiper__fullwidth swiper__fullwidth swiper--button-pill swiper--button-abs',
 		})
-			+vinhBox2({
+			+vinhImagebox({
 				loop: {
-					data:[{},{},{},{},{},{},{},{}]
+					data:[
+						{modifier:'style03 '},
+						{modifier:'style03 '},
+						{modifier:'style03 '},
+						{modifier:'style03 '},
+						{modifier:'style03 '},
+						{modifier:'style03 '},
+						{modifier:'style03 '},
+						{modifier:'style03 '}]
 				},
 			})
 

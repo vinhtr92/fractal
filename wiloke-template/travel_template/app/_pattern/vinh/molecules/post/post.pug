@@ -33,7 +33,7 @@ mixin long_post(args)
 						slidesPerView: 1,
 						loop: true,
 						effect: 'fade'
-					},
+					},!
 					nextText: '<i class="pe-7s-angle-right"></i>',
 					prevText: '<i class="pe-7s-angle-left"></i>',
 					addClass: 'swiper--button-pill swiper--button-abs'
@@ -51,7 +51,7 @@ mixin long_post(args)
 					img: img,
 				})
 
-		include cssmodule
+		include cssmodule!==
 		div(class=css.body)
 			//- Args: title
 			+long_list-title-sm({

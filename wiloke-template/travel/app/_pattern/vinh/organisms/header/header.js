@@ -1,6 +1,6 @@
 class header {
 	constructor() {
-		this.css = {"module":".vinh_header__module","logo":".vinh_header__logo","search":".vinh_header__search","fixed":".vinh_header__fixed","sticky":".vinh_header__sticky","style02":".vinh_header__style02","":""};
+		this.css = {"module":".vinh_header__module","logo":".vinh_header__logo","search":".vinh_header__search","fixed":".vinh_header__fixed","sticky":".vinh_header__sticky","dark":".vinh_header__dark","style02":".vinh_header__style02","":""};
 		this.apply();
 	}
 
@@ -12,8 +12,10 @@ class header {
 	}
 	handleSearch(event, formSearch) {
 		event.preventDefault();
-		formSearch.setAttribute('data-search-active', 'true');
+		formSearch.setAttribute('data-state', 'true');
 	}
+
+	
 
 	handleHeaderFixed(module) {
 		const { css } = this;
@@ -35,10 +37,10 @@ class header {
 		const modules = document.querySelectorAll(css.module);
 		const moduleArr = [].slice.call(modules);
 		wilEach(moduleArr, module => {
-			const search = module.querySelector(css.search);
-			const formSearch = document.querySelector('[data-search-active]');
+			const search = module.querySelector(`${css.search} a`);
+			const formSearch = document.querySelector('[data-state]');
 			if (search) {
-				search.addEventListener('click', event => this.handleSearch(event, formSearch));
+				// search.addEventListener('click', event => this.handleSearch(event, formSearch));
 			}
 			window.addEventListener('scroll', () => this.handleHeaderFixed(module));
 		});
@@ -46,3 +48,30 @@ class header {
 	}
 }
 new header();
+
+
+(function headerToggleBtnSearch(el){
+	const module = document.querySelector(el);
+	const input =  module.querySelector('input');
+	const btn = document.querySelector('a.toggle-mobile');
+	module.setAttribute('data-state','closed');
+	var state = module.getAttribute('data-state')
+
+	btn.addEventListener('click',event => {
+		if(state === 'closed'){
+			module.setAttribute('data-state','open')
+		}
+		event.preventDefault();
+	})
+	module.addEventListener('submit',event => {
+		if(input.value==='' ){
+			module.setAttribute('data-state','closed')
+		}
+	})
+
+	input.addEventListener('focusout',event => {
+		if(input.value===''){
+			module.setAttribute('data-state','closed')			
+		}
+	})
+})('header form.search-form')

@@ -2,6 +2,7 @@
  * Swiper
  */
 $('.swiper__module').each(function() {
+	console.log(this);
 	var self = $(this),
 		wrapper = $('.swiper-wrapper', self),
 		optData = eval('(' + self.attr('data-options') + ')'),
@@ -20,7 +21,8 @@ $('.swiper__module').each(function() {
 		options = $.extend(optDefault, optData);
 	wrapper.children().wrap('<div class="swiper-slide"></div>');
 	var swiper = new Swiper(self, options);
-	
+
+
 	function thumbnails(selector) {
 
 		if (selector.length > 0) {

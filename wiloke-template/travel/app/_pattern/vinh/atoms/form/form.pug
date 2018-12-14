@@ -7,7 +7,7 @@ mixin vinhForm(args)
 		
 		//- code
 		if (has( args.modifier, 'subscribe'))
-			form(name='wil-subscribe' id='wil-subscribe')
+			form(name='wil-subscribe' id='wil-subscribe' action='#')
 					
 				div(class='item-group')
 					label(for="name")= args.name || 'name'
@@ -28,8 +28,8 @@ mixin vinhForm(args)
 						modifier: ['primary', 'md', 'round']
 					})
 					include cssmodule
-		else if (has( args.modifier, 'search-wide'))
-			form(name='wil-search', id='wil-search')
+		else if (has( args.modifier, 'search-wide')) 
+			form(name='wil-search', id='wil-search' action='#')
 
 				div(class='item-group')
 					label(for="search")= args.search || 'Search destination'
@@ -44,7 +44,7 @@ mixin vinhForm(args)
 				include cssmodule
 
 		else if( has(args.modifier,'feedback'))
-			form(name='wil-feedback' id='wil-feedback')
+			form(name='wil-feedback' id='wil-feedback' action='#')
 				div(class='item-group')
 					label(for="name")= args.name || 'name'
 					input(type="text", id="name", )

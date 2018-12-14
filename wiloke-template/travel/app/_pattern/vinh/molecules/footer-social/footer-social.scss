@@ -1,0 +1,41 @@
+/* //--- vinhFooterSocial
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	text-align: center;
+	@include pfs('padding-top, padding-bottom',(
+		400px: 15px,
+		1200px: 40px
+	))
+}
+
+// logo
+.logo {
+	@include pfs('margin-bottom',(
+		400px: 30px,
+		1200px: 45px
+	))
+}
+
+// social
+.social {
+	a {
+		font-size: 16px;
+		margin: 0 15px;
+
+		&:first-child {
+			margin: 0 15px 0 0;
+		}
+
+		&:last-child {
+			margin:  0 0 0  15px;
+		}
+	}
+
+	i {
+		width: initial;
+		height: initial;
+		line-height: initial;
+	}
+}
