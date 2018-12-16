@@ -52,26 +52,30 @@ new header();
 
 (function headerToggleBtnSearch(el){
 	const module = document.querySelector(el);
-	const input =  module.querySelector('input');
-	const btn = document.querySelector('a.toggle-mobile');
-	module.setAttribute('data-state','closed');
-	var state = module.getAttribute('data-state')
+	if(module){
+		const input =  module.querySelector('input');
+		const btn = document.querySelector('a.toggle-mobile');
+		module.setAttribute('data-state','closed');
+		var state = module.getAttribute('data-state')
+	
+	
+		btn.addEventListener('click',event => {
+			if(state === 'closed'){
+				module.setAttribute('data-state','open')
+			}
+			event.preventDefault();
+		})
+		module.addEventListener('submit',event => {
+			if(input.value==='' ){
+				module.setAttribute('data-state','closed')
+			}
+		})
 
-	btn.addEventListener('click',event => {
-		if(state === 'closed'){
-			module.setAttribute('data-state','open')
-		}
-		event.preventDefault();
-	})
-	module.addEventListener('submit',event => {
-		if(input.value==='' ){
-			module.setAttribute('data-state','closed')
-		}
-	})
+		input.addEventListener('focusout',event => {
+			if(input.value===''){
+				module.setAttribute('data-state','closed')
+			}
+		})
+	}
 
-	input.addEventListener('focusout',event => {
-		if(input.value===''){
-			module.setAttribute('data-state','closed')			
-		}
-	})
 })('header form.search-form')

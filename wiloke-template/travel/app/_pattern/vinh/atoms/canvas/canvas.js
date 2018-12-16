@@ -1,5 +1,5 @@
-
-if ($('canvas#canvas').length) {
+const canvas = document.querySelector('canvas#canvas');
+if (canvas) {
 	var t, i = {
 			screen: {
 				elem: null,

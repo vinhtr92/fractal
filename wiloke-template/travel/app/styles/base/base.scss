@@ -54,11 +54,12 @@
 		
 
 				div[class*=body]{
-					padding: 10px 20px;
+					padding: 12px 20px;
 				}
 
 				div[class*=desc]{
 					font-size: 13px;
+					margin: 0;
 				}
 
 				div[class*=imgThumbs]{
@@ -160,6 +161,30 @@
 		.mr-#{$name}{
 			margin-right: $value;
 		}
+		.pt-#{$name}{
+			padding-top: $value;
+		}
+		
+		.pb-#{$name}{
+			padding-bottom: $value !important;
+		}
+		
+		.pl-#{$name}{
+			padding-left: $value;
+		}
+		
+		.pr-#{$name}{
+			padding-right: $value;
+		}
+
+		.px-#{$name}{
+			padding: 0 $value
+		}
+
+		.py-#{$name}{
+			padding: $value 0
+		}
+		
 		
 		.bd-radius--#{$name}{
 			border-radius: $value;
@@ -319,6 +344,28 @@
 				transition: .3s ease opacity;
 				filter: blur(2px);
 			}
+		}
+	}
+
+
+
+	//wil-tag
+	span.wil-tag {
+		@include absolute(top 10px left 10px);
+		line-height: 1;
+		padding: 6px;
+		font-family: $font-primary;
+		font-size: 12px;
+		color: rgba($color-light,0.8);
+		border-radius: 5px;
+
+		&.wil-tag--style02 {
+			font-size: 12px;
+			text-transform: uppercase;
+			font-weight: 400;
+			background: none;
+			position: initial;
+			padding: 0;
 		}
 	}
 

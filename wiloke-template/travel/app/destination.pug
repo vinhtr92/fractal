@@ -20,8 +20,9 @@ block content
 	+section({
 		container: true,
 		css: {
-			'background':'#f6f6f6'
-		}
+			'background':'#fcfcfc'
+		},
+		addClass: 'py-50',
 	})
 		+row
 			+col({
@@ -29,46 +30,182 @@ block content
 			})
 				+vinhForm({
 					modifier: 'search-wide',
-					addClass: 'mb-40',
 				})
 
+
+
+	+section({
+		container: true,
+		css: {
+			'background':'#fcfcfc'
+		},
+		addClass: 'py-20',
+	})
 		+vinhSectitle({
 			title: 'Filter by Region',
-			desc : '+1238 most beautiful tourist destinations in the world'
+			desc : '+1238 most beautiful tourist destinations in the world',
+			addClass: 'mb-20'
 		})
 
 		+row
-			+vinhCatFilter({
+			+vinhImagebox({
 				addClass: 'mb-30',
 				loop: {
-					data: [{},{},{},{}],
+					data: [
+						{
+							modifier: 'style06',
+							category: random(random.continental),
+							desc: `${random(1,100)} destinations`
+						},
+						{
+							modifier: 'style06',
+							category: random(random.continental),
+							desc: `${random(1,100)} destinations`
+						},
+						{
+							modifier: 'style06',
+							category: random(random.continental),
+							desc: `${random(1,100)} destinations`
+						},
+						{
+							modifier: 'style06',
+							category: random(random.continental),
+							desc: `${random(1,100)} destinations`
+						}],
 					wrap: 'col-sm-12 col-md-6 col-lg-3'
 				}
 			})
 
+
+
+
+
+	+section({
+		container: true,
+		css: {
+			'background':'#fcfcfc'
+		},
+		addClass: 'py-20',
+
+	})
 		+vinhSectitle({
 			title: 'Filter by Country',
-			desc : '+1238 most beautiful tourist destinations in the world'
+			desc : '+1238 most beautiful tourist destinations in the world',
+			addClass: 'mb-20'
 		})
 
 		+row
-			+vinhCatFilter({
+			+vinhImagebox({
 				addClass: 'mb-30',
 				loop: {
-					data: [{},{},{},{},{},{},{},{}],
+					data: [
+						{
+							modifier: 'style06',
+							category: random(random.continental),
+							desc: `${random(1,100)} destinations`
+
+						},
+						{
+							modifier: 'style06',
+							category: random(random.continental),
+							desc: `${random(1,100)} destinations`
+
+						},
+						{
+							modifier: 'style06',
+							category: random(random.continental),
+							desc: `${random(1,100)} destinations`
+
+						},
+						{
+							modifier: 'style06',
+							category: random(random.continental),
+							desc: `${random(1,100)} destinations`
+
+						},
+						{
+							modifier: 'style06',
+							category: random(random.continental),
+							desc: `${random(1,100)} destinations`
+
+						},
+						{
+							modifier: 'style06',
+							category: random(random.continental),
+							desc: `${random(1,100)} destinations`
+
+						},
+						{
+							modifier: 'style06',
+							category: random(random.continental),
+							desc: `${random(1,100)} destinations`
+
+						},
+						{
+							modifier: 'style06',
+							category: random(random.continental),
+							desc: `${random(1,100)} destinations`
+
+						}],
 					wrap: 'col-sm-12 col-md-6 col-lg-3'
 				},
 			})
-		
+	
+	
+	
+	
+	
+	+section({
+		container: true,
+		css: {
+			'background':'#fcfcfc'
+		},
+		addClass: 'py-20',
+	})
+	
 		+vinhSectitle({
 			title: 'General Travel Tips and Resources',
-			desc : '+1238 most beautiful tourist destinations in the world'
+			desc : '+1238 most beautiful tourist destinations in the world',
+			addClass: 'mb-20',
 		})
 
 		+row
-			+vinhPostFilter({
+			+vinhImagebox({
 				loop: {
-					data: [{},{},{},{},{},{},{},{}],
+					data: [
+						{
+							modifier: 'style04',
+							categoryColor: random(random.textcolor)
+						},
+						{
+							modifier: 'style04',
+							categoryColor: random(random.textcolor)
+						},
+						{
+							modifier: 'style04',
+							categoryColor: random(random.textcolor)
+						},
+						{
+							modifier: 'style04',
+							categoryColor: random(random.textcolor)
+						},
+						{
+							modifier: 'style04',
+							categoryColor: random(random.textcolor)
+						},
+						{
+							modifier: 'style04',
+							categoryColor: random(random.textcolor)
+						},
+						{
+							modifier: 'style04',
+							categoryColor: random(random.textcolor)
+						},
+						{
+							modifier: 'style04',
+							categoryColor: random(random.textcolor)
+						}
+						],
 					wrap: 'col-sm-12 col-md-6 '
 				},
 			})

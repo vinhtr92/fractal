@@ -2,7 +2,7 @@
 mixin long_post(args)
 	include cssmodule
 
-	+module('div', css.module, args)
+	+module('article', css.module, args)
 		-
 			let args = item;
 			let img = args.img || `img/place/${ random(1, 35) }.jpg`;
@@ -23,9 +23,8 @@ mixin long_post(args)
 
 		if (has(args.modifier,'post02'))
 			header(class=css.header)
-				+vinhTextboxSmall({
-					modifier: 'category',
-				})
+				span(class='wil-tag' class=args.bgTagColor || random(random.bgcolor) )= args.tag || random(random.continental)
+
 				if (args.postType === 'quote')
 					//- Args: quote
 					+long_quote1({
@@ -71,7 +70,7 @@ mixin long_post(args)
 					})
 					include cssmodule
 			div(class=css.body)
-				h3(class=css.title)
+				h2(class=css.title)
 					a(href='#')= args.title || random(random.title)
 				p(class=css.desc)= args.desc || random(random.text,120)
 
@@ -102,12 +101,6 @@ mixin long_post(args)
 					include cssmodule
 
 			include cssmodule
-
-
-
-
-
-
 
 
 
@@ -167,13 +160,10 @@ mixin long_post(args)
 					})
 					include cssmodule
 			div(class=css.body)
-				+vinhTextboxSmall({
-					modifier: 'category',
-					category: args.category || random(random.continental)
-				})
-				include cssmodule
+				span(class='wil-tag' class=args.bgTagColor || random(random.bgcolor) )= args.tag || random(random.continental)
 
-				h3(class=css.title)
+
+				h2(class=css.title)
 					a(href='#')= args.title || random(random.title)
 				p(class=css.desc)= args.desc || random(random.text,200)
 				
@@ -215,20 +205,53 @@ mixin long_post(args)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		else if(has(args.modifier,'postImage'))
+			header(class=css.header)
+				span(class='wil-tag' class=args.bgTagColor || random(random.bgcolor) )= args.tag || random(random.continental)
+				div.wil-overlay
+				div(class=css.img)
+					+vinhImagecover({
+						modifier: args.modiferCover || 'ratio-16by9'
+					})
+					include cssmodule
+				div(class=css.social)
+					+vinhSocial({
+						loop: {
+								data: [
+									{icon: 'la la-facebook'},
+									{icon: 'la la-twitter'},
+									{icon: 'la la-google-plus'},
+									{icon: 'la la-pinterest'},
+								]
+							},
+						modifier: 'style02'
+					})
+					include cssmodule
+			div(class=css.body)
+				h2(class=css.title)
+					a(href='#')= args.title || random(random.title)
+				div(class=css.footer)
+					div(class=css.meta)
+						+vinhTextboxSmall({
+							loop: {
+								data: [
+									{
+										modifier: 'meta',
+										icon: 'la la-eye',
+										text: `${random(1,100)} Views`
+									},
+									{
+										modifier: 'meta',
+										icon: 'la la-comment',
+										text: `${random(1,100)} Comments`
+									}
+								],
+							}
+						})
+						include cssmodule
+					div(class=css.share)
+						a(href="#")
+							i(class=args.iconShare || 'pe-7s-share')
 
 
 
@@ -346,6 +369,5 @@ mixin long_post(args)
 						classText: css.metaText,
 						href: '#'
 					})
-
 
 				include cssmodule

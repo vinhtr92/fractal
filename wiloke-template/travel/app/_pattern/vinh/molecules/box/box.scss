@@ -1,19 +1,6 @@
 /* //--- vinhBox
 --------------------------------------------------------------------------------*/
 
-$defaultOpt: (
-	loop: 10
-);
-@mixin socialAnimation($classes, $opts: $defaultOpt) {
-	#{$classes} {
-		$loop: map-get($opts, 'loop');
-		@for $i from 0 through $loop {
-			&:nth-child(#{$i}) {
-				transition-delay: $i * 0.1s;
-			}
-		}
-	}
-}
 
 // module
 .module {
