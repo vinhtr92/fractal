@@ -28,13 +28,13 @@
 	&:global(.sm){
 		a[class*=video-popup__popup]{ 
 
-			@include size(50px);
+			// @include size(50px);
 
-			@include media("<=sm"){
-				i {
-					top : 1px;
-				}
-			}
+			// @include media("<=sm"){
+				// i {
+					// top : 1px;
+				// }
+			// }
 		}
 		
 		div[class^=swiper__module]{
@@ -260,6 +260,7 @@
 }
 // title
 .title {
+	composes: text-ellipsis from global;
 }
 
 // modifier post03

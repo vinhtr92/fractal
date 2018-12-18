@@ -17,7 +17,7 @@ class wilHoverParallax {
 		this.opts = $.extend(defaultOpt, opt, dataOpt);
 		this.inner = null;
 		this.btnPlay = null;
-		this.bgclone1 = '<div class="bg-parallax-clone-1"></div>';
+		this.bgclone1 = '<div class="bg-parallax-pclone-1"></div>';
 		this.bgclone2 = '<div class="bg-parallax-clone-2"></div>';
 		this.bgclone3 = '<div class="bg-parallax-clone-3"></div>';
 		return this.init();

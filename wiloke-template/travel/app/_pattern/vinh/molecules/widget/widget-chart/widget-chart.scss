@@ -9,46 +9,48 @@
 :global {
 
 	.widget-chart {
-		border-radius: $general-radius;
 		overflow: hidden;
+		margin: -8px;
 		div[class*=imagecover]{
 			padding-top: 15.55%;
 		}
 		.widget-chart__title {
+			text-align: center;
 			margin: 0;
-			@include absolute(top 50% left 50%);
-			transform: translate(-50%,-50%);
+			width: 100%;
+			@include absolute(top 50% );
+			transform: translateY(-50%);
 			color: $color-light;
 			font-size: 14px;
 			transition: .3s ease all;
 			padding:  5px 20px;
 
-			&:after ,
-			&:before {
-				content: '';
-				width: 100%;
-				height: 1px;
-				position: absolute;
-				background: white;
-				transition: .3s ease all;
-				opacity: 0;
+			// &:after ,
+			// &:before {
+			// 	content: '';
+			// 	width: 100%;
+			// 	height: 1px;
+			// 	position: absolute;
+			// 	background: white;
+			// 	transition: .3s ease all;
+			// 	opacity: 0;
 
-				// opacity: 0;
-			}
+			// 	// opacity: 0;
+			// }
 
-			&:after {
-				bottom : 0;
-				left: 0;
-				transform: translate(120%);
+			// &:after {
+			// 	bottom : 0;
+			// 	left: 0;
+			// 	transform: translate(120%);
 
-			}
+			// }
 
-			&:before {
-				top: 0;
-				transform: translate(-120%);
-				left: 0;
+			// &:before {
+			// 	top: 0;
+			// 	transform: translate(-120%);
+			// 	left: 0;
 
-			}
+			// }
 
 		}
 
@@ -56,18 +58,23 @@
 			z-index: 0;
 			transition: .3s all;
 			transform: scale(1.01);
+			height: 100%;
+			opacity: 0;
 
 		}
 
 		.widget-chart__item {
 			display: block;
 			position: relative;
+			border-radius: $general-radius;
+			overflow: hidden;
+			margin: 8px;
 
 				.wil-overlay {
 					opacity: 0.85;
 					transition: .3s ease opacity;
-
 				}
+
 			&:nth-child(1){
 				.wil-overlay {
 					background: linear-gradient(90deg, #8085df 0%, #48d3d8 100%);
@@ -78,6 +85,7 @@
 					background: linear-gradient(90deg, #a065f1 0%, #ec6fb6 100%);
 				}
 			}
+
 			&:nth-child(3) {
 				.wil-overlay {
 					background: linear-gradient(90deg, #f09162 0%, #fcbf70 100%);
@@ -93,22 +101,19 @@
 				transition: .3s ease all;
 
 				.wil-overlay {
-					opacity: 1;
+					opacity: 0.2;
 					transition: .3s ease opacity;
 					// background: rgba(44, 44, 44, 0.7) ;
 				}
 
 				.widget-chart__title {
-					&:after,
-					&:before {
-						transform: translateX(0);
-						transition: .3s ease all;
-						opacity: 1;
-					}
+					left: 0;
+					// text-align: left;
+					// transform: translateX(10%);
+					transform: translateX(100%) translateY(-50%);
+					transition: .3s ease all;
 				}
 			}
 		}
-
 	}
-
 }

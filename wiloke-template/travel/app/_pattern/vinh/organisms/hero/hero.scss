@@ -5,14 +5,17 @@
 .module {
 	position: relative;
 	z-index: 99;
-	padding: 160px 0 40px;
+	padding: 160px 0 45px;
+	overflow: hidden;
+
 
 	:global {
 		.wil-tb {
-			height: calc(80vh - 200px);
+			height: calc(78vh - 200px);
 		}
+
 		.wil-overlay {
-			background: rgba(#000, 0.3) ;
+			background: rgba(#000, 0.3);
 			height: 100%;
 			top: 0;
 		}
@@ -41,6 +44,7 @@
 	composes: bg-cover from global;
 	transform: translate(0, 0);
 	will-change: transform;
+
 	img {
 		display: none;
 	}
@@ -52,21 +56,25 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	> *:first-child {
+
+	>*:first-child {
 		opacity: 0;
 	}
+
 	&:global(.wide),
 	&:global(.high) {
-		> *:first-child {
+		>*:first-child {
 			opacity: 1;
 		}
 	}
+
 	:global {
 		.embed-responsive {
 			top: calc(80vh / 2);
 			transform: translate(0, -50%);
 		}
 	}
+
 	&:global(.high) {
 		:global {
 			.embed-responsive {
@@ -76,9 +84,11 @@
 				height: 80vh;
 				transform: translate(-50%, 0);
 			}
+
 			.embed-responsive-16by9 {
 				width: calc(80vh * 16 / 9);
 			}
+
 			.embed-responsive-4by3 {
 				width: calc(80vh * 4 / 3);
 			}
@@ -100,6 +110,7 @@
 			height: calc(100vh - 200px);
 		}
 	}
+
 	// bgVideo
 	.bgVideo {
 		:global {
@@ -107,15 +118,18 @@
 				top: calc(100vh / 2);
 			}
 		}
+
 		&:global(.high) {
 			:global {
 				.embed-responsive {
 					top: 0;
 					height: 100vh;
 				}
+
 				.embed-responsive-16by9 {
 					width: calc(100vh * 16 / 9);
 				}
+
 				.embed-responsive-4by3 {
 					width: calc(100vh * 4 / 3);
 				}
@@ -126,39 +140,45 @@
 
 // modifier sm
 .sm {
-	@include pfs('padding-top', (
-		400px: 110px,
-		1200px: 200px
-	));
-	@include pfs('padding-bottom', (
-		400px: 40px,
-		1200px: 80px
-	));
+	@include pfs('padding-top', (400px: 110px,
+		1200px: 200px));
+	@include pfs('padding-bottom', (400px: 40px,
+		1200px: 80px));
+
 	:global(.wil-tb) {
 		height: 100%;
+	}
+}
+
+// modifier style02
+.style02 {
+	:global{
+		.wil-tb {
+			height: calc(30vh - 200px);
+		}
 	}
 }
 
 // modifier video
 .video {
 	content: empty;
+
 	:global {
 		.embed-responsive {
 			// padding: 0;
 		}
+
 		.embed-responsive-16by9 {
 			// height: 100vh;
 			// width: calc(100vh * 16 / 9);
 			// transform: translate(calc(50vh - 50%), 0);
 		}
+
 		// .embed-responsive-4by3 {
 		// 	top: -75%;
 		// 	height: 225%;
 		// }
 		// .embed-responsive-item {
 		// 	position: static;
-		// 	width: 100%;
-		// 	height: 100%;
-		// }
-	}
+		}
 }

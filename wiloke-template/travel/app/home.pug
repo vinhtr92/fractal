@@ -47,8 +47,9 @@ block content
 	+section({
 		container: true,
 		css: {
-			'padding': '60px 0 30px 0 '
-		}	
+		},
+		addClass: 'py-60',	
+
 	})
 		+vinhSectitle({
 			title: 'lasted from the blog',
@@ -73,6 +74,7 @@ block content
 			addClass: 'swiper__fullwidth swiper--button-pill swiper--button-abs'
 		})
 			+long_post({
+				addClass: 'mb-0',
 				loop: {
 					data:[
 						{
@@ -205,7 +207,7 @@ block content
 			})
 
 		+row
-			+vinhBox3({
+			+vinhcounter({
 				loop: {
 					data: [
 						{

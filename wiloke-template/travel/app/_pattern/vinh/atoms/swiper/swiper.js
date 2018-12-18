@@ -15,9 +15,7 @@ $('.swiper__module').each(function() {
 							item.wilAddClass('covered')
 						}
 					})
-				},
-				setTransition: function(){
-}
+				}
 			}
 		}
 		,
@@ -50,7 +48,6 @@ $('.swiper__module').each(function() {
 				item.wilRemoveClass('covered')
 			}
 		})
-	
 	  });
 	// console.log(swiper)
 	function thumbnails(selector) {

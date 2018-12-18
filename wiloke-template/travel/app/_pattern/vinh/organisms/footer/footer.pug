@@ -1,7 +1,7 @@
 //- demo: true
 mixin vinhFooter(args)
 	include cssmodule
-
+	include data
 	+module('div', css.module, args)
 		- 
 			let args = item
@@ -15,171 +15,90 @@ mixin vinhFooter(args)
 
 		
 		//- code
-
 		+section({
 			container: true,
+			css: {
+				'background': '#212223'
+			},
+			addClass: 'py-65',
 		})
-			+col({
-				cols: [0,0,3,3]
-			})
-				+vinhWidget({
-					title: 'travel advice'
-				})
-					+vinhList
-						+vinhListitem({
-							loop: {
-								data: [
-									{
-										link: {
-											href: '#',
-											text: 'how to find cheap flight',
-										}
-									},
-									{
-										link: {
-											href: '#',
-											text: 'how to choose the backpack',
-										}
-									},
-									{
-										link: {
-											href: '#',
-											text: '14 key preparation tips',
-										}
-									}
 
-								]
-							}
-						})
-			
-			+col({
-				cols: [0,0,3,3]
-			})
-				+vinhWidget({
-					title: 'travel tips'
+			+row
+				+col({
+					cols: [0,0,3,3]
 				})
-					+vinhList({
+					+vinhWidget({
+						title: 'travel advice'
 					})
-						+vinhListitem({
+						+vinhWidgetList({
+							loop: {
+								data: footer.cat,
+								children: true,
+							}
+						})
+				+col({
+					cols: [0,0,3,3]
+				})
+					+vinhWidget({
+						title: 'travel tips'
+					})
+						+vinhWidgetPost({
+							loop: {
+								data: [{},{}],
+								children: true,
+							}
+						})
+
+
+				+col({
+					cols: [0,0,3,3]
+				})
+					+vinhWidget({
+						title: 'travel tips'
+					})
+						+vinhWidgetGallery({
+							loop: {
+								data: [{},{},{},{},{}],
+								children: true,
+							}
+						})
+				+col({
+					cols: [0,0,3,3]
+				})
+					+vinhWidget({
+						title: 'travel tips'
+					})
+						+vinhWidgetChart({
+
 							loop: {
 								data: [
 									{
-										link: {
-											href: '#',
-											text: 'start here',
-										}
+										addClass: 'mb-10',	
+
 									},
 									{
-										link: {
-											href: '#',
-											text: 'travel blog',
-										}
+										addClass: 'mb-10',	
+
 									},
 									{
-										link: {
-											href: '#',
-											text: 'destination guides',
-										}
+										addClass: 'mb-10',	
+
 									}
-
-								]
-							}
-						})
-
-
-			+col({
-				cols: [0,0,3,3]
-			})
-				+vinhWidget({
-					title: 'travel tips'
-				})
-					+vinhList
-						+vinhListitem({
-
-							loop: {
-								data: [
-									{
-										modifier: 'galery',
-										galery: {
-											src: imgsrc,
-											href: '#',
-										},
-									},
-									{
-										modifier: 'galery',
-										galery: {
-											src: imgsrc2,
-											href: '#',
-										}
-									},
-									{
-										modifier: 'galery',
-										galery: {
-											src: imgsrc3,
-											href: '#',
-										}
-									},
-									{
-										modifier: 'galery',
-										galery: {
-											src: imgsrc4,
-											href: '#',
-										}
-									},
-									{
-										modifier: 'galery',
-										galery: {
-											src: imgsrc5,
-											href: '#',
-										}
-									},
-									{
-										modifier: 'galery',
-										galery: {
-											src: imgsrc6,
-											href: '#',
-										}
-									},
-								]
+									],
+								children: true,
 							},
+
+
 						})
-			+col({
-				cols: [0,0,3,3]
+
+		+section({
+			addClass: 'py-0',
+			css: {
+				'background': '#1b1b1d'
+			}
+		})
+			+vinhFooterSocial({
+
 			})
-				+vinhWidget({
-					title: 'travel tips'
-				})
-					+vinhList
-						+vinhListitem({
-							loop: {
-								data: [
-									{
-										link: {
-											href: '#',
-											text: 'travel forum',
-										}
-									},
-									{
-										link: {
-											href: '#',
-											text: 'book club',
-										}
-									},
-									{
-										link: {
-											href: '#',
-											text: 'Flyte',
-										}
-									},
-									{
-										link: {
-											href: '#',
-											text: 'guidebooks',
-										}
-									},
-								]
-							}
-						})
-		
-		
-	include cssmodule
+
+		include cssmodule

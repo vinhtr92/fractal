@@ -184,6 +184,14 @@
 		.py-#{$name}{
 			padding: $value 0
 		}
+
+		.mx-#{$name}{
+			margin: 0 $value
+		}
+
+		.my-#{$name}{
+			margin: $value 0
+		}
 		
 		
 		.bd-radius--#{$name}{
@@ -214,16 +222,12 @@
 		border-radius: 5px;
 
 		i {
-
 			margin-right: 3px;
 			color: $color-primary;
 			font-size: 16px;
 			vertical-align: text-bottom;
 		}
-
 	}
-
-
 
 
 	a[class*=socialtext] {
@@ -332,17 +336,19 @@
 		transition: .1s ease opacity;
 
 		&.covered {
-			opacity: .7;
-			transition: .3s ease opacity;
-			filter:blur(2px);
+			opacity: .4;
+			transition: .1s ease opacity;
+			// filter:blur(2px);
 
 		}
 
 		@include media('>=sm'){
+			transition: .3s ease opacity;
+
 			&.covered {
-				opacity: 0.2;
+				opacity: 0.4;
 				transition: .3s ease opacity;
-				filter: blur(2px);
+				// filter: blur(2px);
 			}
 		}
 	}

@@ -11,17 +11,35 @@ block afterLink
 	
 //- Header
 block header
-	
+	+longHeader({
+		modifier: '',
+		addClass: ''
+	})
 //- Footer
 block footer
 	
 //- Content
 block content
+
+	+long_hero({
+		img: `img/bg/4.jpg`,
+		overlay: true,
+		align: 'center',
+		modifier: 'style02',
+	})
+		+vinhHerotext({
+			title: 'Blog',
+			desc : 'Let me help you plan your trip of a lifetime!',
+			modifier: 'style03',
+		})
+
+
 	+section({
 		container: true,
 		css: {
-			'background':'#f6f6f6'
-		}
+			'background':'white',
+		},
+		addClass: 'pt-50 pb-20'
 	})
 		+row
 			+col({
@@ -30,6 +48,13 @@ block content
 				+vinhForm({
 					modifier: 'search-wide',
 					addClass: 'mb-30'
+				})
+
+				+vinhTestimonialGrid({
+					loop: {
+						data: [{},{},{},{},{},{},{},{}],
+						children: true,
+					}
 				})
 
 		+row
@@ -97,14 +122,12 @@ block content
 
 				})
 
-	+section({
-		container: true,
+	+vinhFooter({
+
 	})
-		+row
-			+col({
-				cols: [12]
-			})
-				//-
+
+
+			//-
 					+vinhImagebox({
 						modifier: 'style03',
 						category: random(random.continental),
@@ -130,47 +153,29 @@ block content
 						desc: null
 					})
 
-				+vinhImagebox({
-					modifier: 'style03',
-					meta : {
-							data: [
-									{
-										icon: 'la la-eye',
-										text: '120 view',
-										modifier: 'meta',
-									},
-									{
-										icon: 'la la-comment-o',
-										text: '03 comment',
-										modifier: 'meta',
-									}
-							]
-					}
-				})
-				//-modifier style02
-				+vinhImagebox({
-					modifier: 'style02',
-					category: random(random.continental),
-					desc: `${random(1,80)} Destinations`,
-					imgThumbsData: {
-						data: [{},{},{},{},{}],
-					}
-				})
+					+vinhImagebox({
+						modifier: 'style02',
+						category: random(random.continental),
+						desc: `${random(1,80)} Destinations`,
+						imgThumbsData: {
+							data: [{},{},{},{},{}],
+						}
+					})
 
 				//- modifier style04
-				+vinhImagebox({
-					modifier: 'style04',
-					category: random(random.continental),
-					categoryColor: random(random.textcolor),
-					title: random(random.title),
-					desc: `${random(1,80)} Destinations`
-				})
+					+vinhImagebox({
+						modifier: 'style04',
+						category: random(random.continental),
+						categoryColor: random(random.textcolor),
+						title: random(random.title),
+						desc: `${random(1,80)} Destinations`
+					})
 				//- modifier style05
-				+vinhImagebox({
-					modifier: 'style05',
-					category: random(random.continental),
-					categoryColor: random(random.textcolor),
-					title: random(random.title),
-					desc: null,
-				})
+					+vinhImagebox({
+						modifier: 'style05',
+						category: random(random.continental),
+						categoryColor: random(random.textcolor),
+						title: random(random.title),
+						desc: null,
+					})
 

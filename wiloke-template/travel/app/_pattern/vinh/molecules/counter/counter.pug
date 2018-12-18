@@ -1,0 +1,16 @@
+//- demo: true
+mixin vinhcounter(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		div(class=css.bg class='bg'): div
+		div(class=css.counter)= args.counter || '01.'
+		div(class=css.content)
+			h2(class=css.title)= args.title || random(random.title)
+			p(class=css.desc)= args.desc || random(random.text, 25)
+
+
+	include cssmodule

@@ -1,0 +1,86 @@
+/* //--- vinhTestimonialGrid
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	width: 100%;
+	// display: table;
+	position: relative;
+	@include clearfix;
+
+	a {
+		display: block;
+		height: 100%;
+	}
+
+	@include media('>=md'){
+		.item {
+			width: 25%;
+			height: 250px;
+			&:nth-child(n){
+				border-right: 1px solid $color-gray-9;
+			}
+			
+			&:nth-child(4n){
+				border-right: none;
+			}
+
+			&:nth-child(-n+4){
+				border-top: none;
+			}
+
+		}
+	}
+}
+
+// item
+.item {
+	width: 50%;
+	float: left;
+	box-sizing: border-box;
+	
+	border-top: 1px solid $color-gray-9;
+	border-right: 1px solid $color-gray-9;
+	transition: .3s ease all;
+
+	height: 200px;
+	position: relative;
+
+	&:nth-child(2n){
+		border-right: none;
+	}
+
+	&:nth-child(-n+2){
+		border-top: none;
+	}
+
+	&:nth-child(n+9){
+		display: none;
+		visibility: hidden;
+	}
+}
+
+.item:hover {
+	background: darken($color-light,2%);
+	transition: .3s ease all;
+}
+
+// wrap
+.wrap {
+	height: 250px;
+	position: relative;
+}
+
+// image
+.image {
+	@include absolute(top 50% );
+	transform: translateY(-50%);
+	width: 100%;
+	text-align: center;
+	padding:0 15px;
+
+	img {
+		display: inline-block;
+	}
+}
+

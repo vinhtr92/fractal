@@ -1,0 +1,17 @@
+//- demo: true
+mixin vinhTestimonialGrid(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		- let imgsrc = `img/customer/${ random(1,8) }.png`
+
+		
+		//- code
+		div(class=css.item)
+			a(href="#")
+				div(class=css.image)
+					img(src=args.imgsrc || imgsrc, alt="")
+		
+		
+	include cssmodule
