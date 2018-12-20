@@ -1,6 +1,6 @@
 class hero {
 	constructor() {
-		this.css = {"module":".vinh_hero__module","header":".vinh_hero__header","img":".vinh_hero__img","videoPlaceholder":".vinh_hero__videoPlaceholder","bgVideo":".vinh_hero__bgVideo","fullscreen":".vinh_hero__fullscreen","sm":".vinh_hero__sm","style02":".vinh_hero__style02","video":".vinh_hero__video","":""};
+		this.css = {"module":".vinh_hero__module","header":".vinh_hero__header","img":".vinh_hero__img","videoPlaceholder":".vinh_hero__videoPlaceholder","bgVideo":".vinh_hero__bgVideo","fullscreen":".vinh_hero__fullscreen","sm":".vinh_hero__sm","style02":".vinh_hero__style02","video":".vinh_hero__video","style03":".vinh_hero__style03","":""};
 		this.apply();
 	}
 

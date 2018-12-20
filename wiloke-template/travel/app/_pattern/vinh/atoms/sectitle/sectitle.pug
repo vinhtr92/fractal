@@ -8,5 +8,9 @@ mixin vinhSectitle(args)
 		//- code
 		h2(class=css.title)= args.title || 'lorem ipsum dolor'
 		div(class=css.desc)= args.desc  || 'lorem picsum dolor sit amte lorem'
-		
+
+		if args.viewmore
+			a(class=css.viewmore href="#")
+				= args.viewmore.text || 'button'
+				i(class=args.viewmore.icon || 'la la-square')
 	include cssmodule

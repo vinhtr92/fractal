@@ -37,9 +37,9 @@ block content
 	+section({
 		container: true,
 		css: {
-			'background':'white',
+			'background':'#f6f6f6',
 		},
-		addClass: 'pt-50 pb-20'
+		addClass: 'pt-50 pb-65'
 	})
 		+row
 			+col({
@@ -49,13 +49,13 @@ block content
 					modifier: 'search-wide',
 					addClass: 'mb-30'
 				})
-
-				+vinhTestimonialGrid({
-					loop: {
-						data: [{},{},{},{},{},{},{},{}],
-						children: true,
-					}
-				})
+				//- 
+					+vinhTestimonialGrid({
+						loop: {
+							data: [{},{},{},{},{},{},{},{}],
+							children: true,
+						}
+					})
 
 		+row
 			+col({
@@ -121,6 +121,14 @@ block content
 				+vinhSidebar({
 
 				})
+
+
+		+long_pagination({
+			modifier: 'style02',
+			addClass: 'pt-20',
+		})
+
+
 
 	+vinhFooter({
 

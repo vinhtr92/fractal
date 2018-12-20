@@ -2,7 +2,7 @@ mixin wil-grid(args)
 	if (args)
 
 		+tag('div', 'wil-grid', args)(data-options=args.options)
-
+			if arg
 			if args.filter
 				.wil-filter
 					ul.wil-filter__list

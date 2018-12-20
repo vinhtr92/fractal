@@ -10,6 +10,12 @@
 		opacity: 0 !important;
 		transition: all 0.3s ease;
 	}
+
+	:global(.wil-tag){
+		:global(html[dir=rtl]) & {
+			// @include absolute(top 10px right 10px left initial);
+		}
+	}
 }
 
 // header
@@ -74,10 +80,12 @@
 
 // label
 .label {
-	position: absolute;
-	top: 10px;
-	left: 0;
-	z-index: 9;
+	position: relative;
+	// top: 10px;
+	// left: 0;
+	// z-index: 9;
+
+
 
 	span {
 		position: relative;
@@ -209,17 +217,27 @@
 	}
 
 	.label {
-		position: absolute;
-		top: 5px;
-		left: 5px;
+		// position: absolute;
+		// top: 5px ;
+		// left: 5px ;
 		span {
 			line-height: 1;
 			border-radius: 5px;
 			padding: 6px 12px;
 			font-size: 12px;
-			position: absolute;
+			// position: absolute;
 			&:after {
 				display: none;
+			}
+		}
+		:global(.wil-tag){
+		// top: inherit;
+		// left: inherit;
+
+			@include absolute( top 5px left 5px);
+
+			:global(html[dir=rtl]) & {
+				@include absolute( top 5px right 5px left initial);
 			}
 		}
 	}

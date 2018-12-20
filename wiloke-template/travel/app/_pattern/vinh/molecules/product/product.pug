@@ -22,7 +22,7 @@ mixin longProduct(args)
 			else
 				div(class=css.label)
 					if (itemLabel !== '')
-						span(class=itemLabel)= args.sale || itemLabel
+						span(class='wil-tag')= args.sale || itemLabel
 			
 				div(class=css.addToCart)
 					+wil-btn('a', {

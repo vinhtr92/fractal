@@ -7,15 +7,12 @@
 	border-radius: $general-radius;
 	overflow: hidden;
 
-
-
-
-
 	:global {
 		.wil-overlay {
 			z-index: 0;
 		}
 	}
+
 }
 
 .module:hover {
@@ -48,6 +45,15 @@
 	content: none;
 	@include absolute(bottom 0 left 0 right 0);
 	padding: 20px;
+
+
+	// rtl
+	:global(html[dir=rtl]) & {
+		padding: 10px 15px ;
+		text-align: right;
+	}
+
+	// :global(html[dir=rtl]) & {}
 }
 
 // title
@@ -91,12 +97,16 @@
 			
 		}
 	}
+
+	:global(html[dir=rtl]) & {
+		@include absolute(top 10px left 10px right initial);
+	}
 }
 
 // imgThumbs
 .imgThumbs {
 	@include absolute(bottom 20px right 20px ) ;
-	z-index: 1;
+	z-index: 10;
 	margin: -3px;
 	width: 37%;
 	> div,a {
@@ -130,6 +140,15 @@
 	@include media('>=xs'){
 		width: 50%;
 	}
+
+
+	:global(html[dir=rtl]) & {
+		@include absolute(bottom 20px left 20px right initial) ;
+		> div,a {
+			float: left;
+		}
+	}
+
 }
 
 // share
@@ -146,6 +165,12 @@
 	i {
 		font-size: 30px;
 		color: $color-light;
+	}
+
+	:global(html[dir=rtl]) & {
+		@include absolute(left 8px bottom 18px right initial);
+		transform: translateX(-30px);
+
 	}
 }
 
@@ -201,6 +226,9 @@
 	:global {
 		div[class*=imagecover] {
 			padding-top: 133.5%;
+		}		html[dir=rtl],
+		body[class*=rtl] {
+			display: none;
 		}
 	}
 }
@@ -267,6 +295,8 @@
 			display: block;
 		}
 	}
+
+
 }
 
 
@@ -324,15 +354,22 @@
 		color: $color-light;
 		font-weight: $font-semibold;
 		text-transform: capitalize;
-
 		&:hover {
 			color: $color-primary;
 		}
 	}
 
 	.desc {
-		font-size: 13px;
+		font-size: 1srtl3px;
 		line-height: 1;
 		color: $color-gray-9;
+	}
+}
+
+// right to left css
+:global {
+	html[dir=rtl],
+	body[class*=rtl] {
+		// display: none;
 	}
 }

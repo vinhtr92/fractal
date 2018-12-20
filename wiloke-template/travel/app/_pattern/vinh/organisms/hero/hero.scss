@@ -8,6 +8,20 @@
 	padding: 160px 0 45px;
 	overflow: hidden;
 
+	@include media('>=lg'){
+		overflow: initial;
+	}
+
+	> :global(.wil-overlay){
+		background: rgba(#000, 0.3);
+		height: 100%;
+
+		@include media('>=lg'){
+			top: -4px;
+
+		}
+
+	}
 
 	:global {
 		.wil-tb {
@@ -15,9 +29,22 @@
 		}
 
 		.wil-overlay {
-			background: rgba(#000, 0.3);
-			height: 100%;
-			top: 0;
+		}
+
+		.imageContainer {
+			max-width: 1140px;
+			margin: 0 auto;
+			@include clearfix;
+			position: relative;
+
+			// @include media('>=lg'){
+			// 	top: 85px;
+			// }
+
+			@include pfs('top',(
+				1200px: 85px,
+				768px: 40px
+			))
 		}
 	}
 }
@@ -181,4 +208,34 @@
 		// .embed-responsive-item {
 		// 	position: static;
 		}
+}
+
+
+// modifier style03
+.style03 {
+	padding: 160px 0 45px 0;
+
+	body & {
+		// display: none;
+	}
+	> :global(.wil-overlay){
+		background: linear-gradient(90deg, #426efc 0%, #42fced 100%);
+		opacity: 0.8;
+	}
+
+	@include media('>=md'){
+		padding: 160px 0 15px 0
+	}
+
+
+	@include media('>=lg'){
+		padding: 200px 0 0 0;
+		margin-bottom: 100px;
+
+		:global {
+			.wil-tb {
+				height: calc(70vh - 200px);
+			}
+		}
+	}
 }

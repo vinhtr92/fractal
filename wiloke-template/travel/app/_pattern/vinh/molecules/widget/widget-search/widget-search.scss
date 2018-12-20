@@ -32,6 +32,26 @@
 			overflow: hidden;
 			border-radius:  0 5px 5px 0 ;
 
+			:global(html[dir=rtl]) & {
+				right: initial;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				border-radius: initial;
+				border-radius: 5px 0 0 5px;
+				
+
+				&:after {
+					border-radius:  0;
+					transform: translate(-110%);
+				}
+
+				&:hover {
+					&:after {
+						transform: translate(0)
+					}
+				}
+			}
 
 			i {
 				font-size: 16px;
@@ -62,10 +82,10 @@
 					transition: .3s ease all;
 				}
 			}
+
 			&:active {
 				&:after {
 					background: darken($color-primary,10%)
-
 				}
 			}
 		}

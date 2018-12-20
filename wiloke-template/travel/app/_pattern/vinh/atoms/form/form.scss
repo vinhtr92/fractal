@@ -40,6 +40,11 @@
 				transition: .3s all ease;
 				display: inline-block;
 				float: left;
+
+				:global(html[dir=rtl]) & {
+					right: 15px;
+					left: initial;
+				}
 			}
 			input,
 			textarea {
@@ -60,6 +65,12 @@
 				top: 50%;
 				transform: translateY(-50%);
 				right: 15px;
+
+
+				:global(html[dir=rtl]) & {
+					left: 15px;
+					right: initial;
+				}
 			}
 
 			&.active {
@@ -164,13 +175,20 @@
 				float: left;
 				width: calc(((100% - 22.1311%) / 2) - 30px);
 			}
-
-
 		}
 
 		.action {
 			width: 22.1311%;
 			float: left;
+		}
+	}
+
+	:global(.wil-btn){
+		:global(html[dir=rtl]) & {
+			i {
+				margin: 0 13px 0 0 ;
+				transform: rotate(180deg);
+			}
 		}
 	}
 }

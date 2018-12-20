@@ -1,0 +1,476 @@
+extends pug/layout
+
+//- Config
+block config
+	-
+		config.title = 'home2'
+		config.bodyClass = ''
+
+//- afterLink
+block afterLink
+	
+//- Header
+block header
+	+longHeader({
+		
+	})
+//- Footer
+block footer
+	
+//- Content
+block content
+	+long_hero({
+		align: 'center',
+		overlay: true,
+		modifier: 'style03',
+	})
+		+vinhHerotext({
+			destinations: '32 Destinations',
+			title: 'Asia',
+			desc: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.' ,
+			modifier: 'style04'
+		})
+
+		.imageContainer
+			+row
+				+vinhImagebox({
+					loop: {
+					data: [
+						{
+							addClass: 'text-left mb-30',
+							modifier: 'style06',
+							category: random(random.continental),
+							desc: `${random(1,100)} destinations`
+						},
+						{
+							addClass: 'text-left mb-30',
+							modifier: 'style06',
+							category: random(random.continental),
+							desc: `${random(1,100)} destinations`
+						},
+						{
+							addClass: 'text-left mb-30',
+							modifier: 'style06',
+							category: random(random.continental),
+							desc: `${random(1,100)} destinations`,
+						},
+						{
+							addClass: 'text-left mb-30',
+							modifier: 'style06',
+							category: random(random.continental),
+							desc: `${random(1,100)} destinations`,
+						},
+
+					],
+					wrap: 'col-sm-6 col-md-3'
+				
+					}
+				})
+		
+
+	
+
+	+section({
+			container: true,
+			css: {
+			},
+			addClass: 'py-30',	
+		})
+			+row
+				+vinhSectitle({
+					title: 'Travel Tips',
+					desc: 'Maecenas sapien nibh, commodo non laoreet sed',
+					modifier: 'style05',
+					addClass: 'mb-15',
+					viewmore: {
+						text: 'view all',
+						icon: 'la la-arrow-right'
+					},
+				})
+
+
+				+vinhSwiper({
+					options: {
+						slidesPerView: 'auto',
+						centeredSlides: false,
+						spaceBetween: 30,
+						loop: false,
+						breakpoints: {
+							380: {
+								centeredSlides: true,
+								spaceBetween: 15,
+							}
+						},
+
+					},
+					nextText: '<i class="la la-angle-right"></i>',
+					prevText: '<i class="la la-angle-left"></i>',
+					addClass: 'swiper__fullwidth swiper--button-pill swiper--button-abs'
+				})
+					+long_post({
+						addClass: 'mb-0',
+						loop: {
+							data:[
+								{
+									modifier: 'postImage'
+								},
+								{
+									modifier: 'postImage'
+								},
+								{
+									modifier: 'postImage'
+								},
+								{
+									modifier: 'postImage'
+								},
+								{
+									modifier: 'postImage'
+								},
+								{
+									modifier: 'postImage'
+								},
+								{
+									modifier: 'postImage'
+								},
+								{
+									modifier: 'postImage'
+								}
+								],
+						},
+					})
+
+
+	+section({
+			container: true,
+			css: {
+			},
+			addClass: 'py-30',	
+
+		})
+			+vinhSectitle({
+				title: 'Food & Drink',
+				desc: 'Lorem Ipsum is therefore always free from repetition, injected humour',
+				modifier: 'style05',
+				addClass: 'mb-15',
+			})
+
+			+vinhSwiper({
+				options: {
+					slidesPerView: 'auto',
+					centeredSlides: false,
+					spaceBetween: 30,
+					loop: false,
+					breakpoints: {
+						380: {
+							centeredSlides: true,
+							spaceBetween: 15,
+						}
+					},
+
+				},
+				nextText: '<i class="la la-angle-right"></i>',
+				prevText: '<i class="la la-angle-left"></i>',
+				addClass: 'swiper__fullwidth swiper--button-pill swiper--button-abs'
+			})
+				+long_post({
+					addClass: 'mb-0',
+					loop: {
+						data:[
+							{
+								modifier: 'postImage'
+							},
+							{
+								modifier: 'postImage'
+							},
+							{
+								modifier: 'postImage'
+							},
+							{
+								modifier: 'postImage'
+							},
+							{
+								modifier: 'postImage'
+							},
+							{
+								modifier: 'postImage'
+							},
+							{
+								modifier: 'postImage'
+							},
+							{
+								modifier: 'postImage'
+							}
+							],
+					},
+				})
+
+
+
+	+section({
+			container: true,
+			css: {
+			},
+			addClass: 'py-30',	
+
+		})
+			+vinhSectitle({
+				title: 'Hotel',
+				desc: 'Latin words, combined with a handful of model sentence structures',
+				addClass: 'mb-15',
+				modifier: 'style05'
+				
+			})
+
+			+vinhSwiper({
+				options: {
+					slidesPerView: 'auto',
+					centeredSlides: false,
+					spaceBetween: 30,
+					loop: false,
+					breakpoints: {
+						380: {
+							centeredSlides: true,
+							spaceBetween: 15,
+						}
+					},
+
+				},
+				nextText: '<i class="la la-angle-right"></i>',
+				prevText: '<i class="la la-angle-left"></i>',
+				addClass: 'swiper__fullwidth swiper--button-pill swiper--button-abs'
+			})
+				+long_post({
+					addClass: 'mb-0',
+					loop: {
+						data:[
+							{
+								modifier: 'postImage'
+							},
+							{
+								modifier: 'postImage'
+							},
+							{
+								modifier: 'postImage'
+							},
+							{
+								modifier: 'postImage'
+							},
+							{
+								modifier: 'postImage'
+							},
+							{
+								modifier: 'postImage'
+							},
+							{
+								modifier: 'postImage'
+							},
+							{
+								modifier: 'postImage'
+							}
+							],
+					},
+				})
+
+
+
+	+section({
+			container: true,
+			css: {
+				'padding': '0 0 65px 0', 
+			}
+		})
+
+
+			+vinhSectitle({
+				title: 'Destinations',
+				desc: '+1238 most beautiful tourist destinations in the world',
+				addClass: 'mb-15',
+				modifier: 'style05',
+				viewmore: {
+					text: 'view all',
+					icon: 'la la-arrow-right'
+				},
+			})
+
+			+wil-grid({
+				addClass: 'grid-custom',
+				btn: {
+					text: 'one',
+
+				},
+				options: {
+					style: 'creative',
+					devices: {
+						320: {
+							vertical: 30,
+							horizontal: 30,
+							column: 1,
+							gap: 30,
+							items: [
+								{width: 1, height: 1},
+								{width: 1, height: 1},
+								{width: 1, height: 1},
+								{width: 1, height: 1},
+								{width: 1, height: 1},
+							]
+						},
+
+						576: {
+							vertical: 30,
+							horizontal: 30,
+							column: 2,
+							items: [
+								{width: 1, height: 1},
+								{width: 1, height: 1},
+								{width: 1, height: 1},
+								{width: 1, height: 1},
+								{width: 1, height: 1},
+							]
+						},
+						768: {
+							vertical: 30,
+							horizontal: 30,
+							column:4,
+							items: [
+								{width: 2, height: 2},
+								{width: 1, height: 1},
+								{width: 1, height: 1},
+								{width: 1, height: 1},
+								{width: 1, height: 1},
+							]
+						}
+					}
+				}
+			})
+
+				+vinhImagebox({
+					loop: {
+						data: [
+							{
+								modifier: 'style02',
+							},
+							{
+								modifier: 'style02',
+							},
+							{
+								modifier: 'style02',
+							},
+							{
+								modifier: 'style02',
+							},
+							{
+								modifier: 'style02',
+							}],
+						wrap: 'grid-item',
+					}
+				})
+
+
+
+	+section({
+		container: true,
+		css: {
+			'padding': '30px 0 30px 0 ',
+			'text-align': 'center'
+
+		}
+	})
+		+vinhSectitle({
+			title: 'get our travel guides',
+			desc: 'We have over a dozen guides to destinations around the world! Get one of you trip today',
+			css: {
+				'text-align': 'left'
+			},
+			addClass: 'mb-15',
+			modifier: 'style05'
+		})
+
+		+row({
+			attr: {
+				'data-col-xs-gap': 10,
+				'data-col-md-gap': 30,
+			}
+		})
+			+longProduct({
+				modifier: 'sale',
+				loop: {
+					data: [{
+						itemLabel: 'sale',
+					},{},{},{},],
+					wrap: {
+						addClass: 'col-xs-6 col-md-4 col-lg-3'
+					}
+				},
+			})
+
+			+wil-btn('a', {
+				align: 'center',
+				text: 'button',
+				modifier: ['primary', 'lg', 'round'],
+			})
+	
+	+section({
+		container: true,
+		css : {
+			'padding': '30px 0 30px 0 ',
+		}
+	})
+
+		+vinhCanvas
+
+		+row({
+		})
+			+col({
+				cols: [0,6,5,5],
+				offsets: [0,0,1,1],
+			})
+				+vinhSectitle({
+					modifier: 'style05',
+					title: 'download application',
+					desc: 'It is a long established fact that a reader will be distracted readable content of a page when looking at its layout',
+					addClass: 'mb-30',
+				})
+
+				+vinhList({
+				})
+					+vinhListitem({
+						modifier: 'style02',
+
+						loop: {
+							data: [
+								{
+									icon: 'la la-check',
+									text: random(random.text,40),
+								},
+								{
+									icon: 'la la-check',
+									text: random(random.text,40),
+								},
+								{
+									icon: 'la la-check',
+									text: random(random.text,40),
+								},
+								{
+									icon: 'la la-check',
+									text: random(random.text,40),
+								},
+								{
+									icon: 'la la-check',
+									text: random(random.text,40),
+								},
+							]
+						}
+					})
+
+			+col({
+				cols: [0,6,6,6],
+			})
+				div.product-img
+					div
+						img(src="img/products/1.png", alt="iphone")
+					div
+						img(src="img/products/2.png", alt="iphone")
+
+	+vinhFooter({
+
+	})

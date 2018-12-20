@@ -39,6 +39,10 @@
 			width: calc(100% - 75px);
 			align-self: center;
 			padding: 0 0 0 12px;
+
+			:global(html[dir=rtl]) & {
+				padding: 0 12px 0 0;
+			}
 		}
 		
 		.widget-post-item__title {
@@ -53,10 +57,11 @@
 
 		.widget-post-item__meta {
 			line-height: 1;
+			margin: 0 -10px;
 			i {
 				font-size: 16px;
 				color: $color-primary;
-				margin: 0 3px 0 0;
+				margin: 0 3px ;
 				vertical-align: bottom;
 			}
 
@@ -67,12 +72,16 @@
 				padding: 0 10px;
 				position: relative;
 
+				:global(html[dir=rtl]) & {
+					float: right;
+				}
+
 				&:hover {
 					text-decoration: none;
 				}
 
 				&:first-child {
-					padding: 0 10px 0 0;
+					// padding: 0 10px 0 0;
 				}
 
 				+ a:before{
@@ -83,6 +92,11 @@
 					font-size: 3px;
 					line-height: 1;
 					color: #e2e2e5;
+
+					:global(html[dir=rtl]) & {
+						@include absolute(top 50% right 0 left initial);
+
+					}
 				}
 			}
 

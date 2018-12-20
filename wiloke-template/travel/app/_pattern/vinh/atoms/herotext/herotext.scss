@@ -21,6 +21,18 @@
 	line-height: 1.5;
 }
 
+// destinations
+.destinations {
+	text-transform: uppercase;
+	font-family: $font-primary;
+	font-size: 14px;
+	display: inline-block;
+	line-height: 1;
+	padding: 0 0 8px 0;
+	border-bottom: 1px solid $color-light;
+}
+
+
 // modifier style02
 .style02 {
 	@include pfs('margin-bottom',(
@@ -53,5 +65,32 @@
 
 	.desc {
 		font-size: 19px;
+	}
+}
+
+// modifier style04
+.style04 {
+	.title {
+		background: $color-light;
+		line-height: 1;
+		display: block;
+		@include pfs('font-size',(
+			1200px: 98px,
+			768px: 50px
+		))
+	}
+
+	.desc {
+		font-family: $font-quarter;
+		font-size: 19px;
+		max-width: 650px;
+		margin: 0 auto;
+		color: $color-light;
+	}
+
+	.destinations {
+		color: $color-light;
+		margin: 0 0 25px 0;
+		letter-spacing: 2px;
 	}
 }

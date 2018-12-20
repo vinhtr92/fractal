@@ -52,5 +52,9 @@
 		&:nth-child(10n+6) {
 			width: 50%;
 		}
+
+		:global(html[dir=rtl]) & {
+			float: right
+		}
 	}
 }

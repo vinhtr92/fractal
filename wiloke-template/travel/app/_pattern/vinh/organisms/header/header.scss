@@ -24,11 +24,45 @@
 		1200px: 17px
 	));
 
+	// :global(.header-nav) {
+	// 	:global(html[dir=rtl]) & {
+	// 		text-align: right;
+
+	// 		@include media('<=1200px'){
+	// 			// display: none;
+	// 		}
+
+	// 		:global {
+	// 			.header-menu > li.menu-item-has-children > a:after {
+	// 				margin: 0 4px;
+	// 			}
+	// 			.header-menu .sub-menu li > a {
+	// 				text-align: right;
+
+	// 				&:after {
+	// 					left: 15px;
+	// 					right: initial;
+	// 				}
+	// 			}
+
+	// 		}
+	// 	}
+
+	// }
 
 	:global {
 		form[class*=search] {
 			transform: translateX(100%);
-			transition: .3s ease all;
+
+			:global(html[dir=rtl]) & {
+
+				@include media('<=1200px'){
+					transform: translateX(-100%);
+
+				}
+			}
+
+ 			transition: .3s ease all;
 
 			.item-group {
 				overflow: hidden;
@@ -56,6 +90,9 @@
 		}
 
 		form[data-state=open] {
+			:global(html[dir=rtl]) & {
+				transform: translateX(0);
+			}
 			transform: translateX(0);
 			transition: .3s ease all;
 			input {
@@ -106,10 +143,75 @@
 			right: 0;
 			transform: translateY(-50%);
 
+			:global(html[dir=rtl]) & {
+				right: initial;
+				left: 0;
+			}
+
 			@include media(">=685px") {
 				display: none;
 			}
 		}
+
+
+		@include media('<=1200px'){
+				:global(html[dir=rtl]) & {
+					.header-nav .header-menu {
+						left: 0;
+						right: initial;
+						transform: translate(-100%, 0);
+						text-align: right;
+
+						&.active {
+							transform: translate(0, 0);
+						}
+					}
+					
+					.header-nav .header-menu a:after {
+						left: 0;
+						right: initial;
+						border-left: none;
+						border-right: 1px solid rgba(255, 255, 255, 0.1);
+					}
+				}
+			}
+
+			.header-menu {
+				:global(html[dir=rtl]) & {
+					text-align: right;
+
+					.sub-menu {
+						text-align: right;
+
+						li.menu-item-has-children > a:after {
+							left: 15px;
+							right: initial;
+							content: '\f111';
+							font-family: 'lineawesome';
+							position: absolute;
+							margin: 0 4px 0 0;
+						}
+					}
+
+					.sub-menu .sub-menu {
+						right: 100%;
+						left: initial;
+					}
+					.sub-menu li > a {
+						text-align: right;
+
+						&:after {
+							left: 15px;
+							right: initial;
+							// content: '\f111';
+							// font-family: 'lineawesome';
+							// position: absolute;
+						}
+					}
+
+				}
+
+			}
 	}
 }
 
@@ -122,6 +224,14 @@
 		margin-right: 40px;
 		padding: 7px 70px 7px 0;
 		float: left;
+
+		:global(html[dir=rtl]) & {
+			float: right;
+			padding: 7px 0 7px 70px;
+			margin: 0 0 0 40px;
+			border-right: none;
+			border-left: 2px solid $color-gray-2;
+		}
 	}
 	img {
 		max-width: none;
@@ -147,6 +257,14 @@
 		400px: 15px,
 		1200px: 40px
 	));
+
+	:global(html[dir=rtl]) & {
+		@include pfs('left', (
+			400px: 15px,
+			1200px: 40px
+		));
+		right: initial;
+	}
 	* {
 		vertical-align: middle;
 	}
@@ -222,6 +340,17 @@
 			400px: 15px,
 			1200px: 50px
 		));
+
+		:global(html[dir=rtl]) & {
+			@include pfs('right', (
+				400px: 15px,
+				1200px: 50px
+			));
+			left: initial;
+		}
+
+
+
 		cursor: pointer;
 		user-select: none;
 		transition: all 0.3s ease;
@@ -530,119 +659,4 @@
 		1200px: 10px
 	));
 }
-// modifier dark
 
-.dark {
-	.fixed {
-		&.sticky {
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-			border-radius: 0;
-			border-bottom: 1px solid $color-gray-2;
-			animation: fixed 0.3s ease;
-			@include pfs('padding-top, padding-bottom', (
-				400px: 10px,
-				1200px: 15px
-			));
-
-			@keyframes fixed {
-				0% {
-					transform: translate(0, -100%);
-				}
-				100% {
-					transform: translate(0, 0);
-				}
-			}
-		}
-	}
-	:global {
-
-	@include wilMenu('.header-nav', (
-		menuClass: 'header-menu',
-		theme: 'style2--dark',
-		align: 'left',
-		breakpoint: 1200,
-		css: (
-			color: $color-light,
-			font-family: $font-secondary,
-			font-size: 14px,
-			font-weight: $font-semibold,
-			padding: 15px 27px,
-			hover: (
-				color: $color-primary
-			),
-			current: (
-				color: $color-primary
-			)
-		),
-		arrow: (
-			use: 'FontAwesome',
-			icon: 'fa-angle-down'
-		),
-		subMenu: (
-			width: 200,
-			class: 'sub-menu',
-			parentClass: 'menu-item-has-children',
-			align: 'right',
-			position: 'right',
-			css: (
-				color: $color-light,
-				font-weight: $font-medium,
-				hover: (
-					color: $color-primary
-				),
-				current: (
-					color: $color-primary
-				)
-			),
-			arrow: (
-				use: 'FontAwesome',
-				icon: 'fa-angle-right'
-			),
-			animate: (
-				time: 300,
-				easing: 'easeOutBack',
-				effect: 'slideDown'
-			)
-		),
-		menuMobile: (
-			toggleClass: 'active',
-			classButtonToggle: 'toggle-menu',
-			theme: 'style1',
-			align: 'left',
-			width: 260,
-			css: (
-				font-size: 14px,
-				color: $color-gray-3,
-				border-bottom: 1px solid rgba(#fff, 0.05),
-				hover: (
-					color: $color-gray-3
-				),
-				toggle: (
-					color: $color-primary
-				)
-			),
-			arrow: (
-				use: 'FontAwesome',
-				icon: 'fa-angle-down'
-			),
-			subMenu: (
-				css: (
-					hover: (
-						color: $color-gray-3
-					),
-					toggle: (
-						color: $color-primary
-					)
-				)
-			)
-		),
-		responsiveByJavascript: (vinh_header__search
-			enable: false
-		)
-	))
-
-	}
-}

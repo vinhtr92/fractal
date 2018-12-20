@@ -109,6 +109,10 @@
 		}
 	}
 
+	:global(html[dir=rtl]) & {
+		float: right;
+	}
+
 }
 
 // share
@@ -134,6 +138,10 @@
 // share
 .share {
 	float: right;
+
+	:global(html[dir=rtl]) & {
+		float: left;
+	}
 }
 
 // modifier grid
@@ -233,7 +241,7 @@
 				i {
 					font-size: 16px;
 					vertical-align: text-bottom;
-					margin: 0  4px 0 0;
+					margin: 0  4px ;
 				}
 			}
 
@@ -245,15 +253,22 @@
 					// padding: 0 10px 0 0 ;
 				}
 
-				+ span[class*=textbox]:before {
-					content: '\f111';
-					font-family: 'fontawesome';
-					font-size: 4px;
-					@include absolute(top 50%  left 0);
-					transform: translate(-50%);
-					line-height: 0;
-					color: $color-gray-9;
-				}
+				+ span[class*=textbox]{
+					&:before {
+						content: '\f111';
+						font-family: 'fontawesome';
+						font-size: 4px;
+						@include absolute(top 50%  left 0);
+						transform: translate(-50%);
+						line-height: 0;
+						color: $color-gray-9;
+
+						:global(html[dir=rtl]) & {
+							@include absolute(top 50%  right 0 left initial);
+						}
+
+					}
+			}
 			}
 		}
 	}
@@ -273,7 +288,7 @@
 		}
 
 		span.wil-tag {
-			position: initial;
+			position: initial !important;
 			padding: 5px 6px;
 		}
 	}
@@ -282,6 +297,13 @@
 		float: left;
 	}
 
+	.share {
+		float: none ;
+		
+		:global(html[dir=rtl]) & {
+			float: none;
+		}
+	}
 	.title {
 		font-size: 24px;
 		margin: 15px 0 5px 0;
@@ -338,7 +360,7 @@
 		}
 
 		i {
-			margin: 0 4px 0 0;
+			margin: 0 4px ;
 			font-size: 16px;
 			vertical-align: text-bottom;
 		}
@@ -503,6 +525,10 @@
 				font-size: 15px;
 				line-height: 1;
 				color: $color-gray-5;
+
+				:global(html[dir=rtl]) & {
+					@include absolute(top 50%  right 0 left initial);
+				}
 			}
 		}
 
