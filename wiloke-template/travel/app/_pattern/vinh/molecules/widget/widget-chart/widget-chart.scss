@@ -8,13 +8,13 @@
 
 :global {
 
-	.widget-chart {
+	.widget_chart {
 		overflow: hidden;
 		margin: -8px;
 		div[class*=imagecover]{
 			padding-top: 15.55%;
 		}
-		.widget-chart__title {
+		.widget_chart__title {
 			text-align: center;
 			margin: 0;
 			width: 100%;
@@ -63,7 +63,7 @@
 
 		}
 
-		.widget-chart__item {
+		.widget_chart__item {
 			display: block;
 			position: relative;
 			border-radius: $general-radius;
@@ -106,7 +106,7 @@
 					// background: rgba(44, 44, 44, 0.7) ;
 				}
 
-				.widget-chart__title {
+				.widget_chart__title {
 					left: 0;
 					// text-align: left;
 					// transform: translateX(10%);

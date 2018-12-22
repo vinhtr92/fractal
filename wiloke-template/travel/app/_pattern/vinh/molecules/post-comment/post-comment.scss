@@ -47,6 +47,10 @@
 				float: right;
 				font-size: 11px;
 				font-family: $font-primary;
+
+				:global(html[dir=rtl]) & {
+					float: left;
+				}
 			}
 
 			div.comment-avatar {
@@ -56,6 +60,10 @@
 					border-radius: 100%;
 				}
 				float: left;
+
+				:global(html[dir=rtl]) & {
+					float: right;
+				}
 			}
 
 			div.comment-text {
@@ -63,6 +71,11 @@
 				width: calc(100% - 50px);
 				padding: 0 0 0 15px;
 
+				:global(html[dir=rtl]) & {
+					float: right;
+					padding: 0 15px 0 0;
+				}
+				
 			}
 
 			div.comment-meta {
@@ -74,7 +87,16 @@
 				font-size: 14px;
 			}
 
-			div.comment-footer a {
+			div.comment-footer {
+				margin: 0 -10px;
+				float: left;
+
+				:global(html[dir=rtl]) & {
+					float: right;
+				}
+			}
+
+			div.comment-footer > a {
 				color: $color-gray-5;
 				text-decoration: none;
 				font-size: 11px;
@@ -82,6 +104,9 @@
 				padding: 0 10px;
 				text-transform: capitalize;
 
+				:global(html[dir=rtl]) & {
+					float: right;
+				}
 				&:before {
 					font-family: 'lineawesome';
 					color: $color-primary;
@@ -94,10 +119,19 @@
 
 					@include absolute(left 0 top 50%);
 					transform: translate(-50%, -50%);
+
+					:global(html[dir=rtl]) & {
+						left: initial;
+						right: 0;
+						transform: translate(50%, -50%) rotate(-180deg);
+					}
 				}
 
 				&:first-child {
-					padding: 0 10px 0 0;
+					// padding: 0 10px 0 0;
+					:global(html[dir=rtl]) & {
+						// float: right;
+					}
 				}
 
 			}
@@ -122,6 +156,10 @@
 			div.comment-text {
 				width: calc(100% - 35px);
 				padding: 0 0 0 10px;
+
+				:global(html[dir=rtl]) & {
+					padding: 0 10px 0 0 ;
+				}
 			}
 
 			span.author {

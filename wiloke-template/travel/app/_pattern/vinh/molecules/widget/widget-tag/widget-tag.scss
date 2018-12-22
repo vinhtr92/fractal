@@ -6,10 +6,14 @@
 	
 }
 :global {
-	.tagcloud {
+	.tagcloud,
+	.widget_tag {
 		@include clearfix;
 		margin: -3px;
 		a {
+			:global(html[dir=rtl]) & {
+				float: right;
+			}
 			float: left;
 			line-height: 1;
 			padding: 6px 13px;

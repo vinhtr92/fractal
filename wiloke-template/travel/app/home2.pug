@@ -63,7 +63,6 @@ block content
 
 					],
 					wrap: 'col-sm-6 col-md-3'
-				
 					}
 				})
 		
@@ -80,7 +79,6 @@ block content
 				+vinhSectitle({
 					title: 'Travel Tips',
 					desc: 'Maecenas sapien nibh, commodo non laoreet sed',
-					modifier: 'style05',
 					addClass: 'mb-15',
 					viewmore: {
 						text: 'view all',
@@ -150,7 +148,6 @@ block content
 			+vinhSectitle({
 				title: 'Food & Drink',
 				desc: 'Lorem Ipsum is therefore always free from repetition, injected humour',
-				modifier: 'style05',
 				addClass: 'mb-15',
 			})
 
@@ -217,7 +214,6 @@ block content
 				title: 'Hotel',
 				desc: 'Latin words, combined with a handful of model sentence structures',
 				addClass: 'mb-15',
-				modifier: 'style05'
 				
 			})
 
@@ -275,9 +271,7 @@ block content
 
 	+section({
 			container: true,
-			css: {
-				'padding': '0 0 65px 0', 
-			}
+			addClass: 'py-30',
 		})
 
 
@@ -285,7 +279,6 @@ block content
 				title: 'Destinations',
 				desc: '+1238 most beautiful tourist destinations in the world',
 				addClass: 'mb-15',
-				modifier: 'style05',
 				viewmore: {
 					text: 'view all',
 					icon: 'la la-arrow-right'
@@ -370,10 +363,9 @@ block content
 	+section({
 		container: true,
 		css: {
-			'padding': '30px 0 30px 0 ',
 			'text-align': 'center'
-
-		}
+		},
+		addClass: 'pt-15 pb-30',
 	})
 		+vinhSectitle({
 			title: 'get our travel guides',
@@ -382,7 +374,6 @@ block content
 				'text-align': 'left'
 			},
 			addClass: 'mb-15',
-			modifier: 'style05'
 		})
 
 		+row({
@@ -405,7 +396,7 @@ block content
 
 			+wil-btn('a', {
 				align: 'center',
-				text: 'button',
+				text: 'View All Products',
 				modifier: ['primary', 'lg', 'round'],
 			})
 	
@@ -425,7 +416,6 @@ block content
 				offsets: [0,0,1,1],
 			})
 				+vinhSectitle({
-					modifier: 'style05',
 					title: 'download application',
 					desc: 'It is a long established fact that a reader will be distracted readable content of a page when looking at its layout',
 					addClass: 'mb-30',

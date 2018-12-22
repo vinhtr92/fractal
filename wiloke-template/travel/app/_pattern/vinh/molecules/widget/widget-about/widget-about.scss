@@ -7,10 +7,10 @@
 }
 
 :global {
-	.widget-about {
+	.widget_about {
 		text-align: center;
 
-		a.widget-about__header {
+		a.widget_about__header {
 			text-decoration: none;
 			display: block;
 			&:focus {
@@ -18,18 +18,18 @@
 			}
 	
 			&:hover {
-				.widget-about__name {
+				.widget_about__name {
 					color: $color-primary;
 					transition: .3s ease all;
 				}
 			}
 		}
-		.widget-about__desc {
+		.widget_about__desc {
 			padding: 0 0 5px 0 ;
 			margin: 0 0 10px 0 ;
 		}
 
-		.widget-about__name {
+		.widget_about__name {
 			margin : 5px 0 3px 0;
 			font-family: $font-quarter;
 			font-weight: $font-normal;
@@ -38,12 +38,12 @@
 
 		}
 
-		.widget-about__desc {
+		.widget_about__desc {
 			color: $color-gray-5;
 			font-size: 12px;
 		}
 
-		.widget-about__avatar {
+		.widget_about__avatar {
 			@include size(120px);
 			margin: 0 auto;
 			background-size: cover;
@@ -56,11 +56,10 @@
 			}
 		}
 
-		.widget-about__content {
+		.widget_about__content {
 			color: $color-gray-5;
 			font-size: 15px;
 			margin: 0 0 25px 0;
 		}
-
 	}
 }

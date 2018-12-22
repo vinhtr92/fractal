@@ -2,23 +2,9 @@
 mixin vinhListitem(args)
 	include cssmodule
 
-	+module('li', css.module, args)
+	+module('li', '', args)
 		- let args = item
 		
 		//- code
-		if (args.icon && args.text)
-			span(class= args.icon || 'fa fa-square')
-			= args.text ||  random(random.text,50)
-		else if (args.icon && args.link)
-			span(class= args.icon || 'fa fa-square')
-			a(href=args.link.href)= args.link.text || random(random.text,50)
-		else if (args.link)
-			a(href=args.link.href)= args.link.text || random(random.text,50)
-		else if (args.galery)
-			a(href=args.galery.href)
-				span(class='galery-item')
-					div( style=`background-image: url('${args.galery.src}')`)
-					img(src=args.galery.src, alt="")
-		else
-			=args.text ||  random(random.text,50)
+		a(href="#")= args.text || 'text'
 	include cssmodule

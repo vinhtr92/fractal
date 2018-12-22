@@ -199,6 +199,14 @@
 		}
 	}
 
+	.p-0 {
+		padding:0 !important;
+	}
+
+	.m-0 {
+		margin: 0 !important;
+	}
+
 	@each $name,$value in $colors {
 		.bgcolor-#{$name}{
 			background: $value;
@@ -256,6 +264,14 @@
 			font-family: $font-secondary;
 			font-size: 12px;
 			font-weight: $font-semibold;
+		}
+
+		:global(html[dir=rtl]) & {
+			i:before {
+				float: right;
+				margin-left: 10px;
+				margin-right: 0;
+			}
 		}
 	}
 

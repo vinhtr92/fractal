@@ -20,6 +20,10 @@
 			text-align: left;
 			padding: 0;
 
+			:global(html[dir=rtl]) & {
+				text-align: right;
+			}
+
 			&:after {
 				content: none;
 

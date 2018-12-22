@@ -161,7 +161,14 @@
 						right: initial;
 						transform: translate(-100%, 0);
 						text-align: right;
+						
+						
+						li.menu-item-has-children > a:after {
+							font-family: 'fontawesome';
+							content: '\f107';
+						}
 
+						
 						&.active {
 							transform: translate(0, 0);
 						}
@@ -179,17 +186,27 @@
 			.header-menu {
 				:global(html[dir=rtl]) & {
 					text-align: right;
-
+					@include media('>=1200px'){
+						> li.menu-item-has-children > a:after {
+							margin: 0 4px 0 0
+						}
+					}
 					.sub-menu {
 						text-align: right;
 
+
 						li.menu-item-has-children > a:after {
-							left: 15px;
+							left: 0;
 							right: initial;
-							content: '\f111';
-							font-family: 'lineawesome';
+							content: '\f107';
+							font-family: 'fontawesome';
 							position: absolute;
 							margin: 0 4px 0 0;
+							
+							@include media('>=1200px'){
+								left: 15px;
+								content: '\f104';
+							}
 						}
 					}
 

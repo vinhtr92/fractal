@@ -11,7 +11,9 @@ block afterLink
 	
 //- Header
 block header
-	
+	+longHeader({
+
+	})
 //- Footer
 block footer
 	
@@ -20,7 +22,8 @@ block content
 	+section({
 		container: true,
 		css: {
-			'background':'#f6f6f6'
+			'background':'#f6f6f6',
+			'padding-top': '150px',
 		}
 	})
 		+row
@@ -28,7 +31,6 @@ block content
 				cols: [0,0,8,8]
 			})
 				+vinhPostDetail({
-					postType: 'quote',
 					title: 'lorem ipsum dolor sit amet',
 					category: 'utopia',
 					addClass: 'mb-30',
@@ -117,3 +119,6 @@ block content
 
 				})
 
+	+vinhFooter({
+		
+	})

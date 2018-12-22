@@ -293,6 +293,11 @@
 	:global {
 		.wil-tag {
 			display: block;
+
+			:global(html[dir=rtl]) & {
+				display: block;
+				position: initial;
+			}
 		}
 	}
 
@@ -308,6 +313,9 @@
 	.body {
 		position: relative;
 		padding: 12px 0 20px 0 ;
+		:global(html[dir=rtl]) & {
+			text-align: inherit;
+		}
 	}
 
 	.img {

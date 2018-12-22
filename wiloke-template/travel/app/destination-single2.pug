@@ -114,34 +114,3 @@ block content
 			p #[strong Ask your hostel staff] – Before you leave the hostel, ask them to estimate how much what you want to do should cost. How much should a ride to the museum cost?  How much should I pay to have a gown like this made? They will be able to give you bargaining guidelines.
 
 
-	+section({
-		css: {
-			'background-color': '#f4f4f4'
-		},
-		id: 'articles',
-		addClass: 'panel__module'
-	})
-		//- Args: icon, title, text
-		+vinhSectitle({
-			modifier: 'style04',
-			align: 'center',
-			title: 'Article About Bulgaria',
-			icon: ''
-		})
-		+row
-			//- Args: img, country
-			+long_post({
-				loop: {
-					data: [
-						{modifier: 'latest'},
-						{modifier: 'latest'},
-						{modifier: 'latest'},
-						{modifier: 'latest'},
-						{modifier: 'latest'},
-						{modifier: 'latest'}
-					],
-					wrap: 'col-md-4 col-lg-4'
-				},
-				addClass: 'mb-30',
-				modifier: 'lastest'
-			})

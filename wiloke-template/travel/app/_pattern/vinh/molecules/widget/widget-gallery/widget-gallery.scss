@@ -6,7 +6,7 @@
 	
 }
 :global {
-	.widget-gallery {
+	.widget_gallery {
 		margin: -4px;
 		overflow: hidden;
 		a {
@@ -24,7 +24,7 @@
 		}
 		@for $i from 1 through 6 {
 			&[data-column="#{$i}"] {
-				.widget-gallery__item {
+				.widget_gallery__item {
 					width: (100 / $i) * 1%;
 				}
 			}
@@ -42,7 +42,7 @@
 			}
 		}
 	}
-	.widget-gallery__item {
+	.widget_gallery__item {
 		width: 25%;
 		padding: 4px;
 		float: left;

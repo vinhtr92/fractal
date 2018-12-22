@@ -11,6 +11,11 @@
 		padding: 25px 15px 25px 15px;
 		border-radius: $general-radius;
 		background: $color-light;
+
+		footer & {
+			overflow: initial;
+			border-radius: 0;
+		}
 	}
 
 	.widget-title,

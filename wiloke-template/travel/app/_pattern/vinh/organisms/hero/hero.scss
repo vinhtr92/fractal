@@ -179,9 +179,15 @@
 
 // modifier style02
 .style02 {
+	overflow: hidden;
 	:global{
 		.wil-tb {
 			height: calc(30vh - 200px);
+		}
+
+		.wil-overlay {
+			// position: initial;
+			top: 0
 		}
 	}
 }

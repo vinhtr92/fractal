@@ -2,9 +2,22 @@
 mixin vinhWidgetList(args)
 	include cssmodule
 
-	+module('ul', 'widget-list', args)
+	+module('ul', '', args)
 		- let args = item
 		//- code
-		li
-			a(href="#")= set(item, 'text', 'widget list')
+
+		if args.submenu
+			li.has-child
+				a(href="#")= args.submenu.text || 'text'
+				ul(class='sub-menu')
+					+vinhListitem({
+						loop: args.submenu.data || {
+							data: [{},{}]
+						}
+					})
+	
+		else
+			li
+				a(href="#")= set(item, 'text', 'widget list')
+
 	include cssmodule

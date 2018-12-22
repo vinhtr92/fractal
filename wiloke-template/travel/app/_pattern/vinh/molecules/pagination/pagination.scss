@@ -76,9 +76,19 @@
 
 	.next {
 		width: 45px !important;
+		position: relative;
+
+		:global(html[dir=rtl]) & {
+			i:before {
+				content: '\f111';
+			}
+		}
 		
 		i {
-			font-size: inherit
+			font-size: inherit;
+			position: absolute;
+			@include absolute(top 50% left 50%);
+			transform: translate(-50% , -50%);
 		}
 	}
 

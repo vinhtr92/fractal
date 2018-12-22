@@ -7,7 +7,7 @@
 	padding: 30px;
 	position: relative;
 	display: inline-block;
-	background-color: transparent;
+	background-color: $color-light;
 	border-radius: 5px;
 	width: 100%;
 
@@ -20,6 +20,13 @@
 		.wil-btn {
 			min-width: unset;
 			width: 100%;
+
+			:global(html[dir=rtl]) & {
+				i {
+					margin-right: 13px;
+					margin-left: 0;
+				}
+			}
 		}
 
 		.item-group {
@@ -89,8 +96,8 @@
 
 
 
-	@include media('>=sm'){
-	background-color: $color-light;
+	@include media('>=xs'){
+	// background-color: $color-light;
 
 		:global {
 			.wil-btn {
@@ -156,6 +163,7 @@
 		margin: -10px;
 		width: calc(100% + 20px);
 	}
+
 	.action,
 	:global(.item-group){
 		margin: 10px;
@@ -166,6 +174,7 @@
 	.action {
 		button {
 			width: 100%;
+			min-height: 50px;
 		}
 	}
 
@@ -174,12 +183,21 @@
 			.item-group {
 				float: left;
 				width: calc(((100% - 22.1311%) / 2) - 30px);
+
+				:global(html[dir=rtl]) & {
+					float: right;
+				}
 			}
 		}
 
 		.action {
 			width: 22.1311%;
 			float: left;
+			
+
+			:global(html[dir=rtl]) & {
+				float: right;
+			}
 		}
 	}
 
@@ -197,6 +215,7 @@
 .search-wide {
 	position: relative;
 	padding: 0;
+	background: transparent;
 
 	:global {
 		.item-group {
@@ -248,6 +267,18 @@
 			bottom: 0;
 			border-radius: 0px 5px 5px 0;
 			padding: 20px  0 19px 0;
+
+
+			:global(html[dir=rtl]) & {
+				right: initial;
+				left: 0;
+				border-radius: 5px 0 0 5px;
+				
+				i {
+					margin-right: 13px;
+					margin-left: 0;
+				}
+			}
 		}
 
 	}
@@ -304,6 +335,14 @@
 		.wil-btn {
 			margin: 10px;
 			width: calc(100% - 20px);
+
+			i {
+				:global(html[dir=rtl]) & {
+					transform: rotate(180deg);
+					position: relative;
+					top: 2px;
+				}
+			}
 		}
 	}
 }

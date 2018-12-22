@@ -2,28 +2,28 @@
 mixin vinhWidgetPost(args)
 	include cssmodule
 
-	+module('div', 'widget-post', args)
+	+module('div', '', args)
 		- let args = item
 		- let imgsrc = `img/place/${ random(1, 35) }.jpg`
 
 		
 		//- code
-		.widget-post-item 
-			a.widget-post-item__media(style=`background-image:url('${args.imgsrc||imgsrc}')`)
+		.widget_post-item 
+			a.widget_post-item__media(style=`background-image:url('${args.imgsrc||imgsrc}')`)
 				img(src=args.imgsrc || imgsrc, alt="")
-			.widget-post-item__body
-				h4(class='widget-post-item__category' class=args.catColor || random(random.textcolor))
+			.widget_post-item__body
+				h4(class='widget_post-item__category' class=args.catColor || random(random.textcolor))
 					a(href="#")= args.category || random(random.continental)
-				h2.widget-post-item__title
+				h2.widget_post-item__title
 					a(href="#")= args.title || random(random.title)
-				div.widget-post-item__meta
+				div.widget_post-item__meta
 
-					a.widget-post-item__view(href="#")
+					a.widget_post-item__view(href="#")
 						i(class=args.iconView || 'la la-eye' )
 						=args.viewText|| `${random(1,1000)} Views`
 					
 
-					a.widget-post-item__comment(href="#")
+					a.widget_post-item__comment(href="#")
 						i(class=args.iconComment || 'la la-comment')
 						=args.commentText|| `${random(1,1000)} Comments`
 					

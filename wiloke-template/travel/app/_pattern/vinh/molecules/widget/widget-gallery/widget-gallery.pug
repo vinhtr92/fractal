@@ -2,11 +2,11 @@
 mixin vinhWidgetGallery(args)
 	include cssmodule
 
-	+module('div', 'widget-gallery', args)(data-column=set(args, 'column'))
+	+module('div', '', args)(data-column=set(args, 'column'))
 		- let args = item
 		- let imgsrc = `img/place/${ random(1, 35) }.jpg`
 
-		.widget-gallery__item
+		.widget_gallery__item
 			a(href="#" style=`background-image:url('${args.imgsrc||imgsrc}')`)
 				img(src=args.imgsrc || imgsrc, alt="")
 	include cssmodule

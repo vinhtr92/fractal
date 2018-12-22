@@ -6,8 +6,8 @@
 	
 }
 :global {
-	.widget-post {
-		.widget-post-item {
+	.widget_post {
+		.widget_post-item {
 			@include clearfix;
 			display: flex;
 			padding: 15px 0;
@@ -24,18 +24,18 @@
 		}
 
 
-		.widget-post-item__category {
+		.widget_post-item__category {
 			font-size: 10px;
 			font-weight: $font-normal;
 			text-transform: uppercase;
 			margin: 0;
 		}
-		.widget-post-item__media,
-		.widget-post-item__body {
+		.widget_post-item__media,
+		.widget_post-item__body {
 			float: left;
 		}
 
-		.widget-post-item__body {
+		.widget_post-item__body {
 			width: calc(100% - 75px);
 			align-self: center;
 			padding: 0 0 0 12px;
@@ -45,7 +45,7 @@
 			}
 		}
 		
-		.widget-post-item__title {
+		.widget_post-item__title {
 			font-size: 14px;
 			color: $color-dark;
 			margin: 5px 0;
@@ -55,7 +55,7 @@
 			}
 		}
 
-		.widget-post-item__meta {
+		.widget_post-item__meta {
 			line-height: 1;
 			margin: 0 -10px;
 			i {
@@ -72,16 +72,16 @@
 				padding: 0 10px;
 				position: relative;
 
-				:global(html[dir=rtl]) & {
-					float: right;
-				}
-
+				
 				&:hover {
 					text-decoration: none;
 				}
-
+				
 				&:first-child {
 					// padding: 0 10px 0 0;
+						:global(html[dir=rtl]) & {
+							float: right;
+						}
 				}
 
 				+ a:before{
@@ -95,6 +95,7 @@
 
 					:global(html[dir=rtl]) & {
 						@include absolute(top 50% right 0 left initial);
+						transform: translate(50%,-50%) ,;
 
 					}
 				}
@@ -113,7 +114,7 @@
 			}
 		}
 
-		.widget-post-item__media {
+		.widget_post-item__media {
 			display: block;
 			@include size(75px);
 			background-size: cover;
@@ -124,6 +125,46 @@
 				display: none;
 				visibility: hidden;
 			}
+		}
+
+		footer & {
+			.widget_post-item {
+				border-bottom: 1px solid rgba($color-light,0.1);
+				padding: 10px 0;
+	
+				&:first-child {
+					padding: 0 0 10px 0;
+				}
+	
+				&:last-child {
+					padding: 10px 0 0 0;
+				}
+			}
+	
+			.widget_post-item__media {
+				@include size(65px);
+			}
+	
+			.widget_post-item__title {
+				color: $color-light;
+				font-size: 12px;
+			}
+	
+			.widget_post-item__meta > a {
+				font-size: 10px;
+	
+				+ a:before{
+					color: $color-gray-5;
+					
+				}
+	
+	
+			}
+	
+			.widget_post-item__meta i {
+				font-size: 14px;
+			}
+	
 		}
 	}
 }

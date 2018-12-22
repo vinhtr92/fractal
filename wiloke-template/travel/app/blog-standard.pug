@@ -11,17 +11,34 @@ block afterLink
 	
 //- Header
 block header
-	
+	+longHeader({
+
+	})
 //- Footer
 block footer
 	
 //- Content
 block content
+
+
+	+long_hero({
+		img: `img/bg/4.jpg`,
+		overlay: true,
+		align: 'center',
+		modifier: 'style02',
+	})
+		+vinhHerotext({
+			title: 'Blog',
+			desc : 'Let me help you plan your trip of a lifetime!',
+			modifier: 'style03',
+		})
+
 	+section({
 		container: true,
 		css: {
 			'background':'#f6f6f6'
-		}
+		},
+		addClass: 'py-50',
 	})
 
 		+row
@@ -63,3 +80,10 @@ block content
 
 				})
 
+		+long_pagination({
+			modifier: 'style02',
+			addClass: 'pt-20',
+		})
+	+vinhFooter({
+
+	})

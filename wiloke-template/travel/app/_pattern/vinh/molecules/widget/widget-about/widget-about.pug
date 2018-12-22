@@ -2,19 +2,19 @@
 mixin vinhWidgetAbout(args)
 	include cssmodule
 
-	+module('div', 'widget-about', args)
+	+module('div','', args)
 		- let args = item
 		- let imgsrc = `img/avatar/${ random(1, 20) }.jpg`
 
 		
 		//- code
-		a.widget-about__header(href='#')
-			div.widget-about__avatar(style=`background-image:url('${args.imgsrc||imgsrc}')`)
+		a.widget_about__header(href='#')
+			div.widget_about__avatar(style=`background-image:url('${args.imgsrc||imgsrc}')`)
 				img(src= args.imgsrc || imgsrc)
-			h3.widget-about__name= args.name || random(random.people.name)
-			div.widget-about__desc= args.desc || random(random.portfolio.categories)
+			h3.widget_about__name= args.name || random(random.people.name)
+			div.widget_about__desc= args.desc || random(random.portfolio.categories)
 
-		div.widget-about__body
-			div.widget-about__content= args.content || random(random.text,200)
+		div.widget_about__body
+			div.widget_about__content= args.content || random(random.text,200)
 		
 	include cssmodule

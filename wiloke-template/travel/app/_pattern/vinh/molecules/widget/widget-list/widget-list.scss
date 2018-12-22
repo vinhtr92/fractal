@@ -7,44 +7,70 @@
 }
 
 :global {
-	.widget-list {
+	.widget_list {
 		margin: -5px;
 		padding: 0;
 		@include clearfix;
 
-		li {
-			list-style: none;
-			// width: calc(100%/2);
-			width: 100%;
-			// padding: 5px;
-			float: left;
-			// text-align: center;
+		ul.sub-menu {
+			padding-left: 15px;
+			a {
+				font-size: 12px;
+			}
+			:global(html[dir=rtl]) & {
+				padding-left: 0;
+				padding-right: 15px;
+			}
 		}
 
-		a {
-			display: block;
-			font-size: 13px;
-			color: $color-gray-5;
-			// border: 1px solid $color-gray-9;
-			line-height: 1.7;
-			border-radius: 5px;
-			padding: 4px 0;
-			&:hover {
-				color: $color-primary;
-				// border: 1px solid $color-primary;
-				text-decoration: none;
-			}
-
+		li.has-child > a {
 			&:before {
 				font-family: 'fontawesome';
 				content: '\f0da';
-				// ~ fa fa-caret
-				margin: 0 4px 0 5px;
-				font-size: 13px;
 			}
 		}
 
-		&.widget-sidebar {
+		li.has-child {
+			> a {
+				margin-left: -13px;
+
+				:global(html[dir=rtl]) & {
+					margin-left: 0;
+					margin-right: -13px;
+
+					&:before {
+						float: right;
+						content: '\f0d9';
+					}
+				}
+			}
+
+			&[data-state=open]{
+				> a:before {
+					content: '\f0d7';
+					font-family: 'fontawesome';
+
+				}
+
+				:global(html[dir=rtl]) & {
+					> a:before {
+						content: '\f0d7';
+						font-family: 'fontawesome';
+	
+					}
+				}
+			}
+		}
+
+
+		// style on aside or sidebar
+		aside & {
+			ul {
+				margin: 0;
+				padding: 0;
+				@include clearfix;
+			}
+
 			li {
 				// list-style: none;
 				width: calc(100%/2);
@@ -66,6 +92,57 @@
 					content: none;
 				}
 				
+			}
+			
+		}
+
+		footer & {
+			ul {
+				margin: 0;
+				padding: 0;
+				@include clearfix;
+			}
+		}
+
+		li {
+			list-style: none;
+			// width: calc(100%/2);
+			width: 100%;
+			// padding: 5px;
+			float: left;
+			// text-align: center;
+
+			&.has-child a:before {
+
+			}
+		}
+
+		a {
+			display: block;
+			font-size: 13px;
+			color: $color-gray-5;
+			// border: 1px solid $color-gray-9;
+			line-height: 1.7;
+			border-radius: 5px;
+			padding: 4px 0;
+			text-decoration: none;
+			&:hover {
+				color: $color-primary;
+				// border: 1px solid $color-primary;
+				text-decoration: none;
+			}
+
+			&:before {
+				// font-family: 'fontawesome';
+				// content: '\f0da';
+				// ~ fa fa-caret
+				margin: 0 4px 0 5px;
+				font-size: 13px;
+
+				:global(html[dir=rtl] ) & {
+					// content: '\f0d9';
+					// float: right;
+				}
 			}
 		}
 	}
