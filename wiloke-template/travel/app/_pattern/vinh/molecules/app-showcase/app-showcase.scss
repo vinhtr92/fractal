@@ -1,0 +1,98 @@
+/* //--- vinhAppShowcase
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	
+}
+
+// title
+.title {
+	//base style title
+	color: $color-dark;
+	h2 {
+		font-family: $font-quarter;
+		font-weight: $font-normal;
+		position: relative;
+		margin: 0;
+		line-height: 1.7;
+		font-size: 15px;
+		text-align: center;
+		@include media('>=lg'){
+			font-size: 18px;
+			text-align: left;
+
+		}
+	}
+
+	i {
+		font-size: 30px;
+		float: left;
+		display: none;
+		@include media('>=lg'){
+			display: initial;
+			margin-right: 8px;
+		}
+	}
+}
+
+// arrow
+.arrow {
+	display: none;
+	@include media('>=lg'){
+		display: initial;
+	}
+}
+
+// image
+.image {
+	@include media('>=lg'){
+		max-width: 80%;
+	}
+}
+
+.arrow,
+.title {
+	@include media('>=lg'){
+		position: relative;
+		left: -150px;
+	}
+}
+
+.apple {
+	.title h2 {
+			margin-bottom: 18px;
+		@include media('>=lg'){
+			margin-bottom: 0;
+		}
+	}
+
+	.arrow,
+	.title {
+		left: -50px;
+	}
+
+
+	@include media('>=lg'){
+		position: relative;
+		left: -30px;
+	}
+}
+
+
+:global {
+	.showcase-container {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		
+		@include media('>=md'){
+			margin: 0 -20px;
+
+		}
+
+		:global(html[dir=rtl]) & {
+			flex-direction: row-reverse;
+		}
+	}
+}

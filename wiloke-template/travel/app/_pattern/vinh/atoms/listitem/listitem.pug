@@ -6,5 +6,12 @@ mixin vinhListitem(args)
 		- let args = item
 		
 		//- code
-		a(href="#")= args.text || 'text'
+
+		if has(args.modifier,'style02')
+			a(href="#")
+				i(class=args.icon || 'fa fa-square')
+				= args.text || 'text'
+		else
+			a(href="#")= args.text || 'text'
+
 	include cssmodule

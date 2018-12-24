@@ -4,9 +4,20 @@
 // module
 .module {
 	position: relative;
-
+	margin-top: 0 !important;
+	
+	@include media('>=sm'){
+		margin-top: initial;
+	}
 	:global(html[dir=rtl]) & {
 		text-align: right;
+	}
+
+	&:global(.mt-100){
+
+		@include media('>=lg'){
+			margin-top: 100px !important;
+		}
 	}
 }
 

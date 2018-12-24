@@ -1,0 +1,18 @@
+//- demo: true
+mixin vinhAppShowcase(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		div(class=css.title)
+			i(class=args.appIcon || 'fa fa-square')
+			h2= args.title || 'lorem ipsum dolor'
+		if(args.arrow !== null)
+			div(class=css.arrow)
+				img(src=args.arrowSrc || "img/bg/5.png" )
+		div(class=css.image)
+			a(href="#")
+				img(src=args.appImageSrc || "img/products/1.png", alt="app")
+	include cssmodule

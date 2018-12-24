@@ -3,35 +3,7 @@
 
 // module
 .module {
-	margin: 0 0 5px 0;
-	@include clearfix;
-	
-	:global {
-		span {
-			font-size: 24px;
-			margin:0 12px 0 0 ;
-			color: $color-primary;
-		}
-
-		span.galery-item {
-			float: left;
-			margin: 3px;
-
-			> div {
-				width: 60px;
-				height: 60px;
-				background-size: cover;
-				background-position: 50% 50%;
-				transition: all .3s ease;
-				transform: scale(1);
-			}
-		}
-
-		img {
-			display: none;
-			visibility: hidden;
-		}
-	}
+	content: none;
 }
 
 //modifier: galery
@@ -42,4 +14,16 @@
 //modifier: style02 
 .style02 {
 	margin: 0 0 10px 0;
+
+	i {
+		font-size: 24px;
+		color: $color-primary;
+		vertical-align: top;
+		margin-right: 12px;
+
+		:global(html[dir=rtl]) & {
+			margin-left: 12px;
+			margin-right: 0;
+		}
+	}
 }

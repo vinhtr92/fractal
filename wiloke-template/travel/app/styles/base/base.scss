@@ -386,6 +386,26 @@
 		}
 	}
 
+	// unordered list features
+
+	ul.list_features {
+		margin: 0;
+		padding: 0;
+		@include clearfix;
+
+		li {
+			list-style: none;
+			font-size: 15px;
+		}
+
+		a {
+			color: $color-gray-5;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
 
 
 	//wil-tag

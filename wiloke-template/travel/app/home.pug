@@ -52,6 +52,7 @@ block content
 	})
 		+vinhSectitle({
 			title: 'lasted from the blog',
+			addClass: 'mb-15',
 		})
 
 		+vinhSwiper({
@@ -116,9 +117,7 @@ block content
 		+vinhSectitle({
 			title: 'destination guide',
 			desc: '+1238 most beautiful tourist destinations in the world',
-			css: {
-				'margin-bottom' : '20px',
-			}
+			addClass: 'mb-15',
 		})
 
 		+wil-grid({
@@ -236,9 +235,7 @@ block content
 		+vinhSectitle({
 			title: 'upcoming blog',
 			desc: '+1238 most beautiful tourist destinations in the world',
-			css: {
-				'margin-bottom': '20px',
-			}
+			addClass: 'mb-15',
 		})
 
 		+vinhSwiper({
@@ -292,7 +289,6 @@ block content
 		container: true,
 		css: {
 			'padding': '30px 0 30px 0 ',
-			'text-align': 'center'
 
 		}
 	})
@@ -300,9 +296,9 @@ block content
 			title: 'get our travel guides',
 			desc: 'We have over a dozen guides to destinations around the world! Get one of you trip today',
 			css: {
-				'margin-bottom': '25px',
 				'text-align': 'left'
-			}
+			},
+			addClass: 'mb-15'
 		})
 
 		+row({
@@ -323,10 +319,11 @@ block content
 				},
 			})
 
+		div.wil-text-center.mt-20
 			+wil-btn('a', {
-				align: 'center',
 				text: 'view all products',
 				modifier: ['primary', 'lg', 'round'],
+
 			})
 	
 	+section({
@@ -348,35 +345,40 @@ block content
 					modifier: 'style03',
 					title: 'download application',
 					desc: 'It is a long established fact that a reader will be distracted readable content of a page when looking at its layout',
-					addClass: 'mb-30',
+					addClass: 'mb-30 mt-100',
+					css: {
+						'margin-top' : '180px'
+					}
 				})
 
-				+vinhList({
-				})
+				ul.list_features
 					+vinhListitem({
-						modifier: 'style02',
-
 						loop: {
 							data: [
 								{
-									icon: 'la la-check',
+									modifier: 'style02',
 									text: random(random.text,40),
+									icon: 'la la-check',
 								},
 								{
-									icon: 'la la-check',
+									modifier: 'style02',
 									text: random(random.text,40),
+									icon: 'la la-check',
 								},
 								{
-									icon: 'la la-check',
+									modifier: 'style02',
 									text: random(random.text,40),
+									icon: 'la la-check',
 								},
 								{
-									icon: 'la la-check',
+									modifier: 'style02',
 									text: random(random.text,40),
+									icon: 'la la-check',
 								},
 								{
-									icon: 'la la-check',
+									modifier: 'style02',
 									text: random(random.text,40),
+									icon: 'la la-check',
 								},
 							]
 						}
@@ -385,11 +387,25 @@ block content
 			+col({
 				cols: [0,6,6,6],
 			})
-				div.product-img
-					div
-						img(src="img/products/1.png", alt="iphone")
-					div
-						img(src="img/products/2.png", alt="iphone")
+				div.showcase-container
+					+vinhAppShowcase({
+						addClass: 'mb-30',
+						loop: {
+							data: [
+								{
+									appIcon: 'la la-android',
+									title: 'Android Application'
+								},
+								{
+									title: 'IOS Application',
+									appIcon: 'la la-apple',
+									arrowSrc: 'img/bg/6.png',
+									appImageSrc : 'img/products/2.png',
+									modifier: 'apple'
+								}
+							],
+						},
+					})
 						
 	+vinhFooter({
 		
