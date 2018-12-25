@@ -416,37 +416,35 @@ block content
 				offsets: [0,0,1,1],
 			})
 				+vinhSectitle({
+					modifier: 'style03',
 					title: 'download application',
 					desc: 'It is a long established fact that a reader will be distracted readable content of a page when looking at its layout',
-					addClass: 'mb-30',
+					addClass: 'mb-30 mt-160',
 				})
 
-				+vinhList({
-				})
+				ul.list_features
 					+vinhListitem({
-						modifier: 'style02',
-
 						loop: {
 							data: [
 								{
-									icon: 'la la-check',
+									modifier: 'style02',
 									text: random(random.text,40),
+									icon: 'la la-check',
 								},
 								{
-									icon: 'la la-check',
+									modifier: 'style02',
 									text: random(random.text,40),
+									icon: 'la la-check',
 								},
 								{
-									icon: 'la la-check',
+									modifier: 'style02',
 									text: random(random.text,40),
+									icon: 'la la-check',
 								},
 								{
-									icon: 'la la-check',
+									modifier: 'style02',
 									text: random(random.text,40),
-								},
-								{
 									icon: 'la la-check',
-									text: random(random.text,40),
 								},
 							]
 						}
@@ -455,12 +453,26 @@ block content
 			+col({
 				cols: [0,6,6,6],
 			})
-				div.product-img
-					div
-						img(src="img/products/1.png", alt="iphone")
-					div
-						img(src="img/products/2.png", alt="iphone")
-
+				div.showcase-container
+					+vinhAppShowcase({
+						addClass: 'mb-30',
+						loop: {
+							data: [
+								{
+									appIcon: 'la la-android',
+									title: 'Android Application'
+								},
+								{
+									title: 'IOS Application',
+									appIcon: 'la la-apple',
+									arrowSrc: 'img/bg/6.png',
+									appImageSrc : 'img/products/2.png',
+									modifier: 'apple'
+								}
+							],
+						},
+					})
+						
 	+vinhFooter({
-
+		
 	})

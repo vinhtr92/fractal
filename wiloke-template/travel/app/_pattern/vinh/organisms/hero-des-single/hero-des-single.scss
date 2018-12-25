@@ -11,9 +11,9 @@
 
 // sm
 .sm {
-	font-family: $font-tertiary;
+	font-family: $font-quarter;
 	font-style: italic;
-	line-height: normal;
+	// line-height: normal;
 	@include pfs('font-size', (
 		400px: 18px,
 		1600px: 30px
@@ -102,6 +102,6 @@
 		position: relative;
 		transform: translate(0, 20vh);
 		z-index: 2;
-		@include textGradient(#37e584,#98ff00);
+		@include textGradient(#98ff00,#37e584);
 	}
 }

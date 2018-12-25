@@ -3,7 +3,20 @@
 
 // module
 .module {
-	
+	a {
+		display: block;
+	}
+
+	&:nth-child(1){
+		// display: none;
+
+		@include media('>=lg'){
+			:global(html[dir=rtl]) & {
+				position: relative;
+				left: -50px;
+			}
+		}
+	}
 }
 
 // title
@@ -22,6 +35,9 @@
 			font-size: 18px;
 			text-align: left;
 
+			:global(html[dir=rtl]) & {
+				text-align: right;
+			}
 		}
 	}
 
@@ -32,6 +48,12 @@
 		@include media('>=lg'){
 			display: initial;
 			margin-right: 8px;
+
+			:global(html[dir=rtl]) & {
+				float: right;
+				margin-left: 8px;
+				margin-right: 0;
+			}
 		}
 	}
 }
@@ -40,7 +62,11 @@
 .arrow {
 	display: none;
 	@include media('>=lg'){
-		display: initial;
+		display: block;
+
+		:global(html[dir=rtl]) & {
+			transform: rotatey(180deg);
+		}
 	}
 }
 
@@ -56,6 +82,11 @@
 	@include media('>=lg'){
 		position: relative;
 		left: -150px;
+
+
+		:global(html[dir=rtl]) & {
+			left: 120px;
+		}
 	}
 }
 
@@ -76,7 +107,13 @@
 	@include media('>=lg'){
 		position: relative;
 		left: -30px;
+
+		:global(html[dir=rtl]) & {
+			left: 0 ;
+		}
 	}
+
+
 }
 
 
@@ -88,11 +125,6 @@
 		
 		@include media('>=md'){
 			margin: 0 -20px;
-
-		}
-
-		:global(html[dir=rtl]) & {
-			flex-direction: row-reverse;
 		}
 	}
 }

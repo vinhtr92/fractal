@@ -11,8 +11,8 @@
 
 // sm
 .sm {
-	font-family: $font-tertiary;
-	font-style: italic;
+	font-family: $font-quarter;
+	// font-style: italic;
 	line-height: normal;
 	@include pfs('font-size', (
 		400px: 18px,

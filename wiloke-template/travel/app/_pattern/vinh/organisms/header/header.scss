@@ -24,32 +24,6 @@
 		1200px: 17px
 	));
 
-	// :global(.header-nav) {
-	// 	:global(html[dir=rtl]) & {
-	// 		text-align: right;
-
-	// 		@include media('<=1200px'){
-	// 			// display: none;
-	// 		}
-
-	// 		:global {
-	// 			.header-menu > li.menu-item-has-children > a:after {
-	// 				margin: 0 4px;
-	// 			}
-	// 			.header-menu .sub-menu li > a {
-	// 				text-align: right;
-
-	// 				&:after {
-	// 					left: 15px;
-	// 					right: initial;
-	// 				}
-	// 			}
-
-	// 		}
-	// 	}
-
-	// }
-
 	:global {
 		form[class*=search] {
 			transform: translateX(100%);
@@ -220,14 +194,10 @@
 						&:after {
 							left: 15px;
 							right: initial;
-							// content: '\f111';
-							// font-family: 'lineawesome';
-							// position: absolute;
 						}
 					}
 
 				}
-
 			}
 	}
 }
@@ -416,13 +386,6 @@
 			}
 		}
 	}
-
-	div[class*=header__search]{
-
-	}
-
-
-
 }
 
 :global {
@@ -510,152 +473,6 @@
 			enable: false
 		)
 	));
-
-
-
-	header.header--dark {
-		background: $color-dark;
-		border-bottom: 1px solid #000;
-
-		span.toggle-menu {
-			span {
-				background-color: rgba($color-light,0.5);
-			}
-		}
-
-		div[class*=header__search]{
-
-		}
-		.header-menu.active {
-			~ .toggle-menu {
-				span {
-					// background-color: $color-primary;
-				}
-			}
-		}
-	
-		div[class*=header__logo]{
-			@include media('>=lg'){
-				border-right: 2px solid rgba(218, 218, 218, 0.1);
-
-			}
-		}
-
-
-		div[class*=header__search]{
-
-			input {
-				background-color: #333335 !important;
-				border: 1px solid transparent !important;
-				transition: .3s ease all;
-
-				&:focus {
-					border: 1px solid transparent !important;
-					background-color: rgb(246, 246, 246) !important;
-					transition: .3s ease all;
-
-				}
-			}
-
-		}
-		@include wilMenu('.header-nav', (
-			menuClass: 'header-menu',
-			theme: 'style2--dark',
-			align: 'left',
-			breakpoint: 1200,
-			css: (
-				color: $color-light,
-				font-family: $font-secondary,
-				font-size: 14px,
-				font-weight: $font-semibold,
-				padding: 15px 27px,
-				hover: (
-					color: $color-primary
-				),
-				current: (
-					color: $color-primary
-				)
-			),
-			arrow: (
-				use: 'FontAwesome',
-				icon: 'fa-angle-down'
-			),
-			subMenu: (
-				width: 200,
-				class: 'sub-menu',
-				parentClass: 'menu-item-has-children',
-				align: 'right',
-				position: 'right',
-				css: (
-					color: $color-light,
-					font-weight: $font-medium,
-					hover: (
-						color: $color-primary
-					),
-					current: (
-						color: $color-primary
-					)
-				),
-				arrow: (
-					use: 'FontAwesome',
-					icon: 'fa-angle-right'
-				),
-				animate: (
-					time: 300,
-					easing: 'easeOutBack',
-					effect: 'slideDown'
-				)
-			),
-			menuMobile: (
-				toggleClass: 'active',
-				classButtonToggle: 'toggle-menu',
-				theme: 'style1',
-				align: 'left',
-				width: 260,
-				css: (
-					font-size: 14px,
-					color: $color-gray-3,
-					border-bottom: 1px solid rgba(#fff, 0.05),
-					hover: (
-						color: $color-gray-3
-					),
-					toggle: (
-						color: $color-primary
-					)
-				),
-				arrow: (
-					use: 'FontAwesome',
-					icon: 'fa-angle-down'
-				),
-				subMenu: (
-					css: (
-						hover: (
-							color: $color-gray-3
-						),
-						toggle: (
-							color: $color-primary
-						)
-					)
-				)
-			),
-			responsiveByJavascript: (
-				enable: false
-			)
-		))
-
-
-	}
-
-
-	header.header--full {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		border-radius: 0;
-	}
-
-
 }
 
 // modifier style02
@@ -675,5 +492,30 @@
 		400px: 10px,
 		1200px: 10px
 	));
+}
+
+// modifier dark
+.dark {
+	:global {
+		background: $color-dark;
+		border-bottom: 1px solid #000;
+
+			span.toggle-menu {
+				span {
+					background-color: rgba($color-light,0.5);
+				}
+			}
+		.header-nav {
+			> .header-menu > li {
+				a {
+					color: $color-light;
+				}
+
+				ul.sub-menu {
+					background: $color-dark;
+				}
+			}
+		}
+	}
 }
 

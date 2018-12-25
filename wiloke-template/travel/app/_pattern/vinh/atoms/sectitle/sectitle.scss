@@ -13,10 +13,10 @@
 		text-align: right;
 	}
 
-	&:global(.mt-100){
+	&:global(.mt-160){
 
 		@include media('>=lg'){
-			margin-top: 100px !important;
+			margin-top: 160px !important;
 		}
 	}
 }
