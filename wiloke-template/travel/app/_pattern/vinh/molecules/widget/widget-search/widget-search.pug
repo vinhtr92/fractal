@@ -8,7 +8,7 @@ mixin vinhWidgetSearch(args)
 		div.item-group
 			label(for="search-form")
 			input(type="search" id='search-form' class='search-field' placeholder= args.placeholder || 'Search...')
-			button(type='submit' class='search-submit') 
+			button(type='submit' class='search-submit' aria-label='search') 
 				i(class=args.searchIcon || 'fa fa-search')
 		
 		

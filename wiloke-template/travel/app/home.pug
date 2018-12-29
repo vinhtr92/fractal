@@ -9,7 +9,10 @@ block config
 
 //- afterLink
 block afterLink
-	
+	+vinhPlaceHolderLoad({
+		modifier: 'home',
+		search: true,
+	})
 //- Header
 block header
 	+longHeader({
@@ -19,7 +22,9 @@ block header
 	})
 //- Footer1
 block footer
-	
+	+vinhFooter({
+		
+	})
 //- Content
 block content
 	//- Args: img, video, overlay
@@ -64,6 +69,7 @@ block content
 				breakpoints: {
 					380: {
 						centeredSlides: true,
+					div
 						spaceBetween: 15,
 					}
 				},
@@ -122,6 +128,7 @@ block content
 
 		+wil-grid({
 			addClass: 'grid-custom',
+					div
 			options: {
 				style: 'creative',
 				devices: {
@@ -399,7 +406,5 @@ block content
 						},
 					})
 						
-	+vinhFooter({
-		
-	})
+
 		

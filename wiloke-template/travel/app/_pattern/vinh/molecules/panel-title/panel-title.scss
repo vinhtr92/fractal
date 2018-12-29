@@ -9,13 +9,24 @@
 	composes: bg-gradient-1 from global;
 	composes: bd-radius--5 from global;
 	composes: arrow--bottom-left from global;
+
+
 	&:before {
+		//triangle
 		border-top-color: $color-primary;
 		border-width: 7px 9px;
 		bottom: -14px;
 		left: 40px;
 		@include media('<sm') {
 			left: 20px;
+		}
+
+		:global(html[dir=rtl]) & {
+			left: initial;
+			right: 40px;
+			@include media('<sm') {
+				right: 20px;
+			}
 		}
 	}
 }
@@ -31,6 +42,11 @@
 	margin-right: 10px;
 	line-height: normal;
 	@extend %vertical;
+
+	:global(html[dir=rtl]) & {
+		margin-left: 10px;
+		margin-right: 0;
+	}
 }
 
 // title

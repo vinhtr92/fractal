@@ -8,17 +8,23 @@ block config
 
 //- afterLink
 block afterLink
-	
+	+vinhPlaceHolderLoad({
+		modifier: 'blog'
+	})
 //- Header
 block header
+
 	+longHeader({
 		modifier: '',
 		addClass: ''
 	})
 //- Footer
 block footer
-	
-//- Content
+	//- Content
+	+vinhFooter({
+
+	})
+
 block content
 
 	+long_hero({
@@ -129,8 +135,4 @@ block content
 		})
 
 
-
-	+vinhFooter({
-
-	})
 

@@ -56,6 +56,19 @@
 	}
 }
 
+@mixin shimmerload($url){
+	&:before {
+		content: '';
+		background-color: #f5f6f7;
+		background-image: url($url);
+		background-repeat: repeat-y;
+		background-size: 100vw 1px;
+		content: ' ';
+		display: block;
+		height: 100%;
+	}
+}
+
 @mixin text-ellipsis {
 	overflow: hidden;
 	text-overflow: ellipsis;

@@ -133,6 +133,9 @@
 	.bg-gradient-1 {
 		background: #98ff00;
 		background: linear-gradient(to right, $color-primary 0, #98ff00 100%);
+		:global(html[dir=rtl]) & {
+			background: linear-gradient(to left, $color-primary 0, #98ff00 100%);
+		}
 	}
 
 
@@ -421,6 +424,7 @@
 		font-size: 12px;
 		color: rgba($color-light,0.8);
 		border-radius: 5px;
+		z-index: 10;
 
 		&.wil-tag--style02 {
 			font-size: 12px;
@@ -436,6 +440,7 @@
 			@include absolute(top 10px right 10px left initial);
 		}
 	}
+	
 }
 
 

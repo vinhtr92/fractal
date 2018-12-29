@@ -19,6 +19,11 @@
 	margin: 0;
 	composes: text-center from global;
 	transition: all 0.3s ease;
+
+	:global(html[dir=rtl]) & {
+		right: initial;
+		left: 10px;
+	}
 }
 
 // hover

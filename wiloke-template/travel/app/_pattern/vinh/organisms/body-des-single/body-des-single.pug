@@ -9,7 +9,6 @@ mixin longBodyDesSingle(args)
 			+row
 
 				if (args.modifier === 'style1')
-
 					+col({
 						cols: [0,0,10,8],
 						offsets: [0,0,1,2]
@@ -18,10 +17,36 @@ mixin longBodyDesSingle(args)
 							block
 						else
 							div= random(random.text, 200)
+						include cssmodule
 						
-						+long_share({
-							modifier: 'center'
-						})
+						div(class=css.share)
+							+vinhSocial({
+								loop: {
+										data: [
+											{
+												icon: 'la la-facebook',
+												text: 'facebook',
+												modifier: 'socialtext'
+											},
+											{
+												icon: 'la la-twitter',
+												text: 'twitter',
+												modifier: 'socialtext'
+											},
+											{
+												icon: 'la la-google-plus',
+												text: 'google-plus',
+												modifier: 'socialtext'
+											},
+											{
+												icon: 'la la-pinterest',
+												text: 'pinterest',
+												modifier: 'socialtext'
+											},
+										]
+									},
+								})
+								include cssmodule
 
 				else if (args.modifier === 'style2')
 					+col({
@@ -33,10 +58,38 @@ mixin longBodyDesSingle(args)
 						else
 							div= random(random.text, 200)
 
-						+long_share({
-							modifier: 'center'
-						})
-							
+						include cssmodule
+						div(class=css.share)
+							+vinhSocial({
+								loop: {
+										data: [
+											{
+												icon: 'la la-facebook',
+												text: 'facebook',
+												modifier: 'socialtext'
+											},
+											{
+												icon: 'la la-twitter',
+												text: 'twitter',
+												modifier: 'socialtext'
+											},
+											{
+												icon: 'la la-google-plus',
+												text: 'google-plus',
+												modifier: 'socialtext'
+											},
+											{
+												icon: 'la la-pinterest',
+												text: 'pinterest',
+												modifier: 'socialtext'
+											},
+										]
+									},
+								})
+								include cssmodule
+
+
+
 					+col({
 						cols: [0,0,3,3],
 						offsets: [0,0,1,1]
@@ -66,10 +119,6 @@ mixin longBodyDesSingle(args)
 										icon: 'pe-7s-rocket',
 										text: 'Activities',
 										textBoxHref: '#activities'
-									}, {
-										icon: 'pe-7s-note',
-										text: 'Articles',
-										textBoxHref: '#articles'
 									}]
 								},
 								addClass: 'mb-10'

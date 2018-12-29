@@ -1,6 +1,6 @@
 class header {
 	constructor() {
-		this.css = {"module":".vinh_header__module","logo":".vinh_header__logo","search":".vinh_header__search","fixed":".vinh_header__fixed","sticky":".vinh_header__sticky","style02":".vinh_header__style02","dark":".vinh_header__dark","":""};
+		this.css = {"module":".vinh_header__module","logo":".vinh_header__logo","search":".vinh_header__search","fixed":".vinh_header__fixed","sticky":".vinh_header__sticky","style02":".vinh_header__style02","dark":".vinh_header__dark","full":".vinh_header__full","":""};
 		this.apply();
 	}
 
@@ -8,14 +8,14 @@ class header {
 		$('.header-nav').wilMenu({
 			menuClass: 'header-menu',
 			breakpoint: 1200,
-		});		
+		});
 	}
 	handleSearch(event, formSearch) {
 		event.preventDefault();
 		formSearch.setAttribute('data-state', 'true');
 	}
 
-	
+
 
 	handleHeaderFixed(module) {
 		const { css } = this;
@@ -54,28 +54,18 @@ new header();
 	const module = document.querySelector(el);
 	if(module){
 		const input =  module.querySelector('input');
+		const btnForm = module.querySelector('button');
 		const btn = document.querySelector('a.toggle-mobile');
 		module.setAttribute('data-state','closed');
-		var state = module.getAttribute('data-state')
-	
-	
-		btn.addEventListener('click',event => {
-			if(state === 'closed'){
-				module.setAttribute('data-state','open')
-			}
-			event.preventDefault();
-		})
-		module.addEventListener('submit',event => {
-			if(input.value==='' ){
-				module.setAttribute('data-state','closed')
-			}
-		})
 
+		btn.addEventListener('click',event => {
+			module.setAttribute('data-state','open');
+		})
+		
 		input.addEventListener('focusout',event => {
 			if(input.value===''){
 				module.setAttribute('data-state','closed')
 			}
 		})
 	}
-
 })('header form.search-form')

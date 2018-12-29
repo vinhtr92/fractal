@@ -1,0 +1,20 @@
+//- demo: true
+mixin vinhPlaceHolderLoad(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		//- code
+		div(class=css.hero)
+			div
+			div
+			div
+	
+			if(args.search === true)
+				div(class=css.search)
+		div(class=css.container)
+			.container
+				div.row
+					if	block
+						block
+	include cssmodule

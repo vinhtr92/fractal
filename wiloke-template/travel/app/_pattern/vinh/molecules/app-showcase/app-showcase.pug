@@ -11,7 +11,7 @@ mixin vinhAppShowcase(args)
 			h2= args.title || 'lorem ipsum dolor'
 		if(args.arrow !== null)
 			div(class=css.arrow)
-				img(src=args.arrowSrc || "img/bg/5.png" )
+				img(src=args.arrowSrc || "img/bg/5.png" alt='')
 		div(class=css.image)
 			a(href="#")
 				img(src=args.appImageSrc || "img/products/1.png", alt="app")
