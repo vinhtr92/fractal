@@ -13,8 +13,138 @@ mixin vinhPlaceHolderLoad(args)
 			if(args.search === true)
 				div(class=css.search)
 		div(class=css.container)
-			.container
-				div.row
-					if	block
-						block
+			if (has(args.modifier, 'blog'))
+
+				+vinhPlaceholderItem({
+					modifier: 'search-wide'
+				})
+				include cssmodule
+				div(class=css.content)
+					div(class=css.col4)
+						+vinhPlaceholderItem({
+							modifier: 'post02'
+						})
+						include cssmodule
+					div(class=css.col4)
+						+vinhPlaceholderItem({
+							modifier: 'post02'
+						})
+						include cssmodule
+
+					div(class=css.col4)
+						+vinhPlaceholderItem({
+							modifier: 'post02'
+						})
+						include cssmodule
+
+			else if (has(args.modifier, 'destination'))
+				+vinhPlaceholderItem({
+					modifier: 'search-wide',
+					css: {'margin-top': '10px'}
+				})
+				include cssmodule
+
+				div(class=css.content)
+					+vinhPlaceholderItem({
+						modifier: 'sectitle',
+						css: {'margin': '50px 0'}
+					})
+					include cssmodule
+
+					div(class=css.col3)
+						+vinhPlaceholderItem({
+							modifier: 'imgbox06',
+						})
+						include cssmodule
+
+
+					div(class=css.col3)
+						+vinhPlaceholderItem({
+							modifier: 'imgbox06',
+						})
+						include cssmodule
+
+					div(class=css.col3)
+						+vinhPlaceholderItem({
+							modifier: 'imgbox06',
+						})
+						include cssmodule
+
+					div(class=css.col3)
+						+vinhPlaceholderItem({
+							modifier: 'imgbox06',
+						})
+						include cssmodule
+
+
+
+
+			else if (has(args.modifier, 'blog-detail'))
+				div(class=css.content)
+					div(class=css.col8 )
+						+vinhPlaceholderItem({
+							modifier: 'blogdetail',
+							css: {  'margin-bottom':'30px'  }
+						})
+						include cssmodule
+
+						+vinhPlaceholderItem({
+							modifier: 'blogdetail'
+						})
+						include cssmodule
+
+					div(class=css.col4)
+										
+						+vinhPlaceholderItem({
+							modifier: 'search-wide',
+							css: {  'margin-bottom':'30px'  }
+						})
+				
+						+vinhPlaceholderItem({
+							modifier: 'post02',
+							css: {  'margin-bottom':'30px'  }
+						})
+						+vinhPlaceholderItem({
+							modifier: 'post02',
+							css: {  'margin-bottom':'30px'  }
+						})
+						+vinhPlaceholderItem({
+							modifier: 'post02',
+							css: {  'margin-bottom':'30px'  }
+						})
+
+			else if (has(args.modifier, 'blog-standard'))
+				+vinhPlaceholderItem({
+					modifier: 'search-wide',
+					css: {  'margin-bottom':'30px'  }
+				})
+				include cssmodule
+				div(class=css.content)
+
+					div(class=css.col8)
+						+vinhPlaceholderItem({
+							modifier: 'standard',
+							css: {  'margin-bottom':'30px'  }
+						})
+						include cssmodule
+
+					div(class=css.col4)
+						+vinhPlaceholderItem({
+							modifier: 'post02',
+							css: {  'margin-bottom':'30px'  }
+						})
+						include cssmodule
+
+						+vinhPlaceholderItem({
+							modifier: 'post02',
+							css: {  'margin-bottom':'30px'  }
+						})
+						include cssmodule
+			else if (has(args.modifier, 'about'))
+				+vinhPlaceholderItem({
+					modifier: 'about',
+					css: {  'margin':'80px 0 30px'  }
+				})
+				
+						
 	include cssmodule

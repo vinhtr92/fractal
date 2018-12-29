@@ -1,0 +1,76 @@
+//- demo: true
+mixin vinhPlaceholderItem(args)
+	include cssmodule
+
+	+module('div', css.module, args)
+		- let args = item
+		
+		//- code
+		if	(has(args.modifier,'post02'))
+			div(class=css.image)
+			div(class=css.content)
+				div
+				div
+				div
+				div
+		else if	(has(args.modifier,'imgbox06'))
+			div
+			div
+		else if	(has(args.modifier,'sectitle'))
+			div
+			div 
+		else if	(has(args.modifier,'blogdetail'))
+			div(class=css.image)
+			div(class=css.content)
+				div
+				div
+				div
+				div
+				div
+				div
+				div
+				div
+		else if	(has(args.modifier,'standard'))
+			div(class=css.image)
+			div(class=css.content)
+				div(class=css.body)
+					div
+					div
+					div
+					div
+					div
+					div
+					div
+					div
+		else if (has(args.modifier,'about'))
+			div(class=css.image)
+			div(class=css.content)
+				div
+				div
+				div
+				div
+				div
+				div
+				div
+				div
+				div
+				div
+				div
+				div
+				div
+				div
+				div
+
+		else if (has(args.modifier,'about-widget'))
+				div(class=css.avatar)
+				div
+				div
+				div
+				div
+				div
+				div
+
+
+
+
+	include cssmodule

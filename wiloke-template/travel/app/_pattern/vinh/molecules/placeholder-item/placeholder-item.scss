@@ -1,0 +1,286 @@
+/* //--- vinhPlaceholderItem
+--------------------------------------------------------------------------------*/
+
+// module
+.module {
+	position: relative;
+	background: white;
+	border-radius: 10px;
+	overflow: hidden;
+	border: 1px solid whitesmoke;
+}
+
+// modifier search-wide
+.search-wide {
+	@include shimmerload('img/gif/shimmerload.gif');
+	width: 100%;
+	height: 60px;
+	border: 1px solid white;
+	composes: mb-30 from global;
+}
+
+// image
+.image {
+	padding-top: 56.25%;
+	background: white;
+	@include shimmerload('img/gif/shimmerload.gif');
+	position: relative;
+
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+}
+
+// content
+.content {
+	position: relative;
+}
+
+//modifier post02
+.post02 {
+	content: empty;
+	// float: left;
+	width: 100%;
+
+	.image {
+		border-bottom: 1px solid whitesmoke;
+	}
+
+	.content {
+		padding: 20px;
+
+		> div {
+			@include shimmerload('img/gif/shimmerload.gif');
+			position: relative;
+			&:nth-child(1){
+				height: 15px;
+				margin-bottom: 10px;
+				width: 70%;
+				
+			}
+			&:nth-child(2){
+				margin-bottom: 10px;
+			}
+
+			&:nth-child(2),
+			&:nth-child(3){
+				height: 5px;
+			}
+
+			&:nth-child(3){
+				width: 80%;
+			}
+		}
+	}
+}
+// modifier imgbox06
+.imgbox06 {
+	padding-top: 100%;
+	position: relative;
+
+	> div {
+		@include shimmerload('img/gif/shimmerload.gif');
+		position: absolute;
+		&:nth-child(1) {
+			height: 15px;
+			bottom: 35px;
+			left: 20px;
+			width: 50%;
+		}
+		&:nth-child(2) {
+			height: 5px;
+			bottom: 20px;
+			left: 20px;
+			width: 25%;
+		}
+	}
+}
+
+// modifier sectitle
+.sectitle {
+	border-radius: 0;
+	overflow: visible;
+	background: none;
+
+	> div {
+		@include shimmerload('img/gif/shimmerload.gif');
+		position: relative;
+		&:nth-child(1) {
+			height: 15px;
+			margin-bottom: 10px;
+			width: 50%;
+		}
+
+		&:nth-child(2){
+			height: 5px;
+			width: 25%;
+			// top: 20px;
+		}
+	}
+}
+
+// modifier blogdetail
+.blogdetail {
+	position: relative;
+	border-radius: 10px;
+	.image {
+		border: 1px solid whitesmoke;
+	}
+
+	.content {
+		padding: 15px 25px;
+		position: relative;
+		background: white;
+		> div {
+			@include shimmerload('img/gif/shimmerload.gif');
+
+			&:nth-child(1){
+				height: 15px;
+				width: 60%;
+				margin-bottom: 10px;
+				margin-top: 10px;
+			}
+			
+			&:nth-child(3n+2){
+				width: 95%;
+			}
+			&:nth-child(2){
+				height: 5px;
+				width: 30%;
+				margin-bottom: 25px;
+			}
+
+			&:nth-child(n+3){
+				height: 5px;
+				margin-bottom: 15px;
+				// width: 95%;
+			}
+
+			// &:nth-child(5),
+			// &:nth-child(7),
+			// &:nth-child(9){
+			// 	width: 85%;
+			// 		// margin-bottom: 15px;
+			// }
+		}
+	}
+}
+
+// modifier standard
+.standard {
+	background: white;
+	.content {
+		padding: 30px;
+	}
+
+	.body {
+
+		margin-top: -60px;
+		background: white;
+		padding: 30px 20px 0;
+
+		> div {
+			margin: 0 auto;
+
+			&:nth-child(1){
+				height: 12px;
+				width: 60px;
+				margin-bottom: 10px;
+			}
+
+			&:nth-child(2){
+				height: 15px;
+				width: 60% !important;
+				margin-bottom: 20px;
+			}
+			&:nth-child(n+3){
+				height: 5px;
+				margin-bottom: 15px;
+			}
+
+			&:nth-child(3n+2){
+				width: 90%;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+
+
+.body,
+.content {
+	> div {
+		position: relative;
+		@include shimmerload('img/gif/shimmerload.gif');
+	}
+}
+
+
+// modifier about
+.about {
+	border-radius: 0;
+	@include clearfix;
+	padding: 20px;
+	border: none;
+	overflow: hidden;
+	.image {
+		width: 100%;
+		height: 350px;
+		padding-top: 0;
+
+		@include media('>=sm'){
+			float: left;
+			width: 330px;
+			margin-right: 30px;
+			height: 450px;
+		}
+	}
+	
+	.content {
+		margin-top: 20px;
+		@include clearfix;
+		> div {
+			&:nth-child(2n+1){
+				width: 95%;
+			}
+
+			&:nth-child(1){
+				height: 15px;
+				width: 40%;
+				margin-bottom: 15px;
+			}
+
+			&:nth-child(n+2){
+				height: 5px;
+				margin-bottom: 20px;
+			}
+			
+		}
+
+		@include media('>=sm'){
+			float: left;
+			width: calc( 100% - 360px);
+
+			> div {
+				&:nth-child(1) {
+
+				}
+			}
+		}
+	}
+}
+
+
+
+// avatar
+.avatar {
+	
+}

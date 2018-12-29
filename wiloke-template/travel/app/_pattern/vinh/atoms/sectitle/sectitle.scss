@@ -9,12 +9,13 @@
 	@include media('>=sm'){
 		margin-top: initial;
 	}
-	:global(html[dir=rtl]) & {
+
+ 	:global(html[dir=rtl]) & {
 		text-align: right;
 	}
 
-	&:global(.mt-160){
 
+	&:global(.mt-160){
 		@include media('>=lg'){
 			margin-top: 160px !important;
 		}
